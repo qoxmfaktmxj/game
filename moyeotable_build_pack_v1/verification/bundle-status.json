@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "prepared_at": "2026-10-23",
+  "pdf_pages": 29,
+  "ui_images": 8,
+  "original_reference_photos": 9,
+  "prior_ai_concept_images": 1,
+  "rule_tests_passed": 40,
+  "seeded_simulation_games": 100,
+  "schema_cases_passed": 15,
+  "online_multiplayer_implemented": false,
+  "database_migration_executed": false,
+  "production_card_art_complete": false,
+  "reference_photos_public_distribution": "NOT_APPROVED"
+}

@@ -1,0 +1,135 @@
+.game-card-art {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 110px;
+  flex: none;
+  overflow: hidden;
+  border-radius: 7px;
+  pointer-events: none;
+}
+.game-card-art img {
+  object-fit: cover;
+  object-position: center 42%;
+}
+.work-card > .game-card-art {
+  height: 105px;
+}
+.patron-card > .game-card-art {
+  height: 115px;
+}
+.owned-works .work-card > .game-card-art {
+  height: 75px;
+}
+.council-district > .game-card-art {
+  height: 125px;
+}
+.council-district.compact > .game-card-art {
+  height: 65px;
+}
+.council-role-card > .game-card-art {
+  height: 150px;
+}
+.council-my-role > .game-card-art {
+  height: 150px;
+  margin-bottom: 12px;
+}
+.patron-card > .game-card-art img,
+.council-role-card > .game-card-art img,
+.council-my-role > .game-card-art img,
+.signal-character-detail > .game-card-art img {
+  object-position: center 20%;
+}
+.signal-card > .game-card-art {
+  height: 120px;
+  margin-block: 7px;
+}
+.signal-card:has(> .game-card-art) .signal-card-emblem {
+  display: none;
+}
+.signal-card.is-compact > .game-card-art {
+  height: 65px;
+}
+.signal-card.is-compact:has(> .game-card-art) {
+  height: auto;
+  min-height: 120px;
+}
+.board-help-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.board-help-links > a {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.board-help-links > a:hover {
+  color: var(--mint);
+}
+.signal-role-row > div > .game-card-art {
+  float: left;
+  width: 75px;
+  height: 95px;
+  margin: 0 15px 8px 0;
+}
+.signal-secret > .game-card-art {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 14px;
+}
+.signal-character-detail > .game-card-art {
+  height: 145px;
+  margin-top: 12px;
+}
+.number-tile > .game-card-art {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  border-radius: inherit;
+  z-index: 0;
+}
+.number-tile > .game-card-art img {
+  object-position: center;
+  opacity: 0.7;
+}
+.number-tile > small,
+.number-tile > strong {
+  position: relative;
+  z-index: 1;
+}
+.number-tile > span:not(.game-card-art) {
+  z-index: 1;
+}
+.number-tile > strong {
+  text-shadow:
+    0 0 5px #fffdf2,
+    0 0 10px #fffdf2;
+}
+.number-tile > small {
+  background: #fffdf2e8;
+  border-radius: 3px;
+  padding-inline: 3px;
+}
+@media (max-width: 760px) {
+  .work-card > .game-card-art {
+    height: 90px;
+  }
+  .patron-card > .game-card-art {
+    height: 95px;
+  }
+  .council-district > .game-card-art {
+    height: 105px;
+  }
+  .council-role-card > .game-card-art {
+    height: 125px;
+  }
+  .signal-card > .game-card-art {
+    height: 100px;
+  }
+  .signal-card.is-compact > .game-card-art {
+    height: 55px;
+  }
+}

@@ -1,0 +1,2 @@
+# Linux container entrypoints must remain executable by Bash after checkout.
+deploy/*.sh text eol=lf

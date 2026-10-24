@@ -1,0 +1,1172 @@
+[
+  {
+    "id": "w-1",
+    "level": 1,
+    "bonus": "white",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 3,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-2",
+    "level": 1,
+    "bonus": "white",
+    "points": 1,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 4,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-3",
+    "level": 1,
+    "bonus": "white",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 2,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-4",
+    "level": 1,
+    "bonus": "white",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 2,
+      "green": 0,
+      "red": 0,
+      "black": 2
+    }
+  },
+  {
+    "id": "w-5",
+    "level": 1,
+    "bonus": "white",
+    "points": 0,
+    "cost": {
+      "white": 3,
+      "blue": 1,
+      "green": 0,
+      "red": 0,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-6",
+    "level": 1,
+    "bonus": "white",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 2,
+      "green": 2,
+      "red": 0,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-7",
+    "level": 1,
+    "bonus": "white",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 1,
+      "green": 1,
+      "red": 1,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-8",
+    "level": 1,
+    "bonus": "white",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 1,
+      "green": 2,
+      "red": 1,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-9",
+    "level": 2,
+    "bonus": "white",
+    "points": 2,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 5,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-10",
+    "level": 2,
+    "bonus": "white",
+    "points": 3,
+    "cost": {
+      "white": 6,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-11",
+    "level": 2,
+    "bonus": "white",
+    "points": 2,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 5,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-12",
+    "level": 2,
+    "bonus": "white",
+    "points": 2,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 1,
+      "red": 4,
+      "black": 2
+    }
+  },
+  {
+    "id": "w-13",
+    "level": 2,
+    "bonus": "white",
+    "points": 1,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 3,
+      "red": 2,
+      "black": 2
+    }
+  },
+  {
+    "id": "w-14",
+    "level": 2,
+    "bonus": "white",
+    "points": 1,
+    "cost": {
+      "white": 2,
+      "blue": 3,
+      "green": 0,
+      "red": 3,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-15",
+    "level": 3,
+    "bonus": "white",
+    "points": 4,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 7
+    }
+  },
+  {
+    "id": "w-16",
+    "level": 3,
+    "bonus": "white",
+    "points": 4,
+    "cost": {
+      "white": 3,
+      "blue": 0,
+      "green": 0,
+      "red": 3,
+      "black": 6
+    }
+  },
+  {
+    "id": "w-17",
+    "level": 3,
+    "bonus": "white",
+    "points": 3,
+    "cost": {
+      "white": 0,
+      "blue": 3,
+      "green": 3,
+      "red": 5,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-18",
+    "level": 3,
+    "bonus": "white",
+    "points": 5,
+    "cost": {
+      "white": 3,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 7
+    }
+  },
+  {
+    "id": "w-19",
+    "level": 1,
+    "bonus": "blue",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-20",
+    "level": 1,
+    "bonus": "blue",
+    "points": 1,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 4,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-21",
+    "level": 1,
+    "bonus": "blue",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 2
+    }
+  },
+  {
+    "id": "w-22",
+    "level": 1,
+    "bonus": "blue",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 2,
+      "red": 0,
+      "black": 2
+    }
+  },
+  {
+    "id": "w-23",
+    "level": 1,
+    "bonus": "blue",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 1,
+      "green": 3,
+      "red": 1,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-24",
+    "level": 1,
+    "bonus": "blue",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 0,
+      "green": 2,
+      "red": 2,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-25",
+    "level": 1,
+    "bonus": "blue",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 0,
+      "green": 1,
+      "red": 1,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-26",
+    "level": 1,
+    "bonus": "blue",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 0,
+      "green": 1,
+      "red": 2,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-27",
+    "level": 2,
+    "bonus": "blue",
+    "points": 2,
+    "cost": {
+      "white": 0,
+      "blue": 5,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-28",
+    "level": 2,
+    "bonus": "blue",
+    "points": 3,
+    "cost": {
+      "white": 0,
+      "blue": 6,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-29",
+    "level": 2,
+    "bonus": "blue",
+    "points": 2,
+    "cost": {
+      "white": 5,
+      "blue": 3,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-30",
+    "level": 2,
+    "bonus": "blue",
+    "points": 2,
+    "cost": {
+      "white": 2,
+      "blue": 0,
+      "green": 0,
+      "red": 1,
+      "black": 4
+    }
+  },
+  {
+    "id": "w-31",
+    "level": 2,
+    "bonus": "blue",
+    "points": 1,
+    "cost": {
+      "white": 0,
+      "blue": 2,
+      "green": 2,
+      "red": 3,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-32",
+    "level": 2,
+    "bonus": "blue",
+    "points": 1,
+    "cost": {
+      "white": 0,
+      "blue": 2,
+      "green": 3,
+      "red": 0,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-33",
+    "level": 3,
+    "bonus": "blue",
+    "points": 4,
+    "cost": {
+      "white": 7,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-34",
+    "level": 3,
+    "bonus": "blue",
+    "points": 4,
+    "cost": {
+      "white": 6,
+      "blue": 3,
+      "green": 0,
+      "red": 0,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-35",
+    "level": 3,
+    "bonus": "blue",
+    "points": 3,
+    "cost": {
+      "white": 3,
+      "blue": 0,
+      "green": 3,
+      "red": 3,
+      "black": 5
+    }
+  },
+  {
+    "id": "w-36",
+    "level": 3,
+    "bonus": "blue",
+    "points": 5,
+    "cost": {
+      "white": 7,
+      "blue": 3,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-37",
+    "level": 1,
+    "bonus": "green",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 3,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-38",
+    "level": 1,
+    "bonus": "green",
+    "points": 1,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 4
+    }
+  },
+  {
+    "id": "w-39",
+    "level": 1,
+    "bonus": "green",
+    "points": 0,
+    "cost": {
+      "white": 2,
+      "blue": 1,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-40",
+    "level": 1,
+    "bonus": "green",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 2,
+      "green": 0,
+      "red": 2,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-41",
+    "level": 1,
+    "bonus": "green",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 3,
+      "green": 1,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-42",
+    "level": 1,
+    "bonus": "green",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 1,
+      "green": 0,
+      "red": 2,
+      "black": 2
+    }
+  },
+  {
+    "id": "w-43",
+    "level": 1,
+    "bonus": "green",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 1,
+      "green": 0,
+      "red": 1,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-44",
+    "level": 1,
+    "bonus": "green",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 1,
+      "green": 0,
+      "red": 1,
+      "black": 2
+    }
+  },
+  {
+    "id": "w-45",
+    "level": 2,
+    "bonus": "green",
+    "points": 2,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 5,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-46",
+    "level": 2,
+    "bonus": "green",
+    "points": 3,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 6,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-47",
+    "level": 2,
+    "bonus": "green",
+    "points": 2,
+    "cost": {
+      "white": 0,
+      "blue": 5,
+      "green": 3,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-48",
+    "level": 2,
+    "bonus": "green",
+    "points": 2,
+    "cost": {
+      "white": 4,
+      "blue": 2,
+      "green": 0,
+      "red": 0,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-49",
+    "level": 2,
+    "bonus": "green",
+    "points": 1,
+    "cost": {
+      "white": 2,
+      "blue": 3,
+      "green": 0,
+      "red": 0,
+      "black": 2
+    }
+  },
+  {
+    "id": "w-50",
+    "level": 2,
+    "bonus": "green",
+    "points": 1,
+    "cost": {
+      "white": 3,
+      "blue": 0,
+      "green": 2,
+      "red": 3,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-51",
+    "level": 3,
+    "bonus": "green",
+    "points": 4,
+    "cost": {
+      "white": 0,
+      "blue": 7,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-52",
+    "level": 3,
+    "bonus": "green",
+    "points": 4,
+    "cost": {
+      "white": 3,
+      "blue": 6,
+      "green": 3,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-53",
+    "level": 3,
+    "bonus": "green",
+    "points": 3,
+    "cost": {
+      "white": 5,
+      "blue": 3,
+      "green": 0,
+      "red": 3,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-54",
+    "level": 3,
+    "bonus": "green",
+    "points": 5,
+    "cost": {
+      "white": 0,
+      "blue": 7,
+      "green": 3,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-55",
+    "level": 1,
+    "bonus": "red",
+    "points": 0,
+    "cost": {
+      "white": 3,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-56",
+    "level": 1,
+    "bonus": "red",
+    "points": 1,
+    "cost": {
+      "white": 4,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-57",
+    "level": 1,
+    "bonus": "red",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 2,
+      "green": 1,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-58",
+    "level": 1,
+    "bonus": "red",
+    "points": 0,
+    "cost": {
+      "white": 2,
+      "blue": 0,
+      "green": 0,
+      "red": 2,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-59",
+    "level": 1,
+    "bonus": "red",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 0,
+      "green": 0,
+      "red": 1,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-60",
+    "level": 1,
+    "bonus": "red",
+    "points": 0,
+    "cost": {
+      "white": 2,
+      "blue": 0,
+      "green": 1,
+      "red": 0,
+      "black": 2
+    }
+  },
+  {
+    "id": "w-61",
+    "level": 1,
+    "bonus": "red",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 1,
+      "green": 1,
+      "red": 0,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-62",
+    "level": 1,
+    "bonus": "red",
+    "points": 0,
+    "cost": {
+      "white": 2,
+      "blue": 1,
+      "green": 1,
+      "red": 0,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-63",
+    "level": 2,
+    "bonus": "red",
+    "points": 2,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 5
+    }
+  },
+  {
+    "id": "w-64",
+    "level": 2,
+    "bonus": "red",
+    "points": 3,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 6,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-65",
+    "level": 2,
+    "bonus": "red",
+    "points": 2,
+    "cost": {
+      "white": 3,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 5
+    }
+  },
+  {
+    "id": "w-66",
+    "level": 2,
+    "bonus": "red",
+    "points": 2,
+    "cost": {
+      "white": 1,
+      "blue": 4,
+      "green": 2,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-67",
+    "level": 2,
+    "bonus": "red",
+    "points": 1,
+    "cost": {
+      "white": 2,
+      "blue": 0,
+      "green": 0,
+      "red": 2,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-68",
+    "level": 2,
+    "bonus": "red",
+    "points": 1,
+    "cost": {
+      "white": 0,
+      "blue": 3,
+      "green": 0,
+      "red": 2,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-69",
+    "level": 3,
+    "bonus": "red",
+    "points": 4,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 7,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-70",
+    "level": 3,
+    "bonus": "red",
+    "points": 4,
+    "cost": {
+      "white": 0,
+      "blue": 3,
+      "green": 6,
+      "red": 3,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-71",
+    "level": 3,
+    "bonus": "red",
+    "points": 3,
+    "cost": {
+      "white": 3,
+      "blue": 5,
+      "green": 3,
+      "red": 0,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-72",
+    "level": 3,
+    "bonus": "red",
+    "points": 5,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 7,
+      "red": 3,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-73",
+    "level": 1,
+    "bonus": "black",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 3,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-74",
+    "level": 1,
+    "bonus": "black",
+    "points": 1,
+    "cost": {
+      "white": 0,
+      "blue": 4,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-75",
+    "level": 1,
+    "bonus": "black",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 2,
+      "red": 1,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-76",
+    "level": 1,
+    "bonus": "black",
+    "points": 0,
+    "cost": {
+      "white": 2,
+      "blue": 0,
+      "green": 2,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-77",
+    "level": 1,
+    "bonus": "black",
+    "points": 0,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 1,
+      "red": 3,
+      "black": 1
+    }
+  },
+  {
+    "id": "w-78",
+    "level": 1,
+    "bonus": "black",
+    "points": 0,
+    "cost": {
+      "white": 2,
+      "blue": 2,
+      "green": 0,
+      "red": 1,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-79",
+    "level": 1,
+    "bonus": "black",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 1,
+      "green": 1,
+      "red": 1,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-80",
+    "level": 1,
+    "bonus": "black",
+    "points": 0,
+    "cost": {
+      "white": 1,
+      "blue": 2,
+      "green": 1,
+      "red": 1,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-81",
+    "level": 2,
+    "bonus": "black",
+    "points": 2,
+    "cost": {
+      "white": 5,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-82",
+    "level": 2,
+    "bonus": "black",
+    "points": 3,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 0,
+      "black": 6
+    }
+  },
+  {
+    "id": "w-83",
+    "level": 2,
+    "bonus": "black",
+    "points": 2,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 5,
+      "red": 3,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-84",
+    "level": 2,
+    "bonus": "black",
+    "points": 2,
+    "cost": {
+      "white": 0,
+      "blue": 1,
+      "green": 4,
+      "red": 2,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-85",
+    "level": 2,
+    "bonus": "black",
+    "points": 1,
+    "cost": {
+      "white": 3,
+      "blue": 2,
+      "green": 2,
+      "red": 0,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-86",
+    "level": 2,
+    "bonus": "black",
+    "points": 1,
+    "cost": {
+      "white": 3,
+      "blue": 0,
+      "green": 3,
+      "red": 0,
+      "black": 2
+    }
+  },
+  {
+    "id": "w-87",
+    "level": 3,
+    "bonus": "black",
+    "points": 4,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 7,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-88",
+    "level": 3,
+    "bonus": "black",
+    "points": 4,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 3,
+      "red": 6,
+      "black": 3
+    }
+  },
+  {
+    "id": "w-89",
+    "level": 3,
+    "bonus": "black",
+    "points": 3,
+    "cost": {
+      "white": 3,
+      "blue": 3,
+      "green": 5,
+      "red": 3,
+      "black": 0
+    }
+  },
+  {
+    "id": "w-90",
+    "level": 3,
+    "bonus": "black",
+    "points": 5,
+    "cost": {
+      "white": 0,
+      "blue": 0,
+      "green": 0,
+      "red": 7,
+      "black": 3
+    }
+  }
+]

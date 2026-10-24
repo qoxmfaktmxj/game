@@ -1,0 +1,250 @@
+TAP version 13
+# Subtest: 01 deck has 60 unique cards and 12 per suit
+ok 1 - 01 deck has 60 unique cards and 12 per suit
+  ---
+  duration_ms: 2.254749
+  type: 'test'
+  ...
+# Subtest: 02 support cards total 15
+ok 2 - 02 support cards total 15
+  ---
+  duration_ms: 0.247819
+  type: 'test'
+  ...
+# Subtest: 03 setup gives 8 cards each and 44 in deck
+ok 3 - 03 setup gives 8 cards each and 44 in deck
+  ---
+  duration_ms: 0.642708
+  type: 'test'
+  ...
+# Subtest: 04 empty expedition is zero
+ok 4 - 04 empty expedition is zero
+  ---
+  duration_ms: 0.127774
+  type: 'test'
+  ...
+# Subtest: 05 support-only expedition is -40
+ok 5 - 05 support-only expedition is -40
+  ---
+  duration_ms: 0.173717
+  type: 'test'
+  ...
+# Subtest: 06 three support-only cards give -80
+ok 6 - 06 three support-only cards give -80
+  ---
+  duration_ms: 0.075695
+  type: 'test'
+  ...
+# Subtest: 07 numeric 5,8,10 gives 3
+ok 7 - 07 numeric 5,8,10 gives 3
+  ---
+  duration_ms: 0.119728
+  type: 'test'
+  ...
+# Subtest: 08 negative score is multiplied
+ok 8 - 08 negative score is multiplied
+  ---
+  duration_ms: 0.067555
+  type: 'test'
+  ...
+# Subtest: 09 support counts toward eight and bonus is not multiplied
+ok 9 - 09 support counts toward eight and bonus is not multiplied
+  ---
+  duration_ms: 0.29026
+  type: 'test'
+  ...
+# Subtest: 10 full color maximum is 156
+ok 10 - 10 full color maximum is 156
+  ---
+  duration_ms: 0.280205
+  type: 'test'
+  ...
+# Subtest: 11 seven cards have no bonus
+ok 11 - 11 seven cards have no bonus
+  ---
+  duration_ms: 0.119626
+  type: 'test'
+  ...
+# Subtest: 12 supplied-photo score example totals 18
+ok 12 - 12 supplied-photo score example totals 18
+  ---
+  duration_ms: 0.82534
+  type: 'test'
+  ...
+# Subtest: 13 wrong turn is rejected
+ok 13 - 13 wrong turn is rejected
+  ---
+  duration_ms: 0.85277
+  type: 'test'
+  ...
+# Subtest: 14 unknown user rejected
+ok 14 - 14 unknown user rejected
+  ---
+  duration_ms: 0.956593
+  type: 'test'
+  ...
+# Subtest: 15 play moves one card to lane and phase DRAW
+ok 15 - 15 play moves one card to lane and phase DRAW
+  ---
+  duration_ms: 0.473148
+  type: 'test'
+  ...
+# Subtest: 16 lower card cannot follow higher card
+ok 16 - 16 lower card cannot follow higher card
+  ---
+  duration_ms: 0.527955
+  type: 'test'
+  ...
+# Subtest: 17 support cannot follow numeric card
+ok 17 - 17 support cannot follow numeric card
+  ---
+  duration_ms: 0.728263
+  type: 'test'
+  ...
+# Subtest: 18 support can follow support
+ok 18 - 18 support can follow support
+  ---
+  duration_ms: 0.389568
+  type: 'test'
+  ...
+# Subtest: 19 player must own card
+ok 19 - 19 player must own card
+  ---
+  duration_ms: 0.281321
+  type: 'test'
+  ...
+# Subtest: 20 draw before play is rejected
+ok 20 - 20 draw before play is rejected
+  ---
+  duration_ms: 0.535974
+  type: 'test'
+  ...
+# Subtest: 21 cannot play again in DRAW
+ok 21 - 21 cannot play again in DRAW
+  ---
+  duration_ms: 0.987958
+  type: 'test'
+  ...
+# Subtest: 22 cannot take just discarded card
+ok 22 - 22 cannot take just discarded card
+  ---
+  duration_ms: 0.805928
+  type: 'test'
+  ...
+# Subtest: 23 may take another discard top
+ok 23 - 23 may take another discard top
+  ---
+  duration_ms: 1.17889
+  type: 'test'
+  ...
+# Subtest: 24 empty discard rejected
+ok 24 - 24 empty discard rejected
+  ---
+  duration_ms: 0.943089
+  type: 'test'
+  ...
+# Subtest: 25 successful deck draw restores 8 and changes turn
+ok 25 - 25 successful deck draw restores 8 and changes turn
+  ---
+  duration_ms: 0.885115
+  type: 'test'
+  ...
+# Subtest: 26 last deck draw finishes immediately
+ok 26 - 26 last deck draw finishes immediately
+  ---
+  duration_ms: 1.408433
+  type: 'test'
+  ...
+# Subtest: 27 scoring tie yields both winners
+ok 27 - 27 scoring tie yields both winners
+  ---
+  duration_ms: 1.274536
+  type: 'test'
+  ...
+# Subtest: 28 result before finish rejected
+ok 28 - 28 result before finish rejected
+  ---
+  duration_ms: 0.362291
+  type: 'test'
+  ...
+# Subtest: 29 successful command does not mutate original
+ok 29 - 29 successful command does not mutate original
+  ---
+  duration_ms: 1.208448
+  type: 'test'
+  ...
+# Subtest: 30 rejected command does not mutate original
+ok 30 - 30 rejected command does not mutate original
+  ---
+  duration_ms: 0.949885
+  type: 'test'
+  ...
+# Subtest: 31 view omits opponent hand and deck IDs
+ok 31 - 31 view omits opponent hand and deck IDs
+  ---
+  duration_ms: 0.870152
+  type: 'test'
+  ...
+# Subtest: 32 discard view only contains top and count
+ok 32 - 32 discard view only contains top and count
+  ---
+  duration_ms: 0.805713
+  type: 'test'
+  ...
+# Subtest: 33 mutating view cannot mutate server state
+ok 33 - 33 mutating view cannot mutate server state
+  ---
+  duration_ms: 0.451656
+  type: 'test'
+  ...
+# Subtest: 34 outsider cannot get player view
+ok 34 - 34 outsider cannot get player view
+  ---
+  duration_ms: 1.02178
+  type: 'test'
+  ...
+# Subtest: 35 shuffle preserves cards and original input
+ok 35 - 35 shuffle preserves cards and original input
+  ---
+  duration_ms: 1.03055
+  type: 'test'
+  ...
+# Subtest: 36 invalid RNG rejected
+ok 36 - 36 invalid RNG rejected
+  ---
+  duration_ms: 0.614508
+  type: 'test'
+  ...
+# Subtest: 37 duplicate card identity rejected
+ok 37 - 37 duplicate card identity rejected
+  ---
+  duration_ms: 0.295286
+  type: 'test'
+  ...
+# Subtest: 38 corrupted hand size detected
+ok 38 - 38 corrupted hand size detected
+  ---
+  duration_ms: 0.274062
+  type: 'test'
+  ...
+# Subtest: 39 server random adapter uses opaque distinct IDs
+ok 39 - 39 server random adapter uses opaque distinct IDs
+  ---
+  duration_ms: 1.247947
+  type: 'test'
+  ...
+# Subtest: 40 100 seeded full games preserve invariants and terminate
+ok 40 - 40 100 seeded full games preserve invariants and terminate
+  ---
+  duration_ms: 1383.671504
+  type: 'test'
+  ...
+1..40
+# tests 40
+# suites 0
+# pass 40
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1496.593968

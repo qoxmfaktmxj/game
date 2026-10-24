@@ -1,0 +1,90 @@
+{
+  "browser": "Chromium; HTML/CSS/JS inlined for isolated local rendering",
+  "errors": [],
+  "checks": [
+    {
+      "screen": "home",
+      "viewport": "1440x1080",
+      "horizontal_overflow": false,
+      "image": "01_home_desktop.png"
+    },
+    {
+      "screen": "lobby",
+      "viewport": "1440x1080",
+      "horizontal_overflow": false,
+      "image": "02_lobby_desktop.png"
+    },
+    {
+      "screen": "room",
+      "viewport": "1440x1080",
+      "horizontal_overflow": false,
+      "image": "03_room_desktop.png"
+    },
+    {
+      "screen": "game",
+      "viewport": "1440x1080",
+      "horizontal_overflow": false,
+      "image": "04_game_desktop.png"
+    },
+    {
+      "screen": "result",
+      "viewport": "1440x1080",
+      "horizontal_overflow": false,
+      "image": "05_result_desktop.png"
+    },
+    {
+      "check": "desktop_click_flow",
+      "result": "PASS"
+    },
+    {
+      "screen": "home",
+      "viewport": "390x844",
+      "horizontal_overflow": false
+    },
+    {
+      "screen": "lobby",
+      "viewport": "390x844",
+      "horizontal_overflow": false
+    },
+    {
+      "screen": "room",
+      "viewport": "390x844",
+      "horizontal_overflow": false
+    },
+    {
+      "screen": "game",
+      "viewport": "390x844",
+      "horizontal_overflow": false
+    },
+    {
+      "screen": "result",
+      "viewport": "390x844",
+      "horizontal_overflow": false
+    },
+    {
+      "screen": "home",
+      "viewport": "360x800",
+      "horizontal_overflow": false
+    },
+    {
+      "screen": "lobby",
+      "viewport": "360x800",
+      "horizontal_overflow": false
+    },
+    {
+      "screen": "room",
+      "viewport": "360x800",
+      "horizontal_overflow": false
+    },
+    {
+      "screen": "game",
+      "viewport": "360x800",
+      "horizontal_overflow": false
+    },
+    {
+      "screen": "result",
+      "viewport": "360x800",
+      "horizontal_overflow": false
+    }
+  ]
+}

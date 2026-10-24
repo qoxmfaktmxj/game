@@ -1,0 +1,15 @@
+﻿asset_id,proposed_path,size,status,usage,public_review
+home-background,public/art/home.webp,1920x1080,NOT_GENERATED,runtime_after_review,PENDING
+table-background,public/art/table.webp,1920x1080,NOT_GENERATED,runtime_after_review,PENDING
+card-back,public/art/star/card-back.webp,768x1024,NOT_GENERATED,runtime_after_review,PENDING
+aurora,public/art/star/aurora.webp,768x1024,NOT_GENERATED,runtime_after_review,PENDING
+ember,public/art/star/ember.webp,768x1024,NOT_GENERATED,runtime_after_review,PENDING
+tide,public/art/star/tide.webp,768x1024,NOT_GENERATED,runtime_after_review,PENDING
+moss,public/art/star/moss.webp,768x1024,NOT_GENERATED,runtime_after_review,PENDING
+dusk,public/art/star/dusk.webp,768x1024,NOT_GENERATED,runtime_after_review,PENDING
+cover-star-trails,public/art/covers/star-trails.webp,1200x800,NOT_GENERATED,runtime_after_review,PENDING
+cover-light-workshop,public/art/covers/light-workshop.webp,1200x800,NOT_GENERATED,runtime_after_review,PENDING
+cover-night-council,public/art/covers/night-council.webp,1200x800,NOT_GENERATED,runtime_after_review,PENDING
+cover-dusk-signal,public/art/covers/dusk-signal.webp,1200x800,NOT_GENERATED,runtime_after_review,PENDING
+cover-number-garden,public/art/covers/number-garden.webp,1200x800,NOT_GENERATED,runtime_after_review,PENDING
+prior-concept,references/ai_concept_original.png,1536x1024,INCLUDED,PRIVATE_REFERENCE_ONLY,DO_NOT_PUBLISH

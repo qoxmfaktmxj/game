@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480" fill="none">
+  <title>밤의 의회를 위한 독자적인 아치와 달의 기하 구성</title>
+  <rect width="700" height="480" fill="#4C4B61"/>
+  <circle cx="348" cy="220" r="170" stroke="#8C8294"/><circle cx="348" cy="220" r="147" stroke="#777184"/>
+  <path d="M248 355V192a100 100 0 0 1 200 0v163" fill="#BBB09B"/><path d="M271 355V192a77 77 0 0 1 154 0v163" fill="#303B40"/>
+  <path d="M297 354V196a51 51 0 0 1 102 0v158" stroke="#77877C"/>
+  <circle cx="350" cy="188" r="31" fill="#E1D5AB"/><circle cx="364" cy="180" r="29" fill="#303B40"/>
+  <path d="M222 355h251v15H222zM201 376h292v13H201z" fill="#A79A85"/>
+  <path d="M169 347v-99h40v99M490 347v-99h40v99" fill="#B18F6B"/><path d="M166 248h46M487 248h46" stroke="#D2BD94" stroke-width="8"/>
+  <path d="m189 227 5 13-5 8-5-8ZM510 227l5 13-5 8-5-8Z" fill="#EFDAA7"/>
+  <g fill="#D8CCA9"><circle cx="195" cy="155" r="2"/><circle cx="514" cy="158" r="2"/><circle cx="449" cy="91" r="2"/></g>
+  <path d="M244 98v16M236 106h16M474 215v14M467 222h14" stroke="#D8CCA9"/>
+</svg>

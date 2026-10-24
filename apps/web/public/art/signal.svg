@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480" fill="none">
+  <title>황혼의 신호를 위한 독자적인 지평선과 신호의 기하 구성</title>
+  <rect width="700" height="480" fill="#C58D74"/>
+  <circle cx="352" cy="216" r="144" fill="#DCAD84"/><circle cx="352" cy="216" r="172" stroke="#E4BA91"/>
+  <path d="M0 339 137 264l109 54 134-88 139 81 181-76v245H0Z" fill="#876B5B"/>
+  <path d="M0 380 131 330l97 33 191-57 137 49 144-33v158H0Z" fill="#465A4C"/>
+  <path d="m0 423 149-33 141 33 152-51 111 38 147-21v91H0Z" fill="#31463E"/>
+  <path d="m339 314 15-130 15 130Z" fill="#2F433D"/><path d="M325 314h59" stroke="#2F433D" stroke-width="8"/>
+  <circle cx="354" cy="178" r="8" fill="#F5E4B7"/>
+  <path d="M329 156a34 34 0 0 0 0 44M379 156a34 34 0 0 1 0 44M312 139a58 58 0 0 0 0 78M396 139a58 58 0 0 1 0 78" stroke="#F2DBAD" stroke-width="2" stroke-linecap="round"/>
+  <path d="m202 135 9-4 10 3M478 119l12-4 11 5" stroke="#9A6C56" stroke-width="2" stroke-linecap="round"/>
+  <g fill="#F5E4B7"><circle cx="233" cy="197" r="2"/><circle cx="453" cy="177" r="2"/><circle cx="415" cy="104" r="2"/></g>
+</svg>

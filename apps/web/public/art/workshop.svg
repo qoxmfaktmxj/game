@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480" fill="none">
+  <title>빛의 공방을 위한 독자적인 보석과 빛의 기하 구성</title>
+  <rect width="700" height="480" fill="#D6C1A1"/>
+  <circle cx="350" cy="232" r="168" stroke="#F4E5CA"/><circle cx="350" cy="232" r="143" stroke="#E8D7B6"/>
+  <path d="M170 331h360M205 350h290" stroke="#AF9573"/>
+  <path d="m350 107 100 91-100 148-100-148Z" fill="#EFE0B4"/><path d="m350 107 38 91-38 148-38-148Z" fill="#B4BCA2"/><path d="m250 198 62 0 38 148Z" fill="#7D9785"/><path d="m450 198-62 0-38 148Z" fill="#C2A572"/><path d="m350 107 100 91h-62Z" fill="#F9EBC9"/>
+  <path d="m201 219 48 43-48 71-48-71Z" fill="#BC8266"/><path d="m201 219 18 43-18 71-18-71Z" fill="#E1B18A"/><path d="m153 262 30 0 18 71Z" fill="#9A624C"/>
+  <path d="m502 259 43 38-43 63-43-63Z" fill="#45675B"/><path d="m502 259 16 38-16 63-16-63Z" fill="#739581"/><path d="m459 297 27 0 16 63Z" fill="#315248"/>
+  <g stroke="#FAEED2" stroke-width="2"><path d="M479 126v30M464 141h30M209 127v20M199 137h20M549 209v16M541 217h16"/></g>
+  <g fill="#A1845A"><circle cx="153" cy="169" r="3"/><circle cx="515" cy="179" r="3"/><circle cx="404" cy="387" r="3"/></g>
+</svg>

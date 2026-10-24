@@ -1,0 +1,11 @@
+node_modules
+.next
+dist
+.local-data
+test-results
+playwright-report
+artifacts
+moyeotable_build_pack_v1
+package-lock.json
+apps/web/public
+.impeccable

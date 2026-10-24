@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480" fill="none">
+  <title>넘버가든을 위한 독자적인 타일과 잎의 기하 구성</title>
+  <rect width="700" height="480" fill="#A3B29A"/>
+  <circle cx="350" cy="237" r="165" stroke="#D4DBC2"/><circle cx="350" cy="237" r="141" stroke="#BBC7AC"/>
+  <g transform="translate(191 176) rotate(-13 66 90)"><rect y="7" width="112" height="166" rx="12" fill="#728D76"/><rect width="112" height="166" rx="12" fill="#F0ECD7"/><path d="M55 119V63M55 86C25 86 28 51 55 62M56 107c30 0 28-35 0-24" stroke="#6F8F74" stroke-width="3"/><circle cx="56" cy="35" r="7" fill="#B1BC8D"/></g>
+  <g transform="translate(295 147) rotate(3 56 83)"><rect y="7" width="112" height="166" rx="12" fill="#728D76"/><rect width="112" height="166" rx="12" fill="#F8F3DE"/><path d="M56 122V73M56 101C25 101 28 68 56 79M56 113c30 0 28-33 0-22" stroke="#597C65" stroke-width="3"/><circle cx="56" cy="55" r="17" fill="#CE9C76"/><circle cx="56" cy="55" r="8" fill="#EFE0B1"/></g>
+  <g transform="translate(404 185) rotate(15 56 83)"><rect y="7" width="112" height="166" rx="12" fill="#728D76"/><rect width="112" height="166" rx="12" fill="#E6E7D1"/><path d="M55 123V66M55 89C27 89 28 57 55 68M56 110c29 0 27-34 0-23" stroke="#4E7860" stroke-width="3"/><path d="m56 27 9 15-9 15-9-15Z" fill="#799B7A"/></g>
+  <g stroke="#E9E9CF" stroke-width="1.5"><path d="M173 118v18M164 127h18M529 154v18M520 163h18"/></g>
+  <g fill="#E3E4C9"><circle cx="222" cy="365" r="6"/><circle cx="470" cy="379" r="5"/><circle cx="494" cy="371" r="4"/></g>
+</svg>

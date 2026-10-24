@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="850" viewBox="0 0 1000 850" fill="none">
+  <title>링구링구를 위한 세 장의 독자적인 천체 카드와 게임 조각</title>
+  <defs>
+    <filter id="card-shadow" x="-45%" y="-35%" width="190%" height="190%"><feDropShadow dx="0" dy="24" stdDeviation="19" flood-color="#122D25" flood-opacity=".23"/></filter>
+    <filter id="piece-shadow" x="-60%" y="-60%" width="220%" height="230%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#122D25" flood-opacity=".22"/></filter>
+    <linearGradient id="forest" x1="90" y1="40" x2="190" y2="350" gradientUnits="userSpaceOnUse"><stop stop-color="#315746"/><stop offset="1" stop-color="#183E32"/></linearGradient>
+    <linearGradient id="copper" x1="0" y1="40" x2="180" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#C68963"/><stop offset="1" stop-color="#985A45"/></linearGradient>
+    <linearGradient id="night" x1="0" y1="10" x2="210" y2="360" gradientUnits="userSpaceOnUse"><stop stop-color="#465967"/><stop offset="1" stop-color="#293D4B"/></linearGradient>
+    <linearGradient id="paper" x1="20" y1="0" x2="220" y2="370" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFDF1"/><stop offset="1" stop-color="#EDE7D5"/></linearGradient>
+    <clipPath id="face"><rect x="18" y="18" width="224" height="344" rx="8"/></clipPath>
+    <g id="star"><path d="M0-11 2.8-2.8 11 0 2.8 2.8 0 11-2.8 2.8-11 0-2.8-2.8Z" fill="currentColor"/></g>
+    <g id="tiny-star"><path d="M0-5V5M-5 0H5" stroke="currentColor" stroke-width="1.5"/></g>
+    <g id="chip">
+      <ellipse cy="7" rx="43" ry="43" fill="#947347"/>
+      <circle r="43" fill="#C5A36A"/><circle r="35" stroke="#EAD5A8" stroke-width="1.5"/><circle r="28" stroke="#987D50" stroke-width="1"/>
+      <use href="#star" color="#EFE0B7"/>
+      <path d="M-2-39H2M-2 39H2M-39-2V2M39-2V2" stroke="#F0D9A9" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <g stroke="#A4B696" stroke-opacity=".22">
+    <ellipse cx="502" cy="418" rx="360" ry="286" transform="rotate(-18 502 418)"/>
+    <ellipse cx="498" cy="417" rx="300" ry="360" transform="rotate(-32 498 417)"/>
+    <ellipse cx="495" cy="420" rx="403" ry="200" transform="rotate(20 495 420)"/>
+  </g>
+  <g color="#C8A56A"><use href="#star" x="182" y="191"/><use href="#star" x="833" y="451" transform="rotate(15 833 451)"/><use href="#tiny-star" x="701" y="111"/><use href="#tiny-star" x="118" y="445"/><use href="#tiny-star" x="540" y="737"/></g>
+  <g fill="#B7C6A5"><circle cx="146" cy="328" r="3"/><circle cx="774" cy="195" r="2.5"/><circle cx="856" cy="331" r="3"/><circle cx="680" cy="704" r="2.5"/><circle cx="267" cy="699" r="2.5"/></g>
+
+  <g transform="translate(143 249) rotate(-18 130 190)" filter="url(#card-shadow)">
+    <rect x="1" y="6" width="260" height="380" rx="16" fill="#C9C2AC"/>
+    <rect width="260" height="380" rx="16" fill="url(#paper)"/>
+    <rect x="18" y="18" width="224" height="344" rx="8" fill="url(#copper)"/>
+    <g clip-path="url(#face)">
+      <circle cx="131" cy="153" r="67" stroke="#EBC399" stroke-width="1"/><circle cx="131" cy="153" r="82" stroke="#EBC399" stroke-opacity=".45"/>
+      <circle cx="131" cy="153" r="46" fill="#F0C99A"/>
+      <path d="M18 262 78 166 139 262Z" fill="#734E40"/><path d="m93 285 80-139 85 139Z" fill="#D8AA7D"/><path d="m151 184 22-38 24 39-23-9Z" fill="#F2DDAD"/>
+      <path d="M3 305Q75 263 130 294T269 297V370H3Z" fill="#4E5140"/><path d="M10 335Q86 300 154 324T268 321V373H10Z" fill="#3A4739"/>
+      <path d="m47 86 6 4 26-15 17 8 37-23 29 17 35-7" stroke="#F7DEB6" stroke-width="1"/>
+      <g fill="#F7DEB6"><circle cx="47" cy="86" r="2"/><circle cx="79" cy="75" r="2.5"/><circle cx="96" cy="83" r="2"/><circle cx="133" cy="60" r="2.5"/><circle cx="162" cy="77" r="2"/><circle cx="197" cy="70" r="2"/></g>
+    </g>
+    <path d="m37 37 9 16H28Z" stroke="#FFF6D9" stroke-width="1.6"/><path d="m224 325 9 16h-18Z" stroke="#FFF6D9" stroke-width="1.6"/>
+    <path d="M109 343h42" stroke="#F1DBB5" stroke-width="1.5"/>
+  </g>
+
+  <g transform="translate(565 218) rotate(19 130 190)" filter="url(#card-shadow)">
+    <rect x="1" y="6" width="260" height="380" rx="16" fill="#C9C2AC"/>
+    <rect width="260" height="380" rx="16" fill="url(#paper)"/>
+    <rect x="18" y="18" width="224" height="344" rx="8" fill="url(#night)"/>
+    <g clip-path="url(#face)">
+      <circle cx="130" cy="157" r="64" stroke="#A8C2CC"/><circle cx="130" cy="157" r="79" stroke="#A8C2CC" stroke-opacity=".4"/>
+      <circle cx="130" cy="149" r="37" fill="#DCE5D4"/><circle cx="143" cy="139" r="33" fill="#3C5260"/>
+      <path d="M15 233Q42 206 69 233T123 233T177 233T231 233T285 233M-12 256Q15 229 42 256T96 256T150 256T204 256T258 256M15 279Q42 252 69 279T123 279T177 279T231 279T285 279M-12 302Q15 275 42 302T96 302T150 302T204 302T258 302" stroke="#8BAEB9" stroke-width="1.4"/>
+      <path d="m51 110 23-35 37 14 49-33 37 50" stroke="#D1D9C2"/><g fill="#D1D9C2"><circle cx="51" cy="110" r="2"/><circle cx="74" cy="75" r="2.5"/><circle cx="111" cy="89" r="2"/><circle cx="160" cy="56" r="2.5"/><circle cx="197" cy="106" r="2"/></g>
+    </g>
+    <path d="m37 36 9 10-9 10-9-10Z" stroke="#FFF6D9" stroke-width="1.6"/><path d="m223 322 9 10-9 10-9-10Z" stroke="#FFF6D9" stroke-width="1.6"/>
+    <path d="M109 343h42" stroke="#D1D9C2" stroke-width="1.5"/>
+  </g>
+
+  <g transform="translate(364 164) rotate(-3 130 190)" filter="url(#card-shadow)">
+    <rect x="1" y="6" width="260" height="380" rx="16" fill="#C9C2AC"/>
+    <rect width="260" height="380" rx="16" fill="url(#paper)"/>
+    <rect x="18" y="18" width="224" height="344" rx="8" fill="url(#forest)"/>
+    <g clip-path="url(#face)">
+      <circle cx="130" cy="173" r="88" stroke="#C3CF9D" stroke-opacity=".7"/><circle cx="130" cy="173" r="72" stroke="#C3CF9D" stroke-opacity=".4"/>
+      <path d="M130 74v198M31 173h198" stroke="#A5B98F" stroke-opacity=".4"/>
+      <path d="m130 98 11 55 49 20-49 19-11 55-12-55-49-19 49-20Z" fill="#E3D49C"/>
+      <path d="m130 98 11 55-11 20-12-20Z" fill="#F8EAC3"/><path d="m69 173 49 19 12-19Z" fill="#B99B60"/><path d="m130 173 11 19-11 55Z" fill="#C5B77C"/>
+      <circle cx="130" cy="173" r="8" fill="#244C3B"/><circle cx="130" cy="173" r="3" fill="#F6E8BE"/>
+      <path d="m53 109 19-27 33-11M173 97l27 30-7 31M57 221l32 20 7 39M160 254l31-29 15 3" stroke="#D5D9AE"/>
+      <g fill="#EAE8BD"><circle cx="53" cy="109" r="2"/><circle cx="72" cy="82" r="3"/><circle cx="105" cy="71" r="2"/><circle cx="173" cy="97" r="2"/><circle cx="200" cy="127" r="3"/><circle cx="193" cy="158" r="2"/><circle cx="57" cy="221" r="2"/><circle cx="89" cy="241" r="3"/><circle cx="96" cy="280" r="2"/><circle cx="160" cy="254" r="2"/><circle cx="191" cy="225" r="3"/><circle cx="206" cy="228" r="2"/></g>
+      <path d="M87 306h86M103 314h54" stroke="#B5C296" stroke-width="1"/>
+    </g>
+    <circle cx="37" cy="46" r="9" stroke="#FFF6D9" stroke-width="1.6"/><circle cx="223" cy="332" r="9" stroke="#FFF6D9" stroke-width="1.6"/>
+    <path d="M109 343h42" stroke="#D5D9AE" stroke-width="1.5"/>
+  </g>
+
+  <g transform="translate(719 618)" filter="url(#piece-shadow)"><use href="#chip" y="14"/><use href="#chip"/></g>
+  <g transform="translate(790 664) rotate(-13)" filter="url(#piece-shadow)"><use href="#chip"/></g>
+  <g transform="translate(272 604) rotate(-16 38 38)" filter="url(#piece-shadow)">
+    <rect x="2" y="7" width="78" height="78" rx="15" fill="#C0B79B"/><rect width="78" height="78" rx="15" fill="#F2ECD8"/>
+    <g fill="#45614B"><circle cx="22" cy="22" r="5"/><circle cx="56" cy="22" r="5"/><circle cx="39" cy="39" r="5"/><circle cx="22" cy="56" r="5"/><circle cx="56" cy="56" r="5"/></g>
+  </g>
+  <g transform="translate(389 646) rotate(10)" filter="url(#piece-shadow)">
+    <path d="M-16 25h32l-7-34H-9Z" fill="#A66C4C"/><ellipse cy="25" rx="16" ry="5" fill="#8E553D"/><circle cy="-15" r="15" fill="#C38D63"/><path d="M-10-20a11 11 0 0 1 12-6" stroke="#E1B38B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

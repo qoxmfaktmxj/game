@@ -1,0 +1,31 @@
+{
+  "name": "moyeotable",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "npm run dev --workspace @moyeotable/web",
+    "dev:server": "npm run dev --workspace @moyeotable/game-server",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:e2e": "playwright test",
+    "test:art": "tsx --test tests/card-art-assets.test.ts",
+    "build": "npm run build --workspace @moyeotable/game-server && npm run build --workspace @moyeotable/web",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "tsx": "4.23.15",
+    "prettier": "3.9.10",
+    "@types/node": "^24.0.0",
+    "@playwright/test": "^1.56.0"
+  }
+}

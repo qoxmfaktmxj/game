@@ -1,0 +1,20 @@
+{$DOMAIN:game.minseok91.cloud} {
+  encode zstd gzip
+  header {
+    X-Content-Type-Options nosniff
+    Referrer-Policy strict-origin-when-cross-origin
+    X-Frame-Options DENY
+    -Server
+  }
+  @game path /auth/* /tables /tables/* /matchmake /matchmake/* /health /readyz
+  handle @game {
+    reverse_proxy game:2567
+  }
+  @socket header Upgrade websocket
+  handle @socket {
+    reverse_proxy game:2567
+  }
+  handle {
+    reverse_proxy web:3000
+  }
+}

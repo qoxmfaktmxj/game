@@ -1,0 +1,182 @@
+{
+  "pages": 29,
+  "rendered_pages": 29,
+  "bookmarks": 16,
+  "page_checks": [
+    {
+      "page": 1,
+      "characters": 393,
+      "images": 1,
+      "first_line": "P R O D U C T  &  E N G I N E E R I N G  B L U E P R I N T  /  2 0 2 6 . 1 0 . 2 3"
+    },
+    {
+      "page": 2,
+      "characters": 773,
+      "images": 0,
+      "first_line": "R E A D  T H I S  F I R S T"
+    },
+    {
+      "page": 3,
+      "characters": 325,
+      "images": 1,
+      "first_line": "I N T E R F A C E  S P E C I M E N  /  N O T  A  L I V E  S E R V I C E"
+    },
+    {
+      "page": 4,
+      "characters": 308,
+      "images": 1,
+      "first_line": "I N T E R F A C E  S P E C I M E N  /  N O T  A  L I V E  S E R V I C E"
+    },
+    {
+      "page": 5,
+      "characters": 337,
+      "images": 1,
+      "first_line": "I N T E R F A C E  S P E C I M E N  /  N O T  A  L I V E  S E R V I C E"
+    },
+    {
+      "page": 6,
+      "characters": 503,
+      "images": 1,
+      "first_line": "I N T E R F A C E  S P E C I M E N  /  M O B I L E"
+    },
+    {
+      "page": 7,
+      "characters": 352,
+      "images": 1,
+      "first_line": "I N T E R F A C E  S P E C I M E N  /  N O T  A  L I V E  S E R V I C E"
+    },
+    {
+      "page": 8,
+      "characters": 375,
+      "images": 1,
+      "first_line": "E A R L I E R  C O N C E P T  /  P R I V A T E  R E F E R E N C E"
+    },
+    {
+      "page": 9,
+      "characters": 985,
+      "images": 0,
+      "first_line": "00. 결정 기록과 범위"
+    },
+    {
+      "page": 10,
+      "characters": 957,
+      "images": 0,
+      "first_line": "기술 결정 ADR"
+    },
+    {
+      "page": 11,
+      "characters": 1212,
+      "images": 0,
+      "first_line": "출시 범위"
+    },
+    {
+      "page": 12,
+      "characters": 1109,
+      "images": 0,
+      "first_line": "초대 링크 정책"
+    },
+    {
+      "page": 13,
+      "characters": 1279,
+      "images": 0,
+      "first_line": "별길 탐험 데스크톱"
+    },
+    {
+      "page": 14,
+      "characters": 1324,
+      "images": 0,
+      "first_line": "03. 아키텍처와 구현 경계"
+    },
+    {
+      "page": 15,
+      "characters": 1536,
+      "images": 0,
+      "first_line": "게임 모듈 계약"
+    },
+    {
+      "page": 16,
+      "characters": 1186,
+      "images": 0,
+      "first_line": "부하·관측 제안"
+    },
+    {
+      "page": 17,
+      "characters": 1374,
+      "images": 0,
+      "first_line": "command 봉투"
+    },
+    {
+      "page": 18,
+      "characters": 1235,
+      "images": 0,
+      "first_line": "합니다."
+    },
+    {
+      "page": 19,
+      "characters": 1208,
+      "images": 0,
+      "first_line": "배치: 같은 색 경로만 가능합니다. 숫자 카드는 그 경로의 마지막 숫자보다 반드시 커야 합니다. 중간 숫자를 건너뛰는 것은 가능"
+    },
+    {
+      "page": 20,
+      "characters": 1212,
+      "images": 0,
+      "first_line": "예외와 판단"
+    },
+    {
+      "page": 21,
+      "characters": 1729,
+      "images": 0,
+      "first_line": "핵심 명령: TAKE_RESOURCES, PURCHASE, RESERVE, RETURN_RESOURCES, CLAIM_OBJECTIVE."
+    },
+    {
+      "page": 22,
+      "characters": 1055,
+      "images": 0,
+      "first_line": "넘버가든 — 숫자 타일 묶음·재배열"
+    },
+    {
+      "page": 23,
+      "characters": 1537,
+      "images": 0,
+      "first_line": "첫 게임 필수 테스트 시나리오"
+    },
+    {
+      "page": 24,
+      "characters": 1164,
+      "images": 0,
+      "first_line": "백업/복원"
+    },
+    {
+      "page": 25,
+      "characters": 926,
+      "images": 0,
+      "first_line": "ID"
+    },
+    {
+      "page": 26,
+      "characters": 1273,
+      "images": 0,
+      "first_line": "09. 이미지·에셋·권리 관리"
+    },
+    {
+      "page": 27,
+      "characters": 1030,
+      "images": 0,
+      "first_line": "법적 경계"
+    },
+    {
+      "page": 28,
+      "characters": 532,
+      "images": 0,
+      "first_line": "사용자 제공 근거"
+    },
+    {
+      "page": 29,
+      "characters": 555,
+      "images": 9,
+      "first_line": "U S E R - P R O V I D E D  R E F E R E N C E S  /  D O  N O T  P U B L I S H"
+    }
+  ],
+  "text_out_of_page_count": 0
+}

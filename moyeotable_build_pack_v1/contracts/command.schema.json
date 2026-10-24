@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:moyeotable:game-command:1",
+  "title": "Moyeotable game command envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocolVersion",
+    "tableId",
+    "sessionId",
+    "commandId",
+    "expectedVersion",
+    "type",
+    "payload"
+  ],
+  "properties": {
+    "protocolVersion": {
+      "const": 1
+    },
+    "tableId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "sessionId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "commandId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "expectedVersion": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "type": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "type": {
+          "const": "STAR_PLAY"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "cardId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "cardId"
+          ]
+        }
+      }
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "STAR_DISCARD"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "cardId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "cardId"
+          ]
+        }
+      }
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "STAR_DRAW_DECK"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {}
+        }
+      }
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "STAR_DRAW_DISCARD"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "suit": {
+              "enum": [
+                "aurora",
+                "ember",
+                "tide",
+                "moss",
+                "dusk"
+              ]
+            }
+          },
+          "required": [
+            "suit"
+          ]
+        }
+      }
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "RESIGN"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {}
+        }
+      }
+    }
+  ]
+}

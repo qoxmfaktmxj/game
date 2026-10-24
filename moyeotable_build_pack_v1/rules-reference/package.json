@@ -1,0 +1,1 @@
+{"name":"moyeotable-rules-reference","private":true,"type":"module","version":"1.0.0","description":"Pure rule reference, not an online game server","engines":{"node":">=20"},"scripts":{"test":"node --test engine.test.mjs"}}

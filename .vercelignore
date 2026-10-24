@@ -1,0 +1,14 @@
+moyeotable_build_pack_v1/
+.local-data/
+.scratch/
+artifacts/
+test-results/
+playwright-report/
+*.pdf
+04_game_desktop.png
+06_game_mobile.png
+.env
+.env.*
+**/.env
+**/.env.*
+!**/.env.example

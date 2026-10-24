@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T15:10:00Z",
+  "title": "Design System: 링구링구 — Ring Club",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "짙은 잉크 바탕",
+        "tonalRamp": [
+          "oklch(15% 0.0200 248.83)",
+          "oklch(26% 0.0200 248.83)",
+          "oklch(38% 0.0200 248.83)",
+          "oklch(49% 0.0200 248.83)",
+          "oklch(61% 0.0200 248.83)",
+          "oklch(72% 0.0200 248.83)",
+          "oklch(84% 0.0200 248.83)",
+          "oklch(95% 0.0200 248.83)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "클럽 표면",
+        "tonalRamp": [
+          "oklch(15% 0.0258 248.84)",
+          "oklch(26% 0.0258 248.84)",
+          "oklch(38% 0.0258 248.84)",
+          "oklch(49% 0.0258 248.84)",
+          "oklch(61% 0.0258 248.84)",
+          "oklch(72% 0.0258 248.84)",
+          "oklch(84% 0.0258 248.84)",
+          "oklch(95% 0.0258 248.84)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "밝은 전경",
+        "tonalRamp": [
+          "oklch(15% 0.0106 106.60)",
+          "oklch(26% 0.0106 106.60)",
+          "oklch(38% 0.0106 106.60)",
+          "oklch(49% 0.0106 106.60)",
+          "oklch(61% 0.0106 106.60)",
+          "oklch(72% 0.0106 106.60)",
+          "oklch(84% 0.0106 106.60)",
+          "oklch(95% 0.0106 106.60)"
+        ]
+      },
+      "forest": {
+        "role": "neutral",
+        "displayName": "게임 테이블",
+        "tonalRamp": [
+          "oklch(15% 0.0327 230.20)",
+          "oklch(26% 0.0327 230.20)",
+          "oklch(38% 0.0327 230.20)",
+          "oklch(49% 0.0327 230.20)",
+          "oklch(61% 0.0327 230.20)",
+          "oklch(72% 0.0327 230.20)",
+          "oklch(84% 0.0327 230.20)",
+          "oklch(95% 0.0327 230.20)"
+        ]
+      },
+      "deep": {
+        "role": "neutral",
+        "displayName": "깊은 바탕",
+        "tonalRamp": [
+          "oklch(15% 0.0205 249.01)",
+          "oklch(26% 0.0205 249.01)",
+          "oklch(38% 0.0205 249.01)",
+          "oklch(49% 0.0205 249.01)",
+          "oklch(61% 0.0205 249.01)",
+          "oklch(72% 0.0205 249.01)",
+          "oklch(84% 0.0205 249.01)",
+          "oklch(95% 0.0205 249.01)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "보조 전경",
+        "tonalRamp": [
+          "oklch(15% 0.0239 241.97)",
+          "oklch(26% 0.0239 241.97)",
+          "oklch(38% 0.0239 241.97)",
+          "oklch(49% 0.0239 241.97)",
+          "oklch(61% 0.0239 241.97)",
+          "oklch(72% 0.0239 241.97)",
+          "oklch(84% 0.0239 241.97)",
+          "oklch(95% 0.0239 241.97)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "경계선",
+        "tonalRamp": [
+          "oklch(15% 0.0276 244.49)",
+          "oklch(26% 0.0276 244.49)",
+          "oklch(38% 0.0276 244.49)",
+          "oklch(49% 0.0276 244.49)",
+          "oklch(61% 0.0276 244.49)",
+          "oklch(72% 0.0276 244.49)",
+          "oklch(84% 0.0276 244.49)",
+          "oklch(95% 0.0276 244.49)"
+        ]
+      },
+      "mint": {
+        "role": "primary",
+        "displayName": "클럽 라임",
+        "tonalRamp": [
+          "oklch(15% 0.1795 119.78)",
+          "oklch(26% 0.1795 119.78)",
+          "oklch(38% 0.1795 119.78)",
+          "oklch(49% 0.1795 119.78)",
+          "oklch(61% 0.1795 119.78)",
+          "oklch(72% 0.1795 119.78)",
+          "oklch(84% 0.1795 119.78)",
+          "oklch(95% 0.1795 119.78)"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "포커스 라임",
+        "tonalRamp": [
+          "oklch(15% 0.1795 119.78)",
+          "oklch(26% 0.1795 119.78)",
+          "oklch(38% 0.1795 119.78)",
+          "oklch(49% 0.1795 119.78)",
+          "oklch(61% 0.1795 119.78)",
+          "oklch(72% 0.1795 119.78)",
+          "oklch(84% 0.1795 119.78)",
+          "oklch(95% 0.1795 119.78)"
+        ]
+      },
+      "club-coral": {
+        "role": "secondary",
+        "displayName": "코럴",
+        "tonalRamp": [
+          "oklch(15% 0.1254 38.31)",
+          "oklch(26% 0.1254 38.31)",
+          "oklch(38% 0.1254 38.31)",
+          "oklch(49% 0.1254 38.31)",
+          "oklch(61% 0.1254 38.31)",
+          "oklch(72% 0.1254 38.31)",
+          "oklch(84% 0.1254 38.31)",
+          "oklch(95% 0.1254 38.31)"
+        ]
+      },
+      "club-lilac": {
+        "role": "secondary",
+        "displayName": "라일락",
+        "tonalRamp": [
+          "oklch(15% 0.0971 299.05)",
+          "oklch(26% 0.0971 299.05)",
+          "oklch(38% 0.0971 299.05)",
+          "oklch(49% 0.0971 299.05)",
+          "oklch(61% 0.0971 299.05)",
+          "oklch(72% 0.0971 299.05)",
+          "oklch(84% 0.0971 299.05)",
+          "oklch(95% 0.0971 299.05)"
+        ]
+      },
+      "club-sky": {
+        "role": "secondary",
+        "displayName": "스카이",
+        "tonalRamp": [
+          "oklch(15% 0.0636 223.48)",
+          "oklch(26% 0.0636 223.48)",
+          "oklch(38% 0.0636 223.48)",
+          "oklch(49% 0.0636 223.48)",
+          "oklch(61% 0.0636 223.48)",
+          "oklch(72% 0.0636 223.48)",
+          "oklch(84% 0.0636 223.48)",
+          "oklch(95% 0.0636 223.48)"
+        ]
+      },
+      "club-amber": {
+        "role": "secondary",
+        "displayName": "앰버",
+        "tonalRamp": [
+          "oklch(15% 0.1081 76.27)",
+          "oklch(26% 0.1081 76.27)",
+          "oklch(38% 0.1081 76.27)",
+          "oklch(49% 0.1081 76.27)",
+          "oklch(61% 0.1081 76.27)",
+          "oklch(72% 0.1081 76.27)",
+          "oklch(84% 0.1081 76.27)",
+          "oklch(95% 0.1081 76.27)"
+        ]
+      },
+      "aurora": {
+        "role": "secondary",
+        "displayName": "카드 오로라",
+        "tonalRamp": [
+          "oklch(15% 0.0947 82.96)",
+          "oklch(26% 0.0947 82.96)",
+          "oklch(38% 0.0947 82.96)",
+          "oklch(49% 0.0947 82.96)",
+          "oklch(61% 0.0947 82.96)",
+          "oklch(72% 0.0947 82.96)",
+          "oklch(84% 0.0947 82.96)",
+          "oklch(95% 0.0947 82.96)"
+        ]
+      },
+      "ember": {
+        "role": "secondary",
+        "displayName": "카드 여명",
+        "tonalRamp": [
+          "oklch(15% 0.1101 37.38)",
+          "oklch(26% 0.1101 37.38)",
+          "oklch(38% 0.1101 37.38)",
+          "oklch(49% 0.1101 37.38)",
+          "oklch(61% 0.1101 37.38)",
+          "oklch(72% 0.1101 37.38)",
+          "oklch(84% 0.1101 37.38)",
+          "oklch(95% 0.1101 37.38)"
+        ]
+      },
+      "tide": {
+        "role": "secondary",
+        "displayName": "카드 물결",
+        "tonalRamp": [
+          "oklch(15% 0.0626 213.51)",
+          "oklch(26% 0.0626 213.51)",
+          "oklch(38% 0.0626 213.51)",
+          "oklch(49% 0.0626 213.51)",
+          "oklch(61% 0.0626 213.51)",
+          "oklch(72% 0.0626 213.51)",
+          "oklch(84% 0.0626 213.51)",
+          "oklch(95% 0.0626 213.51)"
+        ]
+      },
+      "moss": {
+        "role": "secondary",
+        "displayName": "카드 이끼",
+        "tonalRamp": [
+          "oklch(15% 0.0667 146.99)",
+          "oklch(26% 0.0667 146.99)",
+          "oklch(38% 0.0667 146.99)",
+          "oklch(49% 0.0667 146.99)",
+          "oklch(61% 0.0667 146.99)",
+          "oklch(72% 0.0667 146.99)",
+          "oklch(84% 0.0667 146.99)",
+          "oklch(95% 0.0667 146.99)"
+        ]
+      },
+      "dusk": {
+        "role": "secondary",
+        "displayName": "카드 황혼",
+        "tonalRamp": [
+          "oklch(15% 0.0631 308.75)",
+          "oklch(26% 0.0631 308.75)",
+          "oklch(38% 0.0631 308.75)",
+          "oklch(49% 0.0631 308.75)",
+          "oklch(61% 0.0631 308.75)",
+          "oklch(72% 0.0631 308.75)",
+          "oklch(84% 0.0631 308.75)",
+          "oklch(95% 0.0631 308.75)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "굵은 클럽 제목",
+        "purpose": "홈의 짧은 두 줄 제목."
+      },
+      "headline": {
+        "displayName": "섹션 제목",
+        "purpose": "게임 선반과 이용 순서."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dialog",
+        "value": "0 25px 100px #0009",
+        "purpose": "모달과 바탕 분리."
+      },
+      {
+        "name": "playing-card",
+        "value": "0 4px 10px #0a1e2438",
+        "purpose": "손패의 깊이."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-arrive",
+        "value": "cubic-bezier(0.16,1,0.3,1)",
+        "purpose": "조작 피드백"
+      },
+      {
+        "name": "club-drift",
+        "value": "12s ease-in-out",
+        "purpose": "정지 가능한 홈 아트 미세 이동"
+      },
+      {
+        "name": "club-orbit",
+        "value": "18s linear",
+        "purpose": "하나의 장면 안 궤도 선 이동"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-small",
+        "value": "374px"
+      },
+      {
+        "name": "phone",
+        "value": "640px"
+      },
+      {
+        "name": "club-stack",
+        "value": "760px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1150px"
+      },
+      {
+        "name": "wide",
+        "value": "1450px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "주 버튼",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "새 테이블과 게임 행동",
+      "html": "<button class=\"ds-primary\">우리 테이블 만들기</button>",
+      "css": ".ds-primary{background:var(--mint,#d6f55b);color:var(--deep,#0b131b);padding:12px 21px;min-height:48px;border:0;border-radius:10px;font:700 14px/1.4 Pretendard,sans-serif;cursor:pointer;transition:background .2s,transform .2s}.ds-primary:hover{background:#e3ff88}.ds-primary:active{transform:translateY(1px)}.ds-primary:focus-visible{outline:3px solid #d6f55b;outline-offset:4px}"
+    },
+    {
+      "name": "보조 버튼",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "규칙과 취소",
+      "html": "<button class=\"ds-secondary\">규칙 보기</button>",
+      "css": ".ds-secondary{background:transparent;color:var(--ink,#f4f4ec);box-shadow:inset 0 0 0 1px #556775;padding:12px 21px;min-height:48px;border:0;border-radius:10px;font:700 14px/1.4 Pretendard,sans-serif;cursor:pointer}.ds-secondary:hover{background:#263743}.ds-secondary:focus-visible{outline:3px solid #d6f55b;outline-offset:4px}"
+    },
+    {
+      "name": "이름 입력",
+      "kind": "input",
+      "description": "명시적 레이블과 포커스",
+      "html": "<label class=\"ds-field\">내 이름<input placeholder=\"친구들이 알아볼 이름\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:9px;color:#f4f4ec;font:600 12px Pretendard,sans-serif}.ds-field input{padding:11px 13px;min-height:49px;border:1px solid #4a5f70;border-radius:9px;background:#11202b;color:#f4f4ec;font:400 14px Pretendard,sans-serif;box-sizing:border-box;caret-color:#d6f55b}.ds-field input::placeholder{color:#9aadb9}.ds-field input:focus-visible{outline:3px solid #d6f55b;outline-offset:4px}"
+    },
+    {
+      "name": "주 메뉴",
+      "kind": "nav",
+      "description": "짧고 분명한 상단 탐색",
+      "html": "<nav class=\"ds-nav\"><a href=\"#games\">게임 둘러보기</a><button>내 테이블</button></nav>",
+      "css": ".ds-nav{display:flex;gap:32px;align-items:center;background:#101820;padding:16px}.ds-nav a,.ds-nav button{color:#aab9c5;background:transparent;border:0;font:500 14px Pretendard,sans-serif;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;cursor:pointer}.ds-nav a:hover,.ds-nav button:hover{color:#f4f4ec}.ds-nav a:focus-visible,.ds-nav button:focus-visible{outline:3px solid #d6f55b;outline-offset:4px}"
+    },
+    {
+      "name": "준비 완료",
+      "kind": "chip",
+      "description": "현재 참가자 상태",
+      "html": "<span class=\"ds-ready\">준비 완료</span>",
+      "css": ".ds-ready{display:inline-flex;padding:5px 10px;border-radius:4px;background:#2d3b2b;color:#d6f55b;font:500 12px Pretendard,sans-serif}"
+    },
+    {
+      "name": "숫자 카드",
+      "kind": "card",
+      "description": "밝은 카드 바탕과 읽을 수 있는 숫자",
+      "html": "<button class=\"ds-card\" aria-label=\"오로라 7\"><strong>7</strong><svg viewBox=\"0 0 40 40\" fill=\"none\" stroke=\"currentColor\" aria-hidden=\"true\"><circle cx=\"20\" cy=\"20\" r=\"12\"/><circle cx=\"20\" cy=\"20\" r=\"7\"/></svg><span>오로라</span></button>",
+      "css": ".ds-card{width:88px;height:124px;border:0;border-radius:7px;background:#f3eccf;color:#806018;display:flex;flex-direction:column;align-items:center;justify-content:space-around;padding:8px;box-shadow:0 4px 10px #0a1e2438;cursor:pointer}.ds-card strong{font:700 23px Pretendard,sans-serif;align-self:flex-start}.ds-card svg{width:35px;height:35px}.ds-card span{font:500 10px Pretendard,sans-serif}.ds-card:hover{transform:translateY(-5px)}.ds-card:focus-visible{outline:3px solid #d6f55b;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ring Club — 좋은 친구. 멋진 한 수.",
+    "overview": "친구가 들어와 게임을 고르고 함께 앉는 작은 게임 클럽. 짙고 조용한 공통 셸 위에 라임색 행동과 게임별 컬러 포스터를 둔다.",
+    "keyCharacteristics": [
+      "굵은 한국어 산세리프",
+      "짙은 셸과 라임 행동",
+      "오리지널 3D 게임 아트",
+      "초대·차례·준비 상태의 명확함"
+    ],
+    "rules": [
+      {
+        "name": "공통 셸과 게임 표현",
+        "body": "게임 아트는 표현력이 있어도 조작과 숫자는 안정적으로 읽혀야 한다.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "도형·색·문장을 함께 사용한다",
+      "모션 감소와 수동 정지를 유지한다"
+    ],
+    "donts": [
+      "존재하지 않는 수치나 기능을 장식으로 표시하지 않는다",
+      "사적인 규칙 참조 사진을 서비스 아트로 사용하지 않는다"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "draft2020-12",
+  "format_validation": true,
+  "valid_cases": [
+    "STAR_PLAY",
+    "STAR_DISCARD",
+    "STAR_DRAW_DECK",
+    "STAR_DRAW_DISCARD",
+    "RESIGN"
+  ],
+  "rejected_cases": [
+    "untrusted actorId",
+    "bad uuid",
+    "negative version",
+    "fractional version",
+    "unknown protocol",
+    "unknown action",
+    "empty cardId",
+    "extra card data",
+    "invalid suit",
+    "nonempty draw payload"
+  ],
+  "passed": 15
+}

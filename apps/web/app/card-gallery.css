@@ -1,0 +1,194 @@
+.card-gallery {
+  padding-bottom: 64px;
+}
+.card-game-nav a[aria-current="page"] {
+  color: var(--mint);
+  border-color: var(--mint);
+}
+.other-card-gallery .game-card-art {
+  height: auto;
+  aspect-ratio: 2/3;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+.other-card-gallery .game-card-art img {
+  object-fit: cover;
+  object-position: center;
+}
+.card-gallery-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 25px;
+  border-bottom: 1px solid var(--line);
+}
+.card-gallery-nav > a:last-child {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+.card-gallery-intro {
+  padding: 70px 0 50px;
+}
+.card-gallery-intro > p:first-child {
+  color: var(--mint);
+  font-size: 14px;
+}
+.card-gallery-intro h1 {
+  margin: 16px 0 24px;
+  font-size: clamp(38px, 5vw, 64px);
+  letter-spacing: -0.055em;
+  line-height: 1.13;
+}
+.card-gallery-intro > p:last-of-type {
+  color: var(--muted);
+  font-size: 15px;
+}
+.card-gallery-intro nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+.card-gallery-intro nav a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  font-size: 13px;
+}
+.card-gallery-intro nav a:hover {
+  color: var(--mint);
+  border-color: var(--mint);
+}
+.card-gallery-intro nav .suit-icon {
+  width: 21px;
+  height: 21px;
+}
+.card-gallery-section {
+  border-top: 1px solid var(--line);
+  padding: 30px 0 55px;
+  scroll-margin-top: 20px;
+}
+.card-gallery-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+.card-gallery-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 27px;
+}
+.card-gallery-heading .suit-icon {
+  width: 34px;
+  height: 34px;
+}
+.card-gallery-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.card-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 25px 20px;
+}
+.card-gallery-grid figure {
+  margin: 0;
+  min-width: 0;
+}
+.card-gallery-grid .playing-card {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3;
+  border-radius: 12px;
+}
+.card-gallery-grid .playing-card:hover {
+  transform: none;
+}
+.card-gallery-grid .card-corner {
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  padding: 5px 9px;
+}
+.card-gallery-grid .card-corner .suit-icon {
+  width: 21px;
+  height: 21px;
+}
+.card-gallery-grid .card-corner-bottom {
+  top: auto;
+  left: auto;
+  right: 10px;
+  bottom: 12px;
+  font-size: 18px;
+  padding: 0;
+}
+.card-gallery-grid .card-center {
+  bottom: 16px;
+}
+.card-gallery-grid .card-center > span {
+  font-size: 12px;
+}
+.card-gallery-grid figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.card-gallery-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+.card-gallery-footer p {
+  font-size: 13px;
+  color: var(--muted);
+}
+@media (max-width: 760px) {
+  .card-gallery-nav .brand {
+    font-size: 19px;
+  }
+  .card-gallery-nav > a:last-child {
+    font-size: 11px;
+  }
+  .card-gallery-nav .brand > svg {
+    width: 32px;
+  }
+  .card-gallery-intro {
+    padding: 44px 0 30px;
+  }
+  .card-gallery-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .card-gallery-heading p {
+    margin: 0;
+  }
+  .card-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 14px;
+  }
+  .card-gallery-grid .card-corner {
+    font-size: 24px;
+  }
+  .card-gallery-grid .card-corner-bottom {
+    font-size: 16px;
+  }
+  .card-gallery-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

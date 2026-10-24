@@ -1,0 +1,57 @@
+{
+  "project": "moyeotable",
+  "version": "1.0.0",
+  "colors": {
+    "ink": "#13252C",
+    "surface": "#1D343B",
+    "paper": "#F4F0E5",
+    "muted": "#9AB1B5",
+    "accent": "#B9D8B0",
+    "copper": "#D4A879",
+    "danger": "#D98E88"
+  },
+  "suits": {
+    "aurora": {
+      "label": "오로라",
+      "symbol": "○",
+      "color": "#92C7B0"
+    },
+    "ember": {
+      "label": "여명",
+      "symbol": "△",
+      "color": "#D8A27D"
+    },
+    "tide": {
+      "label": "물결",
+      "symbol": "◇",
+      "color": "#83B5D6"
+    },
+    "moss": {
+      "label": "이끼",
+      "symbol": "□",
+      "color": "#B6C77B"
+    },
+    "dusk": {
+      "label": "황혼",
+      "symbol": "☆",
+      "color": "#B6A2D2"
+    }
+  },
+  "radius": {
+    "card": 12,
+    "panel": 20,
+    "pill": 99
+  },
+  "motionMs": {
+    "select": 120,
+    "move": 220,
+    "layout": 180,
+    "result": 400
+  },
+  "breakpointsPx": {
+    "mobile": 640,
+    "tablet": 1024
+  },
+  "font": "system-ui, Noto Sans CJK KR, sans-serif",
+  "fontFilesIncluded": false
+}
