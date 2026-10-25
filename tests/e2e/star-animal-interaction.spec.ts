@@ -347,17 +347,49 @@ test("animal cards select without playing; illegal and cancelled drags return; l
         node.classList.contains(name),
       )!,
     );
-    await touchDragCard(
-      actor,
-      discardCard,
-      actor.locator(`[data-star-drop="discard"][data-suit="${discardSuit}"]`),
+    const discardPile = actor.locator(
+      `[data-star-drop="discard"][data-suit="${discardSuit}"]`,
     );
+    const priorDiscardLabels = await discardPile
+      .locator(".animal-stack-card .playing-card")
+      .evaluateAll((cards) =>
+        cards.map((card) => card.getAttribute("aria-label")),
+      );
+    const discardedLabel = await discardCard.getAttribute("aria-label");
+    await touchDragCard(actor, discardCard, discardPile);
     await expect(hand(actor)).toHaveCount(7);
+    await expect(discardPile.locator(".stack-front img")).toBeVisible();
+    const expectedDiscardLabels = [...priorDiscardLabels, discardedLabel];
+    const beforeInspection = await hand(actor).evaluateAll((cards) =>
+      cards.map((card) => card.getAttribute("data-card-id")),
+    );
+    await expect(discardPile.locator(".discard-take")).toBeDisabled();
+    await discardPile.locator("button.discard").click();
+    const discardDetail = actor.getByRole("dialog");
     await expect(
-      actor.locator(
-        `[data-star-drop="discard"][data-suit="${discardSuit}"] .playing-card img`,
+      discardDetail.locator(".detail-cards .playing-card"),
+    ).toHaveCount(expectedDiscardLabels.length);
+    expect(
+      await discardDetail
+        .locator(".detail-cards .playing-card")
+        .evaluateAll((cards) =>
+          cards.map((card) => card.getAttribute("aria-label")),
+        ),
+    ).toEqual(expectedDiscardLabels);
+    await expect(
+      discardDetail.getByRole("button", {
+        name: "마지막 카드 가져오기",
+        exact: true,
+      }),
+    ).toBeDisabled();
+    expect(
+      await hand(actor).evaluateAll((cards) =>
+        cards.map((card) => card.getAttribute("data-card-id")),
       ),
-    ).toBeVisible();
+    ).toEqual(beforeInspection);
+    await discardDetail
+      .getByRole("button", { name: "닫기", exact: true })
+      .click();
     await actor.screenshot({
       path: testInfo.outputPath("animal-board-desktop.png"),
       fullPage: true,

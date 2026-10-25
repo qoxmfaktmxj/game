@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
 import {
   ArrowRight,
@@ -11,7 +11,6 @@ import {
   Trophy,
 } from "lucide-react";
 import type {
-  Card,
   PlayerView,
   RoomView,
   StarCommand,
@@ -20,6 +19,7 @@ import type {
 import { suits, suitNames } from "../lib/client";
 import { Modal, PlayingCard, SuitIcon } from "./primitives";
 import { useStarCardDrag } from "./use-star-card-drag";
+import { CardStack } from "./star-card-stack";
 import "./star-board.css";
 
 type PublicPlayer = PlayerView["players"][number];
@@ -64,34 +64,6 @@ function useBoardMotion(version: number, reduceMotion: boolean) {
   return ref;
 }
 
-/** Keep the newest face fully visible, with bounded, readable earlier-card strips. */
-function CardStack({ cards }: { cards: Card[] }) {
-  const shown = cards.slice(-4);
-  return (
-    <div
-      className="animal-card-stack"
-      style={{ "--stack-steps": shown.length - 1 } as CSSProperties}
-      aria-hidden="true"
-    >
-      {shown.map((card, index) => (
-        <div
-          className={`animal-stack-card ${index === shown.length - 1 ? "stack-front" : "stack-previous"}`}
-          key={card.id}
-          style={{ "--stack-index": index } as CSSProperties}
-        >
-          <PlayingCard card={card} artSizes="(max-width: 640px) 60px, 112px" />
-          {index < shown.length - 1 && (
-            <span className="stack-strip-label">
-              {card.kind === "support" ? "×2" : card.value}
-              <span>{suitNames[card.suit]}</span>
-            </span>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export function GameBoard({
   view,
   busy,
@@ -116,6 +88,7 @@ export function GameBoard({
     playerId: string;
     suit: Suit;
   } | null>(null);
+  const [discardDetail, setDiscardDetail] = useState<Suit | null>(null);
   const you = game.players.find((p) => p.id === game.you)!;
   const other = game.players.find((p) => p.id !== game.you)!;
   const selected = game.yourHand.find((card) => card.id === selectedId);
@@ -161,6 +134,15 @@ export function GameBoard({
   const detailedPlayer =
     laneDetail &&
     game.players.find((player) => player.id === laneDetail.playerId);
+  // Older open clients/servers can briefly coexist during a rolling update.
+  const discardedCards = (suit: Suit) =>
+    game.discards[suit].cards ??
+    (game.discards[suit].top ? [game.discards[suit].top!] : []);
+  const canTakeDiscard = (suit: Suit) =>
+    game.legalCommands.some(
+      (command) =>
+        command.type === "STAR_DRAW_DISCARD" && command.payload.suit === suit,
+    );
 
   function lanes(player: PublicPlayer, mine: boolean) {
     return (
@@ -192,7 +174,6 @@ export function GameBoard({
                 ) : (
                   <span className="empty-lane">
                     <SuitIcon suit={suit} />
-                    <span>{target ? "놓을 수 있어요" : "빈 길"}</span>
                   </span>
                 )}
                 {target && (
@@ -262,44 +243,53 @@ export function GameBoard({
             <div className="discard-row">
               {suits.map((suit) => {
                 const pile = game.discards[suit];
-                const enabled = game.legalCommands.some(
-                  (c) =>
-                    c.type === "STAR_DRAW_DISCARD" && c.payload.suit === suit,
-                );
+                const enabled = canTakeDiscard(suit);
                 const discardTarget =
                   selected?.suit === suit && canDiscard && !locked;
                 return (
-                  <button
+                  <div
                     key={suit}
-                    className={`discard ${suit} ${enabled || discardTarget ? "available" : ""} ${drag?.target === `discard:${suit}` ? "drop-hover" : ""}`}
+                    className={`discard-pile ${suit} ${enabled || discardTarget ? "available" : ""} ${drag?.target === `discard:${suit}` ? "drop-hover" : ""}`}
                     data-star-drop="discard"
                     data-suit={suit}
-                    disabled={locked || (!enabled && !discardTarget)}
-                    onClick={() => {
-                      if (enabled)
-                        act({ type: "STAR_DRAW_DISCARD", payload: { suit } });
-                    }}
-                    aria-label={
-                      enabled
-                        ? `${suitNames[suit]} 버림 더미에서 가져오기${pile.top ? `, ${pile.top.kind === "support" ? "지원 ×2" : pile.top.value}` : ""}`
-                        : `${suitNames[suit]} 버림 더미, ${pile.count}장${discardTarget ? ", 선택한 카드를 끌어 놓을 수 있어요" : ""}`
-                    }
                   >
-                    <span className="discard-face">
-                      {pile.top ? (
-                        <PlayingCard
-                          card={pile.top}
-                          artSizes="(max-width: 640px) 48px, 76px"
-                        />
-                      ) : (
-                        <span className="discard-empty">
-                          <SuitIcon suit={suit} />
-                          <span>{suitNames[suit]}</span>
-                        </span>
-                      )}
-                    </span>
-                    <small>{pile.count}장</small>
-                  </button>
+                    <button
+                      type="button"
+                      className={`discard ${suit}`}
+                      onClick={() => setDiscardDetail(suit)}
+                      disabled={pile.count === 0}
+                      aria-label={`${suitNames[suit]} 버림 더미, ${pile.count}장, 자세히 보기`}
+                    >
+                      <span
+                        className={`discard-face ${pile.count ? "occupied" : ""}`}
+                        data-motion-slot={`discard:${suit}`}
+                        data-motion-value={pile.top?.id ?? ""}
+                      >
+                        {pile.top ? (
+                          <CardStack cards={discardedCards(suit)} compact />
+                        ) : (
+                          <span className="discard-empty">
+                            <SuitIcon suit={suit} />
+                            <span>{suitNames[suit]}</span>
+                          </span>
+                        )}
+                      </span>
+                      <small>{pile.count}장</small>
+                    </button>
+                    {pile.count > 0 && (
+                      <button
+                        type="button"
+                        className="discard-take"
+                        disabled={!enabled || locked}
+                        onClick={() =>
+                          act({ type: "STAR_DRAW_DISCARD", payload: { suit } })
+                        }
+                        aria-label={`${suitNames[suit]} 버림 더미에서 가져오기, 마지막 카드 ${pile.top?.kind === "support" ? "지원 ×2" : pile.top?.value}`}
+                      >
+                        가져오기
+                      </button>
+                    )}
+                  </div>
                 );
               })}
             </div>
@@ -403,7 +393,7 @@ export function GameBoard({
               </strong>
               <span>
                 {yourTurn && game.phase === "DRAW"
-                  ? "덱 또는 버림 더미를 눌러 차례를 마쳐요."
+                  ? "덱을 누르거나 버림 더미 아래 ‘가져오기’를 눌러요."
                   : yourTurn && selected && !canPlay
                     ? "이 카드는 지금 길에 놓을 수 없어요. 버릴 수는 있어요."
                     : "카드를 고른 뒤 버튼으로 놓거나, 원하는 곳으로 끌어 주세요."}
@@ -526,6 +516,40 @@ export function GameBoard({
                 : "0점"}
             </strong>
           </div>
+        </Modal>
+      )}
+      {discardDetail && (
+        <Modal
+          title={`${suitNames[discardDetail]} 버림 더미 · ${game.discards[discardDetail].count}장`}
+          onClose={() => setDiscardDetail(null)}
+          wide
+        >
+          <p className="modal-description">
+            먼저 버린 카드부터 순서대로 보여요. 맨 마지막 카드만 가져올 수
+            있어요.
+          </p>
+          <div className="detail-cards">
+            {discardedCards(discardDetail).map((card) => (
+              <PlayingCard key={card.id} card={card} small />
+            ))}
+          </div>
+          {game.discards[discardDetail].count > 0 ? (
+            <button
+              className="button mint"
+              disabled={!canTakeDiscard(discardDetail) || locked}
+              onClick={() => {
+                act({
+                  type: "STAR_DRAW_DISCARD",
+                  payload: { suit: discardDetail },
+                });
+                setDiscardDetail(null);
+              }}
+            >
+              마지막 카드 가져오기
+            </button>
+          ) : (
+            <p>다른 친구가 마지막 카드를 가져갔어요.</p>
+          )}
         </Modal>
       )}
     </div>

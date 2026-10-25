@@ -289,9 +289,43 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
         expect(discardedSuit).toBeTruthy();
         await expect(
           actor.getByRole("button", {
-            name: new RegExp(`^${discardedSuit} 버림 더미(?:,|에서)`),
+            name: new RegExp(`^${discardedSuit} 버림 더미에서 가져오기`),
           }),
         ).toBeDisabled();
+        const inspectDiscard = async () => {
+          const inspect = actor.getByRole("button", {
+            name: `${discardedSuit} 버림 더미, 1장, 자세히 보기`,
+            exact: true,
+          });
+          await expect(inspect).toBeEnabled();
+          await inspect.click();
+          const detail = actor.getByRole("dialog", {
+            name: `${discardedSuit} 버림 더미 · 1장`,
+            exact: true,
+          });
+          await expect(detail).toBeVisible();
+          await expect(
+            detail.locator(".detail-cards .playing-card"),
+          ).toHaveCount(1);
+          await expect(
+            detail.locator(".detail-cards .playing-card"),
+          ).toHaveAttribute("aria-label", selectedLabel!);
+          await expect(
+            detail.getByRole("button", {
+              name: "마지막 카드 가져오기",
+              exact: true,
+            }),
+          ).toBeDisabled();
+          expect(
+            await handCards(actor).evaluateAll((buttons) =>
+              buttons.map((button) => button.getAttribute("data-card-id")),
+            ),
+          ).toEqual(beforeRefresh);
+          await detail
+            .getByRole("button", { name: "닫기", exact: true })
+            .click();
+        };
+        await inspectDiscard();
         await actor.reload();
         await expect(
           actor.getByText("카드 한 장을 가져오세요", { exact: true }),
@@ -304,9 +338,10 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
         expect(recoveredHand).toEqual(beforeRefresh);
         await expect(
           actor.getByRole("button", {
-            name: new RegExp(`^${discardedSuit} 버림 더미(?:,|에서)`),
+            name: new RegExp(`^${discardedSuit} 버림 더미에서 가져오기`),
           }),
         ).toBeDisabled();
+        await inspectDiscard();
         await checkMobileWidths(guest, "draw-recovery", testInfo);
       }
       await drawButton(actor, 44 - turn).click();

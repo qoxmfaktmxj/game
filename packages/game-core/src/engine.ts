@@ -436,10 +436,12 @@ export function toPlayerView(
     players: [publicPlayer(0), publicPlayer(1)],
     yourHand: state.hands[viewer].map(copyCard),
     discards: suitRecord((suit) => {
-      const top = state.discards[suit].at(-1);
+      const pile = state.discards[suit];
+      const top = pile.at(-1);
       return {
-        count: state.discards[suit].length,
+        count: pile.length,
         top: top ? copyCard(top) : null,
+        cards: pile.map(copyCard),
       };
     }),
     legalCommands: listLegalCommands(state, viewerId),

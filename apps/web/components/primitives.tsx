@@ -142,9 +142,6 @@ export function PlayingCard({
         <SuitIcon suit={card.suit} />
         <span>{suitNames[card.suit]}</span>
       </span>
-      <span className="card-corner card-corner-bottom">
-        {card.kind === "support" ? "지원" : card.value}
-      </span>
     </>
   );
   const className = `playing-card animal-playing-card ${card.suit} ${card.kind === "support" ? "support-card" : ""} ${selected ? "selected" : ""} ${small ? "small" : ""}`;

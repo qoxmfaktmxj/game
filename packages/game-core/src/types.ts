@@ -98,7 +98,8 @@ export interface PlayerView {
   deckCount: number;
   players: [PublicPlayer, PublicPlayer];
   yourHand: Card[];
-  discards: Record<Suit, { count: number; top: Card | null }>;
+  /** Public discard order runs from the oldest card to the latest (top) card. */
+  discards: Record<Suit, { count: number; top: Card | null; cards: Card[] }>;
   legalCommands: StarCommand[];
   result: GameResult | null;
 }

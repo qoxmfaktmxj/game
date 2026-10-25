@@ -307,7 +307,7 @@ body:has(.star-animal-theme) {
   box-shadow: none;
   letter-spacing: -0.03em;
 }
-.animal-playing-card.support-card .card-corner:not(.card-corner-bottom) {
+.animal-playing-card.support-card .card-corner {
   min-width: 36px;
   font-size: 22px;
   color: #2057ad;
@@ -321,7 +321,7 @@ body:has(.star-animal-theme) {
   z-index: 1;
   inset: auto 0 0;
   min-height: 25px;
-  padding: 3px 23px 4px 5px;
+  padding: 3px 5px 4px;
   background: #fff;
   color: #183552;
   flex-direction: row;
@@ -336,18 +336,6 @@ body:has(.star-animal-theme) {
   font-weight: 750;
   letter-spacing: -0.02em;
   white-space: nowrap;
-}
-.animal-playing-card .card-corner-bottom {
-  inset: auto 5px 6px auto;
-  min-width: 0;
-  padding: 0;
-  font-size: 12px;
-  background: #fff;
-  transform: none;
-}
-.animal-playing-card.support-card .card-corner-bottom {
-  font-size: 10px;
-  font-weight: 650;
 }
 .playing-card.animal-playing-card:not(button):hover {
   transform: none;
@@ -435,10 +423,7 @@ body:has(.star-animal-theme) {
   min-width: 44px;
   font-size: 36px;
 }
-.animal-card-gallery
-  .card-gallery-grid
-  .support-card
-  .card-corner:not(.card-corner-bottom) {
+.animal-card-gallery .card-gallery-grid .support-card .card-corner {
   font-size: 32px;
   min-width: 58px;
 }
@@ -449,19 +434,10 @@ body:has(.star-animal-theme) {
 .animal-card-gallery .card-gallery-grid .card-center {
   inset: auto 0 0;
   min-height: 45px;
-  padding: 8px 45px 8px 13px;
+  padding: 8px 13px;
 }
 .animal-card-gallery .card-gallery-grid .card-center > span {
   font-size: 18px;
-}
-.animal-card-gallery .card-gallery-grid .card-corner-bottom {
-  inset: auto 13px 14px auto;
-  padding: 0;
-  min-width: 0;
-  font-size: 16px;
-}
-.animal-card-gallery .card-gallery-grid .support-card .card-corner-bottom {
-  font-size: 13px;
 }
 .animal-card-gallery .card-gallery-grid figcaption {
   font-size: 13px;
@@ -531,16 +507,13 @@ body:has(.star-animal-theme) {
     left: 7px;
     padding: 4px 6px;
   }
-  .animal-card-gallery
-    .card-gallery-grid
-    .support-card
-    .card-corner:not(.card-corner-bottom) {
+  .animal-card-gallery .card-gallery-grid .support-card .card-corner {
     font-size: 26px;
     min-width: 47px;
   }
   .animal-card-gallery .card-gallery-grid .card-center {
     min-height: 38px;
-    padding: 6px 35px 6px 10px;
+    padding: 6px 10px;
   }
   .animal-card-gallery .card-gallery-grid .card-art {
     padding-bottom: 38px;
@@ -551,12 +524,6 @@ body:has(.star-animal-theme) {
   .animal-card-gallery .card-gallery-grid .card-center .suit-icon {
     width: 16px;
     height: 16px;
-  }
-  .animal-card-gallery .card-gallery-grid .card-corner-bottom {
-    inset: auto 10px 12px auto;
-    min-width: 0;
-    padding: 0;
-    font-size: 14px;
   }
   .star-animal-theme .score-formula {
     padding: 18px 16px;

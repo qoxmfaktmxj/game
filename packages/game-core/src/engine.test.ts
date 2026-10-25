@@ -533,19 +533,19 @@ test("successful transitions cannot mutate the previous persisted snapshot", () 
   assert.deepEqual(state, before);
 });
 
-test("player views hide opponent hands, deck identities, and buried discard identities", () => {
+test("player views expose all public piles but hide opponent hands and deck identities", () => {
   const state = fixture({
-    discards: { dusk: [cardId("dusk", 2), cardId("dusk", 4)] },
+    lanes0: { aurora: [cardId("aurora", 2), cardId("aurora", 4)] },
+    lanes1: { ember: [cardId("ember", 3)] },
+    discards: {
+      dusk: [cardId("dusk", 8), cardId("dusk", "s0"), cardId("dusk", 2)],
+    },
   });
   for (const player of [0, 1] as const) {
     const view = toPlayerView(state, state.playerIds[player]);
     const serialized = JSON.stringify(view);
     const opponent = player === 0 ? 1 : 0;
-    for (const card of [
-      ...state.hands[opponent],
-      ...state.deck,
-      first(state.discards.dusk),
-    ]) {
+    for (const card of [...state.hands[opponent], ...state.deck]) {
       assert.ok(
         !serialized.includes(card.id),
         `${card.id} must remain private`,
@@ -553,35 +553,113 @@ test("player views hide opponent hands, deck identities, and buried discard iden
     }
     assert.deepEqual(view.yourHand, state.hands[player]);
     assert.equal(view.players[opponent].handCount, 8);
-    assert.equal(view.discards.dusk.count, 2);
-    assert.equal(view.discards.dusk.top?.id, cardId("dusk", 4));
+    assert.deepEqual(view.players[0].lanes, state.lanes[0]);
+    assert.deepEqual(view.players[1].lanes, state.lanes[1]);
+    assert.equal(view.discards.dusk.count, 3);
+    assert.equal(view.discards.dusk.top?.id, cardId("dusk", 2));
+    assert.deepEqual(view.discards.dusk.cards, state.discards.dusk);
+    assert.deepEqual(view.discards.moss, { count: 0, top: null, cards: [] });
     assert.equal("deck" in view, false);
     assert.equal("hands" in view, false);
     assert.equal(view.result, null);
   }
 });
 
+test("three discards stay in public insertion order and only their top can be drawn", () => {
+  let state = fixture({
+    hand0: [cardId("dusk", 8), cardId("dusk", 2)],
+    hand1: [cardId("dusk", "s0"), cardId("ember", 2)],
+  });
+  const order = [cardId("dusk", 8), cardId("dusk", "s0"), cardId("dusk", 2)];
+  for (let index = 0; index < order.length; index += 1) {
+    const actor = state.playerIds[state.activePlayerIndex];
+    const card = state.hands[state.activePlayerIndex].find(
+      (candidate) => candidate.id === order[index],
+    );
+    assert.ok(card);
+    state = applyCommand(state, actor, discard(card));
+    for (const viewer of state.playerIds) {
+      const pile = toPlayerView(state, viewer).discards.dusk;
+      assert.deepEqual(
+        pile.cards.map((entry) => entry.id),
+        order.slice(0, index + 1),
+      );
+      assert.equal(pile.count, index + 1);
+      assert.equal(pile.top?.id, order[index]);
+    }
+    rejectsWithoutMutation(state, actor, drawDiscard("dusk"), "JUST_DISCARDED");
+    state = applyCommand(state, actor, drawDeck());
+  }
+
+  const card = state.hands[1].find(
+    (candidate) => candidate.id === cardId("ember", 2),
+  );
+  assert.ok(card);
+  state = applyCommand(state, "B", play(card));
+  // Seeing an older card never authorises addressing it instead of the top.
+  rejectsWithoutMutation(
+    state,
+    "B",
+    {
+      type: "STAR_DRAW_DISCARD",
+      payload: { suit: "dusk", cardId: order[0] },
+    },
+    "BAD_PAYLOAD",
+  );
+  const next = applyCommand(state, "B", drawDiscard("dusk"));
+  assert.equal(next.hands[1].at(-1)?.id, order[2]);
+  assert.equal(next.deck.length, state.deck.length);
+  for (const viewer of state.playerIds) {
+    const pile = toPlayerView(next, viewer).discards.dusk;
+    assert.deepEqual(
+      pile.cards.map((entry) => entry.id),
+      order.slice(0, 2),
+    );
+    assert.equal(pile.count, 2);
+    assert.equal(pile.top?.id, order[1]);
+  }
+});
+
 test("view cards and nested arrays cannot mutate the private game state", () => {
   const state = fixture({
     lanes0: { aurora: [cardId("aurora", 2)] },
-    discards: { ember: [cardId("ember", 2)] },
+    discards: { ember: [cardId("ember", 2), cardId("ember", 9)] },
   });
   const before = structuredClone(state);
   const view = toPlayerView(state, "A");
+  const otherView = toPlayerView(state, "B");
+  const otherBefore = structuredClone(otherView);
   view.yourHand.pop();
   view.players[0].lanes.aurora.pop();
   view.players[0].score.total = 999;
+  Object.assign(first(view.discards.ember.cards), { id: "changed", value: 99 });
+  Object.assign(view.discards.ember.top!, { id: "changed-top", value: 99 });
+  view.discards.ember.cards.pop();
   view.discards.ember.count = 999;
   view.legalCommands.length = 0;
   assert.deepEqual(state, before);
+  assert.deepEqual(otherView, otherBefore);
 });
 
 test("explicit view projection strips unexpected private fields from public cards", () => {
-  const state = fixture();
-  Object.assign(first(state.hands[0]), { secretNote: "do-not-send-this" });
-  assert.ok(
-    !JSON.stringify(toPlayerView(state, "A")).includes("do-not-send-this"),
-  );
+  const state = fixture({
+    lanes0: { aurora: [cardId("aurora", 2)] },
+    lanes1: { tide: [cardId("tide", 3)] },
+    discards: { ember: [cardId("ember", 2), cardId("ember", 9)] },
+  });
+  for (const card of [
+    first(state.hands[0]),
+    first(state.lanes[0].aurora),
+    first(state.lanes[1].tide),
+    ...state.discards.ember,
+  ]) {
+    Object.assign(card, { secretNote: "do-not-send-this" });
+  }
+  for (const viewer of state.playerIds) {
+    assert.ok(
+      !JSON.stringify(toPlayerView(state, viewer)).includes("do-not-send-this"),
+    );
+  }
 });
 
 test("nonmembers cannot get player views; waiting players have no legal commands", () => {
