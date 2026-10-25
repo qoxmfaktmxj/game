@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("all 50 individual card faces render and remain readable on mobile", async ({
+test("50 selected animal illustrations remain distinct and readable on mobile", async ({
   page,
 }, info) => {
   const errors: string[] = [];
@@ -11,7 +11,7 @@ test("all 50 individual card faces render and remain readable on mobile", async 
   });
   await page.goto("/cards");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "새로운 풍경.",
+    "한 장 더 가까이.",
   );
   const illustrations = page.locator(".card-gallery-grid img.card-art");
   await expect(illustrations).toHaveCount(50);
@@ -19,6 +19,16 @@ test("all 50 individual card faces render and remain readable on mobile", async 
     images.map((image) => image.getAttribute("src")),
   );
   expect(new Set(sources).size).toBe(50);
+  expect(decodeURIComponent(sources[8]!)).toContain("aurora-10-v5.png");
+  for (const name of ["멍이", "냥이", "물개", "수달", "랑이"]) {
+    await expect(
+      page.getByRole("heading", { level: 2, name, exact: true }),
+    ).toBeVisible();
+  }
+  await expect(page.locator(".card-gallery-grid .support-card")).toHaveCount(5);
+  await expect(
+    page.locator(".card-gallery-grid .support-card .card-corner").first(),
+  ).toHaveText("×2");
   for (const image of await illustrations.all()) {
     await image.scrollIntoViewIfNeeded();
     await expect

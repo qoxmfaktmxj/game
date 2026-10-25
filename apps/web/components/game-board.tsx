@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { useReducedMotion } from "motion/react";
 import {
   ArrowRight,
   BookOpen,
   Check,
   Flag,
-  Layers,
-  Sparkles,
+  GripHorizontal,
   Trophy,
-  Users,
 } from "lucide-react";
 import type {
   Card,
@@ -21,47 +19,77 @@ import type {
 } from "@moyeotable/contracts";
 import { suits, suitNames } from "../lib/client";
 import { Modal, PlayingCard, SuitIcon } from "./primitives";
+import { useStarCardDrag } from "./use-star-card-drag";
+import "./star-board.css";
 
 type PublicPlayer = PlayerView["players"][number];
 
-/** Animate only new public cards and changed scores after the server accepts them. */
+/** Animate only public changes in the accepted server View. */
 function useBoardMotion(version: number, reduceMotion: boolean) {
   const ref = useRef<HTMLDivElement>(null);
   const previous = useRef<Map<string, string>>(new Map());
   const firstRender = useRef(true);
   const systemReduced = useReducedMotion();
   useEffect(() => {
-    const elements =
-      ref.current?.querySelectorAll<HTMLElement>("[data-motion-slot]");
     const next = new Map<string, string>();
     const animations: Animation[] = [];
-    elements?.forEach((element) => {
-      const slot = element.dataset.motionSlot!;
-      const value = element.dataset.motionValue ?? "";
-      next.set(slot, value);
-      if (
-        !firstRender.current &&
-        value &&
-        previous.current.get(slot) !== value &&
-        !reduceMotion &&
-        !systemReduced
-      ) {
-        animations.push(
-          element.animate(
-            [
-              { transform: "translateY(-9px) scale(0.97)" },
-              { transform: "translateY(0) scale(1)" },
-            ],
-            { duration: 220, easing: "cubic-bezier(0.16, 1, 0.3, 1)" },
-          ),
-        );
-      }
-    });
+    ref.current
+      ?.querySelectorAll<HTMLElement>("[data-motion-slot]")
+      .forEach((element) => {
+        const slot = element.dataset.motionSlot!;
+        const value = element.dataset.motionValue ?? "";
+        next.set(slot, value);
+        if (
+          !firstRender.current &&
+          value &&
+          previous.current.get(slot) !== value &&
+          !reduceMotion &&
+          !systemReduced
+        ) {
+          animations.push(
+            element.animate(
+              [
+                { transform: "translateY(-7px)" },
+                { transform: "translateY(0)" },
+              ],
+              { duration: 200, easing: "cubic-bezier(0.16, 1, 0.3, 1)" },
+            ),
+          );
+        }
+      });
     previous.current = next;
     firstRender.current = false;
     return () => animations.forEach((animation) => animation.cancel());
   }, [version, reduceMotion, systemReduced]);
   return ref;
+}
+
+/** Keep the newest face fully visible, with bounded, readable earlier-card strips. */
+function CardStack({ cards }: { cards: Card[] }) {
+  const shown = cards.slice(-4);
+  return (
+    <div
+      className="animal-card-stack"
+      style={{ "--stack-steps": shown.length - 1 } as CSSProperties}
+      aria-hidden="true"
+    >
+      {shown.map((card, index) => (
+        <div
+          className={`animal-stack-card ${index === shown.length - 1 ? "stack-front" : "stack-previous"}`}
+          key={card.id}
+          style={{ "--stack-index": index } as CSSProperties}
+        >
+          <PlayingCard card={card} artSizes="(max-width: 640px) 60px, 112px" />
+          {index < shown.length - 1 && (
+            <span className="stack-strip-label">
+              {card.kind === "support" ? "×2" : card.value}
+              <span>{suitNames[card.suit]}</span>
+            </span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export function GameBoard({
@@ -85,16 +113,16 @@ export function GameBoard({
   const boardRef = useBoardMotion(game.version, reduceMotion);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [laneDetail, setLaneDetail] = useState<{
-    player: PublicPlayer;
+    playerId: string;
     suit: Suit;
   } | null>(null);
   const you = game.players.find((p) => p.id === game.you)!;
   const other = game.players.find((p) => p.id !== game.you)!;
   const selected = game.yourHand.find((card) => card.id === selectedId);
   const yourTurn = game.activePlayerId === game.you;
-  const activeName =
-    view.table.members.find((m) => m.userId === game.activePlayerId)
-      ?.nickname || "친구";
+  const name = (id: string) =>
+    view.table.members.find((m) => m.userId === id)?.nickname || "친구";
+  const activeName = name(game.activePlayerId);
   const activeBot = view.table.members.some(
     (member) =>
       member.userId === game.activePlayerId && member.control === "bot",
@@ -112,75 +140,77 @@ export function GameBoard({
       (c) => c.type === "STAR_DISCARD" && c.payload.cardId === selected.id,
     );
   const canDraw = game.legalCommands.some((c) => c.type === "STAR_DRAW_DECK");
-  const name = (id: string) =>
-    view.table.members.find((m) => m.userId === id)?.nickname || "친구";
+  const canSelect = !locked && yourTurn && game.phase === "PLACE";
   const act = (command: StarCommand) => {
+    if (locked) return;
     onCommand(command);
-    setSelectedId(null);
+    // Keep selection and the physical card in place until the server changes the View.
   };
+  const { drag, announcement, start, resetClickSuppression, suppressClick } =
+    useStarCardDrag({
+      enabled: canSelect,
+      version: game.version,
+      legalCommands: game.legalCommands,
+      onSelect: setSelectedId,
+      onCommand: act,
+    });
+  useEffect(() => {
+    if (!game.yourHand.some((card) => card.id === selectedId))
+      setSelectedId(null);
+  }, [game.yourHand, selectedId]);
+  const detailedPlayer =
+    laneDetail &&
+    game.players.find((player) => player.id === laneDetail.playerId);
 
   function lanes(player: PublicPlayer, mine: boolean) {
     return (
       <div className={`lane-row ${mine ? "mine" : "theirs"}`}>
         {suits.map((suit) => {
           const cards = player.lanes[suit];
-          const last = cards.at(-1);
           const score = player.score.lanes[suit];
           const target = mine && selected?.suit === suit && canPlay && !locked;
           return (
             <button
               key={suit}
-              className={`lane ${suit} ${target ? "target-lane" : ""}`}
-              onClick={() =>
-                target
-                  ? act({
-                      type: "STAR_PLAY",
-                      payload: { cardId: selected!.id },
-                    })
-                  : setLaneDetail({ player, suit })
-              }
-              aria-label={
-                target
-                  ? `${suitNames[suit]} 길에 선택한 카드 놓기`
-                  : `${mine ? "내" : "상대"} ${suitNames[suit]} 길, ${cards.length}장, ${score.total}점`
-              }
+              className={`lane ${suit} ${target ? "target-lane" : ""} ${drag?.target === `play:${suit}` && mine ? "drop-hover" : ""}`}
+              data-star-drop={mine ? "play" : undefined}
+              data-suit={suit}
+              onClick={() => setLaneDetail({ playerId: player.id, suit })}
+              aria-label={`${mine ? "내" : "상대"} ${suitNames[suit]} 길, ${cards.length}장, ${score.total}점, 자세히 보기`}
             >
-              <div className="lane-label">
+              <span className="lane-label">
                 <SuitIcon suit={suit} />
                 <span>{suitNames[suit]}</span>
-              </div>
+              </span>
               <div
                 className={`lane-slot ${cards.length ? "occupied" : ""}`}
                 data-motion-slot={`lane:${player.id}:${suit}`}
-                data-motion-value={last?.id ?? ""}
+                data-motion-value={cards.at(-1)?.id ?? ""}
               >
-                {last ? (
-                  <>
-                    <span className="lane-card-value">
-                      {last.kind === "support" ? "+" : last.value}
-                    </span>
-                    <SuitIcon suit={suit} />
-                    <span className="lane-card-count">
-                      {cards.length}장{" "}
-                      {score.supports ? `· 지원 ${score.supports}` : ""}
-                    </span>
-                  </>
+                {cards.length ? (
+                  <CardStack cards={cards} />
                 ) : (
                   <span className="empty-lane">
                     <SuitIcon suit={suit} />
-                    <span>{target ? "여기에 놓기" : "아직 비어 있어요"}</span>
+                    <span>{target ? "놓을 수 있어요" : "빈 길"}</span>
                   </span>
                 )}
                 {target && (
                   <span className="lane-target-hint">
-                    <ArrowRight size={20} />
+                    <ArrowRight size={16} />
                   </span>
                 )}
               </div>
               <span className="lane-score">
-                {score.total > 0 ? "+" : ""}
-                {score.total}
+                <b>
+                  {score.total > 0 ? "+" : ""}
+                  {score.total}
+                </b>
                 <small>점</small>
+                <span>
+                  {cards.length}장
+                  {score.supports ? ` · ×${score.multiplier}` : ""}
+                </span>
               </span>
             </button>
           );
@@ -190,7 +220,19 @@ export function GameBoard({
   }
 
   return (
-    <div className="play-layout" ref={boardRef}>
+    <div
+      className="play-layout star-animal-board"
+      ref={boardRef}
+      data-dragging={Boolean(drag)}
+      data-reduced-motion={reduceMotion}
+      onPointerDownCapture={resetClickSuppression}
+      onClickCapture={(event) => {
+        if (event.detail > 0 && suppressClick()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      }}
+    >
       <div className="game-surface">
         <div className="opponent-header">
           <div className="player-identity">
@@ -199,12 +241,12 @@ export function GameBoard({
             </span>
             <div>
               <strong>{name(other.id)}</strong>
-              <span>손패 {other.handCount}장</span>
+              <span>상대 손패 {other.handCount}장</span>
             </div>
             {!yourTurn && <span className="turn-pill">생각하는 중</span>}
           </div>
           <div className="player-total">
-            <span>탐험 점수</span>
+            <span>점수</span>
             <b
               data-motion-slot="opponent-score"
               data-motion-value={other.score.total}
@@ -224,24 +266,38 @@ export function GameBoard({
                   (c) =>
                     c.type === "STAR_DRAW_DISCARD" && c.payload.suit === suit,
                 );
+                const discardTarget =
+                  selected?.suit === suit && canDiscard && !locked;
                 return (
                   <button
                     key={suit}
-                    className={`discard ${suit} ${enabled ? "available" : ""}`}
-                    disabled={!enabled || locked}
-                    onClick={() =>
-                      act({ type: "STAR_DRAW_DISCARD", payload: { suit } })
+                    className={`discard ${suit} ${enabled || discardTarget ? "available" : ""} ${drag?.target === `discard:${suit}` ? "drop-hover" : ""}`}
+                    data-star-drop="discard"
+                    data-suit={suit}
+                    disabled={locked || (!enabled && !discardTarget)}
+                    onClick={() => {
+                      if (enabled)
+                        act({ type: "STAR_DRAW_DISCARD", payload: { suit } });
+                    }}
+                    aria-label={
+                      enabled
+                        ? `${suitNames[suit]} 버림 더미에서 가져오기${pile.top ? `, ${pile.top.kind === "support" ? "지원 ×2" : pile.top.value}` : ""}`
+                        : `${suitNames[suit]} 버림 더미, ${pile.count}장${discardTarget ? ", 선택한 카드를 끌어 놓을 수 있어요" : ""}`
                     }
-                    aria-label={`${suitNames[suit]} 버림 더미에서 가져오기${pile.top ? `, ${pile.top.kind === "support" ? "지원" : pile.top.value}` : ""}`}
                   >
-                    <SuitIcon suit={suit} />
-                    <b>
-                      {pile.top
-                        ? pile.top.kind === "support"
-                          ? "+"
-                          : pile.top.value
-                        : "—"}
-                    </b>
+                    <span className="discard-face">
+                      {pile.top ? (
+                        <PlayingCard
+                          card={pile.top}
+                          artSizes="(max-width: 640px) 48px, 76px"
+                        />
+                      ) : (
+                        <span className="discard-empty">
+                          <SuitIcon suit={suit} />
+                          <span>{suitNames[suit]}</span>
+                        </span>
+                      )}
+                    </span>
                     <small>{pile.count}장</small>
                   </button>
                 );
@@ -256,11 +312,7 @@ export function GameBoard({
           >
             <div className="deck-back">
               <SuitIcon suit="dusk" />
-              <span>
-                RINGU
-                <br />
-                RINGU
-              </span>
+              <span>링구링구</span>
             </div>
             <span>
               <b>{game.deckCount}</b>장 남음
@@ -268,8 +320,8 @@ export function GameBoard({
           </button>
         </div>
         <div className="my-path-title">
-          <span>나의 별길</span>
-          <span>길을 누르면 자세히 볼 수 있어요</span>
+          <strong>나의 길</strong>
+          <span>길을 누르면 전체 카드를 볼 수 있어요</span>
         </div>
         {lanes(you, true)}
         <div className="hand-area">
@@ -282,7 +334,7 @@ export function GameBoard({
               {yourTurn && <span className="turn-pill mine-turn">내 차례</span>}
             </div>
             <div className="player-total">
-              <span>탐험 점수</span>
+              <span>점수</span>
               <b
                 data-motion-slot="my-score"
                 data-motion-value={you.score.total}
@@ -293,16 +345,31 @@ export function GameBoard({
           </div>
           <div className="hand" aria-label="내 손패">
             {game.yourHand.map((card) => (
-              <PlayingCard
+              <div
                 key={card.id}
-                card={card}
-                motionSlot={`hand:${card.id}`}
-                selected={selected?.id === card.id}
-                disabled={locked || !yourTurn || game.phase !== "PLACE"}
-                onClick={() =>
-                  setSelectedId(selectedId === card.id ? null : card.id)
-                }
-              />
+                className={`hand-card-holder ${drag?.card.id === card.id ? "drag-origin" : ""}`}
+                onPointerDown={(event) => start(event, card)}
+              >
+                <PlayingCard
+                  card={card}
+                  motionSlot={`hand:${card.id}`}
+                  selected={selected?.id === card.id}
+                  disabled={!canSelect}
+                  onClick={() =>
+                    setSelectedId(selectedId === card.id ? null : card.id)
+                  }
+                />
+                <button
+                  type="button"
+                  className="card-drag-handle"
+                  disabled={!canSelect}
+                  aria-label={`${suitNames[card.suit]} ${card.kind === "support" ? "지원 ×2" : card.value} 카드 끌기, 누르면 선택`}
+                  onClick={() => setSelectedId(card.id)}
+                >
+                  <GripHorizontal size={16} />
+                  <span>끌기</span>
+                </button>
+              </div>
             ))}
           </div>
           <div
@@ -315,29 +382,31 @@ export function GameBoard({
                   ? game.phase === "PLACE"
                     ? "1 / 2"
                     : "2 / 2"
-                  : "WAIT"}
+                  : "대기"}
               </span>
               <strong>
                 {!connected
                   ? "테이블에 다시 연결하고 있어요"
                   : !allConnected
                     ? "친구가 돌아오기를 기다리고 있어요"
-                    : !yourTurn
-                      ? activeBot
-                        ? `${activeName}이 생각하고 있어요…`
-                        : `${activeName}님의 선택을 기다려요`
-                      : game.phase === "DRAW"
-                        ? "카드 한 장을 가져오세요"
-                        : selected
-                          ? `${suitNames[selected.suit]} ${selected.kind === "support" ? "지원" : selected.value} 카드를 선택했어요`
-                          : "손패에서 카드 한 장을 골라 주세요"}
+                    : busy
+                      ? "카드 이동을 확인하고 있어요"
+                      : !yourTurn
+                        ? activeBot
+                          ? `${activeName}이 생각하고 있어요…`
+                          : `${activeName}님의 선택을 기다려요`
+                        : game.phase === "DRAW"
+                          ? "카드 한 장을 가져오세요"
+                          : selected
+                            ? `${suitNames[selected.suit]} ${selected.kind === "support" ? "지원 ×2" : selected.value} 카드를 선택했어요`
+                            : "손패에서 카드 한 장을 골라 주세요"}
               </strong>
               <span>
                 {yourTurn && game.phase === "DRAW"
                   ? "덱 또는 버림 더미를 눌러 차례를 마쳐요."
                   : yourTurn && selected && !canPlay
                     ? "이 카드는 지금 길에 놓을 수 없어요. 버릴 수는 있어요."
-                    : "숫자는 더 크게, 지원 카드는 숫자보다 먼저."}
+                    : "카드를 고른 뒤 버튼으로 놓거나, 원하는 곳으로 끌어 주세요."}
               </span>
             </div>
             <div className="action-buttons">
@@ -382,16 +451,17 @@ export function GameBoard({
               )}
             </div>
           </div>
+          <span className="star-drag-status" role="status">
+            {announcement}
+          </span>
         </div>
       </div>
       <aside className="game-aside">
         <div className="game-aside-title">
-          <SuitIcon suit="dusk" />
           <h2>별길 탐험</h2>
-          <p>우리의 작은 우주</p>
+          <p>다섯 동물과 한 장씩 이어 가는 길</p>
         </div>
         <div className="turn-summary">
-          <span>지금은</span>
           <h3>
             {yourTurn ? "당신의 차례예요." : `${activeName}님의 차례예요.`}
           </h3>
@@ -406,10 +476,12 @@ export function GameBoard({
           </ol>
         </div>
         <div className="aside-rule">
-          <h3>작은 탐험 팁</h3>
+          <h3>지원 카드의 배수</h3>
           <p>
-            모든 길을 시작할 필요는 없어요. 잘할 수 있는 길에 집중하는 것도 좋은
-            선택이에요.
+            지원 1장은 ×2, 2장은 ×3, 3장은 ×4. 숫자 카드보다 먼저 놓아 주세요.
+          </p>
+          <p>
+            모든 길을 시작할 필요는 없어요. 잘할 수 있는 길에 집중해 보세요.
           </p>
         </div>
         <button className="aside-button" onClick={onRules}>
@@ -422,15 +494,24 @@ export function GameBoard({
           <Check size={13} /> 매 행동이 자동으로 저장돼요.
         </div>
       </aside>
-      {laneDetail && (
+      {drag && (
+        <div
+          className="star-drag-preview"
+          aria-hidden="true"
+          style={{ left: drag.x, top: drag.y, width: drag.width }}
+        >
+          <PlayingCard card={drag.card} />
+        </div>
+      )}
+      {laneDetail && detailedPlayer && (
         <Modal
-          title={`${name(laneDetail.player.id)}님의 ${suitNames[laneDetail.suit]} 길`}
+          title={`${name(detailedPlayer.id)}님의 ${suitNames[laneDetail.suit]} 길`}
           onClose={() => setLaneDetail(null)}
           wide
         >
           <div className="detail-cards">
-            {laneDetail.player.lanes[laneDetail.suit].length ? (
-              laneDetail.player.lanes[laneDetail.suit].map((card) => (
+            {detailedPlayer.lanes[laneDetail.suit].length ? (
+              detailedPlayer.lanes[laneDetail.suit].map((card) => (
                 <PlayingCard key={card.id} card={card} small />
               ))
             ) : (
@@ -440,8 +521,8 @@ export function GameBoard({
           <div className="score-formula">
             <span>이 길의 점수</span>
             <strong>
-              {laneDetail.player.score.lanes[laneDetail.suit].count
-                ? `(${laneDetail.player.score.lanes[laneDetail.suit].sum} − 20) × ${laneDetail.player.score.lanes[laneDetail.suit].multiplier} + ${laneDetail.player.score.lanes[laneDetail.suit].bonus} = ${laneDetail.player.score.lanes[laneDetail.suit].total}점`
+              {detailedPlayer.score.lanes[laneDetail.suit].count
+                ? `(${detailedPlayer.score.lanes[laneDetail.suit].sum} − 20) × ${detailedPlayer.score.lanes[laneDetail.suit].multiplier} + ${detailedPlayer.score.lanes[laneDetail.suit].bonus} = ${detailedPlayer.score.lanes[laneDetail.suit].total}점`
                 : "0점"}
             </strong>
           </div>
@@ -450,7 +531,6 @@ export function GameBoard({
     </div>
   );
 }
-
 export function ResultPanel({
   view,
   userId,

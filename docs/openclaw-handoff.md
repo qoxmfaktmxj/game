@@ -1,5 +1,7 @@
 # 오픈클로 배포 인계
 
+2026-10-26 업데이트: 확정된 하늘 깡총 카드50종(멍이10은 회색 보더콜리)과 홈/게임별 탭 제목을 적용했다. [릴리스 기록](art/sky-hop-release.md)을 읽고 `git pull --ff-only origin main` 후 기존 배포 문서의 build/up으로 반영한다. 이번 변경에 DB migration은 없으며 `.env.self-host`와 DB 볼륨은 유지한다. 실험 일러스트는 배포 대상에서 제외되어 있다.
+
 프로젝트 루트와 이 문서를 오픈클로에 전달한다. 실행 목표는 리눅스 약8GB RAM 서버에 **링구링구**를 `https://game.minseok91.cloud`로 제공하는 것이다. 사용자가 자체 서버의 Docker Compose·PostgreSQL 사용을 선택했다.
 
 먼저 `AGENTS.md`, `docs/deployment.md`, `docs/verification-multigame.md`를 읽고 현재 서버의 포트·메모리·디스크·기존 프록시를 확인한다. 기존 OpenClaw나 다른 서비스를 덮어쓰지 않는다. 원본 `moyeotable_build_pack_v1`과 사진·개인 자료는 업로드하지 않아도 된다. Docker build context에서는 `.dockerignore`로 제외한다.

@@ -5,6 +5,8 @@ import Image from "next/image";
 import { X, LoaderCircle } from "lucide-react";
 import type { Card, Suit } from "@moyeotable/contracts";
 import { suitNames } from "../lib/client";
+import { getStarCardArt } from "../lib/star-card-art";
+import "./star-theme.css";
 
 export function SuitIcon({
   suit,
@@ -26,44 +28,35 @@ export function SuitIcon({
     >
       {suit === "aurora" && (
         <>
-          <path d="M5 25c5-15 9-17 14-7s10 11 16-3M5 32c5-15 9-17 14-7s10 11 16-3" />
-          <path d="M10 13c3-7 6-9 9-5s4 10 8 10" opacity=".5" />
+          <path d="M12 12c-6-4-9 1-8 9 0 4 4 6 7 3m17-12c6-4 9 1 8 9 0 4-4 6-7 3" />
+          <path d="M11 15c0-7 18-7 18 0v10c0 7-18 7-18 0Z" />
+          <path d="M15 19h.1M25 19h.1M18 24h4l-2 2-2-2Zm2 2v3" />
         </>
       )}
       {suit === "ember" && (
         <>
-          <path
-            d="M21 4c2 8-5 10-4 16 4-1 6-5 7-8 3 4 8 9 8 15 0 7-5 10-12 10S8 32 8 26c0-5 3-9 7-13-1 5 0 7 1 8-1-8 8-10 5-17Z"
-            fill="currentColor"
-            fillOpacity=".1"
-          />
-          <path d="M20 22c0 5-5 6-5 10 0 3 2 5 5 5s5-2 5-5c0-4-3-6-5-10Z" />
+          <path d="m9 17 1-10 8 6h4l8-6 1 10c6 12-4 16-11 16S3 29 9 17Z" />
+          <path d="M14 21h.1M26 21h.1m-8 4h4l-2 2-2-2Zm2 2v3M5 23l6 1m-6 4 6-1m24-4-6 1m6 4-6-1" />
         </>
       )}
       {suit === "tide" && (
         <>
-          <path d="M4 25c6 0 7-4 10-10 3-7 10-10 16-5-7-1-10 6-5 10 3 3 7 4 11 3" />
-          <path d="M4 29c4 3 7 3 11 0s7-3 11 0 7 3 10 0M4 35c4 3 7 3 11 0s7-3 11 0 7 3 10 0" />
+          <path d="M8 21c0-8 5-13 12-13s12 5 12 13c0 8-6 12-12 12S8 29 8 21Z" />
+          <path d="M14 18h.1M26 18h.1m-8 5h4l-2 2-2-2Zm2 2v3m-3 0c1 2 5 2 6 0M4 22l8 2m-7 5 7-2m24-5-8 2m7 5-7-2" />
         </>
       )}
       {suit === "moss" && (
         <>
-          <path
-            d="M12 29H6c-4 0-5-5-2-7-2-3 0-7 3-7-1-4 2-7 5-7s6 3 5 7c4 0 6 5 3 7 3 3 1 7-3 7h-5Z"
-            fill="currentColor"
-            fillOpacity=".08"
-          />
-          <path d="M25 27h7c4 0 6-5 3-8 2-3 0-7-3-7 0-4-3-7-6-7s-6 3-6 7M12 19v16m-4-11 4 3 4-4m10-7v19m-4-14 4 4 5-5M6 36h28" />
+          <path d="M10 14c-6-5-2-10 3-7m17 7c6-5 2-10-3-7" />
+          <path d="M7 22C7 5 33 5 33 22c0 7-6 11-13 11S7 29 7 22Z" />
+          <path d="M14 19h.1M26 19h.1m-6 2c-7-4-12 6-5 8 3 1 4-1 5-1s2 2 5 1c7-2 2-12-5-8Zm-2 2h4l-2 2-2-2Z" />
         </>
       )}
       {suit === "dusk" && (
         <>
-          <path
-            d="M10 24a10 10 0 0 1 20 0"
-            fill="currentColor"
-            fillOpacity=".12"
-          />
-          <path d="M4 24h32M8 29h24m-18 5h12M20 5v4M7 11l3 3m23-3-3 3M3 19l3 1m31-1-3 1" />
+          <path d="M11 12C5 9 6 3 13 6m16 6c6-3 5-9-2-6" />
+          <path d="M7 21C7 5 33 5 33 21c0 8-6 13-13 13S7 29 7 21Z" />
+          <path d="M16 10l1 5m7-5-1 5M7 20l5 2m-4 5 5-1m20-6-5 2m4 5-5-1M15 20h.1M25 20h.1m-7 5h4l-2 2-2-2Zm2 2v3m-3 0c1 2 5 2 6 0" />
         </>
       )}
     </svg>
@@ -135,30 +128,30 @@ export function PlayingCard({
   const content = (
     <>
       <Image
-        src={`/art/cards/star-trails/${card.suit}-${card.kind === "support" ? "support" : card.value}.png`}
+        src={getStarCardArt(card).src}
         alt=""
         fill
         sizes={artSizes}
         className="card-art"
         draggable={false}
       />
-      <span className="card-print-frame" aria-hidden="true" />
       <span className="card-corner">
-        {card.kind === "support" ? "+" : card.value}
+        {card.kind === "support" ? "×2" : card.value}
         <SuitIcon suit={card.suit} />
       </span>
       <span className="card-center">
-        <span>{card.kind === "support" ? "지원" : suitNames[card.suit]}</span>
+        <span>{suitNames[card.suit]}</span>
       </span>
       <span className="card-corner card-corner-bottom">
-        {card.kind === "support" ? "+" : card.value}
+        {card.kind === "support" ? "지원" : card.value}
       </span>
     </>
   );
-  const className = `playing-card illustrated-card ${card.suit} ${selected ? "selected" : ""} ${small ? "small" : ""}`;
-  const label = `${suitNames[card.suit]} ${card.kind === "support" ? "지원 카드" : card.value}`;
+  const className = `playing-card animal-playing-card ${card.suit} ${card.kind === "support" ? "support-card" : ""} ${selected ? "selected" : ""} ${small ? "small" : ""}`;
+  const label = `${suitNames[card.suit]} ${card.kind === "support" ? "지원 카드, 배수 카드" : card.value}`;
   return onClick ? (
     <button
+      type="button"
       className={className}
       onClick={onClick}
       disabled={disabled}
@@ -171,7 +164,7 @@ export function PlayingCard({
       {content}
     </button>
   ) : (
-    <div className={className} aria-label={label}>
+    <div className={className} role="img" aria-label={label}>
       {content}
     </div>
   );
@@ -282,16 +275,16 @@ export function RulesContent() {
   return (
     <div className="rules-content">
       <p className="lead">
-        다섯 개의 별길, 여덟 장의 선택.
+        다섯 동물 친구, 여덟 장의 선택.
         <br />
-        어느 길에 도전할지는 당신에게 달렸어요.
+        같은 친구끼리 숫자가 커지는 순서로 모아요.
       </p>
       <ol className="rule-steps">
         <li>
           <strong>한 장을 놓거나 버려요</strong>
           <p>
-            같은 길에 숫자가 커지는 순서로 놓아요. 지원 카드는 숫자보다 먼저.
-            놓기 어려운 카드는 버릴 수 있어요.
+            같은 동물의 길에 숫자가 커지는 순서로 놓아요. 지원 카드는 숫자보다
+            먼저. 놓기 어려운 카드는 버릴 수 있어요.
           </p>
         </li>
         <li>
@@ -312,9 +305,16 @@ export function RulesContent() {
       <div className="score-formula">
         <span>길마다 이렇게 계산해요</span>
         <strong>(숫자 합 − 20) × (지원 수 + 1)</strong>
+        <p className="support-multipliers">
+          지원 1장 <b>×2</b> · 2장 <b>×3</b> · 3장 <b>×4</b>
+        </p>
         <p>
-          한 길에 8장 이상 모았다면 <b>+20점</b>. 시작하지 않은 길은 0점이에요.
-          지원 카드의 배수는 마이너스 점수에도 적용돼요.
+          카드의 ×2는 지원 카드 표시예요. 지원을 추가할 때마다 배수가 1씩
+          올라가요. 마이너스 점수에도 배수가 적용돼요.
+        </p>
+        <p>
+          한 길에 지원 카드를 포함해 8장 이상 모았다면, 배수를 계산한 뒤{" "}
+          <b>+20점</b>. 시작하지 않은 길은 0점이에요.
         </p>
       </div>
       <div className="suit-legend">

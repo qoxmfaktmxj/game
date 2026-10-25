@@ -1,0 +1,1115 @@
+{
+  "date": "2026-10-26",
+  "status": "approved-for-production",
+  "faceCount": 50,
+  "deckCardCount": 60,
+  "selectionManifest": "docs/art/sky-hop-final-selection.json",
+  "method": "Exact selected asset records exported from local built-in Imagegen provenance. Prompts, references roles, visual review, dimensions and hashes are preserved.",
+  "pathPolicy": {
+    "repositoryFiles": "File and repository reference paths are relative to the repository root.",
+    "generatedImages": "generated_images/<session-id>/<filename> is a generation identifier, not a repository file path. The local user-directory prefix has been removed.",
+    "localArchive": "Raw source records, intermediate images and experimental reference images remain local. They are provenance references, not runtime or deployment dependencies."
+  },
+  "assets": [
+    {
+      "file": "apps/web/public/art/cards/sky-hop/aurora-support-v2.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-218eddc8-f1be-46e2-8a5e-a915fd99b173.png",
+      "prompt": "Use case: identity-preserve. Image 1 is the EXACT EDIT TARGET, the original sky-hop RETRIEVER PUPPY. Preserve character, breed, giant cute head, soft lemon-yellow fur, long floppy ears with SKY-BLUE TIPS, SKY-BLUE belly patch and tail accent, cream muzzle/paw tips, coral cheeks/tongue/paw pads, periwinkle facial features and thick chunky pixel-stair outline. Change only pose to SITTING AND WAVING HELLO: puppy sits front-facing on its bottom, two short hind feet visible in front, ONE front paw lifted at shoulder height in a friendly wave with coral paw pad visible, the OTHER front paw relaxed DOWN beside the belly. One clear raised paw, one lowered paw, two hind feet: four limbs only, no duplicate arms. Friendly smile and tiny tongue. Clean white eye areas each containing one small simple solid periwinkle pupil, gaze naturally aligned, no scattered one-pixel spikes. Keep the distinctive blue ear-tip and blue belly shapes and exact original yellow/blue pastel palette. Whole animal including tail, every ear and foot fully inside frame with generous white margins. Portrait 2:3 exactly 1024x1536 on pure white #ffffff, original broad pastel blocks and coarse square-step contour, exactly two sky-blue/coral pixel sparkles. No text, rank, numbers, frame, logo, watermark, props, clothes or extra animals. No real fur, 3D, glossy shading, smooth vector curves or new medium.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/aurora-support.png",
+          "role": "Exact original edit target; preserve breed, coat colors, face identity and sky-hop pixel style, change action only"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1390632,
+      "sha256": "d7ce799f221ab43213cbc3010735690a8bfb596fcd754fc898e18696271121f9",
+      "visualReview": "Front-facing seated retriever with one front paw waving at shoulder height, other front paw lowered, two hind feet distinct. Original lemon yellow, blue ear tips/belly/tail accents retained. Native output visually inspected. Full single animal inside portrait frame, coarse soft pixel style and two blue/coral sparkles on white; no text, ranks, frame, props, duplicate limbs or watermark.",
+      "suit": "aurora",
+      "face": "support",
+      "animalVariant": "golden-retriever-seated-wave",
+      "action": "앉아서 안녕",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-dogs.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/aurora-2-v3.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-38d8c6c2-1e39-4e37-a4a1-2f72b0f6ecf6.png",
+      "prompt": "Precise localized edit of the supplied image: REPLACE BOTH DARK BLUE EYE SHAPES completely. The existing left eye still has a thin leftward spike. Do not preserve either existing irregular eye outline. Draw two smaller clean matching VERTICAL ROUNDED RECTANGLES in the exact same periwinkle blue, each a simple compact 3-by-4 logical pixel shape with only clipped corners, centered where the old pupils were. The edge must have no hooks, eyelashes, cross shape, outward prong, disconnected pixel or highlight. Both eyes OPEN and aligned toward viewer. Only modify the dark blue eyes and fill their former protruding pixels with surrounding clean white fur. Keep every other part of the image visually unchanged: resting Maltese puppy, white curtain ears and straight fur, icy blue shadows, chin near two front paws, exact face angle/nose/mouth/tongue/cheeks, full body/paws/tail, two sparkles, white background, portrait 1024x1536 and coarse pastel pixel medium. Do not add text, numbers, props, border or watermarks. This correction MUST visibly remove the irregular projecting eye edges; the two simple smaller solid rounded rectangles are the only intended change.",
+      "references": [
+        {
+          "path": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-f84c6e7b-7032-4771-9045-9af3d5770e63.png",
+          "role": "Exact local eye-edit target; preserve resting pose, breed, colors and other artwork"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1473593,
+      "sha256": "a5240cf63365a79aef8f404100b2e2b36abf21621cc900c65b87bba9faacca2c",
+      "visualReview": "White straight-coated Maltese lies belly-down with paired front paws below chin, curtain ears and little tail visible, eyes open. Two extra local eye edits were needed; final uses small clean matching periwinkle rounded rectangles with no projecting hooks. Body/face/pose otherwise visually consistent; no pixel-perfect identity claim. Native output visually inspected. Full single animal inside portrait frame, coarse soft pixel style and two blue/coral sparkles on white; no text, ranks, frame, props, duplicate limbs or watermark.",
+      "suit": "aurora",
+      "face": "2",
+      "animalVariant": "maltese-awake-belly-down-rest",
+      "action": "폭신 쉬기",
+      "generationHistory": [
+        {
+          "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-3404bd92-b6ce-4425-b56b-c3073ff70072.png",
+          "prompt": "Use case: identity-preserve. Image 1 is the EXACT EDIT TARGET, this original white baby MALTESE puppy. Preserve the same breed and character, pure white STRAIGHT silky fur expressed as broad light icy-blue shadow blocks, long curtain-like white hanging ears, giant baby head, small tail, small sky-blue chest/belly patch, coral cheeks/tongue, periwinkle nose/mouth and chunky pixel-step outline. Do not introduce curls, beige or brown fur, or change to a Poodle. Change only pose to SOFT AWAKE REST: puppy lies belly-down, chest resting, both short front paws neatly extended together on the ground, and its chin rests lightly ON TOP of the paired front paws. Eyes OPEN with relaxed warm expression, a tiny content smile. Body and hindquarters visible behind the face in a gentle three-quarter view, short hind feet tucked naturally beside body and full little tail visible. Long straight curtain ears fall softly beside the face and front paws, not covering eyes. Make it clearly resting with chin on paws, not an upright waving puppy or curled sleeping pose. Eye treatment: each clean white eye area has ONE small simple periwinkle pupil, consistent aligned gaze, no extra white or blue spikes, no scattered eye fragments, no crossed eyes. Keep same white/icy-blue pastel palette and coarse broad pixel steps. One full animal on pure white #ffffff, portrait 2:3 exactly 1024x1536, entire ears, feet and tail comfortably inside generous margins, two small blue/coral pixel sparkles only. No text, numbers, ranks, logo, watermark, frame, bedding, props, collar, clothing or additional animals. No realistic fur, smooth vectors, 3D or new medium.",
+          "references": [
+            {
+              "path": "apps/web/public/art/cards/sky-hop/aurora-2-v2.png",
+              "role": "Original breed/style/identity edit target for resting pose"
+            }
+          ],
+          "selection": "Not selected; thin eye-edge projections persisted"
+        },
+        {
+          "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-f84c6e7b-7032-4771-9045-9af3d5770e63.png",
+          "prompt": "Use case: precise-object-edit. Image 1 is the EXACT EDIT TARGET: the finished white Maltese puppy lying belly-down with chin on front paws. Make a strictly LOCAL EYE CLEANUP ONLY. Each current periwinkle eye/pupil has tiny thin horizontal projections or hooks on its left edge that look like stray eyelashes. REMOVE THOSE PROTRUSIONS on BOTH eyes. Replace each eye shape with ONE small tidy solid periwinkle rounded oval made of a few chunky square steps, with a smooth logical silhouette and NO thin one-pixel spikes, hooks, eyelashes, stray dots, highlights or duplicate pupils. Preserve both eyes' existing centers and matched gaze, make the pupils modest and equal in visual weight. Keep the surrounding area clean white as original. DO NOT change any other part: exact white straight Maltese fur, icy-blue shadow lines, long curtain ears, nose, smiling mouth, tongue, cheeks, existing chin-on-paws rest pose, paws and body anatomy, tail, periwinkle outline, original color palette, two blue/coral pixel sparkles, white background and framing must remain visually identical. This is eye repair only, not a redesign or pose revision. Portrait 2:3 exactly 1024x1536. No text, numbers, frame, logo, watermark, props or extra characters. Keep original coarse soft pixel illustration.",
+          "references": [
+            {
+              "path": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-3404bd92-b6ce-4425-b56b-c3073ff70072.png",
+              "role": "Exact eye-cleanup edit target"
+            }
+          ],
+          "selection": "Not selected; one leftward pupil projection remained"
+        },
+        {
+          "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-38d8c6c2-1e39-4e37-a4a1-2f72b0f6ecf6.png",
+          "prompt": "Precise localized edit of the supplied image: REPLACE BOTH DARK BLUE EYE SHAPES completely. The existing left eye still has a thin leftward spike. Do not preserve either existing irregular eye outline. Draw two smaller clean matching VERTICAL ROUNDED RECTANGLES in the exact same periwinkle blue, each a simple compact 3-by-4 logical pixel shape with only clipped corners, centered where the old pupils were. The edge must have no hooks, eyelashes, cross shape, outward prong, disconnected pixel or highlight. Both eyes OPEN and aligned toward viewer. Only modify the dark blue eyes and fill their former protruding pixels with surrounding clean white fur. Keep every other part of the image visually unchanged: resting Maltese puppy, white curtain ears and straight fur, icy blue shadows, chin near two front paws, exact face angle/nose/mouth/tongue/cheeks, full body/paws/tail, two sparkles, white background, portrait 1024x1536 and coarse pastel pixel medium. Do not add text, numbers, props, border or watermarks. This correction MUST visibly remove the irregular projecting eye edges; the two simple smaller solid rounded rectangles are the only intended change.",
+          "references": [
+            {
+              "path": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-f84c6e7b-7032-4771-9045-9af3d5770e63.png",
+              "role": "Exact eye-only correction target"
+            }
+          ],
+          "selection": "Selected; clean compact matching periwinkle eyes"
+        }
+      ],
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-dogs.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/aurora-3-v2.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-ec2b28cf-2ff7-4308-852d-0cc9fd57c917.png",
+      "prompt": "Use case: identity-preserve. Image 1 is the EXACT EDIT TARGET, this original baby SIBERIAN HUSKY pixel character. Preserve gray-and-cream fur, distinctive symmetrical gray/white facial mask and forehead blaze, large triangular ears with coral interiors, pale muzzle/chest/paws, bushy gray tail with cream border, periwinkle features/outline, blue eyes, coral cheeks and tongue. Change only pose to SITTING NEATLY WITH A BIG CURIOUS HEAD TILT: puppy sits straight upright on its bottom, torso facing front, two hind paws neatly placed beside the seated body, BOTH front paws lowered and arranged neatly together on the ground in front. Tilt the huge puppy head strongly to one side as if curiously listening, about 30 degrees relative to the straight torso, ears follow the tilt. Keep tiny friendly tongue smile, not a hop, not both arms raised. Full tail curves beside body. Clean eyes retain the blue-eye identity using one simple pale-blue iris block and one SMALL solid periwinkle pupil per eye inside tidy light eye regions, natural aligned gaze, no spikes, no detached pixels, no cross-eye, no facial mask merging into pupils. Same broad soft pastel color blocks and thick coarse stair-step pixel contour, no new medium or colors. One full baby Husky, every ear/paw/tail inside generous margins, portrait 2:3 exactly 1024x1536 on pure white #ffffff, exactly two blue/coral pixel sparkles. No text, numbers, rank, logo, watermark, frame, props, collar, clothes or extra animals. No limb duplication, realistic fur, 3D, gloss or smooth vector rendering.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/aurora-3.png",
+          "role": "Exact original edit target; preserve breed, coat colors, face identity and sky-hop pixel style, change action only"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1147968,
+      "sha256": "35a47e5e0e56624c00fae5574f1dd4b7ea471e8a748e2d109da0332c367a61d4",
+      "visualReview": "Gray/cream masked Husky sits upright with two front paws neatly lowered together, hind paws at sides and head strongly tilted. Blue eye identity and periwinkle pupils retained with matched gaze; full pointed ears/tail visible. Native output visually inspected. Full single animal inside portrait frame, coarse soft pixel style and two blue/coral sparkles on white; no text, ranks, frame, props, duplicate limbs or watermark.",
+      "suit": "aurora",
+      "face": "3",
+      "animalVariant": "siberian-husky-neat-sit-head-tilt",
+      "action": "고개 갸웃",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-dogs.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/aurora-4-v3.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-b75e4c70-5a71-4722-8169-be324f8526a9.png",
+      "prompt": "Use case: identity-preserve. Image 1 is the EXACT EDIT TARGET, this original baby TOY POODLE. Preserve the exact peach-apricot and cream palette, giant rounded curly head, floppy fluffy poodle ears, simple curly scalloped silhouette expressed as chunky pixel steps, cream muzzle/chest/paw tips, tiny rounded tail, coral cheeks/tongue/pads, periwinkle outline and facial features. Do not recolor or change breed. Change only pose to A LITTLE TWIRLING DANCE: puppy balances on ONE short hind foot touching the ground while the OTHER hind foot is slightly lifted and bent, torso twisting gently to one side. Both short FRONT paws extend in DIFFERENT directions, one a little higher outward and the other low to the opposite side. One fluffy ear swings out slightly with the turn, face remains visible with friendly happy smile. Show FOUR limbs clearly: exactly two front paws, one standing hind foot, one lifted hind foot; no duplicate feet, no twisted joints and no human hands. Tail fully visible. Keep the large baby head, small rounded body and innocent feel. Eyes must be clean small periwinkle pupils one per eye within white eye regions, with matched natural gaze and no detached single-pixel spikes. Same original coarse broad soft pixel blocks, periwinkle square-step contour, not realistic curls or a new medium. One complete puppy centered on pure white #ffffff, portrait 2:3 exactly 1024x1536, all ears/feet/tail inside generous margins. Exactly two blue/coral pixel sparkles. No text, numbers, ranks, logos, watermark, frame, props, clothes, collar, other animals, 3D, glossy shading or smooth vector curves.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/aurora-4-v2.png",
+          "role": "Exact original edit target; preserve breed, coat colors, face identity and sky-hop pixel style, change action only"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1076547,
+      "sha256": "46b92dc042e7543edb58e283f80daa8d8521d22a8e74a7dc5dc655caad226f78",
+      "visualReview": "Apricot Toy Poodle balances on one hind foot, other hind foot lifted, two front paws extended at different heights and one fluffy ear swung outward. Four limbs identifiable, original cream accents and pale coat retained. Native output visually inspected. Full single animal inside portrait frame, coarse soft pixel style and two blue/coral sparkles on white; no text, ranks, frame, props, duplicate limbs or watermark.",
+      "suit": "aurora",
+      "face": "4",
+      "animalVariant": "toy-poodle-one-foot-twirl",
+      "action": "빙글 춤",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-dogs.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/aurora-5-v4.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-20baeb28-ea67-481a-8cb6-6d3ca8c2f8c0.png",
+      "prompt": "Use case: identity-preserve. Image 1 is the EXACT EDIT TARGET, the original IVORY LABRADOR baby puppy. Preserve individual breed identity and exact palette: short smooth ivory-cream coat as broad pale color blocks, slightly warmer ivory floppy ears, creamy muzzle/chest/paw tips, little tail, periwinkle NOSE/mouth and thick pixel-stair outline, coral cheeks and paw pads. Do not change it to yellow, white shaggy Maltese, curly Poodle, or add a blue belly patch. Change ONLY action to PEACEFUL SIDE-LYING NAP. The puppy lies comfortably on its SIDE, full body visible on a gentle diagonal, both front paws drawn together beside its cheek and face, short hind legs softly bent at the knees in a relaxed sleeping position, no tightly curled ball. Big head rests on the side with floppy ears lying gently, mouth a tiny content closed smile. BOTH EYES ARE CLOSED as two simple gentle crescent shapes in periwinkle: do NOT draw open eyes, white eye areas, irises or pupils. Four natural limbs total, no duplicate paws, no twisting or tangles. Tail lies relaxed beside the body and is entirely visible. Preserve the reference's original periwinkle nose and coral cheeks, short ivory fur and original medium. One complete baby Labrador on pure white #ffffff, portrait 2:3 exactly 1024x1536, entire ears, paws and tail within generous headroom/margins. Exactly two blue/coral pixel sparkles. No text or Z letters, numbers, ranks, logos, watermark, frame, pillow, blanket, bed, props, collar, clothing or other animals. No realistic fur, 3D, glossy shading, smooth vector curves or new art medium.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/aurora-5-v3.png",
+          "role": "Exact original edit target; preserve breed, coat colors, face identity and sky-hop pixel style, change action only"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1438911,
+      "sha256": "4702ce1c9e58896a8d60bae7179a2efa54ca69f1ffce8e225abc3ee91af3117d",
+      "visualReview": "Ivory short-coated Labrador lies on side with two front paws beside face and bent hind legs, four limbs identifiable, eyes closed as periwinkle crescents and gentle closed smile. Original periwinkle nose retained; coral remains on cheeks/pads. Full ears and tail inside image. Native output visually inspected. Full single animal inside portrait frame, coarse soft pixel style and two blue/coral sparkles on white; no text, ranks, frame, props, duplicate limbs or watermark.",
+      "suit": "aurora",
+      "face": "5",
+      "animalVariant": "ivory-labrador-side-nap",
+      "action": "새근 낮잠",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-dogs.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/aurora-6-v2.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-70f93c52-5628-4952-84b0-ad1ef40255bd.png",
+      "prompt": "Use case: identity-preserve. Image 1 is the EXACT EDIT TARGET: this baby WELSH CORGI character. Preserve its very large upright ears with coral inner ears, orange-gold coat, cream-white central forehead blaze/muzzle/chest/belly/feet, small short tail with light tip, large round baby head, tiny short legs, coral cheeks/tongue, periwinkle nose/mouth and thick coarse pixel-step outline. Change only POSE to LITTLE SHORT-LEGGED RUN: whole body almost SIDE-ON in a horizontal running motion so its long low Corgi torso and very short legs are clear. Both front legs and both hind legs form a readable running stride, one pair extends slightly forward and the other backward, four SHORT legs only, no extra limbs or tangles. Front and hind pairs must connect naturally to shoulders and hips. Turn big head gently three-quarters toward viewer with both eyes and friendly tongue smile visible, ears perked. Not upright hopping, not a high jump, not stretching long slender legs: playful low Corgi trot/run with tiny legs. Full small tail visible. Clean white eye areas with one modest simple solid periwinkle pupil each, gaze aligned, no detached dots, one-pixel spikes or cross-eye. Keep exact orange/cream/coral/periwinkle palette and broad pastel pixel blocks, original medium. Single entire puppy, all ears, feet and tail comfortably inside frame with clear margins, pure white #ffffff, portrait 2:3 exactly 1024x1536. Exactly two blue/coral pixel sparkles. No text, numbers, ranks, logo, watermark, frame, props, collar, clothing, extra animals, real fur, smooth vectors or 3D.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/aurora-6.png",
+          "role": "Exact original edit target; preserve breed, coat colors, face identity and sky-hop pixel style, change action only"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1480533,
+      "sha256": "f983960d533640b79315b8ff343b5fc17600303b1d629e5e0851029b8006ec50",
+      "visualReview": "Orange/cream Corgi shown side-on in running stride with horizontal torso and four short legs separated, head toward viewer, large upright ears and white forehead blaze retained. Short light-tipped tail visible, matched single pupils in clean eye whites. Native output visually inspected. Full single animal inside portrait frame, coarse soft pixel style and two blue/coral sparkles on white; no text, ranks, frame, props, duplicate limbs or watermark.",
+      "suit": "aurora",
+      "face": "6",
+      "animalVariant": "welsh-corgi-short-legged-run",
+      "action": "짧은 다리 총총",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-dogs.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/aurora-7-v2.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-5492ecd6-42c0-4473-b939-dec4d8739938.png",
+      "prompt": "Use case: identity-preserve. Image 1 is the EXACT EDIT TARGET: this original baby SHIBA INU pixel-sticker character. Preserve the same breed and identity, giant round baby face, upright triangular ears, apricot-orange coat, cream inner ears/eyebrow marks/cheeks/muzzle/chest/paw tips, thick curled ring tail, coral cheeks and tongue, periwinkle facial features and chunky stair-step outline. Preserve the pastel color palette precisely; do not recolor the dog. Change ONLY its body pose: SITTING AND LOOKING BACK. The puppy sits on its bottom in a three-quarter rear/side view, so its little back and rounded hindquarters are visible. Turn its big head gently back over its shoulder toward the viewer with the same friendly face and happy small tongue smile. Put the short front paws naturally on the ground beside the seated chest, show the hind paws appropriately, no hands raised. The characteristic curled Shiba tail must be clearly visible beside the rump, entirely within frame. The pose should read as a seated dog turning to look back, not an upright front-facing hop. Keep the distinctive cream muzzle and orange face easy to see from a gentle three-quarter face angle. Eyes: clean matching white eye regions each with one small simple periwinkle pupil, aligned natural gaze toward the viewer, no scattered one-pixel protrusions, no crossed eyes, no broken pupil shapes. Same original coarse pixel-stair illustration medium and broad simple soft color patches, no new art style. One full puppy on pure white #ffffff, portrait 2:3 exactly 1024x1536, all ears, feet and full curled tail comfortably inside frame, generous headroom and clean corners. Keep exactly two sky-blue/coral pixel sparkles. No text, numbers, ranks, logo, watermark, frame, clothes, collar, props or extra animals. No realistic fur, 3D, glossy rendering, smooth vector curves or polished dense sprite detail.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/aurora-7.png",
+          "role": "Exact edit target; preserve breed, coat colors, facial identity and sky-hop pixel style while changing body pose"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1429191,
+      "sha256": "fa21ccff1255aebe479d94e2479c16a52ce72209190529e062fb8b5712ffb0f5",
+      "visualReview": "Inspected native edit output. Same apricot-and-cream Shiba baby identity, pointed ears, cream muzzle/eyebrow marks, curled ring tail and periwinkle pixel style. Now sits in side/rear three-quarter orientation with head turned back toward viewer; paws sit naturally below and far limbs are partly occluded. Entire ears, seated body and curled tail fit in frame. Single connected periwinkle pupil in each clean white eye with coherent gaze. Exactly two blue/coral sparkles, no text, ranks, props, frame or watermark.",
+      "suit": "aurora",
+      "face": "7",
+      "animalVariant": "shiba-inu-seated-looking-back",
+      "localSourceRecord": "docs/art/sky-hop-batch03-dog-poses.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/aurora-8-v2.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-2a6638d2-c821-477b-bfa0-f6bd505f512a.png",
+      "prompt": "Use case: identity-preserve. Image 1 is the EXACT EDIT TARGET: this baby MINIATURE SCHNAUZER pixel character. Preserve its individual character identity and breed features: folded gray ears, gray coat, large pale eyebrows, distinctive big cream-white bearded muzzle, pale chest/paw tips, short little tail with pale tip, coral cheeks/tongue, thick periwinkle-blue chunky pixel stair-step outline and the same white/pastel gray palette. Change ONLY its POSE to a puppy PLAY BOW: on all fours, both short front legs reach forward along the ground with BOTH front paws planted, chest lowered, round hindquarters raised high, hind feet standing behind, inviting someone to play. Turn its head gently toward the viewer so its SCHNAUZER beard and large pale EYEBROWS and both eyes stay clearly visible, a small happy tongue smile. Keep the baby proportions with a large head and short plump body; do not elongate it into an adult dog. Fully connected short tail lifted slightly behind rump, no cropping. Make the new silhouette clearly a grounded stretching bow, not an airborne hop or upright animal with raised arms. Preserve the exact original colors and broad simple pastel patches; do not add brown fur or switch the outline to another color. Eyes must be neat clean white areas each containing ONE modest simple solid periwinkle pupil, naturally aligned toward viewer, no extra detached/protruding one-pixel fragments, no cross-eye and no eyebrows merging into pupils. Same coarse square-step artwork, not another medium. One complete puppy centered on pure white #ffffff, portrait 2:3 exactly 1024x1536; both ears, all paws and full tail inside with generous headroom and margins. Keep exactly two blue/coral pixel sparkles. No text, numbers, ranks, logo, watermark, frame, collars, clothes, props or extra animals. No real fur, 3D, glossy shading, smooth vector curves or dense sprite detail.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/aurora-8.png",
+          "role": "Exact edit target; preserve breed, coat colors, facial identity and sky-hop pixel style while changing body pose"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1379090,
+      "sha256": "63043df3a879e7a16257c8c461277273fc6f58b607f51c080f120d50b567adc6",
+      "visualReview": "Inspected native edit output. Gray-and-cream miniature Schnauzer retains folded ears, pale eyebrows and prominent pale beard. Body changed to play bow with chest low, front paws forward and rump raised; rear leg partially occluded by body. Full ears, body, paws and short lifted tail in frame. Eyes remain simple connected periwinkle shapes within white eye areas, gaze coherent; no detached fragments. Exactly two blue/coral sparkles, white background, no text, ranks, props, frame or watermark.",
+      "suit": "aurora",
+      "face": "8",
+      "animalVariant": "miniature-schnauzer-play-bow",
+      "localSourceRecord": "docs/art/sky-hop-batch03-dog-poses.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/aurora-9-v2.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-6fe8463f-027e-4e12-90ef-d7e66dbba169.png",
+      "prompt": "Use case: identity-preserve. Image 1 is the EXACT EDIT TARGET: this original pale-cream baby POMERANIAN in sky-hop pixel style. Preserve the individual Pomeranian identity and palette: giant fluffy round head, tiny triangular ears, fluffy short plump cream coat with very light buttery-yellow shadow blocks, pale muzzle and belly, big fluffy plumed tail, coral cheeks/ear interiors/tongue/paw pads, and thick periwinkle-blue chunky stair-step outline. Do NOT turn the dog orange, brown or gray. Change ONLY the POSE: LYING ON ITS BACK SHOWING ITS BELLY. The puppy is comfortably reclined on its back, body on a diagonal, soft cream belly clearly facing the viewer, with all FOUR short paws loosely curled up above its belly. Show at least three paws clearly, fourth may be slightly behind but anatomy must remain four-legged with no extra limbs. Big fluffy head rests to one side, turned toward viewer with a delighted gentle tongue smile. Both front paws curl naturally near the chest, two hind paws toward bottom of belly, relaxed and affectionate, not standing upright and not an airborne kick. Fluffy full body contour and large feathery curled tail must remain distinctly visible beside the body. Use a slightly overhead three-quarter view to make the tummy and back-lying pose unambiguous. Retain exact original cream/ivory/pastel palette and coarse square-pixel edges, broad soft color patches, not a new medium. Clean white eye regions each containing ONE modest simple periwinkle pupil, aligned calm gaze, no cross-eye, no detached pixel fragments or eye spikes. One entire animal centered on pure white #ffffff, portrait 2:3 exactly 1024x1536, whole fluffy ears, paws and full tail inside the image with generous white margins. Exactly two blue/coral pixel sparkles. No text, numbers, ranks, logo, watermark, frame, props, bed, collar, clothes, additional animals or human hands. No realistic fur, 3D, gloss, smooth vector curves or intricate sprite rendering.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/aurora-9.png",
+          "role": "Exact edit target; preserve breed, coat colors, facial identity and sky-hop pixel style while changing body pose"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1428693,
+      "sha256": "de9e0ad37e1d00b3cc846684913a6c20f63d3b8cc70c5731d40841352dfbeac2",
+      "visualReview": "Inspected native edit output. Pale cream Pomeranian remains fluffy with triangular ears, big feathery tail and original light cream palette. Now reclines belly-up with four curled paws visible and coral pads facing viewer; full body and tail inside frame. Single connected periwinkle pupils, clean white eye areas, friendly coherent gaze and original happy mouth. Two blue/coral sparkles on white; no text, ranks, props, frame or watermark.",
+      "suit": "aurora",
+      "face": "9",
+      "animalVariant": "pomeranian-belly-up",
+      "localSourceRecord": "docs/art/sky-hop-batch03-dog-poses.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/aurora-10-v5.png",
+      "source": "generated_images/01a168ed-6850-7b72-bb3d-515fa3e54598/exec-6413cfac-7987-4e0a-b5d3-a9f783ef61c2.png",
+      "prompt": "Use case: precise-object-edit. ONE localized color edit of the attached existing SKY HOP Border Collie puppy card illustration.\nThe attached image is the EDIT TARGET. Change ONLY the CHARCOAL-BLACK FUR to SOFT MEDIUM SILVER GRAY. All formerly black coat regions must become visibly lighter gentle neutral-to-slightly-cool dove gray, approximately #9DA5B3 with subtle #B2BAC6 highlights, not near-black or dark charcoal. Recolor both ears' dark fur, the dark face patches around eyes, dark back and body, dark upper legs, and dark base of tail consistently. Keep all white fur exactly white: central forehead blaze, inner ear white marks, muzzle, chest bib, socks and tail tip. No merle speckles, no spots added, no new markings. This is a gray-and-white Border Collie puppy.\nSTRICTLY preserve the current full-body running pose, silhouette, proportions, four legs, paw shapes, tail, semi-folded ears, eye size/shape/gaze, compact periwinkle pupils, periwinkle nose and smile, coral cheeks/tongue, thick PERIWINKLE BLUE stepped outline, two sky-blue/coral sparkles, and their positions. Do not recolor blue outlines or facial features. Preserve the broad soft pastel blocks and chunky pixel-sticker finish. Do not redraw anatomy or change expression or composition.\nSame opaque PURE WHITE portrait2:3 1024x1536 canvas, whole puppy with original white margins. No text, numbers, frame, watermark, new objects, background, collar, clothing or extra animals. Make the gray visibly softer and lighter than the original black coat while retaining strong separation from the white markings. Only fur color changes.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/aurora-10-v4.png",
+          "role": "Edit target. Replace only charcoal-black coat with soft medium silver gray. Preserve white markings, pose, face, periwinkle outline, sparkles and composition."
+        }
+      ],
+      "suit": "aurora",
+      "face": "10",
+      "animalVariant": "보더콜리",
+      "coat": "회색·흰색",
+      "action": "신나는 달리기",
+      "supersedes": "aurora-10-v4.png",
+      "visualReview": "Inspected generated output. Dark coat regions on ears, face, back, upper legs and tail are now medium cool gray, clearly distinct from white blaze, muzzle, bib, socks and tail tip. Running pose, folded ears, four connected legs, full tail, happy face, blue stepped outline and two sparkles remain visually consistent with v4. No clipping or added markings observed. This is visual preservation, not a pixel-identical guarantee outside the recolored coat.",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1368617,
+      "sha256": "e3fe4b98be20872a713d24778f9b7f1dfbc0bdd8ee0e38707157d17f7ee495aa",
+      "localSourceRecord": "docs/art/sky-hop-border-collie-v5.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/ember-support-v2.png",
+      "source": "generated_images/01a172cc-7170-7d83-bfb2-da099effedea/exec-3f5a7acf-4635-4e0f-814c-ffc75f3bc303.png",
+      "prompt": "EDIT TARGET: attached cream Siamese kitten with muted blue-gray face/ear/paw/tail colorpoints, sky-blue belly patch and pointed ears. Change only ACTION AND BODY POSE to: SIT QUIETLY UPRIGHT ON HAUNCHES, facing front. Two short FRONT PAWS rest NEXT TO EACH OTHER neatly and vertically in front of chest, BOTH on ground, hind feet tucked naturally at sides. Whole tail curves forward to WRAP AROUND THE FRONT PAWS without hiding their separation. Slight gentle head tilt, calm cute face. No raised paws, no hop. This should look like a kitten simply sitting properly with its tail wrapped around its feet. Eye treatment: Two clean contiguous white eye shapes each contain exactly ONE compact small PERIWINKLE pupil. Matched size and coherent gentle forward gaze, no spikes, split whites, isolated one-pixel dots, crossed eyes, or pupil attached to lines. Small friendly smile. Keep EXACT SAME Sky Hop Y2K pixel sticker art family and kitten identity from edit target: huge baby head and small body, thick vivid PERIWINKLE BLUE square-pixel staircase contours, large simple flat pastel blocks, original breed-specific fur colors and markings, coral cheeks/pawpads as visible. Exactly TWO tiny skyblue/coral pixel plus sparkles outside silhouette. One single complete kitten, no extra parts or extra animals. Entire ears/body/tail remain inside comfortable margins. Portrait2:3 1024x1536 PURE WHITE #FFFFFF background with ample empty headroom. Respect natural action silhouette rather than stretching every pose upright. No text, letters, digits, ranks, frames, borders, logos, watermark, scenery, floor lines, props, furniture or toys. No shadows, gradients, realistic fur, fine texture, smooth vector,3D, clay or different style. Pose change only; preserve identity, palette and visual family.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/ember-support.png",
+          "role": "EDIT TARGET. Preserve kitten breed, colors, face identity and Sky Hop pixel-sticker style while changing the action/body pose.",
+          "sha256": "60ec1231a1c8794a54976c151a2237cd2e4843eb442466fc89014ca7aae6d9c7"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1084854,
+      "sha256": "2d601a057ebb6cec3c2af3db5d8bdb4cce39a637090bb4c44b4f0f7944f3e791",
+      "visualReview": "Pass: Front-facing seated Siamese, two forepaws placed side-by-side and tail curved around their front. Cream/blue-gray identity and sky-blue belly retained. Eyes intact.",
+      "suit": "ember",
+      "face": "support",
+      "animalVariant": "siamese-kitten",
+      "action": "quiet-front-sit",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-cats.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/ember-2-v3.png",
+      "source": "generated_images/01a172cc-7170-7d83-bfb2-da099effedea/exec-249f18e4-53a1-4a55-a1d7-1a1495a83663.png",
+      "prompt": "EDIT TARGET: attached solid blue-gray short-coated Russian Blue baby kitten, triangular ears, periwinkle eyes and no green irises. Change only ACTION AND BODY POSE to: SIT COMFORTABLY ON HAUNCHES and GROOM ONE FRONT PAW: lift ONLY ONE paw delicately near mouth, small coral tongue lightly touching its side as if licking it. OTHER front paw planted on ground in front of body. Hind feet tucked seated, entire curved tail at side. Keep lifted paw clearly separate from chin and mouth outline, with a tiny visible gap except the little tongue contact; no arm growing from mouth, no merged face/hand blob. Head bends slightly toward raised paw, still showing face. Eye treatment: Two clean contiguous white eyes with exactly ONE compact small PERIWINKLE pupil each, aligned in the same gentle downward direction toward the raised paw. No crossed eyes, spikes, split whites, detached pixels, or eyebrow/outline merges. No green eye colors. Keep EXACT SAME Sky Hop Y2K pixel sticker art family and kitten identity from edit target: huge baby head and small body, thick vivid PERIWINKLE BLUE square-pixel staircase contours, large simple flat pastel blocks, original breed-specific fur colors and markings, coral cheeks/pawpads as visible. Exactly TWO tiny skyblue/coral pixel plus sparkles outside silhouette. One single complete kitten, no extra parts or extra animals. Entire ears/body/tail remain inside comfortable margins. Portrait2:3 1024x1536 PURE WHITE #FFFFFF background with ample empty headroom. Respect natural action silhouette rather than stretching every pose upright. No text, letters, digits, ranks, frames, borders, logos, watermark, scenery, floor lines, props, furniture or toys. No shadows, gradients, realistic fur, fine texture, smooth vector,3D, clay or different style. Pose change only; preserve identity, palette and visual family.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/ember-2-v2.png",
+          "role": "EDIT TARGET. Preserve kitten breed, colors, face identity and Sky Hop pixel-sticker style while changing the action/body pose.",
+          "sha256": "5780d3db490783a11cc620e8ac2436ab677b29ca87e16a970ffd0d6440c8aae6"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1107875,
+      "sha256": "68e0b7e3e90b46874dba3d4d9bb00c0944e9f77849cb3801d6a7ba3f8c092b8d",
+      "visualReview": "Pass: Seated Russian Blue grooming one raised forepaw near mouth; other forepaw down and hind feet seated. Paw, tongue and face remain understandable and separate. Solid blue-gray identity and periwinkle eyes retained.",
+      "suit": "ember",
+      "face": "2",
+      "animalVariant": "russian-blue-kitten",
+      "action": "seated-paw-grooming",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-cats.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/ember-3-v2.png",
+      "source": "generated_images/01a172cc-7170-7d83-bfb2-da099effedea/exec-cfeaefff-c57c-40d0-9a5c-a8edd5e02063.png",
+      "prompt": "EDIT TARGET: attached cream/chestnut Norwegian Forest baby kitten, large fluffy neck ruff, pointed ear-tip tufts and huge fluffy tail represented by big pixel blocks. Change only ACTION AND BODY POSE to: CURL SIDEWAYS INTO A COZY ROUND SLEEPING BALL. Lie comfortably on side, body rounded into a compact circle, head resting gently low against body. The HUGE FLUFFY TAIL wraps around outer curve and over tucked paws LIKE A SOFT BLANKET but remains visibly one attached tail with identifiable tip. Front/hind paws may be naturally tucked beneath tail; do not invent visible extra limbs. Keep tufted ears and fluffy neck ruff identifiable. Mouth a tiny peaceful closed smile, not open laughing. NO hopping or standing. Low rounded restful silhouette. Eye treatment: Both eyes CLOSED in relaxed sleep as TWO SIMPLE SHORT PERIWINKLE downward-curved pixel arcs. No open pupils, no green irises, no lashes, isolated dots or stray face pixels. Eyes must be balanced in sleeping face. Keep EXACT SAME Sky Hop Y2K pixel sticker art family and kitten identity from edit target: huge baby head and small body, thick vivid PERIWINKLE BLUE square-pixel staircase contours, large simple flat pastel blocks, original breed-specific fur colors and markings, coral cheeks/pawpads as visible. Exactly TWO tiny skyblue/coral pixel plus sparkles outside silhouette. One single complete kitten, no extra parts or extra animals. Entire ears/body/tail remain inside comfortable margins. Portrait2:3 1024x1536 PURE WHITE #FFFFFF background with ample empty headroom. Respect natural action silhouette rather than stretching every pose upright. No text, letters, digits, ranks, frames, borders, logos, watermark, scenery, floor lines, props, furniture or toys. No shadows, gradients, realistic fur, fine texture, smooth vector,3D, clay or different style. Pose change only; preserve identity, palette and visual family.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/ember-3.png",
+          "role": "EDIT TARGET. Preserve kitten breed, colors, face identity and Sky Hop pixel-sticker style while changing the action/body pose.",
+          "sha256": "71cb124217aaeeebe71a909a1bc08cd86c039097d422ed50c2a81ea5fc29a1a3"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1069477,
+      "sha256": "761536f587bde57d9a10fecce86a74e299f21ca54d3e37bf4328ed07c0e9448a",
+      "visualReview": "Pass: Norwegian Forest kitten curled sideways asleep, huge fluffy tail wrapped as a blanket, cream/chestnut blocks and ear tufts retained. Two clean closed-eye arcs, peaceful mouth.",
+      "suit": "ember",
+      "face": "3",
+      "animalVariant": "norwegian-forest-kitten",
+      "action": "curled-tail-blanket-sleep",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-cats.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/ember-4-v2.png",
+      "source": "generated_images/01a172cc-7170-7d83-bfb2-da099effedea/exec-efbc70a2-0c14-4a2c-9f0d-703ffdddf637.png",
+      "prompt": "EDIT TARGET: attached cream/bluepoint fluffy Ragdoll baby kitten, white inverted-V facial blaze, muted blue-gray ears/paws/tail and large simple long-coat blocks. Change only ACTION AND BODY POSE to: LOUNGE DIAGONALLY ON ITS BACK with BELLY OPEN TOWARD VIEWER, relaxed and trusting. Head at upper-left, rump lower-right; fluffy back rests downward, cream belly clearly facing up. Both FRONT PAWS loosely bent at chest level like tiny relaxed curls, TWO hind feet naturally spread apart to either side of lower belly, exactly four limbs. Whole fluffy tail curves visibly beside body entirely inside canvas. Face tilted naturally toward viewer, not twisted upside-down. No upright hopping or seated wave. Eye treatment: Two intact contiguous white eye shapes, ONE compact small PERIWINKLE pupil each, same direction toward viewer, no green irises. Keep simple cute calm eyes, no spikes, split whites, disconnected dots, crossing or merges with face lines. Keep EXACT SAME Sky Hop Y2K pixel sticker art family and kitten identity from edit target: huge baby head and small body, thick vivid PERIWINKLE BLUE square-pixel staircase contours, large simple flat pastel blocks, original breed-specific fur colors and markings, coral cheeks/pawpads as visible. Exactly TWO tiny skyblue/coral pixel plus sparkles outside silhouette. One single complete kitten, no extra parts or extra animals. Entire ears/body/tail remain inside comfortable margins. Portrait2:3 1024x1536 PURE WHITE #FFFFFF background with ample empty headroom. Respect natural action silhouette rather than stretching every pose upright. No text, letters, digits, ranks, frames, borders, logos, watermark, scenery, floor lines, props, furniture or toys. No shadows, gradients, realistic fur, fine texture, smooth vector,3D, clay or different style. Pose change only; preserve identity, palette and visual family.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/ember-4.png",
+          "role": "EDIT TARGET. Preserve kitten breed, colors, face identity and Sky Hop pixel-sticker style while changing the action/body pose.",
+          "sha256": "ff5ab9cff998ba1de1b82c471c704eb80d72fc2292ccbc20b1b50981461f91b6"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1140630,
+      "sha256": "37aa34ba7ba752b2fdc732987c1d58cd6de0f7954a4cdcb854e163cc2cfff7d6",
+      "visualReview": "Pass: Ragdoll lying diagonally belly-up with two forepaws bent near chest and two hind paws spread naturally. All four paws and whole tail visible. Cream/bluepoint blocks and inverted-V face retained. Eyes intact.",
+      "suit": "ember",
+      "face": "4",
+      "animalVariant": "blue-bicolor-ragdoll-kitten",
+      "action": "diagonal-belly-up-lounge",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-cats.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/ember-5-v2.png",
+      "source": "generated_images/01a172cc-7170-7d83-bfb2-da099effedea/exec-c021fd22-4248-4922-840a-469e84829191.png",
+      "prompt": "EDIT TARGET: attached light golden/cream British Shorthair baby kitten, very round bread-like cheeky face, small rounded ears, compact chubby short-coated body. Change only ACTION AND BODY POSE to: FOUR-LEGGED SIDE/THREE-QUARTER stance, NOT upright human-like. Body seen partly from side, TWO rear paws and ONE front paw support body. Extend the other SINGLE front paw carefully FORWARD just above ground as if cautiously exploring the empty space. Keep head turned toward viewer with a curious mild tilt; large round cheeks and tiny ears clearly visible. Tail fully visible behind in gentle curve. Exactly four paws with clear attachment, no object being touched. Short sturdy legs and round plump body. Eye treatment: Two clean white pixel eye shapes each with ONE complete small PERIWINKLE pupil, both look toward viewer together, curious but not cross-eyed. No spikes, split whites, isolated pixels, or line-connected pupils. Keep small friendly mouth. Keep EXACT SAME Sky Hop Y2K pixel sticker art family and kitten identity from edit target: huge baby head and small body, thick vivid PERIWINKLE BLUE square-pixel staircase contours, large simple flat pastel blocks, original breed-specific fur colors and markings, coral cheeks/pawpads as visible. Exactly TWO tiny skyblue/coral pixel plus sparkles outside silhouette. One single complete kitten, no extra parts or extra animals. Entire ears/body/tail remain inside comfortable margins. Portrait2:3 1024x1536 PURE WHITE #FFFFFF background with ample empty headroom. Respect natural action silhouette rather than stretching every pose upright. No text, letters, digits, ranks, frames, borders, logos, watermark, scenery, floor lines, props, furniture or toys. No shadows, gradients, realistic fur, fine texture, smooth vector,3D, clay or different style. Pose change only; preserve identity, palette and visual family.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/ember-5.png",
+          "role": "EDIT TARGET. Preserve kitten breed, colors, face identity and Sky Hop pixel-sticker style while changing the action/body pose.",
+          "sha256": "a55483f7e4719f5fcbce6b31cdf6fabce1d3208817513811d8396ec8942084bc"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1092644,
+      "sha256": "c8d9f23e8d6b94fe1800bab02f1a9e26e65c6d27ca9fa143f2129f0b43b2b0d4",
+      "visualReview": "Pass: Golden/cream British Shorthair in a side/three-quarter four-legged stance, one forepaw extended carefully and three other paws supporting the body. Round face and small ears retained. Eyes intact.",
+      "suit": "ember",
+      "face": "5",
+      "animalVariant": "golden-british-shorthair-kitten",
+      "action": "curious-careful-front-paw",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-cats.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/ember-6-v2.png",
+      "source": "generated_images/01a172cc-7170-7d83-bfb2-da099effedea/exec-d61b6d57-3cbc-4904-a80e-30a6cb7688ee.png",
+      "prompt": "EDIT TARGET: attached silver American Shorthair baby kitten, broad dark-gray tabby stripes in simple large blocks, round cheeks, short coat and striped curved tail. Change only ACTION AND BODY POSE to: A LOW PLAYFUL MID-AIR POUNCE, body horizontal/diagonal as if leaping forward without any target. BOTH front paws stretch FORWARD SIDE BY SIDE, clearly two separate forelegs. BOTH hind paws bend and TUCK behind belly following the jump, clearly two separate rear legs. Full striped tail extends in gentle counterbalancing curve entirely in frame. Head faces forward and slightly toward viewer, eager cute expression. This is a low horizontal four-legged pounce, NOT original upright two-feet hop. No prey, toy, ball or other object. Eye treatment: Two intact contiguous white eye shapes with exactly ONE small complete PERIWINKLE pupil each, matched direction toward leap. No cross-eye, upward pupil spikes, split whites, isolated dots or face-line connections. Cute confident eyes. Keep EXACT SAME Sky Hop Y2K pixel sticker art family and kitten identity from edit target: huge baby head and small body, thick vivid PERIWINKLE BLUE square-pixel staircase contours, large simple flat pastel blocks, original breed-specific fur colors and markings, coral cheeks/pawpads as visible. Exactly TWO tiny skyblue/coral pixel plus sparkles outside silhouette. One single complete kitten, no extra parts or extra animals. Entire ears/body/tail remain inside comfortable margins. Portrait2:3 1024x1536 PURE WHITE #FFFFFF background with ample empty headroom. Respect natural action silhouette rather than stretching every pose upright. No text, letters, digits, ranks, frames, borders, logos, watermark, scenery, floor lines, props, furniture or toys. No shadows, gradients, realistic fur, fine texture, smooth vector,3D, clay or different style. Pose change only; preserve identity, palette and visual family.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/ember-6.png",
+          "role": "EDIT TARGET. Preserve kitten breed, colors, face identity and Sky Hop pixel-sticker style while changing the action/body pose.",
+          "sha256": "b21bde2d372c24f6d8bc04a823bacce03ac0e0b8a930113eadfb5b603cb374a0"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1405500,
+      "sha256": "a0bc868c6c38af1d5dcb987f510def8c2ffeb938f716533e99b16dc98f7ad0e6",
+      "visualReview": "Pass: Silver tabby American Shorthair in a low horizontal pounce, two forepaws stretched forward, two rear paws tucked behind, complete striped tail visible. Large stripe blocks retained. Eyes intact.",
+      "suit": "ember",
+      "face": "6",
+      "animalVariant": "silver-tabby-american-shorthair-kitten",
+      "action": "low-playful-hunting-pounce",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-cats.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/ember-7-v2.png",
+      "source": "generated_images/01a172cc-7170-7d83-bfb2-da099effedea/exec-b10492b6-f028-49d8-bfa1-6efcf90a8375.png",
+      "prompt": "EDIT TARGET: attached original silver-cream PERSIAN BABY KITTEN. Keep EXACT SAME CHARACTER IDENTITY, pale silver/cream fur pattern, tiny ears, round broad flat short-muzzle face, periwinkle outlines, simple eye style, coral details and Sky Hop chunky Y2K pixel sticker art. CHANGE POSE COMPLETELY to a SOFT CAT LOAF: kitten resting low and comfortably, both FRONT PAWS TUCKED INVISIBLY UNDER THE CHEST, hind legs tucked beneath round fluffy body. Body a wide squishy bread-loaf mound, head upright and almost level looking gently at viewer, not the original standing/hopping/two-paws-up pose. Show the ENTIRE fluffy curved tail wrapping visibly along one side of the loaf, ending in an identifiable rounded tip. Full animal in a calm low round silhouette, huge baby head and small fluffy loaf body, no floating forelegs or raised paws. Persian tiny ears and broad short flat muzzle must remain recognizable. Long coat represented by large simple stepped blocks only, not tiny hairs. Eyes: two clean contiguous white pixel shapes, each with one compact fully intact PERIWINKLE pupil; matching scale, consistent friendly forward gaze, no spikes, dangling dots, split whites, cross-eye or lines touching eyes. Preserve thick periwinkle staircase contours and flat silver/cream blocks. Exactly TWO tiny blue/coral pixel plus sparkles around animal. Portrait2:3 1024x1536 PURE WHITE #FFFFFF background. Animal centered, full tail and ears inside margins; let the natural loaf shape be lower and wider than the original and leave blank headroom rather than stretching it upright. No objects, actual bread, props, text, letters, digits, frame, watermark, logos, shadows, extra animals. No realistic fur, gradients, texture, 3D, smooth vector or style change.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/ember-7.png",
+          "role": "EDIT TARGET. Preserve existing kitten identity, breed/color blocks, eye style and Sky Hop art family while changing the pose completely."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1107254,
+      "sha256": "02cbcd0d7eef59a0139c4a09a5de7e554bd8a450a2bfe348538059c8593393d5",
+      "suit": "ember",
+      "face": "7",
+      "animalVariant": "silver-cream-persian-kitten",
+      "action": "soft-cat-loaf",
+      "visualReview": "Pass: Low rounded loaf with front paws tucked under body, fluffy tail visibly curving at side. Tiny ears, broad short face, silver/cream blocky coat retained. Eyes visually intact with coherent gaze, two blue/coral sparkles, no text/frame/watermark.",
+      "localSourceRecord": "docs/art/sky-hop-batch03-cat-poses.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/ember-8-v2.png",
+      "source": "generated_images/01a172cc-7170-7d83-bfb2-da099effedea/exec-6b988698-26da-4600-aa03-97e7a8420aae.png",
+      "prompt": "EDIT TARGET: attached original pale-gray SCOTTISH FOLD BABY KITTEN. Preserve EXACT SAME character identity, pale-gray/light-gray coat patches, round head, unmistakable forward-folded ears, small baby body, periwinkle stepped outlines, cute face and chunky Sky Hop Y2K pixel sticker art. CHANGE THE ACTION COMPLETELY to SITTING AND WAVING ONE FRONT PAW. Kitten sits firmly on its haunches, rounded bottom resting, two little hind feet visible in front. Raise ONLY ONE front paw to shoulder/cheek height with coral pawpad facing viewer in a gentle greeting. The OTHER front paw stays DOWN in front of chest/belly and rests near the seated feet. No both-paws-up hopping pose. Keep both folded ears and whole round face clearly visible, whole curved tail lying to the side. Slight head tilt with friendly smile; cute and relaxed. Eyes are two clean contiguous white pixel blocks each containing ONE compact complete periwinkle pupil, matched size and same forward gaze, not cross-eyed. No spikes, disconnected dots, split whites or pupil connected to face lines. Keep original muted gray palette, coral cheeks/tongue/pawpads, big flat shapes, thick periwinkle square-pixel staircase contours, no smooth vector or realism. Exactly TWO tiny blue/coral pixel plus sparkles. Portrait2:3 1024x1536 PURE WHITE #FFFFFF background, one full kitten with ears/paws/tail entirely inside margins and blank headroom. No props, chairs, text, letters, numbers, borders, frame, logo, watermark, other animals, shadows, fine fur, texture, gradients or3D. This is the SAME kitten in a clearly different sitting one-paw greeting pose.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/ember-8.png",
+          "role": "EDIT TARGET. Preserve existing kitten identity, breed/color blocks, eye style and Sky Hop art family while changing the pose completely."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1100755,
+      "sha256": "2288c09d26377f231e0bcb586bf23e87743dc2d76507ec074a5efb6d5c63eb2d",
+      "suit": "ember",
+      "face": "8",
+      "animalVariant": "pale-gray-scottish-fold-kitten",
+      "action": "seated-one-paw-wave",
+      "visualReview": "Pass: Clearly seated on haunches, exactly one forepaw raised at shoulder, other forepaw down between hind feet. Folded ears and round gray face retained. Eyes visually intact with coherent gaze, two blue/coral sparkles, no text/frame/watermark.",
+      "localSourceRecord": "docs/art/sky-hop-batch03-cat-poses.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/ember-9-v2.png",
+      "source": "generated_images/01a172cc-7170-7d83-bfb2-da099effedea/exec-0eb74085-4155-48ac-9ae7-721bf02b4c24.png",
+      "prompt": "EDIT TARGET: attached original GOLDEN BENGAL BABY KITTEN. Preserve EXACT SAME kitten identity, golden-brown short coat, few large dark-brown rosette spots, cream muzzle/belly, coral facial details, big baby head and Sky Hop coarse Y2K pixel sticker family. CHANGE POSE COMPLETELY into a LONG CAT STRETCH, shown from a SIDE/THREE-QUARTER VIEW. Kitten body runs horizontally or slightly diagonally across canvas. BOTH FRONT LEGS stretch far FORWARD to the left with TWO separate little front paws planted ahead; chest low, HINDQUARTERS raised to right, rear legs supporting the rump, tail lifted in a gentle visible curve. Head low near the front paws but TURNED TOWARD THE VIEWER so both clean eyes and cute face remain visible. This is the familiar feline front-down/rump-up stretch, clearly elongated and very different from upright hopping or waving. Keep four legs anatomically understandable, two front paws side-by-side with small white separation; no extra limbs, no merged paw blob. Entire tail and ears inside frame. Preserve large simple rosette blocks, short coat, periwinkle thick square-pixel staircase outlines, flat pastel gold/cream/brown colors. Eyes: each one clean contiguous white pixel block with ONE compact complete periwinkle pupil, consistent forward gaze, matched size, no upward spikes, split whites, stray dots, crossing or merged facial lines. Friendly happy expression with small mouth and coral tongue. Exactly TWO tiny blue/coral pixel plus sparkles. Portrait2:3 1024x1536 PURE WHITE #FFFFFF background. Fit the full longer horizontal stretch inside generous margins; leave white headroom, do not force body upright just to fill height. No props, ground/floor lines, text, letters, digits, frame, logos, watermark, other animals, shadows, fine fur, gradients, texture,3D or different style.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/ember-9.png",
+          "role": "EDIT TARGET. Preserve existing kitten identity, breed/color blocks, eye style and Sky Hop art family while changing the pose completely."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1110674,
+      "sha256": "a05d44e5820fc0314f98d2436c6f3116617ad41cbae2e23cbf75d8424bb73ced",
+      "suit": "ember",
+      "face": "9",
+      "animalVariant": "golden-bengal-kitten",
+      "action": "long-front-paw-stretch",
+      "visualReview": "Pass: Side/three-quarter stretch with two separate forepaws extended forward, chest low, rump high, hind paws and entire tail visible. Golden coat and large dark rosettes retained. Eyes visually intact with coherent gaze, two blue/coral sparkles, no text/frame/watermark.",
+      "localSourceRecord": "docs/art/sky-hop-batch03-cat-poses.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/ember-10-v3.png",
+      "source": "generated_images/01a168ed-6850-7b72-bb3d-515fa3e54598/exec-8680343b-1b92-482c-80c5-92d94e83a8b9.png",
+      "prompt": "Use case: precise-object-edit / character variation.\nThe attached image is the EDIT TARGET and the exact SKY HOP pixel illustration style reference. The user wants the cat on numeric card10 changed to a DIFFERENT BREED and a cleaner, more natural POSE. Replace this calico cat completely with one VERY YOUNG TURKISH ANGORA KITTEN, keeping the established cute chunky pastel pixel art language.\n\nNew breed: snow-white / cool pale ivory silky fluffy medium-long coat expressed in a few large simple stepped blocks, big triangular ears with coral interiors, delicate small muzzle, soft fluffy cheek/neck collar, beautiful long feathery white tail. Periwinkle thick pixel contour separates the white fur clearly from the pure white background. No calico orange/black patches, no stripes, no spots. Use tiny pale sky/lavender shadow blocks only to distinguish white fur shapes.\nNew pose: calmly SEATED with its back and body turned three-quarter AWAY from the viewer, looking back sweetly over one shoulder toward the viewer. Both forelegs descend naturally to the floor in front of the seated torso; one may partly overlap the other but no twisted arms. Rounded seated hindquarters grounded with small hind paws naturally visible. The long fluffy tail curves gently around one SIDE, entirely outside the legs, full tip clearly visible. This is a composed looking-back sitting pose, NOT a C-shaped body chasing its tail, NOT running, NOT hopping, NOT curled into a circle, NOT self-hugging.\nVery large friendly baby head, small plump kitten body, simple happy tiny mouth/coral tongue, coral cheek accents. TWO clean periwinkle pupils in tidy white eye regions; both look in the same direction. No crossed eyes, no stray one-cell spike, no broken pupils, no extra facial features.\nPreserve the original thick periwinkle stair-step outlines, broad pastel blocks and homemade adorable Sky Hop sticker style. Keep exactly TWO tiny blue/coral pixel sparkles. Portrait1024x1536 opaque WHITE background, full single kitten centered at about70%height, blank headroom and generous margins so both ears, four-leg anatomy and full fluffy tail remain within frame.\nNo writing, digits, symbols of rank, frame, watermark, clothes, props, scenery, other animals, extra limbs, detached paws, realistic fur strands, glossy3D or smooth vector conversion.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/ember-10-v2.png",
+          "role": "edit target and Sky Hop style reference; replace breed and pose"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1136117,
+      "sha256": "677b5dab3b2370d1aca431ecd7bb8e6e1ec312ec3528f329ce259f38da63d0e7",
+      "suit": "ember",
+      "face": "10",
+      "animalVariant": "터키시 앙고라",
+      "action": "앉아 돌아보기",
+      "visualReview": "White/ivory Turkish Angora kitten with large triangular ears and long feathery tail, clean periwinkle eyes. Seated three-quarter body with face toward viewer, two front paws grounded and hindquarters seated; no previous curled chase or twisted arms. Fur and outline visually clear against white, full ears/paws/tail fit frame, two sparkles and no writing.",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-angora.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/tide-support.png",
+      "source": "generated_images/01a172cc-7170-7d83-bfb2-da099effedea/exec-f2d56835-ca34-4549-8043-0e82b0c01616.png",
+      "reusedFrom": "apps/web/public/art/cards/sky-hop/tide.png",
+      "prompt": "Create ONE original BABY SEAL character belonging to EXACTLY THE SAME SKY HOP Y2K PIXEL STICKER FAMILY as the two attached puppy and kitten references. BOTH reference images are STYLE, PALETTE AND COMPOSITION references ONLY. Do NOT transfer their dog/cat species anatomy or ears. This new subject is a tiny cheerful baby seal: completely EARLESS ROUND head, soft plump pear-shaped pale powder-blue/gray-white body, big simple pale-cream belly, small round muzzle, tiny periwinkle nose, slightly mismatched innocent vacant eyes and a small open smiling mouth with pale-coral tongue, pale-coral cheek blocks. EXACTLY TWO smooth short FRONT FLIPPERS lifted beside the belly as if beginning a tiny clap, not furry legs or paws, no paw pads. The body narrows into a paired split rear flipper tail at the bottom, two broad little paddle-shaped tips; NO four-legged stance, no dog tail, NO dog ears, NO cat ears, NO human fingers. Entire seal body is doing a gentle joyful bob/hop, crooked oversized round head and small chubby body, awkwardly lovable homemade internet sticker character. Match references with THICK CLEAR PERIWINKLE BLUE square-pixel staircase outlines, chunky coarse pixel steps on every rounded contour, big simple pastel color blocks, no finely detailed fur or individual pixels of noise. Exactly TWO small sky-blue/coral pixel plus sparkles at the sides matching references. Single full seal, all front flippers and rear flippers intact inside frame, roughly65–75%canvasheight with clear white headroom and margins. Portrait2:3 1024x1536 PURE WHITE #FFFFFF background. Preserve the selected reference style precisely; NOT a new illustration style, not vector, smooth cartoon, clay, 3D or realism. No gradients, shading, ground shadow, paper texture, tiny fur, neon confetti, antialiasing, text, typography, numbers, logo, watermark, border, card frame, clothes, props, water scenery, people or additional animals.",
+      "references": [
+        {
+          "path": "apps/web/public/art/studies/round-05/02-sky-hop-dog.png",
+          "role": "Selected Sky Hop style, pastel palette and portrait composition only. Do not transfer dog anatomy."
+        },
+        {
+          "path": "apps/web/public/art/studies/round-05/02-sky-hop-cat.png",
+          "role": "Selected Sky Hop style, pastel palette and portrait composition only. Do not transfer cat anatomy."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1418031,
+      "sha256": "59c79f88dff769b41e7dcdad459215a7bc6daccb0bce8fed86b5c4dad5017afa",
+      "suit": "tide",
+      "face": "support",
+      "animalVariant": "기본 인사",
+      "visualReview": "Pass: one full baby seal with earless round head, two raised front flippers, two-lobed rear flippers, powder-blue body, cream belly, coral cheeks/tongue, thick periwinkle stepped outline and two pixel sparkles. All extremities visible. No text, logo or watermark. Matches selected Sky Hop family.",
+      "localSourceRecord": "docs/art/sky-hop-batch01-support.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/tide-2.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-a0d18e25-0bf2-482d-9b2d-770365e60766.png",
+      "prompt": "Create ONE full-body action illustration of EXACTLY the same original baby SEAL character as the supplied reference. Preserve its very pale powder-blue-gray body, buttery cream round muzzle and belly patch, small light sky-blue flippers and paired rear tail flippers, thick PERIWINKLE BLUE square staircase pixel outline, silly slightly uneven eyes, coral cheeks and tongue. This is a SEAL: smooth ROUND HEAD WITH NO EXTERNAL EARS, ONLY TWO front FLIPPERS with no fingers or dog paw pads, paired rear flippers at the tail, NO four-legged cat/dog body. Change the action clearly: this chubby happy seal is PATTING ITS PLUMP CREAM BELLY with both small front flippers, one flipper resting against the upper belly and the other patting the lower belly in an alternating rhythm. Both flippers must be clearly directed inward at its belly, not held near the face. Big innocent open smile, tongue peeking out; very endearingly dopey. Upright slightly tilted body with all tail flippers visible. Same chunky Y2K pixel sticker visual treatment as reference: large simple pastel fields, thick coarse stepped edges, no realistic fur, no 3D, no smooth vector curves, no detailed game-sprite rendering. Pure white background, exactly two small isolated sky-blue/coral square pixel sparkles. Portrait 2:3 image 1024x1536. Single complete seal centered at around 70 percent of canvas height, generous top and side white margins, all flippers and tail inside canvas. No text, numbers, letters, logo, watermark, frame, border, clothing, props, balls, people, water or scenery. Only this seal in the new belly-patting pose.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/tide.png",
+          "role": "Exact character identity, anatomy, palette, periwinkle pixel outline, face and composition reference. Change only the action to patting its own belly."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1086701,
+      "sha256": "92bcca40b2b01a4c039c6c5b42e8e39942b5a834192946bd2ae871f751e664c5",
+      "visualReview": "The same pale blue-gray earless seal pats its cream belly with both front flippers at different heights; happy derpy face, paired rear tail flippers, no legs/paws. Whole character visible, two sparkles, white background. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "tide",
+      "face": "2",
+      "animalVariant": "배 두드리는 물개",
+      "localSourceRecord": "docs/art/sky-hop-batch01-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/tide-3.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-76f5739f-d950-4972-93b5-eb38d60a18fc.png",
+      "prompt": "Create ONE complete action illustration of EXACTLY the same original happy baby SEAL from the reference. Keep its pale powder-blue-gray color, buttery cream muzzle and belly, sky-blue front flippers and paired rear flippers, coral cheeks and tiny tongue, large innocent slightly uneven eyes, and the exact thick periwinkle blue square-step pixel outline. This is a seal with NO external ears, NO legs or dog paws, NO fingers, only two front paddle-shaped flippers and a paired flipper tail. ACTION IS CLEAR APPLAUSE: lift BOTH front flippers up directly in front of the lower face, their inner edges TOUCHING each other in a CLAP in front of its chin. Flippers are oriented vertically together, one from each side, clearly meeting in the middle, with two tiny simple periwinkle block motion ticks above their contact to imply the clap. Do not cover its eyes. Belly below is unobstructed, round and plump. Delighted innocent open smile. Full slightly tilted upright body with rear flippers visible. Match the selected chunky Y2K pixel sticker family: large pastel color fields, coarse thick staircase contours, no realistic texture, no 3D, no smooth vector shapes, no detailed game sprite. One animal centered occupying about 70 percent of a 1024x1536 portrait 2:3 white canvas; ample headroom and margin with all tail/flippers within image. Exactly two small sky-blue and coral pixel sparkles on plain white. No text, numbers, letters, logos, watermark, clothing, props, scene, water, frame, border, other animals or people. Make it look like the same seal enthusiastically and awkwardly clapping.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/tide.png",
+          "role": "Exact character identity, anatomy, palette, periwinkle pixel outline and face reference. Change only the action to clapping both front flippers together in front of its face."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1357861,
+      "sha256": "cc95b05e1e21f93b26328d8f7543cbcd083e5d3565715fba73364c4971f700e5",
+      "visualReview": "The same earless seal brings both front flippers together directly below its chin, with small clap motion ticks; belly remains visible, paired rear tail flippers and no legs/paws. Whole character visible, two sparkles, white background. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "tide",
+      "face": "3",
+      "animalVariant": "박수치는 물개",
+      "localSourceRecord": "docs/art/sky-hop-batch01-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/tide-4.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-81375dc9-39ca-4677-897e-f8ec590bea03.png",
+      "prompt": "Create ONE new action card illustration of EXACTLY the same original baby SEAL as the supplied reference. Preserve pale powder blue-gray body, cream muzzle and belly, sky-blue front flippers and paired rear flipper tail, coral cheeks and tongue, innocent slightly uneven eyes, and thick PERIWINKLE BLUE coarse staircase pixel outlines. It is an EARLESS SEAL with only TWO front paddle flippers and the paired rear tail flippers: no external ears, legs, fingers or dog paw pads. Change pose strongly to SIDEWAYS ROLLING: its round body is curled into a loose C shape as it tumbles sideways, the big head tilted almost sideways toward the lower-left, its cream belly curves through the center, and the paired rear tail flippers curl UP toward the upper-right. One small front flipper folds across its chest and the other peeks outward for balance. This should clearly look like a chubby seal doing a silly sideways barrel roll, not standing upright and not patting its belly or clapping. Keep the happy derpy face visible and all flippers in frame. Chunky Y2K pixel sticker family, broad simple pastel color fields and thick square stepped edges, no realistic fur, no 3D, no polished smooth vector style. PURE WHITE portrait 2:3 1024x1536 image, one complete seal with its C-shaped pose occupying about 70 percent of canvas height, enough white margin around head and tail. Exactly two small isolated sky-blue and coral pixel sparkles. No text, numbers, letters, logos, watermark, frame, border, props, clothing, water, scene, other animals or people.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/tide.png",
+          "role": "Exact seal character, anatomy, face, palette and pixel-style identity reference. Change only pose to sideways rolling with a C-shaped curled body."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1080563,
+      "sha256": "e6e8f75069f3d8287b8a1d4bd513ac63c43025aea997b6f54482689dd674ae43",
+      "visualReview": "Earless seal curves into a C-shaped side tumble, head sideways at lower left and paired rear flippers raised upper right. Two front flippers remain distinct, no legs or paws. Whole outline visible with two sparkles. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "tide",
+      "face": "4",
+      "animalVariant": "옆으로 데굴 구르는 물개",
+      "localSourceRecord": "docs/art/sky-hop-batch02-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/tide-5.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-492bff54-aac0-4c99-8e51-6fd371fa867c.png",
+      "prompt": "Create ONE complete action image of EXACTLY the same original pale blue baby SEAL as the reference. Keep the very pale powder-blue-gray body, cream broad muzzle and belly, pale sky-blue flippers, coral cheeks and tiny tongue, thick PERIWINKLE BLUE chunky staircase outline, and innocent slightly uneven eyes. Seal anatomy: perfectly ROUND EARLESS head, TWO front paddle flippers, paired rear tail flippers, NO external ears, NO legs, no hands or dog paws. New pose is LYING ON ITS BELLY WITH CHIN PROPPED ON BOTH FRONT FLIPPERS. Face close to the viewer, lower jaw gently resting on two little sky-blue paddle flippers side by side beneath its cheeks. Flat tummy lies down, little body stretches behind the head diagonally toward upper-right, and paired rear flippers visible at the far end gently lifted. Make it look lazy, blank and blissfully thoughtless, with small vacant uneven eyes and tiny relaxed open mouth. Body clearly prone and flattened, not sitting upright, clapping or patting belly. Show the ENTIRE seal from both front flippers to tail, with no ground line or scene. Maintain the reference family of Y2K coarse pixel stickers, large simple pastel fields and thick square steps, no realistic animal surface, no 3D or smooth vector style. PURE WHITE portrait 2:3 1024x1536 image, entire diagonal prone seal spans about 65-70 percent of height with generous white space all around. Exactly two small isolated sky-blue/coral pixel sparkles. No props, pillow, bed, water, floor illustration, clothing, text, numbers, letters, logos, watermark, border, frame, other animals or people.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/tide.png",
+          "role": "Exact seal character identity, anatomy, palette, face and chunky pixel outline reference. Change only action to lying prone and resting chin on both front flippers."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1069194,
+      "sha256": "0f06a2241f9d2ca4416204eb8b41d60a605df51cc4fb9e1ac0d40dd87a3b470b",
+      "visualReview": "Earless seal lies belly-down diagonally with chin supported by both front paddle flippers; body and paired rear flippers extend behind. Full character, no external ears or four-legged anatomy, two sparkles. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "tide",
+      "face": "5",
+      "animalVariant": "엎드려 턱 괴는 물개",
+      "localSourceRecord": "docs/art/sky-hop-batch02-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/tide-6.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-2c74de5e-da0a-4244-9937-1ead42aa808f.png",
+      "prompt": "Create ONE full-body action illustration of the EXACT same original baby SEAL in the reference. Keep pale blue-gray round body, cream muzzle and belly, pale sky-blue flippers, coral cheeks and tongue, innocent uneven eyes, coarse thick PERIWINKLE BLUE square staircase outline and pastel pixel sticker identity. NO external ears, no legs, fingers or dog paws: seal has TWO front paddle flippers plus paired rear tail flippers. ACTION: A BIG ONE-FLIPPER WAVE HELLO. Upright pudgy body with one front flipper stretched HIGH UP above the side of its head, the other front flipper held LOW beside the lower belly. Clearly asymmetric, not two raised hands, not clapping. Its huge earless head tilts noticeably toward the low flipper, while it smiles with a little tongue. Rear tail flippers curve gently to one side, fully visible. Add a couple of tiny periwinkle square motion ticks near the raised flipper. Preserve the sweet silly awkward expression, not athletic elegance. Same broad simple pastel fields, thick stepped contour and few details as reference, no realism, no fur, no 3D, no smooth vector shapes. PURE WHITE portrait 2:3 1024x1536 image, one complete seal occupying about 70 percent height, ample white margins around high flipper and tail. Exactly two small sky-blue/coral pixel sparkles. No numbers, text, letters, logo, watermark, frame, border, clothes, props, water, scenery, people or additional animals.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/tide.png",
+          "role": "Exact seal character, face, anatomy, palette and pixel-style reference. Change only action to a high single-flipper greeting with other flipper held low."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1088536,
+      "sha256": "89cea84089ab2560a18893bd0e52443cef8716956566fc39a0dd840fbe9ce53c",
+      "visualReview": "Earless seal tilts head while one front flipper reaches up beside head and other stays low by belly; paired rear flippers visible. Small waving motion ticks, complete silhouette, two sparkles. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "tide",
+      "face": "6",
+      "animalVariant": "한 지느러미로 인사하는 물개",
+      "localSourceRecord": "docs/art/sky-hop-batch02-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/tide-7.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-2ca2365d-0e53-4ed2-99d6-5f02600002c3.png",
+      "prompt": "Create ONE new full-body action card of the EXACT original baby SEAL from the supplied reference. Preserve pale powder-blue-gray body, cream round muzzle and belly, sky-blue paddle flippers, coral cheeks and tongue, thick PERIWINKLE BLUE square staircase pixel outlines, large simple pastel fields, and huge sweet baby head. SEAL ANATOMY: no external ears, only TWO front paddle flippers and paired rear flipper tail, NO legs, fingers or dog paws. New action AIRPLANE ARMS: both front flippers extend widely outward horizontally, left and right, like airplane wings, in a light happy mid-air bounce. Body nearly upright, tail flippers gently lifted underneath; both flippers are fully spread, not raised above head or touching cheeks. Slight awkward happy head tilt, small open smile and tongue. Eyes must be clean and intentional: one simple compact solid periwinkle pupil per white eye, whole clean white surround, pupils looking in the SAME direction, smooth simple pixel-block pupil tops with NO isolated protruding one-pixel bump, no stray blue specks and no crossed eyes. Preserve playful innocence without broken eye shapes. Single complete animal centered, occupying 65-75 percent of a PURE WHITE portrait 2:3 1024x1536 canvas. All wing-like flippers, head and paired tail flippers have ample white margin. Exactly TWO small isolated sky-blue/coral pixel sparkles. Same coarse Y2K pixel sticker treatment as reference, no 3D, real fur, smooth vector rendering or detailed polished game sprite. No text, letters, digits, labels, logo, watermark, border, frame, props, clothes, water, scene, ground, extra animals or people.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/tide.png",
+          "role": "Preserve exact seal character identity, anatomy, pastel palette and chunky pixel sticker style; only change pose to airplane flippers spread for a small jump. Clean up pupils as requested."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1076414,
+      "sha256": "66c77cdccc987793287a651f0c868340fa71efa24976d7d604162f8b4fd06fa8",
+      "visualReview": "Inspected native output. Earless seal spreads both front flippers horizontally with a light upright bounce; paired rear tail flippers remain visible. Whole clean white eyes, single compact pupils with no detached specks or suspicious extra top cell. Full silhouette, two sparkles. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "tide",
+      "face": "7",
+      "animalVariant": "비행기 팔 물개",
+      "localSourceRecord": "docs/art/sky-hop-batch03-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/tide-8.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-a4210620-50b0-4469-98e0-c06867f3eb47.png",
+      "prompt": "Create ONE new full-body pose of the EXACT original baby SEAL in the supplied reference, preserving its pale powder-blue-gray chubby body, cream muzzle/belly, sky-blue front flippers and paired rear tail flippers, coral cheeks, thick PERIWINKLE BLUE coarse square staircase outline, huge sweet head and simple pastel pixel-sticker identity. Anatomy is EARLESS seal with two front paddle flippers and a paired rear tail, NO legs, fingers, dog paws or external ears. New pose: PEACEFULLY SLEEPING ON ITS SIDE. The entire seal lies diagonally on its side, head toward upper-left and relaxed rear flippers toward lower-right. ONE sky-blue front flipper is tucked under the side of its head as its own pillow; the other front flipper rests loosely over its cream tummy. Eyes are BOTH gently CLOSED as two simple clean periwinkle crescent curves, no visible white eye or pupils. Tiny relaxed happy mouth, soft coral cheeks, a tranquil baby expression. Rear flippers loosely relaxed together. Clearly side-sleeping, not upright, belly-down chin propping or belly-up floating. Its body, both front flippers and complete tail flippers must all be visible. No separate pillow, bed, Z letters or sleeping props. Same chunky Y2K pixel sticker drawing with broad pastel fields and thick stepped contours, no fur realism, 3D, smooth vector shapes or dense sprite detail. PURE WHITE portrait 2:3 1024x1536 image, one whole diagonal sleeping animal occupying about 65-75 percent height with ample white margins. Exactly TWO tiny sky-blue/coral pixel sparkles. No letters, words, digits, labels, logos, watermark, frame, border, scenery, ground line, water, clothes, other animals or people.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/tide.png",
+          "role": "Exact seal identity, earless anatomy, pastel palette and chunky pixel style reference. Change only pose to peaceful side sleeping with one front flipper as a pillow."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1065180,
+      "sha256": "0f013621b3b71d9a52daf8e253eebdcb262f8ce167e40ce93e531ba42b60396b",
+      "visualReview": "Inspected native output. Seal lies diagonally on its side, one flipper under head as pillow and other over belly, paired tail relaxed. Two closed clean crescent eyes. Full silhouette on white with two sparkles; no props. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "tide",
+      "face": "8",
+      "animalVariant": "새근새근 물개",
+      "localSourceRecord": "docs/art/sky-hop-batch03-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/tide-9.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-4b9c8588-61d8-4c82-8342-31916ca23bb8.png",
+      "prompt": "Create ONE complete new action card illustration of the EXACT original baby SEAL from the reference. Preserve pale powder-blue-gray body, large cream muzzle and belly, sky-blue front paddle flippers and paired rear flippers, coral blush/tongue, giant round EARLESS head, thick PERIWINKLE BLUE square-step pixel outline and large simple pastel fields. Anatomy: only two front FLIPPERS and paired rear tail flippers, no external ears, no legs, fingers or paw pads. New action CHEEK POKE: the happy seal sits in a compact curled sitting posture with paired rear flippers visible near the bottom, while BOTH small front flippers rise to its face. The tip of the left flipper gently presses the LEFT coral cheek, and the tip of the right flipper gently presses the RIGHT coral cheek. Each flipper contacts a separate cheek, never clap together. Make the cheeks a little plump where touched. Eyes are BOTH CLOSED happy periwinkle crescent smile arcs, clean simple contours, no exposed white eyes or pupils. Little delighted mouth and tiny coral tongue between cheeks. Clearly an innocent cheek-squishing cute gesture, not applause, chin propping or belly patting. All body and flippers fully visible. Same chunky pastel Y2K pixel sticker drawing, no realism, fur, 3D, smooth vectors or polished sprite details. PURE WHITE portrait 2:3 1024x1536, one full seal around 70 percent height with white margin around head, cheek flippers and tail. Exactly TWO isolated small sky-blue/coral pixel sparkles. No words, letters, digits, labels, logos, watermark, card frame, border, clothes, props, water, scene, other animals or people.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/tide.png",
+          "role": "Exact seal character anatomy, pastel palette and chunky pixel style reference; change only pose to a compact seated happy cheek poke with both front flipper tips."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1088664,
+      "sha256": "5ee03b0a91ebe9d457f953e009bbcdf7fe7024bc834fe945bb288c040182b328",
+      "visualReview": "Inspected native output. Compact seated seal presses separate coral cheeks with two front flipper tips, eyes closed in happy arcs. No external ears or legs. Complete tail and front flippers with two sparkles. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "tide",
+      "face": "9",
+      "animalVariant": "볼 콕 물개",
+      "localSourceRecord": "docs/art/sky-hop-batch03-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/tide-10-v2.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-2e260622-06a1-40a6-b431-3f518b39e227.png",
+      "prompt": "Use case: precise-object-edit. Correct ONLY the NOSE AND MOUTH of the seal in IMAGE 1. Image1 is the EDIT TARGET: keep its new alert RIGHT-SIDE-UP side-reclining pose, supporting front flipper low at left, other flipper on belly, rear flippers at right, face/eyes, pale blue body, cream muzzle, framing and two sparkles unchanged. IMAGE2 supplies the original character's correct NOSE AND MOUTH only. In image1 the nose has mistakenly become a blue ring with a CORAL CENTER, making a second pink spot stacked above the mouth. REMOVE that error: replace the whole upper nose with ONE SMALL SOLID PERIWINKLE BLUE oval/soft triangular pixel-block nose, NO coral or white center and NO donut hole. From its bottom a short periwinkle line leads to the simple cheerful curved smile, exactly like the character in Image2. There must be ONLY ONE tiny coral tongue located LOW INSIDE THE OPEN MOUTH, below the solid blue nose; no second coral dot above, no duplicate mouth, no red clown nose. Keep the same happy expression and mouth location and cream muzzle shape. Change no other part of the illustration. Preserve image1's pale blue/cream/coral palette and coarse periwinkle staircase outline, all limbs/tail, clean white eyes/pupils, entire full-body composition, pure white 1024x1536 portrait2:3 canvas and two blue/coral pixel sparkles. No additional objects, text, numbers, logos, frame, background or pose changes.",
+      "references": [
+        {
+          "path": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-643e3e6f-bc8f-4a0c-8a2c-0587796b2509.png",
+          "role": "Edit target: preserve the entire new right-side-up side-reclining seal pose, colors, eyes, body, flippers, tail, framing and two sparkles. Correct only corrupted pink-centered nose and mouth."
+        },
+        {
+          "path": "apps/web/public/art/cards/sky-hop/tide.png",
+          "role": "Original seal nose and mouth identity reference only. Use its small solid periwinkle nose connected to a simple smiling mouth and one coral tongue. Do not change new reclining pose."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1427445,
+      "sha256": "3bc3c9aa60203461a3ebc89144c2be614c9a58da1b27f4f905c626822174097c",
+      "visualReview": "Inspected initial generation and focused nose/mouth correction. Earless seal is right-side-up and alert in relaxed side recline, one front flipper supports chest low on side and the other rests on belly; paired rear flippers lift lightly to side. Corrected to one solid periwinkle nose and one coral tongue in lower smile, retaining new pose and original colors. Open clean eyes, two front flippers only, no legs, entire silhouette and two sparkles visible. Generated raster pixel-style art; minor tonal variation remains.",
+      "suit": "tide",
+      "face": "10",
+      "animalVariant": "물개",
+      "action": "옆으로 기대 쉬기",
+      "supersedes": "tide-10.png",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-specials.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/moss-support.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-4c69aa1a-38b2-48ce-a3eb-5e42500f52ab.png",
+      "reusedFrom": "apps/web/public/art/cards/sky-hop/moss.png",
+      "prompt": "Create ONE original BABY OTTER character for the same finished card-art family as the two supplied sky-hop puppy and kitten references. Use BOTH references for STYLE, PALETTE AND COMPOSITION ONLY, never their animal anatomy. The subject must be an unmistakable baby otter: two very small ROUND ears low on the sides of its rounded head, a broad LARGE CREAM muzzle with a small dark nose and a little coral tongue, chubby tapering body with a LARGE CREAM belly, short tiny hands and short feet, and a long smoothly tapering waterdrop-shaped otter tail rendered with chunky staircase edges and fully visible beside the body. Warm LIGHT APRICOT BROWN body and tail, NOT gray Siamese markings, with the identical PERIWINKLE BLUE thick outline and facial details from the reference family. Tiny sky-blue accents on inner ears or fingertips only, coral pink cheeks, tongue and small paw pads. Huge slightly tilted head with small uneven innocent eyes and a sweet mindlessly happy expression. Both little hands raised close beside its cheeks, feet kept close together in an awkward TINY HOP, making it look endearingly clumsy and harmless. The long tail makes the species legible and must fit fully inside the image. Visual style: chunky Y2K pixel sticker, large square blocks and obvious stepped edges, broad simple pastel fields, sparse details, same weight and art treatment as references. Do not make realistic fur, a 3D object, smooth vector art, a finely detailed game sprite, or an elegant realistic animal. Portrait 2:3 canvas at 1024x1536, PURE WHITE background, single centered full-body otter taking 65-75 percent of total image height; generous top headroom and white margin around every ear, foot and the whole tail. Exactly two small isolated block-pixel sparkles in sky blue and coral, like references. No stones, shells, props, water scene, scenery, clothing, equipment, other animals, text, numbers, logos, captions, frame, border or watermark. Make the otter feel completely at home beside these specific chosen puppy and kitten images while keeping its own warm peach identity.",
+      "references": [
+        {
+          "path": "apps/web/public/art/studies/round-05/02-sky-hop-dog.png",
+          "role": "STYLE, PALETTE AND COMPOSITION ONLY. Match thick periwinkle staircase outline, large pastel blocks, cheerful tiny-hop pose, two sky/coral pixel sparkles and isolated white portrait layout. Do not keep dog anatomy."
+        },
+        {
+          "path": "apps/web/public/art/studies/round-05/02-sky-hop-cat.png",
+          "role": "STYLE, PALETTE AND COMPOSITION ONLY. Match the selected character family, playful uneven eyes, scale and airy white margins. Do not keep cat ears, gray points or cat anatomy."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1466545,
+      "sha256": "1878f17c96fac1d85fb0add3f1d07a0f9deb4af4d3be6707db3399a51627f904",
+      "suit": "moss",
+      "face": "support",
+      "animalVariant": "기본 깡총",
+      "visualReview": "Matches selected sky-hop family with thick periwinkle stepped outline, pastel large color areas, two sky/coral pixel sparkles, tilted happy head and close-foot tiny hop. Otter has small round ears, light apricot body, broad cream muzzle and belly, short raised paws, and fully visible long tapering tail. Complete head/ears/feet/tail fit inside white margins. Minor generated tonal variation remains; image is a raster pixel-style illustration.",
+      "localSourceRecord": "docs/art/sky-hop-batch01-support.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/moss-2.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-7053860d-07d2-4e08-a7ae-5ae08edfeea9.png",
+      "prompt": "Create ONE full-body pose variation of the EXACT original BABY OTTER from the supplied reference. Preserve its warm light APRICOT BROWN body, big cream muzzle and cream belly, small ROUND ears with tiny sky-blue accents, coral cheeks and tongue, slightly uneven innocent eyes and thick PERIWINKLE BLUE staircase pixel outline. SAME character and same large-head small-body family. New action is RELAXED BACK FLOATING: the baby otter lies on its back with belly facing the viewer, entire body tilted diagonally from the upper left head to the lower right feet/tail, looking content and adorably vacant. Its two tiny front hands rest loosely ON TOP OF ITS CREAM BELLY, not raised by its face; its two small hind feet point gently up. Its long tapering otter tail extends naturally beyond its lower body and is fully visible. Clearly read as an otter lying belly-up, not standing, swimming forward or dancing. Keep both little rounded ears, all four small paws and the long tail inside canvas. NO water is shown: it floats as an isolated character on pure white, without ripples, waterline, splashes, stones, shells or any props. Match exact chunky Y2K pixel sticker style of reference with bold coarse square steps and large simple pastel fields, no realistic fur, no 3D, no smooth vector shapes. Single full animal, portrait 2:3 1024x1536 white canvas, overall diagonal character bounding shape occupies around 70 percent of canvas height with generous margins. Exactly two isolated tiny sky-blue/coral pixel sparkles. No letters, text, numbers, logos, watermark, frame, border, scenery, clothes, people or other animals.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/moss.png",
+          "role": "Exact otter character identity, colors, anatomy, face and chunky pixel outline reference. Change only its pose to floating relaxed on its back, with no visible water or background scene."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1425910,
+      "sha256": "4ecf45bfc41e4c9a10d3c5c4c6493579f72121f07f1bbad651783973af726002",
+      "visualReview": "Apricot otter reclines diagonally belly-up, small forepaws resting over cream belly, hind paw pads facing viewer and long tail extending to lower right. Clear round ears and back-floating pose without water or props. Whole silhouette, two sparkles, white background. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "moss",
+      "face": "2",
+      "animalVariant": "등으로 둥둥 뜨는 수달",
+      "localSourceRecord": "docs/art/sky-hop-batch01-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/moss-3.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-32cd51ae-4d12-4ad2-9dd6-0746180d485e.png",
+      "prompt": "Create ONE complete full-body action illustration of the EXACT BABY OTTER character in the reference. Keep the identical light warm APRICOT BROWN body, broad CREAM muzzle and cream belly, tiny ROUND ears with pale sky-blue inside, long tapering otter tail, coral pink cheeks and tongue, innocent derpy uneven eyes, and chunky thick PERIWINKLE BLUE staircase outlines. Change its action to an adorable long MORNING STRETCH: BOTH short front arms are stretched HIGH ABOVE ITS HEAD, reaching upward with both small paw pads facing partly forward; the hands extend clearly past the top of its ears. Its body is longer than the base pose as it stretches up on two little feet, large cream belly lengthened, back gently curved, long tail curls visibly to one side for balance. Both arms MUST start at the shoulders, not grow out of the head. Make the head a little smaller relative to the stretched torso while retaining the same baby otter identity. The open happy mouth and slightly misplaced eyes look harmless and awkward, not athletic or elegant. Read instantly as stretching with both hands overhead, not waving, hopping or clapping. Single full animal at about 70 percent of a portrait 2:3 1024x1536 image, all high fingertips, ears, feet and entire long tail completely visible with generous white margin including above the raised hands. Match the reference's Y2K coarse pixel sticker family, large simple pastel color fields, pronounced square stepped contours. No fur realism, no 3D, no smooth vector drawing. Pure white background with exactly two tiny sky-blue and coral pixel sparkles. No text, numbers, letters, logos, watermark, props, stones, water, scene, clothing, frame, border, other animals or people.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/moss.png",
+          "role": "Exact otter character identity, colors, anatomy, face and chunky pixel outline reference. Change only its action to a full-body overhead stretch with both front paws above the head."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1431153,
+      "sha256": "4de9c59f2db0724c8a15ff43d87c1e6b30327ee8cf5ec820a65288ba01fd1fcd",
+      "visualReview": "Apricot otter stretches both forepaws above its ears; arms connect along torso, body and cream belly lengthened, small feet and long side tail visible. Same round ears and derpy expression; complete fingertips and feet, two sparkles, white background. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "moss",
+      "face": "3",
+      "animalVariant": "기지개 켜는 수달",
+      "localSourceRecord": "docs/art/sky-hop-batch01-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/moss-4.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-2efbb584-7f33-44a4-bc22-c633f5b33077.png",
+      "prompt": "Create ONE full-body action variation of the EXACT original BABY OTTER from the supplied reference. Preserve its warm light APRICOT BROWN body, broad CREAM muzzle and cream belly, tiny ROUND ears with small sky-blue accents, long tapering tail, coral cheeks and tongue, chunky thick PERIWINKLE BLUE staircase pixel outline. New pose is HOLDING ITS BELLY AND LAUGHING HARD: BOTH tiny front paws are pressed to the lower and upper sides of its cream belly as if laughter makes its tummy ache. Its torso bends into a funny sideways curve, knees slightly bent, head tipped back, mouth wide open with small pink tongue. Eyes are little uneven squeezed smiling arcs rather than normal round open eyes, but keep the same harmless dopey character. This is a full-body giggle fit, not floating on its back, belly patting or overhead stretching. The curved torso, backward head tilt and delighted eyes must make the action clear. Short hind feet support it and the long otter tail curves visibly outward for balance. All two ears, four paws and complete tail in frame. Same coarse Y2K pixel sticker treatment with large pastel fields and pronounced square stepped edges; no realism, no fur, no 3D, no smooth vector style. One full otter occupies around 70 percent height of PURE WHITE portrait 2:3 1024x1536 canvas, generous white margins. Exactly two small isolated sky-blue/coral pixel sparkles. No text, numbers, letters, logos, watermark, props, clothes, water, scenery, frame, border, people or other animals.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/moss.png",
+          "role": "Exact otter character identity, anatomy, palette, face and pixel-style reference. Change only action to laughing while holding its belly with both front paws."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1422598,
+      "sha256": "5e0dadb10f7a45f99f2dcd95a81d214ed449805784007e70b5d0cd1d5ba997a0",
+      "visualReview": "Apricot otter holds cream belly with two front paws, curved torso, tilted-back laughing head and uneven squeezed smile eyes. Round ears, two hind feet and long side tail visible; two sparkles. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "moss",
+      "face": "4",
+      "animalVariant": "배 잡고 깔깔 웃는 수달",
+      "localSourceRecord": "docs/art/sky-hop-batch02-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/moss-5.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-fcb7c8c3-8c88-4612-b07b-fb8b43f27888.png",
+      "prompt": "Create ONE complete action illustration of EXACTLY the same original BABY OTTER as the supplied reference. Preserve warm light APRICOT BROWN body, broad cream muzzle and cream belly, small ROUND ears with sky-blue accents, coral cheeks and tongue, innocent slightly uneven eyes, thick PERIWINKLE BLUE stepped pixel outline. New pose: SITTING AND HUGGING ITS OWN LONG TAIL. The otter sits on its bottom with both short hind feet visible at the lower corners. Its own long tapering apricot tail emerges naturally from behind its hip and curls around to the FRONT of its body in a broad U, with the tip pointing up toward its chest. Both tiny front paws gently clutch and cuddle that tail against its cream belly. Make the continuous tail attachment and curved shape readable; it is a TAIL, not a separate cushion, stick, food or second animal. Big round head tilts sweetly over the hugged tail, simple open-mouth innocent expression with tiny tongue. A cuddly compact seated silhouette, not standing, swimming, stretching or dancing. Ensure two front paws, two hind feet, both round ears and entire wrapped tail are visible. Same chunky coarse Y2K pixel sticker family with large pastel fields and thick square staircase outlines. No realistic fur, no 3D, no smooth vector finish. Single animal occupies around 70 percent height of PURE WHITE portrait 2:3 1024x1536 canvas with ample white margins. Exactly two tiny isolated sky-blue/coral pixel sparkles. No text, numbers, letters, logos, watermark, props, clothes, stones, water, scene, frame, border, people or other animals.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/moss.png",
+          "role": "Exact otter identity, anatomy, palette, face and chunky pixel-style reference. Change only pose to sitting and hugging its own long tail wrapped in front."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1511140,
+      "sha256": "f8353f9714fe333fc92dc12be118c49bbff5d64904b983c3c5b9145b95eabbcc",
+      "visualReview": "Apricot otter sits with two hind soles visible, both front paws cuddling its long tail which curls up in front of belly. Round ears and same derpy face, complete compact silhouette and two sparkles. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "moss",
+      "face": "5",
+      "animalVariant": "꼬리를 안고 앉은 수달",
+      "localSourceRecord": "docs/art/sky-hop-batch02-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/moss-6.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-268f4f36-4f2e-4b86-9909-dae118de150d.png",
+      "prompt": "Create ONE complete action image of the EXACT original BABY OTTER shown in the reference. Keep warm light APRICOT BROWN body, broad cream muzzle and cream belly, small ROUND ears with light sky-blue details, long tapering tail, coral cheeks and tongue, silly uneven innocent eyes and thick PERIWINKLE BLUE square staircase pixel outlines. NEW ACTION: an adorably awkward sideways DANCE KICK. The otter balances on its LEFT hind foot while its RIGHT hind leg kicks clearly out sideways toward the viewer's right, showing the little cream sole and coral paw pad. Its opposite LEFT front arm reaches out toward the viewer's left for balance, while the other front paw bends in toward its cheek. Big head tips left and torso leans the opposite way in a goofy off-balance dance. Long otter tail sweeps to the left, separate and readable. This is a silly wobbly little kick, NOT athletic martial arts, not standing with both paws raised, not a simple hop. Four limbs only: two front paws and two hind feet, plus the one long tail, all fully visible. Keep the oversized baby head and harmless derpy smile with tongue. Match chunky Y2K pastel pixel sticker identity, large simple color fields, obvious coarse square steps, no realism, fur, 3D or smooth vector finish. PURE WHITE portrait 2:3 1024x1536 image, full character about 70 percent height, ample white margins around sideways kicking foot, balancing paw, ears and complete tail. Exactly two small sky-blue/coral pixel sparkles. No text, numbers, letters, logos, watermark, frame, border, props, clothes, water, scene, people or other animals.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/moss.png",
+          "role": "Exact otter character identity, anatomy, palette, face and coarse pixel-style reference. Change only action to an awkward sideways kick with a balancing opposite front arm."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1456482,
+      "sha256": "25462ad150fd9504c07cc773005ea40fd057724c0431c41ffbaa7a235df9b025",
+      "visualReview": "Apricot otter balances on one hind foot, kicks other foot sideways, opposite front arm stretched sideways and other front paw near face. Round ears, long side tail and four limbs clear, full silhouette and two sparkles. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "moss",
+      "face": "6",
+      "animalVariant": "옆 발차기 춤추는 수달",
+      "localSourceRecord": "docs/art/sky-hop-batch02-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/moss-7.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-0e5ba9a2-788b-4e60-94c5-18fb7d165397.png",
+      "prompt": "Create ONE complete new pose of the EXACT original BABY OTTER from the supplied reference. Preserve warm light APRICOT BROWN body and long tapering tail, broad cream muzzle and belly, small ROUND ears with sky-blue accents, coral cheeks and tongue, huge sweet baby head, thick PERIWINKLE BLUE square staircase outline and broad pastel pixel-sticker color blocks. New pose is A POLITE LITTLE BOW. The otter stands on two short hind feet, bends visibly forward at the waist, dipping its big head and shoulders toward us. BOTH small front paws are held together neatly in front of its lower cream belly as it bows, not above its head and not crossed over chest. Its complete long tail extends from behind and sweeps to the side for balance. A shy innocent gentle smile. Show sufficient side/three-quarter angle so the forward waist bend is obvious while face remains visible. Open eyes, if visible, must each have ONE compact solid periwinkle pupil and clear complete white surround, clean simple block shapes with no single blue pixel bump or detached specks; both eyes gaze gently together downward, never crossed. Exactly two small front paws and two hind feet, both round ears and whole tail within canvas. Same chunky coarse Y2K pixel sticker drawing, no fur realism, 3D, smooth vector shapes or detailed game sprites. PURE WHITE portrait 2:3 1024x1536 image, one complete bowing otter about 65-75 percent height with generous white margins. Exactly TWO tiny isolated sky-blue/coral pixel sparkles. No text, letters, digits, labels, logo, watermark, props, clothing, water, scene, border, frame, other animals or people.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/moss.png",
+          "role": "Exact otter identity, round ears, long tail, pastel palette and chunky pixel outline reference. Change action to a polite bow with both front paws together before belly; clean pupil shapes."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1392638,
+      "sha256": "99607b6e856f4d3b2a65d8e184007e7548e033ce9cfe75e0f5f9dc0b4b6d4bcf",
+      "visualReview": "Inspected native output. Otter joins front paws before lower belly with head and torso inclined in a modest bow, two hind feet and complete long side tail visible. Clean single pupils looking downward together, no top-cell spike or detached blue fleck. Full silhouette, two sparkles. Bow is gentle rather than deeply bent. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "moss",
+      "face": "7",
+      "animalVariant": "꾸벅 인사 수달",
+      "localSourceRecord": "docs/art/sky-hop-batch03-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/moss-8-v2.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-47547360-c633-4903-a9d0-96b28653b3c7.png",
+      "prompt": "Use case: precise-object-edit. Improve ONLY the awkward FRONT ARM anatomy and hug pose of the exact seated original baby OTTER in this image. Preserve its warm GOLDEN APRICOT and CREAM color scheme, huge round baby head, small round ears with sky accents, closed smiling crescent eyes, coral cheeks and tiny tongue, both planted hind feet and their coral paw pads, long tail at the side, thick PERIWINKLE BLUE pixel-stair outline, two blue/coral sparkles, white background and overall composition. REBUILD THE TWO FRONT ARMS from shoulders to hands so they look natural and softly cuddly. There must be EXACTLY TWO FRONT ARMS, each clearly starting at its own shoulder below the head. Each upper arm curves DOWN along its own side of the body with a low rounded elbow. The two short forearms then curl GENTLY INWARD to the middle of the belly. Each arm ends in ONE small ROUND paw. Place these TWO paws close together and SLIGHTLY OVERLAPPING SOFTLY at the belly center, one just above the other, like the otter is warmly hugging itself. Keep the cream chest above visible. No sharp X or scissor cross, no arms cutting straight diagonally across chest, no duplicated hand, no unattached limb, no long human arms. The upper arms and low elbows should form two clear smooth U-like arcs made of chunky square staircase pixels. Soft safe cuddle, relaxed seated posture and peaceful closed smile. Both hind feet remain resting on the bottom, whole long tail intact. Same broad pastel blocks and coarse Y2K pixel sticker family, not real fur, 3D or smooth vector. One entire animal on PURE WHITE portrait 2:3 1024x1536, all ears, two front paws, two hind feet and tail inside generous white margins. Exactly two small sky-blue/coral pixel sparkles. No text, digits, words, logo, watermark, border, frame, extra animal, props, clothing, water or scenery.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/moss-8.png",
+          "role": "Edit target: preserve exact otter identity, golden apricot/cream colors, closed happy face, seated legs and tail; rebuild only the two forearms as a natural soft rounded hug with clearly connected shoulders and gently overlapping paws at belly center."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1101864,
+      "sha256": "bc1adeec040619195d25fceed14548db1fd75408801df9cd125bd3b9cd724295",
+      "visualReview": "Inspected native output. Original golden-apricot/cream seated otter, closed happy eyes, round ears, side tail and two planted hind feet preserved. Two front arms now each connect clearly from shoulder through rounded low elbow to one short paw; paws gently overlap at center belly. No scissor-X crossing or duplicated forelimb. Full outline, white margins and two sparkles retained. Generated raster pixel-style art; minor tonal variation remains.",
+      "suit": "moss",
+      "face": "8",
+      "animalVariant": "수달",
+      "action": "폭 안아주기",
+      "supersedes": "moss-8.png",
+      "localSourceRecord": "docs/art/sky-hop-pose-refresh-specials.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/moss-9-v2.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-72c31e72-d905-4f74-87c6-a3a4fd35b784.png",
+      "prompt": "Use case: precise-object-edit. Perform one TINY localized eye correction on this existing curled-up baby otter illustration. The image is the EDIT TARGET, not inspiration for a new drawing. The affected eye is the VIEWER'S LEFT / LOWER eye, around x=390 y=650 in the 1024x1536 image. Its blue pupil currently has a small narrow SINGLE BLUE PIXEL-BLOCK protruding upward from the middle of its top edge (near x=380 y=621). REMOVE that narrow upper protruding blue cap by replacing ONLY the cap with the surrounding pure white sclera color. The pupil's remaining top should become a simple FLAT HORIZONTAL pixel edge, with a clean white gap above it. Keep the existing pupil width, position, lower edge and gaze as close as possible. Do NOT enlarge the pupil to absorb the spike, do NOT leave an upward knob, and do NOT add a highlight or new blue dot. Keep the other higher eye unchanged. Preserve everything else extremely closely: exact warm apricot otter coat, cream muzzle/belly, coral cheeks/tongue/paw pads, round ears and sky-blue accents, thick periwinkle stepped outlines, awake smile, curled round body and all tucked paws, long tail arch on the right, white background, exact two pixel sparkles, original margins, scale and 1024x1536 portrait2:3 canvas. No new objects, no text, no labels, no border, no changed pose or character. This is only a pixel-shaped artifact cleanup of the lower-left pupil top, not a redesign or a style change.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/moss-9.png",
+          "role": "Edit target. Preserve entire otter artwork; correct only the small blue one-cell protrusion on the top of the viewer-left/lower pupil by filling that protruding cap with white sclera."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1491372,
+      "sha256": "1621b5891384f2409ae8a1c58df0808af96fd41c1296eea6e89a49542d86537c",
+      "visualReview": "Inspected native output and copied file against original moss-9. The narrow upper one-cell blue cap on the viewer-left/lower pupil is removed; pupil now has a simple compact upper contour with clear white above. The edit mildly smooths that pupil contour, with its general position/size and gaze retained. Warm apricot/cream/coral palette, curled pose, paws, tail arc, facial expression, upper eye, white framing and two sparkles remain visually unchanged.",
+      "suit": "moss",
+      "face": "9",
+      "animalVariant": "공처럼 데굴 수달 · 눈 픽셀 정리",
+      "supersedes": "moss-9.png",
+      "localSourceRecord": "docs/art/sky-hop-batch03-otter9-fix.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/moss-10.png",
+      "source": "generated_images/01a172cc-e985-7e71-b56b-5a2e69670b2d/exec-2a914802-ce51-4579-97f4-ab58d1c35c72.png",
+      "prompt": "Create ONE new full-body action illustration of the EXACT original BABY OTTER from the supplied reference. Preserve light warm APRICOT BROWN body and long tapering tail, broad cream muzzle/belly, small ROUND ears with sky-blue accents, coral cheeks/tongue/paw pads, oversized baby head, thick PERIWINKLE BLUE coarse square staircase outline and broad simple pastel fields. New action is A BIG CELEBRATORY STAR JUMP IN MID-AIR. BOTH tiny front arms reach HIGH and OUT to the upper left and upper right, BOTH short hind legs kick FAR APART to lower left and lower right, making an unmistakable dynamic X-shaped STAR silhouette. There is EMPTY WHITE SPACE BETWEEN THE TWO SPREAD HIND LEGS. The body is compact in the air, not standing tall with feet together and not an overhead morning stretch. Paws show little cream soles and coral pads. Its long otter tail curves out behind to one side and stays fully visible, distinct from the four limbs. Huge joyful baby smile with tongue, head slightly tilted, endearingly clumsy exuberance rather than athletic. TWO clean white eyes, each with ONE SIMPLE SOLID PERIWINKLE PUPIL shaped like a small compact rounded rectangle in the pixel grid, FLAT CLEAN TOP edges, white clearly surrounding each pupil. Both pupils look in the same forward direction. NO cross-shaped pupils, NO isolated one-cell protrusion on top or sides, NO detached blue specks or crossed gaze. Maintain chosen chunky Y2K pixel-sticker style with broad pastel shapes, no fur realism, 3D, smooth vector or dense game-sprite detail. PURE WHITE portrait 2:3 1024x1536 canvas, single complete star-jumping otter around 70 percent total height with generous margins around raised paws, spread feet, round ears and entire tail. Exactly TWO tiny isolated sky-blue/coral pixel sparkles. No words, letters, numbers, labels, logo, watermark, props, clothes, water, scene, ground, border, frame, other animals or people.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/moss.png",
+          "role": "Exact otter identity, round ears, long tail, pastel palette and chunky pixel style. Change only to a dynamic star-shaped airborne celebration jump, with carefully clean aligned pupils."
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1448808,
+      "sha256": "18ddefafbbe5dd58ca8fcf2b60e6a9e5cb72b6682002d7dd885fca3eb34870dd",
+      "visualReview": "Inspected native output. Dynamic airborne star jump with both forearms extended up/out, hind feet spread far apart with white gap, long tail visible to side. Distinct from feet-together overhead stretch. Clean simple single pupils with no detached specks or obvious top spike, full silhouette and two sparkles. Minor generated tonal variation remains; raster pixel-style illustration.",
+      "suit": "moss",
+      "face": "10",
+      "animalVariant": "만세 점프 수달",
+      "localSourceRecord": "docs/art/sky-hop-batch03-actions.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/dusk-support.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-05c05f61-70f9-41e0-9910-ce3cb11907aa.png",
+      "reusedFrom": "apps/web/public/art/cards/sky-hop/dusk.png",
+      "prompt": "Use case: stylized-concept. Create ONE new original BABY TIGER named Rangi for the same pastel pixel animal card family as the references. Portrait 2:3 exactly 1024x1536. BOTH supplied images are STYLE, PALETTE AND COMPOSITION references ONLY: use their thick periwinkle-blue blocky pixel stair-step outline, broad soft pastel patches, goofy slightly crooked eyes, huge tilted head and short chubby airborne body, clean white backdrop and two small sky-blue/coral pixel sparkles. Replace dog/cat species completely with a baby TIGER. Tiger identity must be unmistakable: two small ROUND ears, pastel apricot-gold body, creamy round muzzle and belly, THREE to FIVE large simple lavender/dusky-navy tiger stripes over forehead and cheeks, plus a long curved tail with a few broad alternating lavender tiger stripe bands. Round ears, not pointed cat ears; no Siamese mask. Tiny sky-blue belly/paw accents and coral cheeks, tongue and ear interiors fit the reference palette. Oversized round crooked head, very short fat torso, two small hind feet together in a little hop, short front paws held out at different heights, large foolish eyes looking in slightly different directions and tiny happy open mouth with a little tongue. Cute clumsy baby, slightly derpy, never fierce or cool. Whole animal centered, every round ear, paw, foot and the entire curved striped tail inside the frame, animal 65–75 percent of total image height with generous clean headroom and margins. Preserve the same coarse square-pixel illustration medium, clearly visible blocky outline steps, broad flat pastel color regions with limited details. Pure white #ffffff background, exactly two tiny pixel sparkles. No rabbit ears, dog floppy ears, pointed cat ears, extra animals, clothing, props, text, numbers, symbols that resemble labels, card frame, logo or watermark. No realistic fur, 3D, glossy rendering, smooth vector curves or intricate polished sprite details.",
+      "references": [
+        {
+          "path": "apps/web/public/art/studies/round-05/02-sky-hop-dog.png",
+          "role": "Style, palette and composition only; puppy replaced with baby tiger"
+        },
+        {
+          "path": "apps/web/public/art/studies/round-05/02-sky-hop-cat.png",
+          "role": "Style, palette and composition only; kitten replaced with baby tiger"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1077948,
+      "sha256": "f276e32a9f047b19f13b6c0c4aad60c32b1bfb087bf1e93fa527f23af57cebe3",
+      "suit": "dusk",
+      "face": "support",
+      "animalVariant": "기본 깡총",
+      "visualReview": "Inspected native output and copied PNG. Single full-body baby tiger with round ears, apricot-gold fur, cream muzzle/belly/feet, broad lavender forehead/cheek/body/tail stripes, periwinkle stepped outline, coral pads/cheeks/tongue and two blue/coral pixel sparkles. Crooked large head and short body match sky-hop animal family. Entire ears, paws, feet and curved striped tail inside image with generous white headroom. No text, card labels, frame, logos, watermark or additional animals. Generated tiger has more stripes than the prompt's 3–5 target, while remaining simple and readable; sky-blue appears in sparkles rather than belly accents.",
+      "localSourceRecord": "docs/art/sky-hop-batch01-support.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/dusk-2.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-b09dc8d1-629f-4be9-abd2-030c0493ea46.png",
+      "prompt": "Use case: identity-preserve. Make ONE new action variation of the EXACT same original baby tiger character in the supplied image. Image 1 is the CHARACTER IDENTITY, PIXEL STYLE AND PALETTE reference. Preserve its round ears, huge childlike head, short chubby body, soft apricot-gold fur, cream muzzle/belly/paws, broad dark lavender tiger stripes, coral cheeks/ear interiors/paw pads, and thick periwinkle-blue coarse square-stair-step outline. Change ONLY the action and expression: the baby tiger is peacefully sleeping curled into a cute round ball. It lies on its side with both eyes gently closed as simple short periwinkle arcs, a tiny soft content smile, its big cheek resting on tucked front paws. Short hind feet tuck against the round belly, and the long striped tail follows the OUTER curve of the curled body, with its entire rounded tail tip clearly visible. Make the compact cuddle pose readable, no tangled limbs and no extra paws. Keep the same foolishly cute baby proportions and broad simple pastel patches of the reference. Slight three-quarter view, one complete original tiger centered on pure white #ffffff background, portrait 2:3 exactly 1024x1536. Entire round ears, all visible paws/feet and full curled tail comfortably inside frame with generous margins and clear space overhead. Exactly two small sky-blue/coral pixel sparkles, as in reference. Use the same chunky low-resolution pixel-sticker artwork with obvious blocky outline steps; no change of artistic medium. No text or sleeping Z letters, numbers, ranks, card symbols, card frame, logo, watermark, bedding, pillows, props, clothes or additional animals. No real fur, realistic lighting, 3D, glossy rendering, smooth vector curves or refined dense sprite detail.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk.png",
+          "role": "Exact baby tiger identity, original sky-hop pixel style and palette; action and expression changed only"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1480129,
+      "sha256": "31ac2b903ffb8b288a58d4d72018e1036cf41995905202ad380a883896c32172",
+      "visualReview": "Inspected native output. Single full-body tiger curled into a round sleeping pose with closed eyes, content smile, tucked front paws below cheek, compact hind feet and entire striped tail curved around the outside. Apricot/cream/lavender/coral colors and periwinkle stepped outline match approved original. Whole ears, visible feet and full tail inside frame; white backdrop, two blue/coral sparkles; no letters, ranks, frame, props or watermark.",
+      "suit": "dusk",
+      "face": "2",
+      "animalVariant": "baby-tiger-curled-sleep",
+      "localSourceRecord": "docs/art/sky-hop-batch01-tiger.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/dusk-3.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-781e03b6-3047-4ed4-a1e0-1d2fd1feefc5.png",
+      "prompt": "Use case: identity-preserve. Make ONE new action variation of the EXACT same original baby tiger shown in the supplied image. Image 1 is the CHARACTER IDENTITY, PIXEL STYLE AND PALETTE reference. Preserve round ears, huge slightly crooked baby head, very short chubby body, soft apricot-gold fur, cream round muzzle/belly/paws, large dark lavender tiger stripes, coral cheeks/ear interiors/paw pads/tongue, thick periwinkle-blue coarse square-stair-step outline, and its endearingly awkward innocent eyes. Change ONLY action and expression: a PLAYFUL LITTLE FORWARD POUNCE. The whole tiger is airborne, body leaning almost horizontally forward on a gentle diagonal, both SHORT FRONT PAWS extended in front in a cute reaching gesture, small hind legs tucked under the rounded belly. The big round head faces partly toward the viewer so both foolish slightly off-center eyes and happy peaceful tiny tongue smile remain visible. Long striped tail curves up and back, completely in frame. This is a harmless baby play-hop: soft goofy face, NO aggressive expression, NO claws, NO fangs, no prey and no other animal. Clear distinct front paws and tucked hind feet, no extra limbs. Preserve exact character identity and coarse pastel pixel sticker medium with big simple color regions and obvious blocky step edges, not a new illustration style. Full complete animal centered, portrait 2:3 exactly 1024x1536, pure white #ffffff background. Every round ear, front paw, tucked hind foot and full striped tail with tip inside image; generous clean white margins and headroom. Exactly two small sky-blue/coral pixel sparkles matching the reference. No text, numbers, ranks, card symbols, frame, logo, watermark, motion typography, clothing, props or scenery. No real fur, 3D, gloss, smooth vector curves or intricate polished sprites.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk.png",
+          "role": "Exact baby tiger identity, original sky-hop pixel style and palette; action and expression changed only"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1523002,
+      "sha256": "a9301903ee6d970fe6a3572a2b01385fc82f954e908fe997662e78d0bd3633ce",
+      "visualReview": "Inspected native output. Single full-body tiger in playful forward pounce with body nearly horizontal on diagonal, two front paws reaching forward, hind feet tucked back and full striped tail raised. Peaceful goofy face without fangs or claws. Approved apricot/cream/lavender/coral colors and periwinkle stepped outline preserved. Entire ears, four paws and tail fit inside frame; white backdrop, two blue/coral sparkles, no text, card ranks, frame, props or watermark.",
+      "suit": "dusk",
+      "face": "3",
+      "animalVariant": "baby-tiger-playful-pounce",
+      "localSourceRecord": "docs/art/sky-hop-batch01-tiger.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/dusk-4.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-03ff9453-51cc-4090-9acb-c118abf7f837.png",
+      "prompt": "Use case: identity-preserve. Create ONE new action pose of the EXACT original baby tiger in Image 1. Image 1 is the character identity, palette and pixel-style reference. Preserve its ROUND ears, huge slightly crooked childlike head, very short chubby body, soft apricot-gold fur, creamy muzzle/belly/paws, simple broad dark lavender forehead/cheek/body/tail stripes, coral ear interiors/cheeks/paw pads/tongue, and thick periwinkle-blue chunky pixel-stair outline. Change ONLY action/expression: PEEKABOO. The baby tiger is sitting upright on its little round bottom with two short hind feet visible in front. Both tiny FRONT PAWS lifted close to the eyes in an innocent peekaboo game: one paw covers one eye, the other paw partly covers the other eye but leaves ONE bright goofy eye peeking through the side gap. Small delighted smile below the paws, friendly and playful. Keep both front paws distinct from the face, no human fingers and no extra limbs. Long striped tail curves casually beside the seated body, its whole tip visible. A coherent fresh pose different from standing, sleeping or jumping. Same broad pastel patches and coarse visible square steps as reference, not a different medium. ONE full animal centered on pure white #ffffff, portrait 2:3 exactly 1024x1536, approximately 70 percent image height with generous clear margins. Every round ear, hind foot and entire striped tail fully inside the frame. Exactly TWO small sky-blue/coral pixel sparkles. No writing, numbers, rank symbols, logo, watermark, frame, props, clothes, extra animals or scenery. No pointed cat ears, realistic fur, smooth vector curves, 3D, shiny rendering or dense polished sprite details.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk.png",
+          "role": "Exact original baby tiger character identity, sky-hop pixel style and pastel palette; action and expression changed only"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1454855,
+      "sha256": "f96f2897673a58a770e063cca426412c6122ac4d5c9361912c409e99c613265d",
+      "visualReview": "Inspected native output. Seated single baby tiger with two front paws raised near eyes, one eye hidden and one eye peeking openly, happy tongue smile and visible seated hind feet. Entire round ears and striped tail inside frame; approved apricot/cream/lavender/coral colors, periwinkle pixel stair outline and two blue/coral sparkles retained. No text, ranks, props, frame or watermark.",
+      "suit": "dusk",
+      "face": "4",
+      "animalVariant": "baby-tiger-peekaboo",
+      "localSourceRecord": "docs/art/sky-hop-batch02-tiger.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/dusk-5.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-26653e1d-1ea2-4ce9-aa05-73cbf3cd9be1.png",
+      "prompt": "Use case: identity-preserve. Create ONE fresh action illustration of the EXACT same baby tiger from Image 1. Reference role: preserve CHARACTER IDENTITY, PASTEL PALETTE AND CHUNKY PIXEL STYLE. Keep its ROUND ears, very large childlike head and tiny short chubby body, apricot-gold fur, cream muzzle/belly/paws, broad dark lavender forehead/cheek/body/tail tiger stripes, coral inner ears/cheeks/tongue/paw pads, and thick periwinkle-blue rough square-stair-step outline. Change ONLY the pose/expression to a SLEEPY BIG YAWN: tiger sits loosely on its bottom with little hind feet forward, shoulders and tiny front paws relaxed and drooping beside the belly, head tilting slightly backward. Eyes half closed, huge simple rounded O-shaped yawning mouth on the cream muzzle, a small soft coral tongue low inside. Tender innocent sleepy expression, emphatically NO sharp fangs, NO teeth display, no aggression. The open mouth must read as a yawn, not its usual small smile. Keep its awkward adorable baby character. Long striped tail lies curving beside the body and full rounded tip visible. Distinct from curled sleeping, standing/hopping or peekaboo: seated droopy rest posture with big yawn. Same broad pastel color regions and clearly visible chunky pixel steps; no change of medium. ONE whole animal centered on pure white #ffffff, portrait 2:3 exactly 1024x1536; approximately 70 percent image height and generous empty margins. Entire ears, relaxed paws, hind feet and full striped tail fit within image. Exactly TWO small blue/coral pixel sparkles. No text including no Z letters, numbers, ranks, card symbols, frame, logo, watermark, props, clothes or extra animals. No realistic fur, 3D, gloss, smooth vector curves or detailed polished sprites.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk.png",
+          "role": "Exact original baby tiger character identity, sky-hop pixel style and pastel palette; action and expression changed only"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1524286,
+      "sha256": "f755994e8db482cdfa69e0f2f3b6a98de33875643fdf247c6acb0eff7fabe88a",
+      "visualReview": "Inspected native output. Seated single baby tiger with half-closed eyes, big O-shaped open yawn, soft coral tongue and relaxed drooping front paws. No fangs or aggression. Whole round ears, hind feet and full striped tail visible. Original pastel identity and stepped outline retained; two sparkles on white, no text, ranks, props, frame or watermark.",
+      "suit": "dusk",
+      "face": "5",
+      "animalVariant": "baby-tiger-sleepy-yawn",
+      "localSourceRecord": "docs/art/sky-hop-batch02-tiger.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/dusk-6-v2.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-846a4a7f-958e-44eb-a366-89156e562cb8.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the EXACT EDIT TARGET, not a loose reference. Make a carefully localized correction to ONLY the two eyes and their immediately surrounding pixels. The user finds the current eye region awkward. Keep the original baby tiger's tilted head orientation and eye locations relative to the tilted face, but redraw the two eyes as a clean matched pair: same apparent white-eye size and shape appropriate to the slight perspective, tidy white eye regions separated clearly from apricot fur and lavender stripes, and ONE small simple solid periwinkle pupil inside each eye. Both pupils must look in the SAME natural direction, calmly forward toward the viewer, with matching proportions and balanced placement; no crossed eyes, divergent gaze, floating dots, extra pupils, squiggles, highlights or eyelash clutter. Pupils should be modest in size and surrounded by clear white, not large blobs. Friendly alert expression, not wildly goofy. Keep the coarse square pixel stair edges of the artwork. PRESERVE EVERYTHING OUTSIDE THE EYE REGION: exact apricot/cream/coral/lavender palette, periwinkle outline, round ears, all forehead and cheek stripes, nose, smiling mouth/tongue, cheeks, head angle, entire C-shaped seated body, both front paws holding its own striped tail tip, two hind feet, long connected curved tail, both blue/coral pixel sparkles, white background, margins, framing and full-body scale. Do not change pose, facial anatomy outside eyes, tiger identity or artistic medium. Return one image only, original portrait 2:3 exactly 1024x1536. No added words, ranks, symbols, frame, logo, watermark, props or additional animals. No new decoration, no smooth vector redesign, no 3D or real fur.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk-6.png",
+          "role": "Exact edit target; correct paired eye whites and pupils only while preserving pose, palette, stripes, character and composition"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1493665,
+      "sha256": "f2db604cf1a60627c274e96d0a3486a5946aa3152c25ce158156d98b0b7a7c33",
+      "visualReview": "Inspected native edit output and saved PNG. Eyes now have clean similarly sized white regions and one modest simple periwinkle pupil each, with a balanced aligned forward gaze. Pupils no longer read as drifting toward the eye edges and remain visually separate from forehead/cheek stripes. Tilted head, smiling mouth, round ears, apricot/cream/lavender/coral palette, C-shaped body holding its own striped tail, paws/feet, two blue/coral sparkles and white portrait framing remain visually consistent with the original. Entire ears, paws and tail inside frame, no text/ranks/props/watermark. This is a generative edit, so exact pixel identity outside the eyes is not claimed.",
+      "suit": "dusk",
+      "face": "6",
+      "animalVariant": "baby-tiger-catching-own-tail-eyes-corrected",
+      "localSourceRecord": "docs/art/sky-hop-batch02-fix-tiger6.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/dusk-7.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-627d54fc-3a50-44f2-a2e1-a6e4318d5bca.png",
+      "prompt": "Use case: identity-preserve. Create ONE new action illustration of the exact original baby tiger character. Image 1 is CHARACTER/STYLE/PALETTE reference: same round ears, huge head, very short plump body, apricot-gold fur, cream muzzle/belly/paws, broad dark lavender tiger stripes, coral cheeks/inner ears/paw pads/tongue, thick periwinkle-blue chunky pixel-stair outline. Image 2 is the CORRECTED EYE DESIGN reference only: clean matching white eye shapes, one SMALL simple periwinkle pupil per eye, aligned friendly gaze, no stray pixels or overlapping stripes. New action: LONG HAPPY STRETCH on all fours. Both short front legs extend far forward along the ground, front paws firmly touching the ground and pointing forward. Lower chest and head near the front paws while the plump hindquarters stay raised, two hind feet also touching the ground. The long striped tail curves UP behind the rump in a large gentle arc. Three-quarter view so both eyes and both front paws remain visible; head turned a little toward viewer with a soft content smile. Clear four-legged stretch, absolutely NOT an airborne pounce: front paws must be grounded, butt up, body stretched. Whole single baby tiger inside frame, all round ears, four paws and entire tail tip visible with generous white margins, portrait 2:3 exactly 1024x1536. Coarse visible square-step outlines and broad flat pastel blocks remain consistent with both references. Pure white #ffffff background and exactly two small blue/coral pixel sparkles. Eyes must have a clean white moat around a single modest solid pupil each, natural matching gaze, no cross-eye or asymmetrical pupil fragments. No text, ranks, numbers, logo, watermark, frame, props, clothes, other animals or new medium. No smooth vector curves, realistic fur, 3D or intricate sprite detail.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk.png",
+          "role": "Exact baby tiger character identity, original sky-hop pixel style and pastel palette; action changed"
+        },
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk-6-v2.png",
+          "role": "Corrected clean matched white eyes and single periwinkle pupils only; not tail-catching pose"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1496812,
+      "sha256": "40e78fadfe2ebe8d2370e50640c7f954a135f1dd8d10b315428c1f1a01935556",
+      "visualReview": "Inspected native output. One baby tiger in grounded four-legged stretch with front paws extended and contacting ground, raised rump, upward arcing striped tail, big head facing viewer. The far hind leg is partially occluded naturally by the body. Two tidy white eyes contain one modest periwinkle pupil each with aligned gaze, separated from stripes. Full ears, paws and tail inside frame, approved pastel identity, stepped outlines, two blue/coral sparkles, white background; no text, ranks, props, frames or watermarks.",
+      "suit": "dusk",
+      "face": "7",
+      "animalVariant": "baby-tiger-long-grounded-stretch",
+      "localSourceRecord": "docs/art/sky-hop-batch03-tiger.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/dusk-8.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-535e9319-1f60-4437-9f2b-d33f6d984baa.png",
+      "prompt": "Use case: identity-preserve. Create ONE new pose of the exact original baby tiger. Image 1 is CHARACTER IDENTITY, PIXEL STYLE and PASTEL PALETTE reference: round ears, huge baby head, very short chubby body, apricot-gold fur, cream muzzle/belly/paws, broad dark lavender stripes on forehead/cheeks/body/tail, coral cheeks/inner ears/paw pads/tongue, thick periwinkle-blue square-step outline. Image 2 supplies the CORRECTED EYE DESIGN: clean white eye shapes and a single small simple solid periwinkle pupil each, aligned forward gaze, no extra protruding pupil pixels or stripes overlapping eyes. New action: SHOWING OFF A PAW PAD. The tiger sits on its round bottom, raises ONE hind foot forward toward the viewer and holds that raised hind foot gently with BOTH small FRONT PAWS, like a baby proudly showing its own foot. The sole of the raised foot clearly faces the viewer with the original simple coral paw-pad pattern: one rounded central pad and small rounded toe pads, NOT a heart symbol. The OTHER hind foot stays visible beside the body on the ground. Four limbs only: two front paws holding one lifted hind foot, one remaining hind foot planted. Cheerful mild smile, little tongue, matched pupils gazing calmly forward. Long striped tail resting in a relaxed curve beside the body, whole tip visible. Single full baby tiger centered on pure white #ffffff, portrait 2:3 exactly 1024x1536, about 70 percent image height and generous margins around ears, paws and complete tail. Same coarse chunky square-step edges and broad flat pastel blocks; no change of medium. Exactly TWO small blue/coral pixel sparkles. No text, numbers, ranks, heart icons, logo, watermark, frame, props, clothing, extra animals, additional paws or human fingers. No real fur, 3D, gloss, smooth vector curves or dense sprite detail.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk.png",
+          "role": "Exact baby tiger character identity, original sky-hop pixel style and pastel palette; action changed"
+        },
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk-6-v2.png",
+          "role": "Corrected clean matched white eyes and single periwinkle pupils only; not tail-catching pose"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1514382,
+      "sha256": "c91bd79f580ffb3f662be37139b28b55303fde4819246a4020fb7429801c2248",
+      "visualReview": "Inspected native output. One seated baby tiger with both front paws holding one lifted hind foot, sole facing viewer with original rounded coral central/toe pads; other hind foot remains clearly visible. Four limbs identifiable, no human fingers or heart symbol. Clean aligned single pupils within white eyes, separated from face stripes. Entire ears and tail visible; original pastel identity and coarse outline, two sparkles, white backdrop; no text, ranks, props, frame or watermark.",
+      "suit": "dusk",
+      "face": "8",
+      "animalVariant": "baby-tiger-showing-paw-pad",
+      "localSourceRecord": "docs/art/sky-hop-batch03-tiger.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/dusk-9.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-36061591-05fd-4545-b166-4980bb0c05ca.png",
+      "prompt": "Use case: identity-preserve. Create ONE new action pose of the EXACT same baby tiger character. Image 1 is CHARACTER IDENTITY, PIXEL STYLE AND PALETTE reference: round ears, huge cute head, very short chubby torso and limbs, apricot-gold fur, cream muzzle/belly/paws, broad dark lavender tiger stripes, coral cheeks/inner ears/paw pads, thick periwinkle-blue chunky square-step outline. Image 2 is the CLEAN CORRECTED EYES reference: two tidy matching white eye areas with one small simple solid periwinkle pupil in each; aligned natural gaze with no floating pixel pieces, no mismatched eyes, no overlap with facial stripes. New action: LITTLE SHOULDER SHRUG. The baby tiger stands on TWO tiny hind feet planted firmly together, tilts its big head slightly with a relaxed gentle closed smile, and raises BOTH SHORT FRONT PAWS beside its shoulders in a small shrug. Forepaws point outward, paws facing up/out like an innocent 'who knows' gesture, but keep simple rounded ANIMAL paws and coral pad shapes, never human fingers or human hands. Shoulders slightly lifted, elbows bent, a calm amused cute expression. Clean single periwinkle pupil per eye, both looking the same direction gently forward. Full connected long striped tail in an easy curve beside the body. Distinct shrug silhouette, not a jump or standard hands-forward pose. One entire baby tiger centered, every round ear, paw, foot and whole tail visible in frame with generous white margins. Pure white #ffffff background, portrait 2:3 exactly 1024x1536, around 70 percent canvas height. Same broad pastel color blocks and coarse visibly stepped pixel outline as references. Exactly TWO small blue/coral pixel sparkles. No text, numbers, ranks, logo, watermark, card frame, objects, clothing, extra animals or new medium. No human fingers, real fur, 3D, shiny shading, smooth vector lines or dense sprite detail.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk.png",
+          "role": "Exact baby tiger character identity, original sky-hop pixel style and pastel palette; action changed"
+        },
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk-6-v2.png",
+          "role": "Corrected clean matched white eyes and single periwinkle pupils only; not tail-catching pose"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1482839,
+      "sha256": "9d1914ff9b53b8dfd3b3ce5ccbc021ea13037dd9ec7de828ddc2f19ce3fc53ee",
+      "visualReview": "Inspected native output. One baby tiger stands on two short hind feet with both front paws raised outward near shoulders in a gentle shrug, tilted head and relaxed closed smile. Rounded animal paws, no human fingers. Eyes have one simple centered pupil in each clean white shape, no disconnected fragments or stripe overlap. Entire ears, paws and curved tail in frame; original pastel identity and periwinkle outline, two sparkles on white, no text, ranks, props, frame or watermark.",
+      "suit": "dusk",
+      "face": "9",
+      "animalVariant": "baby-tiger-shoulder-shrug",
+      "localSourceRecord": "docs/art/sky-hop-batch03-tiger.json"
+    },
+    {
+      "file": "apps/web/public/art/cards/sky-hop/dusk-10.png",
+      "source": "generated_images/01a172cd-6660-71d1-b756-f9e3b769c603/exec-bc754dd8-4df2-48da-a404-04e5c8c417a2.png",
+      "prompt": "Use case: identity-preserve. Create ONE new energetic action illustration of the EXACT same baby tiger. Image 1 is CHARACTER IDENTITY, STYLE AND PALETTE reference: same round ears, very large childlike head, tiny chubby body and short limbs, apricot-gold fur, cream muzzle/belly/paws, broad dark lavender tiger stripes, coral cheeks/inner ears/paw pads/tongue and thick periwinkle-blue coarse pixel-stair outline. Image 2 is CORRECTED EYE DESIGN reference only: clean matching white eye regions with one SMALL simple solid periwinkle pupil per eye; natural matched gaze, no scattered dots, stripe overlap or cross-eyes. New action: JOYFUL MID-AIR SIDEWAYS TWIRL. The whole tiger is clearly ROTATED about 50–60 degrees to one side while airborne, so head and body axis make a strong diagonal instead of the upright reference pose. Both short hind legs are bent and tucked, BOTH front paws spread outward in DIFFERENT directions as if joyfully spinning: one reaches above the head, the other reaches out by the side. No paw touches the ground. Long striped tail arcs in the OPPOSITE curve to balance the rotating body, its whole tip visible. Big cheerful soft smile with little tongue, friendly matched eyes still looking naturally forward relative to the turned head. Deliberately cute and childlike, not acrobatic realism. Make the silhouette distinct from a straight-up hop and a forward pounce: sideways rotated body, asymmetrical open paws, curled hind legs. One entire animal only, all ears, four paws/feet and the full connected tail inside frame with generous margins and headroom. Pure white #ffffff, portrait 2:3 exactly 1024x1536, character around 70 percent image height. Broad simple pastel color blocks, visible chunky pixel stairs, original artistic medium unchanged. Exactly TWO small blue/coral pixel sparkles. No text, numbers, ranks, arrows, motion typography, logo, watermark, frame, props, clothing, extra animals, real fur, 3D, gloss, smooth vector curves or intricate sprites.",
+      "references": [
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk.png",
+          "role": "Exact baby tiger character identity, original sky-hop pixel style and pastel palette; action changed"
+        },
+        {
+          "path": "apps/web/public/art/cards/sky-hop/dusk-6-v2.png",
+          "role": "Corrected clean matched white eyes and single periwinkle pupils only; not tail-catching pose"
+        }
+      ],
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1520371,
+      "sha256": "260ec8662b9cb058caa37b04e020ae45ceebf517475a86926b3a59cdc4572522",
+      "visualReview": "Inspected native output. One baby tiger in tilted airborne jump with one front paw above head and the other extended sideways, two bent hind legs and striped tail curving the opposite way. Silhouette clearly differs from upright basic hop and forward pounce. Head/body tilt is gentler than the exact 50–60-degree prompt target, while the asymmetrical paws and folded legs convey the action. One clean periwinkle pupil per white eye with consistent gaze, no stray pixel fragments or stripe overlap. Full ears, limbs and tail fit inside image; original pastel identity, two sparkles on white, no text, ranks, props, frame or watermark.",
+      "suit": "dusk",
+      "face": "10",
+      "animalVariant": "baby-tiger-joyful-airborne-twirl",
+      "localSourceRecord": "docs/art/sky-hop-batch03-tiger.json"
+    }
+  ]
+}

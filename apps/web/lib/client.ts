@@ -84,9 +84,9 @@ export function readLocalSession(): IdentitySession | null {
 
 export const suits = ["aurora", "ember", "tide", "moss", "dusk"] as const;
 export const suitNames = {
-  aurora: "오로라",
-  ember: "불꽃",
-  tide: "물결",
-  moss: "숲",
-  dusk: "황혼",
+  aurora: "멍이",
+  ember: "냥이",
+  tide: "물개",
+  moss: "수달",
+  dusk: "랑이",
 };

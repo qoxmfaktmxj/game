@@ -1,23 +1,25 @@
 import Link from "next/link";
+import Image from "next/image";
 import "../card-gallery.css";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import type { Card, Suit } from "@moyeotable/contracts";
 import { PlayingCard, SuitIcon, Logo } from "../../components/primitives";
 import { suitNames } from "../../lib/client";
+import { getStarCardArt, starCardArt } from "../../lib/star-card-art";
 import { CardGalleryNav } from "../../components/card-gallery-nav";
 
-export const metadata = { title: "별길 탐험 카드 모아보기 — 링구링구" };
+export const metadata = { title: "링구링구 - 별길 탐험" };
 const suits: Suit[] = ["aurora", "ember", "tide", "moss", "dusk"];
 const descriptions = {
-  aurora: "고요한 얼음 위로 빛이 흐르는 길.",
-  ember: "작은 불씨에서 시작하는 따뜻한 모험.",
-  tide: "파도를 따라 더 멀리, 더 깊이.",
-  moss: "초록의 틈에서 발견하는 작은 세계.",
-  dusk: "해가 저물 때, 새로운 풍경이 열려요.",
+  aurora: "꼬리를 흔들며 먼저 다가오는 강아지 친구.",
+  ember: "호기심 가득한 눈으로 세상을 구경하는 고양이 친구.",
+  tide: "동그란 눈과 작은 지느러미로 인사하는 바다 친구.",
+  moss: "물 위에 둥실, 조약돌을 아끼는 수달 친구.",
+  dusk: "선명한 줄무늬와 순한 표정의 호랑이 친구.",
 };
 export default function CardsPage() {
   return (
-    <main className="card-gallery page-width">
+    <main className="card-gallery animal-card-gallery star-animal-theme page-width">
       <header className="card-gallery-nav">
         <Link href="/" aria-label="링구링구 홈">
           <Logo />
@@ -27,19 +29,30 @@ export default function CardsPage() {
         </Link>
       </header>
       <div className="card-gallery-intro">
-        <p>별길 탐험</p>
         <h1>
-          한 장마다,
-          <br />
-          새로운 풍경.
+          다섯 친구와,
+          <br />한 장 더 가까이.
         </h1>
-        <p>다섯 갈래의 길을 따라 50가지 그림을 만나보세요.</p>
+        <p>
+          별길 탐험에서 만나는 멍이, 냥이, 물개, 수달, 랑이. 품종과 포즈가 다른
+          50가지 그림을 만나보세요.
+        </p>
         <CardGalleryNav />
-        <nav aria-label="카드 계열">
+        <nav className="animal-gallery-friends" aria-label="카드 계열">
           {suits.map((suit) => (
             <a href={`#${suit}`} key={suit}>
-              <SuitIcon suit={suit} />
-              {suitNames[suit]}
+              <span className="animal-friend-preview">
+                <Image
+                  src={starCardArt[suit].support.src}
+                  alt=""
+                  fill
+                  sizes="(max-width: 760px) 16vw, 180px"
+                />
+              </span>
+              <span>
+                <SuitIcon suit={suit} />
+                {suitNames[suit]}
+              </span>
             </a>
           ))}
         </nav>
@@ -79,8 +92,8 @@ export default function CardsPage() {
                 />
                 <figcaption>
                   {card.kind === "support"
-                    ? "지원 · 같은 카드 3장"
-                    : `${suitNames[suit]} ${card.value}`}
+                    ? "지원 ×2 · 같은 카드 3장"
+                    : `${suitNames[suit]} ${card.value} · ${getStarCardArt(card).name}`}
                 </figcaption>
               </figure>
             ))}
@@ -88,7 +101,10 @@ export default function CardsPage() {
         </section>
       ))}
       <footer className="card-gallery-footer">
-        <p>숫자 카드 45장 + 지원 카드 15장. 총 60장으로 탐험해요.</p>
+        <div>
+          <p>숫자 카드 45장 + 지원 카드 15장. 총 60장으로 함께해요.</p>
+          <p>지원 카드 배수: 1장 ×2 · 2장 ×3 · 3장 ×4</p>
+        </div>
         <Link href="/" className="button primary">
           게임 하러 가기 <ArrowUpRight size={18} />
         </Link>

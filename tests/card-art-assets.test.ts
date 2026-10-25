@@ -9,6 +9,48 @@ import {
   CHARACTER_INFO,
 } from "../packages/game-core/src/games/signal";
 import ready from "../apps/web/lib/card-art-ready.json";
+import selected from "../docs/art/sky-hop-final-selection.json";
+import { getStarCardArt, starCardArt } from "../apps/web/lib/star-card-art";
+import { SUITS } from "../packages/game-core/src/types";
+
+test("Star Trails ships all 50 approved faces, including the gray Border Collie", () => {
+  const hashes = new Set<string>();
+  assert.equal(selected.assets.length, 50);
+  for (const suit of SUITS) {
+    assert.equal(Object.keys(starCardArt[suit]).length, 10);
+    for (const face of [
+      "support",
+      ...Array.from({ length: 9 }, (_, i) => String(i + 2)),
+    ]) {
+      const asset = selected.assets.find(
+        (item) => item.suit === suit && item.face === face,
+      );
+      assert.ok(asset, `${suit}-${face}`);
+      const card =
+        face === "support"
+          ? { id: "art-check", suit, kind: "support" as const, value: null }
+          : {
+              id: "art-check",
+              suit,
+              kind: "number" as const,
+              value: Number(face),
+            };
+      assert.equal(getStarCardArt(card).src, asset.url);
+      const bytes = readFileSync(`apps/web/public${asset.url}`);
+      assert.equal(bytes.subarray(0, 8).toString("hex"), "89504e470d0a1a0a");
+      assert.equal(bytes.readUInt32BE(16), 1024);
+      assert.equal(bytes.readUInt32BE(20), 1536);
+      const hash = createHash("sha256").update(bytes).digest("hex");
+      assert.equal(hash, asset.sha256, asset.url);
+      hashes.add(hash);
+    }
+  }
+  assert.equal(hashes.size, 50);
+  assert.equal(
+    starCardArt.aurora[10].src,
+    "/art/cards/sky-hop/aurora-10-v5.png",
+  );
+});
 
 test("every public card type has its own valid, distinct original illustration", () => {
   const expected = [

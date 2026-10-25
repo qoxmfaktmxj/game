@@ -31,6 +31,7 @@ import type {
   CommandAck,
   CommandError,
   RoomView,
+  Suit,
   TableCommand,
   TableView,
 } from "@moyeotable/contracts";
@@ -58,6 +59,9 @@ import {
   ExtraRules,
 } from "./multigame-board";
 import type { GameAction } from "./game-ui";
+import { starCardArt } from "../lib/star-card-art";
+
+const WAITING_SUITS: Suit[] = ["aurora", "ember", "tide"];
 
 type Dialog =
   | "create"
@@ -119,6 +123,16 @@ export function MoyeotableApp() {
   } | null>(null);
   const joining = useRef(false);
   const previousGame = useRef<string>("");
+  const activeGameName =
+    screen === "table" && view && view.table.id === tableId
+      ? GAME_CATALOG[view.gameKey].name
+      : null;
+  useEffect(() => {
+    document.title = activeGameName
+      ? `링구링구 - ${activeGameName}`
+      : "링구링구";
+  }, [activeGameName]);
+
   useEffect(() => {
     if (!view) return;
     const current = `${view.table.id}:${view.gameKey}`;
@@ -672,11 +686,13 @@ export function MoyeotableApp() {
     view.table.members.length <= metadata.maxPlayers &&
     view.table.members.every((m) => m.ready && m.connected);
   const inGame = screen === "table" && view?.table.status === "PLAYING";
+  const animalTheme =
+    screen !== "home" && (view?.gameKey ?? selectedGame) === "star-trails";
 
   return (
     <MotionConfig reducedMotion={reduceMotion ? "always" : "user"}>
       <div
-        className={`app ${inGame ? "in-game" : ""}`}
+        className={`app ${inGame ? "in-game" : ""} ${animalTheme ? "star-animal-theme" : ""}`}
         data-reduced-motion={reduceMotion}
       >
         <a className="skip-link" href="#main-content">
@@ -1052,13 +1068,32 @@ export function MoyeotableApp() {
                     )}
                   </div>
                   <aside className="waiting-game">
-                    <div className="waiting-game-art">
-                      <img
-                        src={metadata.art}
-                        alt={`${metadata.name} 게임 아트`}
-                        width="1000"
-                        height="850"
-                      />
+                    <div
+                      className={`waiting-game-art ${animalTheme ? "animal-waiting-art" : ""}`}
+                    >
+                      {animalTheme ? (
+                        <div
+                          role="img"
+                          aria-label="함께 기다리는 멍이, 냥이, 물개 친구들"
+                        >
+                          {WAITING_SUITS.map((suit) => (
+                            <img
+                              key={suit}
+                              src={starCardArt[suit].support.src}
+                              alt=""
+                              width="240"
+                              height="360"
+                            />
+                          ))}
+                        </div>
+                      ) : (
+                        <img
+                          src={metadata.art}
+                          alt={`${metadata.name} 게임 아트`}
+                          width="1000"
+                          height="850"
+                        />
+                      )}
                     </div>
                     <div>
                       <span className="game-meta">

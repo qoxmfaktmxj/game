@@ -289,7 +289,7 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
         expect(discardedSuit).toBeTruthy();
         await expect(
           actor.getByRole("button", {
-            name: new RegExp(`^${discardedSuit} 버림 더미에서 가져오기`),
+            name: new RegExp(`^${discardedSuit} 버림 더미(?:,|에서)`),
           }),
         ).toBeDisabled();
         await actor.reload();
@@ -304,7 +304,7 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
         expect(recoveredHand).toEqual(beforeRefresh);
         await expect(
           actor.getByRole("button", {
-            name: new RegExp(`^${discardedSuit} 버림 더미에서 가져오기`),
+            name: new RegExp(`^${discardedSuit} 버림 더미(?:,|에서)`),
           }),
         ).toBeDisabled();
         await checkMobileWidths(guest, "draw-recovery", testInfo);

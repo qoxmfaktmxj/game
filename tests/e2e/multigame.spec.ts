@@ -26,6 +26,7 @@ async function setup(
   }
   const host = pages[0];
   await host.goto("/");
+  await expect(host).toHaveTitle("링구링구");
   await host
     .getByRole("button", { name: "우리 테이블 만들기", exact: true })
     .click();
@@ -140,17 +141,28 @@ test("same members choose garden, ready again, edit tiles and keep the rack afte
 }, info) => {
   const { pages, contexts } = await setup(browser, baseURL, "workshop", 2);
   try {
+    for (const page of pages)
+      await expect(page).toHaveTitle("링구링구 - 빛의 공방");
+    await pages[0]
+      .getByLabel("다음에 함께할 게임", { exact: false })
+      .selectOption("star-trails");
+    for (const page of pages)
+      await expect(page).toHaveTitle("링구링구 - 별길 탐험");
     await pages[0]
       .getByRole("button", { name: "준비됐어요", exact: true })
       .click();
     await pages[0]
       .getByLabel("다음에 함께할 게임", { exact: false })
       .selectOption("garden");
+    for (const page of pages)
+      await expect(page).toHaveTitle("링구링구 - 넘버가든");
     await expect(
       pages[0].getByRole("button", { name: "준비됐어요", exact: true }),
     ).toBeVisible();
     await expect(pages[0].locator(".occupied-seat")).toHaveCount(2);
     await start(pages);
+    for (const page of pages)
+      await expect(page).toHaveTitle("링구링구 - 넘버가든");
     const first = (await pages[0]
       .locator(".multi-board-heading")
       .textContent())!.includes("내 차례예요")
@@ -179,6 +191,7 @@ test("same members choose garden, ready again, edit tiles and keep the rack afte
     );
     await first.reload();
     await expect(first.locator(".garden-board")).toBeVisible();
+    await expect(first).toHaveTitle("링구링구 - 넘버가든");
     await expect(
       first
         .locator(".board-section")
@@ -190,6 +203,13 @@ test("same members choose garden, ready again, edit tiles and keep the rack afte
       fullPage: true,
     });
     await mobile(first, "garden", info);
+    await first
+      .getByRole("button", { name: "링구링구 홈", exact: true })
+      .click();
+    await expect(first).toHaveTitle("링구링구");
+    await first.goBack();
+    await expect(first.locator(".garden-board")).toBeVisible();
+    await expect(first).toHaveTitle("링구링구 - 넘버가든");
   } finally {
     for (const c of contexts) await c.close();
   }
