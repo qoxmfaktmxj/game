@@ -36,6 +36,7 @@ const rooms: Room[] = [],
   latencies: number[] = [];
 let errors = 0,
   finished = 0,
+  rematches = 0,
   unexpectedDisconnects = 0,
   actions = 0;
 const startedAt = new Date().toISOString();
@@ -99,29 +100,36 @@ try {
     }
   }
   // Keep all sockets connected before starting simultaneous active play.
-  await Promise.all(
-    tables.map(async (peers) => {
-      for (const peer of peers) {
-        const ack = await peer.table("READY", true);
-        await Promise.all(
-          peers.map((p) => p.wait((v) => v.table.revision >= ack.revision!)),
-        );
-      }
-      await peers[0].table("START");
+  const startRound = async (peers: Peer[], command: "START" | "REMATCH") => {
+    for (const peer of peers) {
+      const ack = await peer.table("READY", true);
       await Promise.all(
-        peers.map((p) => p.wait((v) => v.table.status === "PLAYING")),
+        peers.map((p) => p.wait((v) => v.table.revision >= ack.revision!)),
       );
-    }),
-  );
+    }
+    await peers[0].table(command);
+    await Promise.all(
+      peers.map((p) => p.wait((v) => v.table.status === "PLAYING")),
+    );
+  };
+  await Promise.all(tables.map((peers) => startRound(peers, "START")));
   const begin = performance.now(),
     deadline = begin + seconds * 1000;
   await Promise.all(
     tables.map(async (peers) => {
       try {
-        while (
-          performance.now() < deadline &&
-          peers[0].view!.table.status !== "RESULT"
-        ) {
+        let countedFinish = false;
+        while (performance.now() < deadline) {
+          if (peers[0].view!.table.status === "RESULT") {
+            await Promise.all(
+              peers.map((p) => p.wait((v) => v.table.status === "RESULT")),
+            );
+            if (!countedFinish) { finished++; countedFinish = true; }
+            if (performance.now() >= deadline) break;
+            await startRound(peers, "REMATCH");
+            rematches++;
+            continue;
+          }
           const version = peers[0].view!.game!.version;
           await Promise.all(
             peers.map((p) => p.wait((v) => v.game?.version === version)),
@@ -143,7 +151,7 @@ try {
           actions++;
           if (paceMs) await delay(paceMs);
         }
-        if (peers[0].view!.table.status === "RESULT") finished++;
+        if (!countedFinish && peers[0].view!.table.status === "RESULT") finished++;
       } catch (error) {
         errors++;
         console.error(
@@ -175,6 +183,7 @@ try {
     paceMs,
     actions,
     finishedTables: finished,
+    rematches,
     errors,
     unexpectedDisconnects,
     latencyMs: {
