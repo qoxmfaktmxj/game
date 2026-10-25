@@ -137,9 +137,9 @@ export function PlayingCard({
       />
       <span className="card-corner">
         {card.kind === "support" ? "×2" : card.value}
-        <SuitIcon suit={card.suit} />
       </span>
       <span className="card-center">
+        <SuitIcon suit={card.suit} />
         <span>{suitNames[card.suit]}</span>
       </span>
       <span className="card-corner card-corner-bottom">

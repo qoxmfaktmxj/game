@@ -235,10 +235,9 @@
   min-width: 26px;
   font-size: 17px;
 }
-.star-animal-board .discard-face .card-corner .suit-icon {
+.star-animal-board .discard-face .card-center .suit-icon {
   width: 11px;
   height: 11px;
-  margin-top: 2px;
 }
 .star-animal-board .discard-face .card-center {
   min-height: 18px;
@@ -605,16 +604,16 @@
     min-width: 22px;
     font-size: 15px;
   }
-  .star-animal-board .lane-slot .card-corner .suit-icon,
-  .star-animal-board .discard-face .card-corner .suit-icon {
+  .star-animal-board .lane-slot .card-center .suit-icon,
+  .star-animal-board .discard-face .card-center .suit-icon {
     width: 9px;
     height: 9px;
-    margin-top: 1px;
   }
   .star-animal-board .lane-slot .card-center,
   .star-animal-board .discard-face .card-center {
     min-height: 16px;
     padding: 2px 13px 2px 3px;
+    gap: 2px;
   }
   .star-animal-board .lane-slot .card-center > span,
   .star-animal-board .lane-slot .card-corner-bottom,
