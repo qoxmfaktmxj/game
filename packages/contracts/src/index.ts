@@ -13,6 +13,8 @@ export type {
   PlayerScore,
 } from "@moyeotable/game-core";
 export const PROTOCOL_VERSION = 1 as const;
+// 4001 is Colyseus SERVER_SHUTDOWN; keep guest expiry in an application code.
+export const AUTH_EXPIRED_CLOSE_CODE = 4401 as const;
 export interface UserIdentity {
   id: string;
   nickname: string;

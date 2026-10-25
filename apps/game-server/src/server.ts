@@ -7,7 +7,7 @@ import express, {
 } from "express";
 import type { IncomingMessage } from "node:http";
 import { isIP } from "node:net";
-import type { UserIdentity } from "@moyeotable/contracts";
+import { AUTH_EXPIRED_CLOSE_CODE, type UserIdentity } from "@moyeotable/contracts";
 import { GAMES } from "@moyeotable/game-core/catalog";
 import type { TableRepository } from "@moyeotable/db";
 import type { Authenticator, AuthenticatedIdentity } from "./auth.js";
@@ -103,7 +103,7 @@ export async function startServer(configuration: ServerConfiguration) {
       const expiresAt = (client.auth as AuthenticatedIdentity).expiresAt;
       if (expiresAt !== undefined) {
         const timer = setTimeout(
-          () => client.leave(4001, "AUTH_EXPIRED"),
+          () => client.leave(AUTH_EXPIRED_CLOSE_CODE, "AUTH_EXPIRED"),
           Math.max(0, expiresAt - Date.now()),
         );
         timer.unref();
@@ -124,7 +124,7 @@ export async function startServer(configuration: ServerConfiguration) {
     private assertSession(client: Client) {
       const expiresAt = (client.auth as AuthenticatedIdentity).expiresAt;
       if (expiresAt !== undefined && expiresAt <= Date.now()) {
-        client.leave(4001, "AUTH_EXPIRED");
+        client.leave(AUTH_EXPIRED_CLOSE_CODE, "AUTH_EXPIRED");
         throw new ServiceError("UNAUTHENTICATED");
       }
     }

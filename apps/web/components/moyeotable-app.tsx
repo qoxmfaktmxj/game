@@ -34,6 +34,7 @@ import type {
   TableCommand,
   TableView,
 } from "@moyeotable/contracts";
+import { AUTH_EXPIRED_CLOSE_CODE } from "@moyeotable/contracts";
 import {
   GAME_CATALOG,
   GAMES,
@@ -308,7 +309,7 @@ export function MoyeotableApp() {
           if (live) {
             setConnected(false);
             clearPending();
-            if (code === 4001) {
+            if (code === AUTH_EXPIRED_CLOSE_CODE) {
               const sb = getSupabase();
               if (sb) {
                 void sb.auth

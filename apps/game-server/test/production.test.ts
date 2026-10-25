@@ -188,7 +188,7 @@ test(
     room.onMessage("view", () => {});
     room.onMessage("error", () => {});
     const code = await new Promise<number>((resolve) => room.onLeave(resolve));
-    assert.equal(code, 4001);
+    assert.equal(code, 4401);
     assert.equal(
       (await running.service.view(table.id, user.id)).table.members[0]!
         .connected,
