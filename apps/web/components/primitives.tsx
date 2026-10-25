@@ -127,16 +127,18 @@ export function PlayingCard({
 }) {
   const content = (
     <>
-      <Image
-        src={getStarCardArt(card).src}
-        alt=""
-        fill
-        sizes={artSizes}
-        className="card-art"
-        draggable={false}
-      />
       <span className="card-corner">
         {card.kind === "support" ? "×2" : card.value}
+      </span>
+      <span className="card-art-window">
+        <Image
+          src={getStarCardArt(card).src}
+          alt=""
+          fill
+          sizes={artSizes}
+          className="card-art"
+          draggable={false}
+        />
       </span>
       <span className="card-center">
         <SuitIcon suit={card.suit} />

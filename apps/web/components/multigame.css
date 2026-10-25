@@ -1192,7 +1192,3 @@ details.player-pill {
     gap: 9px;
   }
 }
-.app[data-reduced-motion="true"] .number-tile,
-.app[data-reduced-motion="true"] .work-card {
-  transition: none;
-}

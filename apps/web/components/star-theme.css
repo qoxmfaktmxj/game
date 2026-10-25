@@ -243,15 +243,6 @@ body:has(.star-animal-theme) {
 .star-animal-theme :is(.suit-legend, .score-table) .dusk {
   color: var(--dusk);
 }
-.star-animal-theme .toggle::before {
-  background: #b7c7d8;
-}
-.star-animal-theme .toggle.enabled::before {
-  background: var(--mint);
-}
-.star-animal-theme .toggle > span {
-  background: #fff;
-}
 .star-animal-theme .danger {
   color: #a3372c;
 }
@@ -275,6 +266,17 @@ body:has(.star-animal-theme) {
 
 /* Card ranks and family names are live text, never embedded in the artwork. */
 .playing-card.animal-playing-card {
+  --card-rank-height: 32px;
+  --card-name-height: 22px;
+  --card-rank-size: 25px;
+  --card-support-size: 22px;
+  --card-name-size: 12px;
+  --card-label-inset: 6px;
+  display: grid;
+  grid-template-rows: var(--card-rank-height) minmax(0, 1fr) var(
+      --card-name-height
+    );
+  height: 148px;
   overflow: hidden;
   color: #183552;
   background: #fff;
@@ -283,24 +285,32 @@ body:has(.star-animal-theme) {
   box-shadow: none;
   font-variant-numeric: tabular-nums;
 }
+.animal-playing-card .card-art-window {
+  display: block;
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+  pointer-events: none;
+}
 .animal-playing-card .card-art {
   object-fit: contain;
   object-position: center;
-  padding-bottom: 25px;
+  padding: 0;
   pointer-events: none;
   z-index: 0;
 }
 .animal-playing-card .card-corner {
-  z-index: 2;
-  top: 4px;
-  left: 4px;
-  min-width: 29px;
-  padding: 2px 4px 4px;
+  position: static;
+  inset: auto;
+  min-width: 0;
+  min-height: 0;
+  padding: 0 var(--card-label-inset);
+  align-items: flex-start;
+  justify-content: center;
   background: #fff;
   color: #183552;
-  border-radius: 5px;
   font-family: var(--sans);
-  font-size: 25px;
+  font-size: var(--card-rank-size);
   font-weight: 850;
   line-height: 1;
   text-shadow: none;
@@ -308,8 +318,7 @@ body:has(.star-animal-theme) {
   letter-spacing: -0.03em;
 }
 .animal-playing-card.support-card .card-corner {
-  min-width: 36px;
-  font-size: 22px;
+  font-size: var(--card-support-size);
   color: #2057ad;
 }
 .animal-playing-card .card-center .suit-icon {
@@ -318,10 +327,12 @@ body:has(.star-animal-theme) {
   flex-shrink: 0;
 }
 .animal-playing-card .card-center {
-  z-index: 1;
-  inset: auto 0 0;
-  min-height: 25px;
-  padding: 3px 5px 4px;
+  position: static;
+  inset: auto;
+  min-height: 0;
+  min-width: 0;
+  padding: 0 var(--card-label-inset);
+  line-height: 1.2;
   background: #fff;
   color: #183552;
   flex-direction: row;
@@ -332,10 +343,17 @@ body:has(.star-animal-theme) {
   pointer-events: none;
 }
 .animal-playing-card .card-center > span {
-  font-size: 12px;
+  font-size: var(--card-name-size);
   font-weight: 750;
   letter-spacing: -0.02em;
   white-space: nowrap;
+}
+.playing-card.animal-playing-card.small {
+  --card-rank-height: 28px;
+  --card-name-height: 20px;
+  --card-rank-size: 22px;
+  --card-support-size: 20px;
+  height: 134px;
 }
 .playing-card.animal-playing-card:not(button):hover {
   transform: none;
@@ -411,33 +429,32 @@ body:has(.star-animal-theme) {
   padding-top: 32px;
 }
 .animal-card-gallery .card-gallery-grid .animal-playing-card {
+  --card-rank-height: 52px;
+  --card-name-height: 40px;
+  --card-rank-size: 36px;
+  --card-support-size: 32px;
+  --card-name-size: 18px;
+  --card-label-inset: 13px;
+  height: auto;
   border-radius: 14px;
 }
-.animal-card-gallery .card-gallery-grid .card-art {
-  padding-bottom: 45px;
-}
 .animal-card-gallery .card-gallery-grid .card-corner {
-  top: 10px;
-  left: 10px;
-  padding: 5px 8px;
-  min-width: 44px;
-  font-size: 36px;
+  inset: auto;
+  padding: 0 var(--card-label-inset);
+  font-size: var(--card-rank-size);
 }
 .animal-card-gallery .card-gallery-grid .support-card .card-corner {
-  font-size: 32px;
-  min-width: 58px;
+  font-size: var(--card-support-size);
 }
 .animal-card-gallery .card-gallery-grid .card-center .suit-icon {
   width: 18px;
   height: 18px;
 }
 .animal-card-gallery .card-gallery-grid .card-center {
-  inset: auto 0 0;
-  min-height: 45px;
-  padding: 8px 13px;
+  inset: auto;
 }
 .animal-card-gallery .card-gallery-grid .card-center > span {
-  font-size: 18px;
+  font-size: var(--card-name-size);
 }
 .animal-card-gallery .card-gallery-grid figcaption {
   font-size: 13px;
@@ -500,26 +517,13 @@ body:has(.star-animal-theme) {
   .animal-friend-preview {
     aspect-ratio: 4/5;
   }
-  .animal-card-gallery .card-gallery-grid .card-corner {
-    font-size: 29px;
-    min-width: 36px;
-    top: 7px;
-    left: 7px;
-    padding: 4px 6px;
-  }
-  .animal-card-gallery .card-gallery-grid .support-card .card-corner {
-    font-size: 26px;
-    min-width: 47px;
-  }
-  .animal-card-gallery .card-gallery-grid .card-center {
-    min-height: 38px;
-    padding: 6px 10px;
-  }
-  .animal-card-gallery .card-gallery-grid .card-art {
-    padding-bottom: 38px;
-  }
-  .animal-card-gallery .card-gallery-grid .card-center > span {
-    font-size: 16px;
+  .animal-card-gallery .card-gallery-grid .animal-playing-card {
+    --card-rank-height: 44px;
+    --card-name-height: 34px;
+    --card-rank-size: 29px;
+    --card-support-size: 26px;
+    --card-name-size: 16px;
+    --card-label-inset: 10px;
   }
   .animal-card-gallery .card-gallery-grid .card-center .suit-icon {
     width: 16px;

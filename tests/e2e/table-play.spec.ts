@@ -193,7 +193,7 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
       await expect(handCards(page)).toHaveCount(8);
       await expect(drawButton(page, 44)).toBeVisible();
     }
-    // Verify the in-app preference independently of the operating-system preference.
+    // Every player uses the same defaults; operating-system accessibility still applies.
     expect(
       await host.evaluate(
         () => matchMedia("(prefers-reduced-motion: reduce)").matches,
@@ -210,25 +210,12 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
     expect(
       (await transitionDurations()).some((duration) => duration > 0.00001),
     ).toBe(true);
-    await host.getByRole("button", { name: "설정", exact: true }).click();
-    const reduceMotion = host.getByRole("switch", {
-      name: "움직임 줄이기",
-      exact: true,
-    });
-    await expect(reduceMotion).not.toBeChecked();
-    await reduceMotion.click();
-    await expect(reduceMotion).toBeChecked();
-    await expect(host.locator(".app")).toHaveAttribute(
-      "data-reduced-motion",
-      "true",
-    );
-    expect(
-      (await transitionDurations()).every((duration) => duration <= 0.00001),
-    ).toBe(true);
-    await host
-      .getByRole("dialog")
-      .getByRole("button", { name: "닫기", exact: true })
-      .click();
+    await host.emulateMedia({ reducedMotion: "reduce" });
+    await expect
+      .poll(async () =>
+        (await transitionDurations()).every((duration) => duration <= 0.00001),
+      )
+      .toBe(true);
     await checkMobileWidths(guest, "game", testInfo);
     await captureScreenshot(host, "game-desktop.png", testInfo);
 
@@ -263,7 +250,7 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
       await selected.click();
       await expect(selected).toHaveAttribute("aria-pressed", "true");
       const play = actor.getByRole("button", {
-        name: "길에 놓기",
+        name: "놓기",
         exact: true,
       });
       if (turn > 0 && turn % 3 !== 0 && (await play.isEnabled())) {

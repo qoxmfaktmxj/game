@@ -113,7 +113,6 @@ export function MoyeotableApp() {
   const [inviteTableId, setInviteTableId] = useState("");
   const [email, setEmail] = useState("");
   const [mailSent, setMailSent] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(false);
   const roomRef = useRef<Room | null>(null);
   const pendingAction = useRef<PendingAction>("list");
   const pending = useRef<{
@@ -149,9 +148,6 @@ export function MoyeotableApp() {
   useEffect(() => {
     let live = true;
     let unsubscribe: (() => void) | undefined;
-    setReduceMotion(
-      localStorage.getItem("moyeotable.reduce-motion") === "true",
-    );
     const params = new URLSearchParams(window.location.search);
     if (params.get("table")) {
       if (params.get("invite")) {
@@ -690,10 +686,9 @@ export function MoyeotableApp() {
     screen !== "home" && (view?.gameKey ?? selectedGame) === "star-trails";
 
   return (
-    <MotionConfig reducedMotion={reduceMotion ? "always" : "user"}>
+    <MotionConfig reducedMotion="user">
       <div
         className={`app ${inGame ? "in-game" : ""} ${animalTheme ? "star-animal-theme" : ""}`}
-        data-reduced-motion={reduceMotion}
       >
         <a className="skip-link" href="#main-content">
           본문으로 건너뛰기
@@ -767,7 +762,6 @@ export function MoyeotableApp() {
         <main id="main-content">
           {screen === "home" && (
             <Home
-              reduceMotion={reduceMotion}
               onCreate={(key) => {
                 if (isGameKey(key)) setSelectedGame(key);
                 openDialog("create");
@@ -1215,7 +1209,6 @@ export function MoyeotableApp() {
                     view={view}
                     busy={busy}
                     connected={connected}
-                    reduceMotion={reduceMotion}
                     onCommand={gameCommand}
                     onRules={() => openDialog("rules")}
                     onResign={() => openDialog("resign")}
@@ -1240,7 +1233,6 @@ export function MoyeotableApp() {
                     view={view}
                     userId={session.user.id}
                     busy={busy || !connected}
-                    reduceMotion={reduceMotion}
                     onReady={() => tableCommand("READY", !me?.ready)}
                     onRematch={() => tableCommand("REMATCH")}
                   />
@@ -1517,49 +1509,30 @@ export function MoyeotableApp() {
                 </button>
               </div>
             )}
-            <div className="setting-row">
-              <div>
-                <strong>움직임 줄이기</strong>
-                <p>카드와 화면의 움직임을 최소화해요.</p>
-              </div>
-              <button
-                className={`toggle ${reduceMotion ? "enabled" : ""}`}
-                role="switch"
-                aria-checked={reduceMotion}
-                aria-label="움직임 줄이기"
-                onClick={() => {
-                  setReduceMotion(!reduceMotion);
-                  localStorage.setItem(
-                    "moyeotable.reduce-motion",
-                    String(!reduceMotion),
-                  );
-                }}
-              >
-                <span />
-              </button>
-            </div>
             <div className="setting-profile">
               <span>나의 이름</span>
               <strong>
                 {session?.user.nickname || "아직 정하지 않았어요"}
               </strong>
             </div>
-            {inGame && metadata.supportsResign && (
-              <button
-                className="text-button danger"
-                onClick={() => setDialog("resign")}
-              >
-                <Flag size={17} /> 이번 게임 기권하기
-              </button>
-            )}
-            {session && (
-              <button
-                className="text-button danger"
-                onClick={() => void logout()}
-              >
-                <LogOut size={17} /> 로그아웃
-              </button>
-            )}
+            <div className="settings-actions">
+              {inGame && metadata.supportsResign && (
+                <button
+                  className="text-button danger"
+                  onClick={() => setDialog("resign")}
+                >
+                  <Flag size={17} /> 이번 게임 기권하기
+                </button>
+              )}
+              {session && (
+                <button
+                  className="text-button danger settings-logout"
+                  onClick={() => void logout()}
+                >
+                  <LogOut size={17} /> 로그아웃
+                </button>
+              )}
+            </div>
           </Modal>
         )}
         {dialog === "resign" && (

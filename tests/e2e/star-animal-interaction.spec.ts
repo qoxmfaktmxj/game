@@ -295,7 +295,7 @@ test("animal cards select without playing; illegal and cancelled drags return; l
       .poll(async () => (await gate.state()).acknowledgements)
       .toBe(1);
     await expect(
-      actor.getByRole("button", { name: "길에 놓기", exact: true }),
+      actor.getByRole("button", { name: "놓기", exact: true }),
     ).toBeEnabled();
     await expect(hand(actor)).toHaveCount(8);
     await expect(ownLane.locator(".playing-card")).toHaveCount(0);

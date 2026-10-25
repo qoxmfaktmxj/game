@@ -4,10 +4,10 @@
   --board-blue: #2762c7;
   --board-line: #d3e0ef;
   --stack-card-width: 104px;
-  --stack-card-height: 146px;
+  --stack-card-height: 170px;
   --stack-step: 32px;
   --discard-card-width: 72px;
-  --discard-card-height: 100px;
+  --discard-card-height: 124px;
   --discard-stack-step: 25px;
   color: var(--board-ink);
   grid-template-columns: minmax(0, 1fr) 214px;
@@ -120,16 +120,13 @@
   z-index: var(--stack-index);
 }
 .star-animal-board .animal-stack-card .playing-card {
+  --card-rank-height: var(--stack-step);
   width: 100%;
   height: var(--stack-card-height);
   min-height: 0;
   transform: none !important;
   border-radius: 9px;
   box-shadow: 0 2px 5px #1835521c;
-}
-.star-animal-board .animal-stack-card .card-corner {
-  top: 3px;
-  padding-top: 1px;
 }
 .star-animal-board .lane-score {
   display: flex;
@@ -216,29 +213,16 @@
   border-radius: 8px;
 }
 .star-animal-board .discard-face .playing-card {
+  --card-name-height: 18px;
+  --card-rank-size: 19px;
+  --card-support-size: 17px;
+  --card-name-size: 10px;
+  --card-label-inset: 4px;
   border-radius: 8px;
-}
-.star-animal-board .discard-face .card-corner {
-  min-width: 22px;
-  top: 2px;
-  left: 3px;
-  padding: 1px 3px 2px;
-  font-size: 19px;
-}
-.star-animal-board .discard-face .support-card .card-corner {
-  min-width: 26px;
-  font-size: 17px;
 }
 .star-animal-board .discard-face .card-center .suit-icon {
   width: 11px;
   height: 11px;
-}
-.star-animal-board .discard-face .card-center {
-  min-height: 18px;
-  padding: 2px 4px 3px;
-}
-.star-animal-board .discard-face .card-center > span {
-  font-size: 10px;
 }
 .star-animal-board .discard-empty {
   width: 100%;
@@ -307,7 +291,7 @@
 }
 .star-animal-board .deck-back {
   width: 70px;
-  height: 100px;
+  height: var(--discard-card-height);
   background: #2762c7;
   border: 4px solid #fff;
   outline: 1px solid #aec4e5;
@@ -372,7 +356,7 @@
 }
 .star-animal-board .hand-card-holder > .playing-card {
   width: 100%;
-  height: 124px;
+  height: 148px;
 }
 .star-animal-board .hand .playing-card:not(:disabled) {
   cursor: grab;
@@ -415,17 +399,21 @@
   gap: 18px;
 }
 .star-animal-board .action-bar > div:first-child {
-  padding-left: 41px;
+  padding-left: 0;
   gap: 5px;
   min-width: 0;
 }
 .star-animal-board .action-step {
+  position: static;
+  align-self: flex-start;
   color: var(--board-blue);
-  border-color: #b3c8e9;
-  background: #fff;
-  min-width: 32px;
-  min-height: 25px;
-  font-size: 10px;
+  border: 0;
+  background: transparent;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.3;
 }
 .star-animal-board .action-bar strong,
 .star-animal-board .action-bar.active strong {
@@ -531,7 +519,7 @@
 .star-animal-board .star-drag-preview .playing-card {
   width: 100%;
   height: auto;
-  aspect-ratio: 88 / 124;
+  aspect-ratio: 88 / 148;
   transform: none !important;
   box-shadow: 0 12px 25px #18355235;
 }
@@ -569,10 +557,10 @@
 @media (max-width: 640px) {
   .star-animal-board {
     --stack-card-width: 64px;
-    --stack-card-height: 91px;
+    --stack-card-height: 115px;
     --stack-step: 24px;
     --discard-card-width: 48px;
-    --discard-card-height: 67px;
+    --discard-card-height: 88px;
     --discard-stack-step: 21px;
     gap: 0;
   }
@@ -601,18 +589,12 @@
     font-size: 10px;
   }
   .star-animal-board .animal-stack-card .playing-card {
+    --card-name-height: 16px;
+    --card-rank-size: 17px;
+    --card-support-size: 15px;
+    --card-name-size: 9px;
+    --card-label-inset: 3px;
     border-radius: 6px;
-  }
-  .star-animal-board .lane-slot .card-corner {
-    top: 2px;
-    left: 2px;
-    min-width: 17px;
-    padding: 2px;
-    font-size: 17px;
-  }
-  .star-animal-board .lane-slot .support-card .card-corner {
-    min-width: 22px;
-    font-size: 15px;
   }
   .star-animal-board .lane-slot .card-center .suit-icon,
   .star-animal-board .discard-face .card-center .suit-icon {
@@ -621,13 +603,7 @@
   }
   .star-animal-board .lane-slot .card-center,
   .star-animal-board .discard-face .card-center {
-    min-height: 16px;
-    padding: 2px 3px;
     gap: 2px;
-  }
-  .star-animal-board .lane-slot .card-center > span,
-  .star-animal-board .discard-face .card-center > span {
-    font-size: 9px;
   }
   .star-animal-board .empty-lane > .suit-icon {
     width: 22px;
@@ -648,16 +624,10 @@
   .star-animal-board .discard-pile {
     gap: 6px;
   }
-  .star-animal-board .discard-face .card-corner {
-    top: 1px;
-    left: 2px;
-    min-width: 17px;
-    padding: 1px 2px 2px;
-    font-size: 16px;
-  }
-  .star-animal-board .discard-face .support-card .card-corner {
-    min-width: 22px;
-    font-size: 14px;
+  .star-animal-board .discard-face .playing-card {
+    --card-name-height: 16px;
+    --card-rank-size: 16px;
+    --card-support-size: 14px;
   }
   .star-animal-board .discard-take {
     font-size: 10px;
@@ -678,7 +648,6 @@
   }
   .star-animal-board .deck-back {
     width: 48px;
-    height: 67px;
     border-width: 3px;
     gap: 4px;
   }
@@ -717,7 +686,11 @@
     width: 76px;
   }
   .star-animal-board .hand-card-holder > .playing-card {
-    height: 108px;
+    --card-rank-height: 28px;
+    --card-name-height: 20px;
+    --card-rank-size: 22px;
+    --card-support-size: 20px;
+    height: 132px;
   }
   .star-animal-board .hand-heading .avatar {
     width: 28px;
@@ -751,7 +724,7 @@
     padding: 12px 0 16px;
   }
   .star-animal-board .action-bar > div:first-child {
-    padding-left: 39px;
+    padding-left: 0;
   }
   .star-animal-board .action-bar strong {
     font-size: 13px;
@@ -769,8 +742,8 @@
 @media (max-width: 374px) {
   .star-animal-board {
     --stack-card-width: 54px;
-    --stack-card-height: 78px;
-    --discard-card-height: 58px;
+    --stack-card-height: 102px;
+    --discard-card-height: 80px;
   }
   .star-animal-board .game-surface {
     padding-inline: 8px;
@@ -785,9 +758,6 @@
   .star-animal-board .lane-label .suit-icon {
     display: none;
   }
-  .star-animal-board .deck-back {
-    height: 58px;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   .star-animal-board *,
@@ -796,10 +766,4 @@
     transition: none !important;
     animation: none !important;
   }
-}
-.star-animal-board[data-reduced-motion="true"] *,
-.star-animal-board[data-reduced-motion="true"] *::before,
-.star-animal-board[data-reduced-motion="true"] *::after {
-  transition: none !important;
-  animation: none !important;
 }

@@ -1884,36 +1884,6 @@ input {
   color: var(--muted);
   margin-top: 7px;
 }
-.toggle {
-  width: 48px;
-  min-height: 44px;
-  position: relative;
-  background: transparent;
-  flex-shrink: 0;
-}
-.toggle:before {
-  content: "";
-  position: absolute;
-  inset: 9px 0;
-  background: #d1d8c4;
-  border-radius: 20px;
-}
-.toggle.enabled:before {
-  background: var(--ink);
-}
-.toggle > span {
-  position: absolute;
-  left: 4px;
-  top: 13px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--paper);
-  transition: transform 0.2s;
-}
-.toggle.enabled > span {
-  transform: translateX(22px);
-}
 .setting-profile {
   display: flex;
   flex-direction: column;
@@ -1926,6 +1896,27 @@ input {
 }
 .setting-profile > strong {
   font-size: 16px;
+}
+.settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+.settings-actions > .text-button {
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 10px 4px;
+  gap: 8px;
+  text-align: left;
+}
+.settings-actions > .text-button svg {
+  flex-shrink: 0;
+}
+.settings-actions > .settings-logout {
+  margin-inline-start: auto;
 }
 .danger {
   color: #9d5244;
@@ -3156,11 +3147,6 @@ input {
     transition-duration: 0.01ms !important;
   }
 }
-.app[data-reduced-motion="true"] * {
-  animation-duration: 0.01ms !important;
-  animation-iteration-count: 1 !important;
-  transition-duration: 0.01ms !important;
-}
 /* Small screens keep game information readable; only the hand scrolls. */
 @media (max-width: 640px) {
   .header-cta,
@@ -4192,16 +4178,6 @@ input {
     transform: none !important;
   }
 }
-.app[data-reduced-motion="true"] .hero-orbit .orbit-scene * {
-  animation: none !important;
-}
-.app[data-reduced-motion="true"] .orbit-card-arrival,
-.app[data-reduced-motion="true"] .orbit-card-float {
-  transform: none !important;
-}
-.app[data-reduced-motion="true"] .motion-control {
-  display: none;
-}
 
 /* Ring Club — a shared place to play, with a quiet shell and expressive covers. */
 :root {
@@ -4998,15 +4974,6 @@ textarea:focus-visible {
 .score-formula {
   background: #293b48;
 }
-.toggle:before {
-  background: #4b5d6b;
-}
-.toggle.enabled:before {
-  background: var(--mint);
-}
-.toggle > span {
-  background: var(--deep);
-}
 .danger {
   color: #ffb49d;
 }
@@ -5371,15 +5338,6 @@ textarea:focus-visible {
   .club-game-go {
     transition: none !important;
   }
-}
-.app[data-reduced-motion="true"] .club-scene-art > img,
-.app[data-reduced-motion="true"] .club-scene-path ellipse {
-  animation: none !important;
-  transform: none !important;
-}
-.app[data-reduced-motion="true"] .club-game-cover > img,
-.app[data-reduced-motion="true"] .club-game-go {
-  transition: none !important;
 }
 
 /* Individual illustrations; ranks remain crisp, accessible HTML. */

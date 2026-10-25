@@ -25,7 +25,7 @@ import "./star-board.css";
 type PublicPlayer = PlayerView["players"][number];
 
 /** Animate only public changes in the accepted server View. */
-function useBoardMotion(version: number, reduceMotion: boolean) {
+function useBoardMotion(version: number) {
   const ref = useRef<HTMLDivElement>(null);
   const previous = useRef<Map<string, string>>(new Map());
   const firstRender = useRef(true);
@@ -43,7 +43,6 @@ function useBoardMotion(version: number, reduceMotion: boolean) {
           !firstRender.current &&
           value &&
           previous.current.get(slot) !== value &&
-          !reduceMotion &&
           !systemReduced
         ) {
           animations.push(
@@ -60,7 +59,7 @@ function useBoardMotion(version: number, reduceMotion: boolean) {
     previous.current = next;
     firstRender.current = false;
     return () => animations.forEach((animation) => animation.cancel());
-  }, [version, reduceMotion, systemReduced]);
+  }, [version, systemReduced]);
   return ref;
 }
 
@@ -68,7 +67,6 @@ export function GameBoard({
   view,
   busy,
   connected,
-  reduceMotion,
   onCommand,
   onRules,
   onResign,
@@ -76,13 +74,12 @@ export function GameBoard({
   view: RoomView<"star-trails">;
   busy: boolean;
   connected: boolean;
-  reduceMotion: boolean;
   onCommand: (command: StarCommand) => void;
   onRules: () => void;
   onResign: () => void;
 }) {
   const game = view.game!;
-  const boardRef = useBoardMotion(game.version, reduceMotion);
+  const boardRef = useBoardMotion(game.version);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [laneDetail, setLaneDetail] = useState<{
     playerId: string;
@@ -205,7 +202,6 @@ export function GameBoard({
       className="play-layout star-animal-board"
       ref={boardRef}
       data-dragging={Boolean(drag)}
-      data-reduced-motion={reduceMotion}
       onPointerDownCapture={resetClickSuppression}
       onClickCapture={(event) => {
         if (event.detail > 0 && suppressClick()) {
@@ -370,8 +366,8 @@ export function GameBoard({
               <span className="action-step">
                 {yourTurn
                   ? game.phase === "PLACE"
-                    ? "1 / 2"
-                    : "2 / 2"
+                    ? "놓기·버리기"
+                    : "가져오기"
                   : "대기"}
               </span>
               <strong>
@@ -426,7 +422,7 @@ export function GameBoard({
                       })
                     }
                   >
-                    길에 놓기 <ArrowRight size={17} />
+                    놓기 <ArrowRight size={17} />
                   </button>
                 </>
               )}
@@ -559,21 +555,19 @@ export function ResultPanel({
   view,
   userId,
   busy,
-  reduceMotion,
   onReady,
   onRematch,
 }: {
   view: RoomView<"star-trails">;
   userId: string;
   busy: boolean;
-  reduceMotion: boolean;
   onReady: () => void;
   onRematch: () => void;
 }) {
   const resultRef = useRef<SVGSVGElement>(null);
   const systemReduced = useReducedMotion();
   useEffect(() => {
-    if (reduceMotion || systemReduced) return;
+    if (systemReduced) return;
     const animation = resultRef.current?.animate(
       [
         { transform: "scale(0.8) rotate(-12deg)" },
@@ -582,7 +576,7 @@ export function ResultPanel({
       { duration: 480, easing: "cubic-bezier(0.16, 1, 0.3, 1)" },
     );
     return () => animation?.cancel();
-  }, [reduceMotion, systemReduced]);
+  }, [systemReduced]);
   const result = view.result!;
   const mine = view.table.members.find((m) => m.userId === userId)!;
   const isHost = view.table.hostId === userId;

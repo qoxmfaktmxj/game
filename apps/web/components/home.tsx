@@ -55,11 +55,7 @@ export const clubGames = [
   },
 ] as const;
 
-function ClubScene({
-  reduceMotion: appReducedMotion = false,
-}: {
-  reduceMotion?: boolean;
-}) {
+function ClubScene() {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { amount: 0.15 });
   const osReducedMotion = useReducedMotion();
@@ -73,7 +69,7 @@ function ClubScene({
     document.addEventListener("visibilitychange", update);
     return () => document.removeEventListener("visibilitychange", update);
   }, []);
-  const reduceMotion = appReducedMotion || (ready && !!osReducedMotion);
+  const reduceMotion = ready && !!osReducedMotion;
   const playing = ready && inView && tabVisible && !paused && !reduceMotion;
   return (
     <figure className="club-scene" ref={ref} data-playing={playing}>
@@ -128,12 +124,10 @@ export function Home({
   onCreate,
   onJoin,
   onRules,
-  reduceMotion = false,
 }: {
   onCreate: (gameKey?: string) => void;
   onJoin: () => void;
   onRules: (gameKey?: string) => void;
-  reduceMotion?: boolean;
 }) {
   return (
     <div className="club-home">
@@ -155,7 +149,7 @@ export function Home({
             </button>
           </div>
         </div>
-        <ClubScene reduceMotion={reduceMotion} />
+        <ClubScene />
       </section>
       <section
         className="club-collection page-width"
