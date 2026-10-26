@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, type ReactNode } from "react";
 import Image from "next/image";
-import { X, LoaderCircle } from "lucide-react";
+import { ArrowUpRight, X, LoaderCircle } from "lucide-react";
 import type { Card, Suit } from "@moyeotable/contracts";
 import { suitNames } from "../lib/client";
 import { getStarCardArt } from "../lib/star-card-art";
@@ -68,36 +68,36 @@ export function Logo({ compact = false }: { compact?: boolean }) {
     <span className="brand">
       <svg
         width="42"
-        height="34"
-        viewBox="0 0 42 34"
+        height="36"
+        viewBox="0 0 44 38"
         fill="none"
         aria-hidden="true"
       >
-        <ellipse
-          cx="15"
-          cy="17"
-          rx="10"
-          ry="13"
-          transform="rotate(-31 15 17)"
-          stroke="currentColor"
-          strokeWidth="2"
+        <rect
+          x="5"
+          y="8"
+          width="22"
+          height="27"
+          rx="5"
+          transform="rotate(-12 16 21.5)"
+          fill="var(--color-paper)"
+          stroke="var(--color-accent-text)"
+          strokeWidth="1.8"
         />
-        <ellipse
-          cx="27"
-          cy="17"
-          rx="10"
-          ry="13"
-          transform="rotate(-31 27 17)"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <path
-          d="m19 13 2 4-2 4"
-          stroke="var(--gold)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        <g transform="rotate(10 29 17)">
+          <rect
+            x="18"
+            y="3"
+            width="22"
+            height="28"
+            rx="5"
+            fill="var(--color-brand)"
+            stroke="var(--color-accent-text)"
+            strokeWidth="1.8"
+          />
+          <circle cx="24" cy="10" r="2" fill="var(--color-accent-ink)" />
+          <circle cx="34" cy="24" r="2" fill="var(--color-accent-ink)" />
+        </g>
       </svg>
       {!compact && (
         <span>
@@ -305,7 +305,7 @@ export function RulesContent() {
         <span>길마다 이렇게 계산해요</span>
         <strong>(숫자 합 − 20) × (지원 수 + 1)</strong>
         <p className="support-multipliers">
-          지원 1장 <b>×2</b> · 2장 <b>×3</b> · 3장 <b>×4</b>
+          지원 1장 <b>×2</b>, 2장 <b>×3</b>, 3장 <b>×4</b>
         </p>
         <p>
           카드의 ×2는 지원 카드 표시예요. 지원을 추가할 때마다 배수가 1씩
@@ -324,14 +324,16 @@ export function RulesContent() {
           </span>
         ))}
       </div>
-      <p className="quiet">2인 · 60장 · 각자 손패 8장 · 기본 규칙 1.0.0</p>
+      <p className="quiet">
+        2인, 카드 60장. 각자 손패 8장으로 시작해요. 기본 규칙 1.0.0
+      </p>
       <a
         className="card-gallery-link"
         href="/cards"
         target="_blank"
         rel="noreferrer"
       >
-        카드 그림 모아보기 ↗
+        카드 그림 모아보기 <ArrowUpRight size={16} aria-hidden="true" />
       </a>
     </div>
   );

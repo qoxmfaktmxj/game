@@ -16,7 +16,7 @@ export function CardGalleryNav({
         href="/cards"
         aria-current={current === "star-trails" ? "page" : undefined}
       >
-        별길 탐험
+        로스트 팻츠
       </Link>
       {Object.entries(artGames).map(([key, name]) => (
         <Link

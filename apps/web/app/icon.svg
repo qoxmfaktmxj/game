@@ -1,15 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#203e35" />
-  <g fill="none" stroke="#fffcf4" stroke-width="2.7">
-    <ellipse cx="24" cy="32" rx="13" ry="17" transform="rotate(-31 24 32)" />
-    <ellipse cx="40" cy="32" rx="13" ry="17" transform="rotate(-31 40 32)" />
+  <style>
+    :root { --paper: #ffffff; --brand: #94b2df; --line: #345884; --ink: #182b45; }
+  </style>
+  <rect width="64" height="64" rx="16" fill="var(--paper)" />
+  <g transform="translate(10 13)" stroke="var(--line)" stroke-width="1.8">
+    <rect x="5" y="8" width="22" height="27" rx="5" transform="rotate(-12 16 21.5)" fill="var(--paper)" />
+    <g transform="rotate(10 29 17)">
+      <rect x="18" y="3" width="22" height="28" rx="5" fill="var(--brand)" />
+      <g fill="var(--ink)" stroke="none">
+        <circle cx="24" cy="10" r="2" />
+        <circle cx="34" cy="24" r="2" />
+      </g>
+    </g>
   </g>
-  <path
-    d="m29 26 3 6-3 6"
-    fill="none"
-    stroke="#b89154"
-    stroke-width="3.2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
 </svg>

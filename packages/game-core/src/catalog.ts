@@ -22,14 +22,14 @@ export interface GameMetadata<K extends GameKey = GameKey> {
 export const GAME_CATALOG: { [K in GameKey]: GameMetadata<K> } = {
   "star-trails": {
     key: "star-trails",
-    name: "별길 탐험",
+    name: "로스트 팻츠",
     minPlayers: 2,
     maxPlayers: 2,
     rulesVersion: "1.0.0",
     contentVersion: "1.0.0",
     schemaVersion: 1,
     description: "다섯 별길에 쌓아 가는 두 사람의 탐험",
-    art: "/art/club-orbit.png",
+    art: "/art/club-lost-pets.png",
     supportsResign: true,
   },
   workshop: {

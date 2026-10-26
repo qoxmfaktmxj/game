@@ -200,9 +200,9 @@ test("animal cards select without playing; illegal and cancelled drags return; l
       .getByRole("button", { name: "테이블에 입장하기", exact: true })
       .click();
     await expect(host.locator(".occupied-seat")).toHaveCount(2);
-    await host.getByRole("button", { name: "준비됐어요", exact: true }).click();
+    await host.getByRole("button", { name: "준비", exact: true }).click();
     await guest
-      .getByRole("button", { name: "준비됐어요", exact: true })
+      .getByRole("button", { name: "준비", exact: true })
       .click();
     await host.getByRole("button", { name: "탐험 시작", exact: true }).click();
     await expect(hand(host)).toHaveCount(8);

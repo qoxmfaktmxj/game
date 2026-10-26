@@ -30,7 +30,7 @@ Users can lose their connection or refresh while playing. The interface must com
 
 ## Capabilities and Constraints
 
-- First game: 별길 탐험, two players and one basic-rules match at a time. Keep the internal `star-trails` identifier and original reference package unchanged.
+- First game: 로스트 팻츠, two players and one basic-rules match at a time. The user selected this exact display name on 2026-10-27; it is the same game called 별길 탐험 in the original specification. Keep the rules, internal `star-trails` identifier and original reference package unchanged.
 - 빛의 공방, 밤의 의회, 황혼의 신호 and 넘버가든 implement the official base-rule editions recorded in `docs/game-expansion-sources.md`, with original names and artwork. The user approved this scope on 2026-10-23. Their private state, legal actions and results have separate engines.
 - Rule priority: package decisions, first-game specification, contracts/data specification, interface specification, then visual mockups.
 - Server authority, input validation, authenticated action identity, duplicate-command handling and persistence before acknowledgement are required.
@@ -41,7 +41,9 @@ Users can lose their connection or refresh while playing. The interface must com
 
 ## Brand Commitments
 
-The platform is 링구링구. The two-player card game is 별길 탐험; the user explicitly requested separating the game name from the platform name on 2026-10-24. The user asked for a polished design informed by Best Free Fonts, Originkit and Awwwards, with Impeccable and UI UX Pro Max assisting the work. They explicitly prefer substantial implementation before revision and delegated the first design direction. The current visual treatment is an implementation choice recorded in `DESIGN.md`, not a separately approved permanent identity.
+The platform is 링구링구. The user explicitly requested separating the game name from the platform name on 2026-10-24, then selected **로스트 팻츠** as the two-player game's exact display name on 2026-10-27. On the same day they selected cover B: a 3×3 grid of numbers 2–10 with a larger ×2 otter card on its right. The production cover is `apps/web/public/art/club-lost-pets.png`; it uses the existing approved animal illustrations and does not change the game's 50 distinct faces or 60-card deck. The current white/off-white surfaces, Open Air accent and paired-card logo are recorded in `DESIGN.md`; the selection history and verification scope are in `docs/open-air-refinement.md`.
+
+The user prefers substantial implementation before revision. Earlier visual research used Best Free Fonts, Originkit and Awwwards, with Impeccable and UI UX Pro Max assisting the work; those references remain historical context rather than authority over the latest user choices.
 
 Use friendly, direct Korean. Explain player actions in familiar language. Keep infrastructure and development detail out of ordinary product flows except where the environment or connection mode changes what the user can do.
 
@@ -49,7 +51,7 @@ Use friendly, direct Korean. Explain player actions in familiar language. Keep i
 
 - `moyeotable_build_pack_v1/START_HERE.md`, `docs/00_decisions.md` and `docs/05_game01_star_trails.md` inside that package provide product and rule evidence.
 - The package contains rule reference code, tests, protocol contracts and eight screen mockups. Its original verification report describes the package's limits.
-- `apps/web/public/art/` contains five newly generated original game covers plus the existing SVG card illustrations, separate from the private source photographs.
+- `apps/web/public/art/` contains original game covers and card illustrations, separate from the private source photographs. The current 로스트 팻츠 cover is the user-selected B composition assembled from the approved animal artwork; previous covers remain as historical assets.
 - `apps/web/public/fonts/` contains self-hosted Gowun Batang and Pretendard files with licenses and source notes.
 - `test-results/` contains execution evidence produced during development; stable selected screenshots are copied to `artifacts/verification/`. Only a test actually run can support a completion claim.
 - There are no supplied testimonials, live audience counts or service-performance achievements. Do not invent them.

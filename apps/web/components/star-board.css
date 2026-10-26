@@ -1,8 +1,33 @@
+/* Hallmark · scope: app · theme: Paper Club, Open Air · genre: playful · redesign: restyle · signature: animal card trails · v2.0.0 */
+/* Critique: neutral paper and quiet shadows frame the full public stacks. Geometry retained; finish review pending. */
+:root {
+  --star-space-10: 10px;
+  --star-space-11: 11px;
+  --star-space-14: 14px;
+  --star-space-15: 15px;
+  --star-space-18: 18px;
+  --star-space-22: 22px;
+  --star-space-28: 28px;
+  --star-space-3: 3px;
+  --star-space-5: 5px;
+  --star-space-6: 6px;
+  --star-space-7: 7px;
+  --star-space-9: 9px;
+}
+:root {
+  --star-table-paper: var(--color-paper);
+  --star-opponent-paper: #fff0e8;
+  --star-opponent-ink: #8d4928;
+  --star-card-shadow: color-mix(in srgb, var(--color-ink) 8%, transparent);
+  --star-deck-shadow: color-mix(in srgb, var(--color-ink) 13%, transparent);
+  --star-drag-shadow: color-mix(in srgb, var(--color-ink) 21%, transparent);
+  --star-clear: transparent;
+}
 .star-animal-board {
-  --board-ink: #183552;
-  --board-muted: #4b6380;
-  --board-blue: #2762c7;
-  --board-line: #d3e0ef;
+  --board-ink: var(--ink);
+  --board-muted: var(--muted);
+  --board-blue: var(--mint);
+  --board-line: var(--line);
   --stack-card-width: 104px;
   --stack-card-height: 170px;
   --stack-step: 32px;
@@ -11,14 +36,14 @@
   --discard-stack-step: 25px;
   color: var(--board-ink);
   grid-template-columns: minmax(0, 1fr) 214px;
-  gap: 28px;
+  gap: var(--star-space-28);
 }
 .star-animal-board .game-surface {
-  background: #fffefa;
+  background: var(--star-table-paper);
   color: var(--board-ink);
-  padding: 20px 22px 0;
+  padding: var(--space-ml) var(--star-space-22) 0;
   overflow: visible;
-  border: 1px solid var(--board-line);
+  border: 1px solid var(--color-border-strong);
   border-radius: 16px;
 }
 .star-animal-board .player-identity strong {
@@ -35,12 +60,12 @@
   font-weight: 750;
 }
 .star-animal-board .avatar {
-  background: #e7f0ff;
+  background: var(--color-accent-soft);
   color: var(--board-blue);
 }
 .star-animal-board .avatar.opponent {
-  background: #fff0de;
-  color: #85501e;
+  background: var(--star-opponent-paper);
+  color: var(--star-opponent-ink);
 }
 .star-animal-board .turn-pill {
   color: var(--board-muted);
@@ -49,12 +74,12 @@
 }
 .star-animal-board .mine-turn {
   color: var(--board-blue);
-  border-color: #9eb9e9;
-  background: #f3f8ff;
+  border-color: var(--color-border-strong);
+  background: var(--color-paper-2);
 }
 .star-animal-board .lane-row {
-  gap: 12px;
-  margin-top: 16px;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
   align-items: start;
 }
 .star-animal-board .lane {
@@ -66,8 +91,8 @@
 .star-animal-board .lane-label {
   color: var(--board-ink);
   font-size: 13px;
-  gap: 5px;
-  margin-bottom: 8px;
+  gap: var(--star-space-5);
+  margin-bottom: var(--space-xs);
   font-weight: 650;
 }
 .star-animal-board .lane-label .suit-icon {
@@ -79,19 +104,19 @@
   min-height: var(--stack-card-height);
   width: min(100%, var(--stack-card-width));
   margin-inline: auto;
-  background: transparent;
-  border: 1px dashed #a6bdd9;
+  background: var(--star-clear);
+  border: 1px dashed var(--color-border-strong);
   border-radius: 10px;
   box-shadow: none;
   overflow: visible;
 }
 .star-animal-board .lane-slot.occupied {
   border: 0;
-  background: transparent;
+  background: var(--star-clear);
 }
 .star-animal-board .empty-lane {
   color: var(--board-muted);
-  gap: 8px;
+  gap: var(--space-xs);
 }
 .star-animal-board .empty-lane > .suit-icon {
   width: 28px;
@@ -126,15 +151,15 @@
   min-height: 0;
   transform: none !important;
   border-radius: 9px;
-  box-shadow: 0 2px 5px #1835521c;
+  box-shadow: 0 2px 5px var(--star-card-shadow);
 }
 .star-animal-board .lane-score {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: center;
-  gap: 2px;
-  margin-top: 8px;
+  gap: var(--space-3xs);
+  margin-top: var(--space-xs);
   color: var(--board-ink);
   font-size: 14px;
 }
@@ -151,11 +176,11 @@
 .star-animal-board .target-lane .lane-slot {
   outline: 2px solid var(--board-blue);
   outline-offset: 4px;
-  background: #f3f8ff;
+  background: var(--color-paper-2);
 }
 .star-animal-board .lane-target-hint {
-  background: var(--board-blue);
-  color: #fff;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
   width: 24px;
   height: 24px;
   bottom: -5px;
@@ -171,10 +196,10 @@
 }
 .star-animal-board .shared-center {
   --shared-label-height: 18px;
-  --shared-label-gap: 9px;
-  gap: 20px;
-  margin: 20px 0;
-  padding: 14px 0;
+  --shared-label-gap: var(--star-space-9);
+  gap: var(--space-ml);
+  margin: var(--space-ml) 0;
+  padding: var(--star-space-14) 0;
   border-color: var(--board-line);
   align-items: flex-start;
 }
@@ -185,7 +210,7 @@
   margin-bottom: var(--shared-label-gap);
 }
 .star-animal-board .discard-row {
-  gap: 12px;
+  gap: var(--space-sm);
   align-items: start;
 }
 .star-animal-board .discard-pile {
@@ -193,16 +218,16 @@
   flex-direction: column;
   align-items: stretch;
   min-width: 0;
-  gap: 8px;
+  gap: var(--space-xs);
 }
 .star-animal-board .discard {
-  background: transparent;
+  background: var(--star-clear);
   padding: 0;
   width: 100%;
   min-height: 44px;
   min-width: 0;
   border-radius: 8px;
-  gap: 6px;
+  gap: var(--star-space-6);
   color: var(--board-ink);
 }
 .star-animal-board .discard-face {
@@ -231,10 +256,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  border: 1px dashed #afc1d8;
+  gap: var(--star-space-6);
+  border: 1px dashed var(--color-border-strong);
   border-radius: 8px;
-  background: #f3f8ff;
+  background: var(--color-paper-2);
   color: var(--board-muted);
 }
 .star-animal-board .discard-empty > span {
@@ -257,28 +282,29 @@
   outline-offset: 3px;
 }
 .star-animal-board .discard.available:hover {
-  background: transparent;
+  background: var(--star-clear);
 }
 .star-animal-board .discard-take {
   width: 100%;
   min-height: 44px;
-  padding: 6px 2px;
-  border: 1px solid #9ab5df;
+  padding: var(--star-space-6) var(--space-3xs);
+  border: 1px solid var(--color-border-strong);
   border-radius: 6px;
-  background: #fff;
+  background: var(--paper);
   color: var(--board-blue);
   font-size: 12px;
   font-weight: 650;
   line-height: 1.3;
 }
 .star-animal-board .discard-take:not(:disabled):hover {
-  background: #e2edfc;
+  background: var(--color-accent-soft);
 }
 .star-animal-board .discard-take:disabled {
   border-color: var(--board-line);
-  background: transparent;
+  background: var(--star-clear);
   color: var(--board-muted);
   opacity: 0.55;
+  cursor: not-allowed;
 }
 .star-animal-board .draw-deck {
   color: var(--board-ink);
@@ -286,26 +312,26 @@
   align-self: flex-start;
   margin-top: calc(var(--shared-label-height) + var(--shared-label-gap));
   min-width: 70px;
-  gap: 8px;
+  gap: var(--space-xs);
   opacity: 1 !important;
 }
 .star-animal-board .deck-back {
   width: 70px;
   height: var(--discard-card-height);
-  background: #2762c7;
-  border: 4px solid #fff;
-  outline: 1px solid #aec4e5;
+  background: var(--color-accent);
+  border: 4px solid var(--paper);
+  outline: 1px solid var(--color-border-strong);
   border-radius: 9px;
-  box-shadow: 3px 4px 7px #18355225;
-  gap: 9px;
+  box-shadow: 3px 4px 7px var(--star-deck-shadow);
+  gap: var(--star-space-9);
 }
 .star-animal-board .deck-back > .suit-icon {
-  color: #fff;
+  color: var(--color-accent-ink);
   width: 29px;
   height: 29px;
 }
 .star-animal-board .deck-back > span {
-  color: #fff;
+  color: var(--color-accent-ink);
   font-size: 10px;
   letter-spacing: 0;
   font-weight: 700;
@@ -323,7 +349,7 @@
 .star-animal-board .my-path-title {
   color: var(--board-ink);
   font-size: 14px;
-  gap: 12px;
+  gap: var(--space-sm);
 }
 .star-animal-board .my-path-title > span + span,
 .star-animal-board .my-path-title > span {
@@ -331,22 +357,22 @@
   font-size: 11px;
 }
 .star-animal-board .mine.lane-row {
-  margin-top: 12px;
+  margin-top: var(--space-sm);
 }
 .star-animal-board .hand-area {
-  margin: 20px -22px 0;
-  padding: 16px 22px 0;
-  background: #f3f8ff;
+  margin: var(--space-ml) calc(var(--star-space-22) * -1) 0;
+  padding: var(--space-md) var(--star-space-22) 0;
+  background: var(--color-paper-2);
   border-top: 1px solid var(--board-line);
   border-radius: 0 0 16px 16px;
 }
 .star-animal-board .hand {
   min-height: 0;
-  gap: 10px;
-  padding: 22px 5px 8px;
+  gap: var(--star-space-10);
+  padding: var(--star-space-22) var(--star-space-5) var(--space-xs);
   justify-content: safe center;
   touch-action: pan-x pan-y;
-  scrollbar-color: #a0b9dc #f3f8ff;
+  scrollbar-color: var(--color-border-strong) var(--color-paper-2);
 }
 .star-animal-board .hand-card-holder {
   position: relative;
@@ -371,12 +397,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: var(--space-2xs);
   width: 100%;
   min-height: 44px;
   padding: 0;
   color: var(--board-muted);
-  background: transparent;
+  background: var(--star-clear);
   font-size: 11px;
   touch-action: none;
   cursor: grab;
@@ -384,23 +410,23 @@
 }
 .star-animal-board .card-drag-handle:disabled {
   opacity: 0.45;
-  cursor: default;
+  cursor: not-allowed;
 }
 .star-animal-board .card-drag-handle:not(:disabled):hover {
-  background: #e2edfc;
+  background: var(--color-accent-soft);
   color: var(--board-blue);
 }
 .star-animal-board .action-bar {
-  padding: 14px 0 18px;
+  padding: var(--star-space-14) 0 var(--star-space-18);
   min-height: 94px;
   border-color: var(--board-line);
   color: var(--board-ink);
   align-items: center;
-  gap: 18px;
+  gap: var(--star-space-18);
 }
 .star-animal-board .action-bar > div:first-child {
   padding-left: 0;
-  gap: 5px;
+  gap: var(--star-space-5);
   min-width: 0;
 }
 .star-animal-board .action-step {
@@ -408,7 +434,7 @@
   align-self: flex-start;
   color: var(--board-blue);
   border: 0;
-  background: transparent;
+  background: var(--star-clear);
   min-width: 0;
   min-height: 0;
   padding: 0;
@@ -429,26 +455,26 @@
 .star-animal-board .action-buttons .button {
   min-height: 46px;
   font-size: 13px;
-  padding: 11px 16px;
+  padding: var(--star-space-11) var(--space-md);
 }
 .star-animal-board .button.mint {
-  background: var(--board-blue);
-  color: #fff;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
 }
 .star-animal-board .button.mint:hover:not(:disabled) {
-  background: #1f50aa;
+  background: var(--color-accent-hover);
 }
 .star-animal-board .discard-button {
   color: var(--board-blue);
-  background: #fff;
-  border-color: #9ab5df;
+  background: var(--paper);
+  border-color: var(--color-border-strong);
 }
 .star-animal-board .game-aside {
-  padding: 19px 0;
+  padding: var(--space-ml) 0;
   color: var(--board-ink);
 }
 .star-animal-board .game-aside-title {
-  padding-bottom: 20px;
+  padding-bottom: var(--space-ml);
   border-color: var(--board-line);
 }
 .star-animal-board .game-aside-title h2 {
@@ -462,7 +488,7 @@
   color: var(--board-muted);
 }
 .star-animal-board .turn-summary {
-  padding-block: 22px;
+  padding-block: var(--star-space-22);
   border-color: var(--board-line);
 }
 .star-animal-board .turn-summary h3 {
@@ -477,22 +503,22 @@
   color: var(--board-blue);
 }
 .star-animal-board .turn-summary li > span {
-  background: #e7f0ff;
+  background: var(--color-accent-soft);
   color: var(--board-muted);
 }
 .star-animal-board .turn-summary li.current > span {
-  background: var(--board-blue);
-  color: #fff;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
 }
 .star-animal-board .aside-rule {
-  padding-block: 20px;
+  padding-block: var(--space-ml);
 }
 .star-animal-board .aside-rule h3 {
   font-size: 13px;
   color: var(--board-ink);
 }
 .star-animal-board .aside-rule p {
-  margin-top: 8px;
+  margin-top: var(--space-xs);
   color: var(--board-muted);
   font-size: 12px;
   line-height: 1.7;
@@ -521,7 +547,7 @@
   height: auto;
   aspect-ratio: 88 / 148;
   transform: none !important;
-  box-shadow: 0 12px 25px #18355235;
+  box-shadow: 0 12px 25px var(--star-drag-shadow);
 }
 .star-animal-board[data-dragging="true"],
 .star-animal-board[data-dragging="true"] * {
@@ -536,15 +562,15 @@
   white-space: nowrap;
 }
 .star-animal-board :focus-visible {
-  outline: 3px solid var(--board-blue);
+  outline: 3px solid var(--color-focus);
   outline-offset: 4px;
 }
 .star-animal-board .detail-cards {
-  gap: 14px;
+  gap: var(--star-space-14);
 }
 .star-animal-board .score-formula {
   color: var(--board-ink);
-  background: #f3f8ff;
+  background: var(--color-paper-2);
 }
 @media (max-width: 1100px) {
   .star-animal-board {
@@ -565,17 +591,17 @@
     gap: 0;
   }
   .star-animal-board .game-surface {
-    padding: 14px 10px 0;
+    padding: var(--star-space-14) var(--star-space-10) 0;
     border-radius: 12px;
   }
   .star-animal-board .lane-row {
-    gap: 7px;
-    margin-top: 14px;
+    gap: var(--star-space-7);
+    margin-top: var(--star-space-14);
   }
   .star-animal-board .lane-label {
-    gap: 3px;
+    gap: var(--star-space-3);
     font-size: 12px;
-    margin-bottom: 7px;
+    margin-bottom: var(--star-space-7);
   }
   .star-animal-board .lane-label .suit-icon {
     width: 14px;
@@ -583,7 +609,7 @@
   }
   .star-animal-board .lane-score {
     font-size: 13px;
-    margin-top: 7px;
+    margin-top: var(--star-space-7);
   }
   .star-animal-board .lane-score > span {
     font-size: 10px;
@@ -603,7 +629,7 @@
   }
   .star-animal-board .lane-slot .card-center,
   .star-animal-board .discard-face .card-center {
-    gap: 2px;
+    gap: var(--space-3xs);
   }
   .star-animal-board .empty-lane > .suit-icon {
     width: 22px;
@@ -611,18 +637,18 @@
   }
   .star-animal-board .shared-center {
     --shared-label-height: 16px;
-    gap: 11px;
-    margin-block: 15px;
-    padding-block: 12px;
+    gap: var(--star-space-11);
+    margin-block: var(--star-space-15);
+    padding-block: var(--space-sm);
   }
   .star-animal-board .board-row-label {
     font-size: 11px;
   }
   .star-animal-board .discard-row {
-    gap: 6px;
+    gap: var(--star-space-6);
   }
   .star-animal-board .discard-pile {
-    gap: 6px;
+    gap: var(--star-space-6);
   }
   .star-animal-board .discard-face .playing-card {
     --card-name-height: 16px;
@@ -644,12 +670,12 @@
   }
   .star-animal-board .draw-deck {
     min-width: 48px;
-    gap: 6px;
+    gap: var(--star-space-6);
   }
   .star-animal-board .deck-back {
     width: 48px;
     border-width: 3px;
-    gap: 4px;
+    gap: var(--space-2xs);
   }
   .star-animal-board .deck-back > .suit-icon {
     width: 22px;
@@ -671,15 +697,15 @@
     font-size: 10px;
   }
   .star-animal-board .hand-area {
-    margin: 16px -10px 0;
-    padding: 14px 10px 0;
+    margin: var(--space-md) calc(var(--star-space-10) * -1) 0;
+    padding: var(--star-space-14) var(--star-space-10) 0;
     border-radius: 0 0 12px 12px;
   }
   .star-animal-board .hand {
     justify-content: flex-start;
-    gap: 9px;
-    padding: 20px 5px 4px;
-    margin-inline: -3px;
+    gap: var(--star-space-9);
+    padding: var(--space-ml) var(--star-space-5) var(--space-2xs);
+    margin-inline: calc(var(--star-space-3) * -1);
   }
   .star-animal-board .hand-card-holder {
     flex-basis: 76px;
@@ -703,7 +729,7 @@
     font-size: 11px;
   }
   .star-animal-board .player-total {
-    gap: 6px;
+    gap: var(--star-space-6);
   }
   .star-animal-board .player-total > span {
     font-size: 11px;
@@ -714,14 +740,14 @@
   .star-animal-board .turn-pill {
     margin-left: 0;
     font-size: 10px;
-    padding: 3px 5px;
+    padding: var(--star-space-3) var(--star-space-5);
   }
   .star-animal-board .action-bar {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
-    padding: 12px 0 16px;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0 var(--space-md);
   }
   .star-animal-board .action-bar > div:first-child {
     padding-left: 0;
@@ -746,14 +772,14 @@
     --discard-card-height: 80px;
   }
   .star-animal-board .game-surface {
-    padding-inline: 8px;
+    padding-inline: var(--space-xs);
   }
   .star-animal-board .hand-area {
-    margin-inline: -8px;
-    padding-inline: 8px;
+    margin-inline: calc(var(--space-xs) * -1);
+    padding-inline: var(--space-xs);
   }
   .star-animal-board .lane-row {
-    gap: 5px;
+    gap: var(--star-space-5);
   }
   .star-animal-board .lane-label .suit-icon {
     display: none;
@@ -765,5 +791,343 @@
   .star-animal-board *::after {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+.star-animal-board {
+  gap: var(--space-lg);
+  align-items: start;
+}
+.star-animal-board :is(h2, h3, strong) {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.star-animal-board .opponent-header {
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--board-line);
+}
+.star-animal-board .player-identity {
+  gap: var(--space-sm);
+}
+.star-animal-board .avatar {
+  border: 1px solid var(--color-border-strong);
+  border-radius: 12px;
+  color: var(--board-blue);
+  background: var(--color-accent-soft);
+}
+.star-animal-board .avatar.opponent {
+  background: var(--star-opponent-paper);
+  color: var(--star-opponent-ink);
+}
+.star-animal-board .player-total {
+  gap: var(--space-xs);
+}
+.star-animal-board .player-total b {
+  font-size: 28px;
+  font-variant-numeric: tabular-nums;
+}
+.star-animal-board .turn-pill {
+  padding: var(--star-space-6) var(--space-xs);
+  border-radius: 6px;
+  font-size: 12px;
+}
+.star-animal-board .mine-turn {
+  background: var(--color-accent);
+  border-color: var(--board-blue);
+  color: var(--color-accent-ink);
+}
+.star-animal-board .lane-row {
+  padding-block: var(--space-2xs);
+}
+.star-animal-board .lane-label {
+  font-size: 14px;
+  margin-bottom: var(--space-sm);
+}
+.star-animal-board .lane-score {
+  gap: var(--space-2xs);
+  font-size: 15px;
+}
+.star-animal-board .lane-score > span,
+.star-animal-board .lane-score small {
+  font-size: 12px;
+}
+.star-animal-board .shared-center {
+  padding: var(--space-md) 0;
+  margin-block: var(--space-ml);
+  border-top: 1px solid var(--board-line);
+  border-bottom: 1px solid var(--board-line);
+}
+.star-animal-board .board-row-label {
+  font-size: 13px;
+  color: var(--board-ink);
+  font-weight: 600;
+}
+.star-animal-board .discard-empty {
+  background: var(--color-paper-2);
+}
+.star-animal-board .discard-take {
+  border-radius: 6px;
+  background: var(--paper);
+  font-size: 12px;
+}
+.star-animal-board .draw-deck > span {
+  font-size: 12px;
+}
+.star-animal-board .my-path-title {
+  font-size: 15px;
+  gap: var(--space-sm);
+}
+.star-animal-board .my-path-title > span {
+  font-size: 12px;
+}
+.star-animal-board .hand-area {
+  background: var(--color-paper-2);
+  padding-top: var(--space-ml);
+  border-color: var(--color-border-strong);
+}
+.star-animal-board .hand-heading .player-identity > strong {
+  font-size: 15px;
+}
+.star-animal-board .hand {
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: var(--space-xs);
+  scrollbar-width: thin;
+}
+.star-animal-board .hand .playing-card.selected {
+  outline: 3px solid var(--board-blue);
+  outline-offset: 3px;
+}
+.star-animal-board .action-bar {
+  padding-block: var(--space-md) var(--space-ml);
+  gap: var(--space-md);
+  border-top: 1px solid var(--board-line);
+}
+.star-animal-board .action-bar strong {
+  font-size: 15px;
+}
+.star-animal-board .action-step {
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--board-blue);
+}
+.star-animal-board .action-buttons {
+  gap: var(--space-xs);
+}
+.star-animal-board .action-buttons .button {
+  min-height: 44px;
+  border-radius: 8px;
+  padding: var(--space-sm) var(--space-md);
+  font-size: 14px;
+}
+.star-animal-board .game-aside {
+  position: sticky;
+  top: 20px;
+  padding-top: var(--space-2xs);
+}
+.star-animal-board .game-aside-title h2 {
+  font-size: 24px;
+}
+.star-animal-board .game-aside-title p,
+.star-animal-board .turn-summary li,
+.star-animal-board .aside-rule p {
+  font-size: 13px;
+  line-height: 1.65;
+}
+.star-animal-board .turn-summary {
+  padding-block: var(--space-ml);
+}
+.star-animal-board .turn-summary h3,
+.star-animal-board .aside-rule h3 {
+  font-size: 15px;
+}
+.star-animal-board .turn-summary li.current {
+  font-weight: 650;
+}
+.star-animal-board .aside-button {
+  min-height: 44px;
+  font-size: 13px;
+}
+@media (max-width: 640px) {
+  .star-animal-board {
+    gap: 0;
+  }
+  .star-animal-board .opponent-header {
+    padding-bottom: var(--space-sm);
+  }
+  .star-animal-board .player-identity {
+    gap: var(--space-xs);
+  }
+  .star-animal-board .lane-label {
+    font-size: 12px;
+    margin-bottom: var(--space-xs);
+  }
+  .star-animal-board .lane-score {
+    gap: var(--space-3xs);
+    font-size: 13px;
+  }
+  .star-animal-board .lane-score > span,
+  .star-animal-board .lane-score small {
+    font-size: 11px;
+  }
+  .star-animal-board .shared-center {
+    margin-block: var(--space-md);
+    padding-block: var(--space-sm);
+  }
+  .star-animal-board .board-row-label {
+    font-size: 12px;
+  }
+  .star-animal-board .discard-take {
+    font-size: 11px;
+  }
+  .star-animal-board .draw-deck > span {
+    font-size: 11px;
+  }
+  .star-animal-board .my-path-title {
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-sm);
+    font-size: 14px;
+  }
+  .star-animal-board .my-path-title > span {
+    font-size: 11px;
+  }
+  .star-animal-board .hand-heading .player-identity > strong {
+    font-size: 14px;
+  }
+  .star-animal-board .turn-pill {
+    font-size: 11px;
+    padding: var(--space-2xs) var(--star-space-6);
+  }
+  .star-animal-board .player-total b {
+    font-size: 24px;
+  }
+  .star-animal-board .action-bar {
+    gap: var(--space-sm);
+    padding-block: var(--space-md);
+  }
+  .star-animal-board .action-bar strong,
+  .star-animal-board .action-buttons .button {
+    font-size: 13px;
+  }
+}
+
+.star-animal-board .game-surface {
+  padding-bottom: var(--space-ml);
+}
+.star-animal-board .star-personal-zone {
+  display: contents;
+  min-width: 0;
+}
+.star-animal-board .star-personal-zone .hand-area {
+  min-width: 0;
+  margin: var(--space-md) 0 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 12px;
+}
+@media (min-width: 1101px) {
+  .star-animal-board {
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: var(--space-lg);
+  }
+  .star-animal-board .star-personal-zone {
+    display: block;
+    align-self: start;
+    position: static;
+  }
+  .star-animal-board .star-personal-zone .hand-area {
+    margin: 0;
+  }
+  .star-animal-board .star-personal-zone .hand {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-2xs);
+    overflow: visible;
+    margin: 0;
+    padding: var(--space-md) 0 var(--space-2xs);
+    justify-content: normal;
+  }
+  .star-animal-board .star-personal-zone .hand-card-holder {
+    width: 88px;
+    margin-inline: auto;
+  }
+  .star-animal-board .star-personal-zone .hand-card-holder > .playing-card {
+    width: 88px;
+    height: 148px;
+  }
+  .star-animal-board .star-personal-zone .card-drag-handle {
+    min-height: 44px;
+  }
+  .star-animal-board .star-personal-zone .action-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+    padding-block: var(--space-sm) 0;
+  }
+  .star-animal-board .star-personal-zone .action-bar > div:first-child {
+    gap: var(--space-2xs);
+  }
+  .star-animal-board .star-personal-zone .action-buttons {
+    width: 100%;
+  }
+  .star-animal-board .star-personal-zone .action-buttons .button {
+    flex: 1;
+  }
+  .star-animal-board .star-personal-zone .game-aside {
+    display: block;
+    position: static;
+    padding: var(--space-md) var(--space-2xs) 0;
+  }
+  .star-animal-board .star-personal-zone .game-aside-title {
+    padding-bottom: var(--space-sm);
+  }
+  .star-animal-board .star-personal-zone .game-aside-title h2 {
+    font-size: 18px;
+  }
+  .star-animal-board .star-personal-zone .game-aside-title p,
+  .star-animal-board .star-personal-zone .turn-summary li,
+  .star-animal-board .star-personal-zone .aside-rule p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .star-animal-board .star-personal-zone .turn-summary,
+  .star-animal-board .star-personal-zone .aside-rule {
+    padding-block: var(--space-sm);
+  }
+  .star-animal-board .star-personal-zone .turn-summary h3,
+  .star-animal-board .star-personal-zone .aside-rule h3 {
+    font-size: 14px;
+  }
+  .star-animal-board .star-personal-zone .turn-summary ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-md);
+    margin-top: var(--space-xs);
+  }
+  .star-animal-board .star-personal-zone .turn-summary li {
+    margin: 0;
+  }
+  .star-animal-board .star-personal-zone .aside-rule p {
+    margin-top: var(--space-2xs);
+  }
+  .star-animal-board .star-personal-zone .aside-button {
+    min-height: 44px;
+  }
+}
+@media (min-width: 1101px) and (min-height: 1200px) {
+  .star-animal-board .star-personal-zone {
+    position: sticky;
+    top: 16px;
+  }
+}
+@media (max-width: 1100px) {
+  .star-animal-board .star-personal-zone .game-aside {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  .star-animal-board .star-personal-zone .hand-area {
+    padding: var(--space-md) var(--space-xs);
   }
 }

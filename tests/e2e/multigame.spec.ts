@@ -64,7 +64,7 @@ async function setup(
 }
 async function start(pages: Page[]) {
   for (const p of pages) {
-    await p.getByRole("button", { name: "준비됐어요", exact: true }).click();
+    await p.getByRole("button", { name: "준비", exact: true }).click();
     await expect(
       p.getByRole("button", { name: "준비 완료 · 취소", exact: true }),
     ).toBeVisible();
@@ -147,9 +147,9 @@ test("same members choose garden, ready again, edit tiles and keep the rack afte
       .getByLabel("다음에 함께할 게임", { exact: false })
       .selectOption("star-trails");
     for (const page of pages)
-      await expect(page).toHaveTitle("링구링구 - 별길 탐험");
+      await expect(page).toHaveTitle("링구링구 - 로스트 팻츠");
     await pages[0]
-      .getByRole("button", { name: "준비됐어요", exact: true })
+      .getByRole("button", { name: "준비", exact: true })
       .click();
     await pages[0]
       .getByLabel("다음에 함께할 게임", { exact: false })
@@ -157,7 +157,7 @@ test("same members choose garden, ready again, edit tiles and keep the rack afte
     for (const page of pages)
       await expect(page).toHaveTitle("링구링구 - 넘버가든");
     await expect(
-      pages[0].getByRole("button", { name: "준비됐어요", exact: true }),
+      pages[0].getByRole("button", { name: "준비", exact: true }),
     ).toBeVisible();
     await expect(pages[0].locator(".occupied-seat")).toHaveCount(2);
     await start(pages);

@@ -123,13 +123,12 @@ export function CouncilBoard({
             </strong>
             <span className="council-gold">
               <Coins size={15} /> {player.gold}
-              <span>·</span>
-              <Building2 size={15} /> {player.city.length}/8<span>·</span>손패{" "}
-              {player.handCount}
+              <Building2 size={15} /> {player.city.length}/8
+              <span>손패 {player.handCount}</span>
             </span>
             <small>
               {player.revealedRoles.length
-                ? player.revealedRoles.map(roleName).join(" · ")
+                ? player.revealedRoles.map(roleName).join(", ")
                 : "역할을 비밀리에 고르는 중"}
             </small>
           </div>
@@ -483,61 +482,190 @@ export function CouncilBoard({
               </div>
             )}
           </section>
-          <section className="multi-panel multi-hand">
-            <div className="multi-panel-heading">
-              <h3>
-                나의 건물 카드 <span>{game.yourHand.length}</span>
-              </h3>
-              <span>
-                <Coins size={16} /> 금 {mine.gold}
-              </span>
-            </div>
-            <p>
-              건설은 자원을 받은 뒤에 할 수 있어요. 교환이나 연구소에 쓸 카드는
-              체크해서 골라 주세요.
-            </p>
-            <div className="council-hand">
-              {game.yourHand.map((card) => (
-                <div
-                  key={card.id}
-                  className={`council-hand-card council-district ${chosen.includes(card.id) ? "selected" : ""}`}
-                  data-category={card.category}
-                >
-                  <CardArt game="council" id={card.kind} />
-                  <label className="council-card-select">
-                    <input
-                      type="checkbox"
-                      aria-label={`${card.name} 선택`}
-                      disabled={
-                        locked || !turn || game.phase === "CHOOSE_CARDS"
-                      }
-                      checked={chosen.includes(card.id)}
-                      onChange={() => toggle(card.id)}
-                    />
-                    <span>{categoryNames[card.category]} 구역</span>
-                  </label>
-                  <strong>{card.name}</strong>
-                  <b>
-                    <Coins size={15} /> {card.cost}
-                  </b>
-                  <p>
-                    {card.text || "도시에 세우면 건설 비용만큼 점수를 얻어요."}
-                  </p>
-                  <button
-                    className="button secondary"
-                    disabled={
-                      !can("COUNCIL_BUILD") ||
-                      mine.gold < card.cost ||
-                      mine.city.some((built) => built.kind === card.kind)
-                    }
-                    onClick={() => act("COUNCIL_BUILD", { cardId: card.id })}
+          <div className="council-hand-workspace">
+            <section className="multi-panel multi-hand">
+              <div className="multi-panel-heading">
+                <h3>
+                  나의 건물 카드 <span>{game.yourHand.length}</span>
+                </h3>
+                <span>
+                  <Coins size={16} /> 금 {mine.gold}
+                </span>
+              </div>
+              <p>
+                건설은 자원을 받은 뒤에 할 수 있어요. 교환이나 연구소에 쓸
+                카드는 체크해서 골라 주세요.
+              </p>
+              <div className="council-hand">
+                {game.yourHand.map((card) => (
+                  <div
+                    key={card.id}
+                    className={`council-hand-card council-district ${chosen.includes(card.id) ? "selected" : ""}`}
+                    data-category={card.category}
                   >
-                    금 {card.cost} · 건설
+                    <CardArt game="council" id={card.kind} />
+                    <label className="council-card-select">
+                      <input
+                        type="checkbox"
+                        aria-label={`${card.name} 선택`}
+                        disabled={
+                          locked || !turn || game.phase === "CHOOSE_CARDS"
+                        }
+                        checked={chosen.includes(card.id)}
+                        onChange={() => toggle(card.id)}
+                      />
+                      <span>{categoryNames[card.category]} 구역</span>
+                    </label>
+                    <strong>{card.name}</strong>
+                    <b>
+                      <Coins size={15} /> {card.cost}
+                    </b>
+                    <p>
+                      {card.text ||
+                        "도시에 세우면 건설 비용만큼 점수를 얻어요."}
+                    </p>
+                    <button
+                      className="button secondary"
+                      disabled={
+                        !can("COUNCIL_BUILD") ||
+                        mine.gold < card.cost ||
+                        mine.city.some((built) => built.kind === card.kind)
+                      }
+                      onClick={() => act("COUNCIL_BUILD", { cardId: card.id })}
+                    >
+                      금 {card.cost} · 건설
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </section>
+            {turn && (game.phase === "RESOURCE" || game.phase === "ACTION") && (
+              <section className="multi-panel council-action-panel">
+                <h3>역할과 도시의 능력</h3>
+                {can("COUNCIL_INCOME") && (
+                  <button
+                    className="button secondary full"
+                    onClick={() => act("COUNCIL_INCOME")}
+                  >
+                    <Coins size={16} /> 구역 수입 받기
                   </button>
-                </div>
-              ))}
-            </div>
-          </section>
+                )}
+                {can("COUNCIL_POWER") && [1, 2].includes(game.activeRole) && (
+                  <div className="council-power">
+                    <label>
+                      지목할 역할
+                      <select
+                        aria-label="능력 대상으로 지목할 역할"
+                        value={targetRole}
+                        onChange={(event) =>
+                          setTargetRole(Number(event.target.value))
+                        }
+                      >
+                        {game.roleGuide
+                          .filter((role) => role.rank >= 2)
+                          .map((role) => (
+                            <option
+                              key={role.rank}
+                              value={role.rank}
+                              disabled={
+                                game.activeRole === 2 &&
+                                role.rank === game.assassinatedRole
+                              }
+                            >
+                              {role.rank}. {role.name}
+                            </option>
+                          ))}
+                      </select>
+                    </label>
+                    <button
+                      className="button secondary full"
+                      disabled={
+                        game.activeRole === 2 &&
+                        targetRole === game.assassinatedRole
+                      }
+                      onClick={() => act("COUNCIL_POWER", { targetRole })}
+                    >
+                      이 역할 지목하기
+                    </button>
+                  </div>
+                )}
+                {can("COUNCIL_POWER") && game.activeRole === 3 && (
+                  <div className="council-power">
+                    <label>
+                      손패를 바꿀 사람
+                      <select
+                        aria-label="손패를 교환할 사람"
+                        value={availableTarget}
+                        onChange={(event) =>
+                          setTargetPlayer(event.target.value)
+                        }
+                      >
+                        {game.players
+                          .filter((player) => player.id !== game.you)
+                          .map((player) => (
+                            <option key={player.id} value={player.id}>
+                              {memberName(view, player.id)} ({player.handCount}
+                              장)
+                            </option>
+                          ))}
+                      </select>
+                    </label>
+                    <button
+                      className="button secondary full"
+                      onClick={() =>
+                        act("COUNCIL_POWER", {
+                          kind: "swap",
+                          targetPlayerId: availableTarget,
+                        })
+                      }
+                    >
+                      손패 전체 교환
+                    </button>
+                    <p>또는 손패에서 바꿀 카드를 선택하세요.</p>
+                    <button
+                      className="button secondary full"
+                      disabled={!chosen.length}
+                      onClick={() =>
+                        act("COUNCIL_POWER", { kind: "cycle", cardIds: chosen })
+                      }
+                    >
+                      선택한 {chosen.length}장 새로 받기
+                    </button>
+                  </div>
+                )}
+                {can("COUNCIL_LAB") && (
+                  <button
+                    className="button secondary full"
+                    disabled={chosen.length !== 1}
+                    onClick={() => act("COUNCIL_LAB", { cardId: chosen[0] })}
+                  >
+                    빛 연구소 · 선택한 1장 → 금 1
+                  </button>
+                )}
+                {can("COUNCIL_SMITHY") && (
+                  <button
+                    className="button secondary full"
+                    onClick={() => act("COUNCIL_SMITHY")}
+                  >
+                    <Sparkles size={16} /> 금 2 → 카드 3장
+                  </button>
+                )}
+                {can("COUNCIL_END") && (
+                  <div className="council-end-turn">
+                    <p>
+                      이번 차례 건설 {game.buildsUsed}/{game.buildLimit}
+                    </p>
+                    <button
+                      className="button primary full"
+                      onClick={() => act("COUNCIL_END")}
+                    >
+                      차례 마치기
+                    </button>
+                  </div>
+                )}
+              </section>
+            )}
+          </div>
         </div>
         <aside className="multi-sidebar">
           <section className="multi-panel">
@@ -563,129 +691,6 @@ export function CouncilBoard({
               </span>
             )}
           </section>
-          {turn && (game.phase === "RESOURCE" || game.phase === "ACTION") && (
-            <section className="multi-panel">
-              <h3>역할과 도시의 능력</h3>
-              {can("COUNCIL_INCOME") && (
-                <button
-                  className="button secondary full"
-                  onClick={() => act("COUNCIL_INCOME")}
-                >
-                  <Coins size={16} /> 구역 수입 받기
-                </button>
-              )}
-              {can("COUNCIL_POWER") && [1, 2].includes(game.activeRole) && (
-                <div className="council-power">
-                  <label>
-                    지목할 역할
-                    <select
-                      aria-label="능력 대상으로 지목할 역할"
-                      value={targetRole}
-                      onChange={(event) =>
-                        setTargetRole(Number(event.target.value))
-                      }
-                    >
-                      {game.roleGuide
-                        .filter((role) => role.rank >= 2)
-                        .map((role) => (
-                          <option
-                            key={role.rank}
-                            value={role.rank}
-                            disabled={
-                              game.activeRole === 2 &&
-                              role.rank === game.assassinatedRole
-                            }
-                          >
-                            {role.rank}. {role.name}
-                          </option>
-                        ))}
-                    </select>
-                  </label>
-                  <button
-                    className="button secondary full"
-                    disabled={
-                      game.activeRole === 2 &&
-                      targetRole === game.assassinatedRole
-                    }
-                    onClick={() => act("COUNCIL_POWER", { targetRole })}
-                  >
-                    이 역할 지목하기
-                  </button>
-                </div>
-              )}
-              {can("COUNCIL_POWER") && game.activeRole === 3 && (
-                <div className="council-power">
-                  <label>
-                    손패를 바꿀 사람
-                    <select
-                      aria-label="손패를 교환할 사람"
-                      value={availableTarget}
-                      onChange={(event) => setTargetPlayer(event.target.value)}
-                    >
-                      {game.players
-                        .filter((player) => player.id !== game.you)
-                        .map((player) => (
-                          <option key={player.id} value={player.id}>
-                            {memberName(view, player.id)} · {player.handCount}장
-                          </option>
-                        ))}
-                    </select>
-                  </label>
-                  <button
-                    className="button secondary full"
-                    onClick={() =>
-                      act("COUNCIL_POWER", {
-                        kind: "swap",
-                        targetPlayerId: availableTarget,
-                      })
-                    }
-                  >
-                    손패 전체 교환
-                  </button>
-                  <p>또는 아래 손패에서 바꿀 카드를 선택하세요.</p>
-                  <button
-                    className="button secondary full"
-                    disabled={!chosen.length}
-                    onClick={() =>
-                      act("COUNCIL_POWER", { kind: "cycle", cardIds: chosen })
-                    }
-                  >
-                    선택한 {chosen.length}장 새로 받기
-                  </button>
-                </div>
-              )}
-              {can("COUNCIL_LAB") && (
-                <button
-                  className="button secondary full"
-                  disabled={chosen.length !== 1}
-                  onClick={() => act("COUNCIL_LAB", { cardId: chosen[0] })}
-                >
-                  빛 연구소 · 선택한 1장 → 금 1
-                </button>
-              )}
-              {can("COUNCIL_SMITHY") && (
-                <button
-                  className="button secondary full"
-                  onClick={() => act("COUNCIL_SMITHY")}
-                >
-                  <Sparkles size={16} /> 금 2 → 카드 3장
-                </button>
-              )}
-              {can("COUNCIL_END") && (
-                <div className="council-end-turn">
-                  <p>
-                    이번 차례 건설 {game.buildsUsed}/{game.buildLimit}
-                  </p>
-                  <button
-                    className="button primary full"
-                    onClick={() => act("COUNCIL_END")}
-                  >
-                    차례 마치기
-                  </button>
-                </div>
-              )}
-            </section>
-          )}
         </aside>
       </div>
     </BoardFrame>

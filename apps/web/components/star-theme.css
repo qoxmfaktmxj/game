@@ -1,40 +1,94 @@
+/* Hallmark · shape: app screen · genre: playful · theme: Paper Club, Open Air · redesign: restyle · scope: app · nav: shared game shell · signature: original cards · posture: full-palette · surface: absolute · v2.0.0 */
+/* Hallmark · pre-emit critique: white surfaces frame the approved animal art; Open Air fills pair with dark accessible text. Finish review pending. */
+:root {
+  --animal-star-animal-theme-tone: #8b591b;
+  --animal-star-animal-theme-tone-2: #a34734;
+  --animal-star-animal-theme-tone-3: #23677c;
+  --animal-star-animal-theme-tone-4: #407052;
+  --animal-star-animal-theme-tone-5: #7354a2;
+  --animal-body-surface: var(--color-canvas);
+  --animal-star-animal-theme-tone-6: var(--color-border-strong);
+  --animal-star-animal-theme-surface: var(--color-brand-soft);
+  --animal-star-animal-theme-ink: var(--color-ink);
+  --animal-star-animal-theme-button-primary-ink: var(--color-paper);
+  --animal-star-animal-theme-button-primary-surface: var(--color-accent-hover);
+  --animal-star-animal-theme-button-secondary-shadow: var(--color-border-strong);
+  --animal-star-animal-theme-button-secondary-surface: var(--color-paper-2);
+  --animal-star-animal-theme-icon-button-bordered-edge: var(--color-border-strong);
+  --animal-star-animal-theme-avatar-surface: var(--color-accent-soft);
+  --animal-star-animal-theme-avatar-ink: var(--color-accent-text);
+  --animal-star-animal-theme-avatar-opponent-surface: #fce6d6;
+  --animal-star-animal-theme-avatar-opponent-ink: #8a4929;
+  --animal-star-animal-theme-connection-online-ink: var(--color-accent-text);
+  --animal-star-animal-theme-waiting-main-surface: var(--color-paper);
+  --animal-star-animal-theme-seat-avatar-empty-ink: var(--color-muted);
+  --animal-star-animal-theme-seat-avatar-empty-edge: var(--color-border-strong);
+  --animal-star-animal-theme-seat-h3-small-surface: var(--color-accent-soft);
+  --animal-star-animal-theme-modal-shadow: color-mix(in srgb, var(--color-ink) 19%, transparent);
+  --animal-star-animal-theme-modal-surface: var(--color-backdrop);
+  --animal-star-animal-theme-field-edge: var(--color-border-strong);
+  --animal-star-animal-theme-field-ink: var(--color-muted);
+  --animal-star-animal-theme-form-error-surface: var(--color-danger-soft);
+  --animal-star-animal-theme-form-error-ink: var(--color-danger);
+  --animal-star-animal-theme-form-success-surface: var(--color-success-soft);
+  --animal-star-animal-theme-form-success-ink: var(--color-success);
+  --animal-space-20: 20px;
+  --animal-space-6: 6px;
+  --animal-star-animal-theme-toast-shadow: color-mix(in srgb, var(--color-ink) 14%, transparent);
+  --animal-star-animal-theme-local-mode-edge: var(--color-rule);
+  --animal-star-animal-theme-result-person-winner-surface: var(--color-accent-soft);
+  --animal-playing-card-animal-playing-card-edge: var(--color-card-edge);
+  --animal-animal-playing-card-support-card-card-corner-ink: var(--color-accent-text);
+  --animal-space-3: 3px;
+  --animal-space-54: 54px;
+  --animal-space-36: 36px;
+  --animal-animal-card-gallery-card-gallery-intro-nav-a-surface: var(--color-paper-2);
+  --animal-animal-card-gallery-card-gallery-intro-nav-a-edge: var(--color-border-strong);
+  --animal-space-18: 18px;
+  --animal-space-32: 32px;
+  --animal-space-9: 9px;
+  --animal-space-7: 7px;
+  --animal-space-5: 5px;
+  --animal-space-38: 38px;
+  --animal-space-28: 28px;
+}
 /* The animal edition belongs only to Star Trails and its card gallery. */
 .star-animal-theme {
   color-scheme: light;
-  --canvas: #fffefa;
-  --paper: #ffffff;
-  --forest: #f3f8ff;
-  --ink: #183552;
-  --deep: #183552;
-  --muted: #526b82;
-  --line: #d5e1ed;
-  --mint: #2762c7;
-  --gold: #2762c7;
-  --aurora: #8b591b;
-  --ember: #a34734;
-  --tide: #23677c;
-  --moss: #407052;
-  --dusk: #7354a2;
+  --canvas: var(--color-canvas);
+  --paper: var(--color-paper);
+  --forest: var(--color-paper-2);
+  --ink: var(--color-ink);
+  --deep: var(--color-ink);
+  --muted: var(--color-muted);
+  --line: var(--color-rule);
+  --mint: var(--color-accent-text);
+  --gold: var(--color-accent-text);
+  --aurora: var(--animal-star-animal-theme-tone);
+  --ember: var(--animal-star-animal-theme-tone-2);
+  --tide: var(--animal-star-animal-theme-tone-3);
+  --moss: var(--animal-star-animal-theme-tone-4);
+  --dusk: var(--animal-star-animal-theme-tone-5);
   min-height: 100dvh;
   background: var(--canvas);
   color: var(--ink);
 }
 body:has(.star-animal-theme) {
-  background: #fffefa;
+  background: var(--animal-body-surface);
 }
 .star-animal-theme *,
 .animal-playing-card {
-  scrollbar-color: #9db7d2 transparent;
+  scrollbar-color: var(--animal-star-animal-theme-tone-6) transparent;
 }
 .star-animal-theme ::selection {
-  background: #d8e8ff;
-  color: #183552;
+  background: var(--animal-star-animal-theme-surface);
+  color: var(--animal-star-animal-theme-ink);
 }
 .star-animal-theme :is(button, input, select, textarea) {
   caret-color: var(--mint);
 }
 .star-animal-theme :is(button, a, input, select, textarea):focus-visible {
-  outline: 3px solid var(--mint);
+  outline: 3px solid var(--color-focus);
   outline-offset: 4px;
 }
 .star-animal-theme .site-header {
@@ -48,62 +102,64 @@ body:has(.star-animal-theme) {
 .star-animal-theme .button.primary,
 .star-animal-theme .button.mint,
 .star-animal-theme .header-cta {
-  background: var(--mint);
-  color: #fff;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
 }
 .star-animal-theme .button.primary:not(:disabled):hover,
 .star-animal-theme .button.mint:not(:disabled):hover,
 .star-animal-theme .header-cta:not(:disabled):hover {
-  background: #1c4fa7;
-  color: #fff;
+  background: var(--animal-star-animal-theme-button-primary-surface);
+  color: var(--color-accent-ink);
   box-shadow: none;
 }
 .star-animal-theme .button.secondary {
-  background: #fff;
+  background: var(--animal-star-animal-theme-button-primary-ink);
   color: var(--ink);
-  box-shadow: inset 0 0 0 1px #a8bed5;
+  box-shadow: inset 0 0 0 1px
+    var(--animal-star-animal-theme-button-secondary-shadow);
 }
 .star-animal-theme .button.secondary:not(:disabled):hover,
 .star-animal-theme .icon-button:hover {
-  background: #e9f2ff;
+  background: var(--animal-star-animal-theme-button-secondary-surface);
 }
 .star-animal-theme .icon-button.bordered {
-  border-color: #b4c7dc;
-  box-shadow: inset 0 0 0 1px #b4c7dc;
+  border-color: var(--animal-star-animal-theme-icon-button-bordered-edge);
+  box-shadow: inset 0 0 0 1px
+    var(--animal-star-animal-theme-icon-button-bordered-edge);
 }
 .star-animal-theme .text-button {
   color: var(--mint);
 }
 .star-animal-theme .avatar,
 .star-animal-theme .seat-avatar {
-  background: #dceaff;
-  color: #194a93;
+  background: var(--animal-star-animal-theme-avatar-surface);
+  color: var(--animal-star-animal-theme-avatar-ink);
 }
 .star-animal-theme .avatar.opponent,
 .star-animal-theme .seat-avatar.seat-1 {
-  background: #fce6d6;
-  color: #8a4929;
+  background: var(--animal-star-animal-theme-avatar-opponent-surface);
+  color: var(--animal-star-animal-theme-avatar-opponent-ink);
 }
 .star-animal-theme .connection {
-  color: #a34734;
+  color: var(--animal-star-animal-theme-tone-2);
 }
 .star-animal-theme .connection.online {
-  color: #2762c7;
+  color: var(--animal-star-animal-theme-connection-online-ink);
 }
 .star-animal-theme .waiting-main,
 .star-animal-theme .table-list-item,
 .star-animal-theme .result-panel {
-  background: #f3f8ff;
+  background: var(--animal-star-animal-theme-waiting-main-surface);
 }
 .star-animal-theme .table-list-item:hover,
 .star-animal-theme .new-table-tile > span:first-child {
-  background: #e9f2ff;
+  background: var(--animal-star-animal-theme-button-secondary-surface);
 }
 .star-animal-theme .new-table-tile {
-  border-color: #b4c7dc;
+  border-color: var(--animal-star-animal-theme-icon-button-bordered-edge);
 }
 .star-animal-theme .waiting-intro h2 {
-  color: #183552;
+  color: var(--animal-star-animal-theme-ink);
   font-weight: 750;
 }
 .star-animal-theme .waiting-intro .live-label {
@@ -126,51 +182,17 @@ body:has(.star-animal-theme) {
   font-size: 12px;
 }
 .star-animal-theme .seat-avatar.empty {
-  color: #526b82;
-  background: #fff;
-  border-color: #9cb5d0;
+  color: var(--animal-star-animal-theme-seat-avatar-empty-ink);
+  background: var(--animal-star-animal-theme-button-primary-ink);
+  border-color: var(--animal-star-animal-theme-seat-avatar-empty-edge);
 }
 .star-animal-theme .seat h3 small,
 .star-animal-theme .ready-status.ready {
-  background: #dfedff;
-  color: #194a93;
+  background: var(--animal-star-animal-theme-seat-h3-small-surface);
+  color: var(--animal-star-animal-theme-avatar-ink);
 }
 .star-animal-theme .waiting-game-art {
-  background: #f3f8ff;
-}
-.star-animal-theme .animal-waiting-art {
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-.animal-waiting-art > div {
-  position: relative;
-  width: 240px;
-  height: 180px;
-}
-.animal-waiting-art > div img {
-  position: absolute;
-  width: 105px;
-  height: 157px;
-  border-radius: 12px;
-  border: 4px solid #fff;
-  object-fit: cover;
-}
-.animal-waiting-art > div img:first-child {
-  left: 3px;
-  top: 15px;
-  transform: rotate(-13deg);
-}
-.animal-waiting-art > div img:nth-child(2) {
-  left: 68px;
-  top: 0;
-  z-index: 2;
-  transform: rotate(0);
-}
-.animal-waiting-art > div img:last-child {
-  right: 3px;
-  top: 15px;
-  transform: rotate(13deg);
+  background: var(--animal-star-animal-theme-waiting-main-surface);
 }
 .star-animal-theme .waiting-bottom,
 .star-animal-theme .seat,
@@ -178,35 +200,35 @@ body:has(.star-animal-theme) {
   border-color: var(--line);
 }
 .star-animal-theme .modal {
-  background: #fff;
+  background: var(--animal-star-animal-theme-button-primary-ink);
   color: var(--ink);
-  box-shadow: 0 24px 80px #18355230;
+  box-shadow: 0 24px 80px var(--animal-star-animal-theme-modal-shadow);
 }
 .star-animal-theme .modal::backdrop {
-  background: #1835526b;
+  background: var(--animal-star-animal-theme-modal-surface);
   backdrop-filter: none;
 }
 .star-animal-theme .field :is(input, select, textarea) {
   color: var(--ink);
-  background: #fff;
-  border-color: #a7bdd4;
+  background: var(--animal-star-animal-theme-button-primary-ink);
+  border-color: var(--animal-star-animal-theme-field-edge);
 }
 .star-animal-theme .field :is(input, textarea)::placeholder {
-  color: #596f85;
+  color: var(--animal-star-animal-theme-field-ink);
 }
 .star-animal-theme .form-error,
 .star-animal-theme .error-banner {
-  background: #fff0ed;
-  color: #a3372c;
+  background: var(--animal-star-animal-theme-form-error-surface);
+  color: var(--animal-star-animal-theme-form-error-ink);
 }
 .star-animal-theme .form-success {
-  background: #ecf7ed;
-  color: #356346;
+  background: var(--animal-star-animal-theme-form-success-surface);
+  color: var(--animal-star-animal-theme-form-success-ink);
 }
 .star-animal-theme .rule-steps li::before,
 .star-animal-theme .score-formula {
-  background: #f3f8ff;
-  color: #183552;
+  background: var(--animal-star-animal-theme-waiting-main-surface);
+  color: var(--animal-star-animal-theme-ink);
 }
 .star-animal-theme .rules-content > .lead {
   font-size: 21px;
@@ -222,11 +244,11 @@ body:has(.star-animal-theme) {
   font-weight: 600;
 }
 .star-animal-theme .suit-legend {
-  gap: 12px 20px;
+  gap: var(--space-sm) var(--animal-space-20);
 }
 .star-animal-theme .suit-legend > span {
   font-size: 14px;
-  gap: 6px;
+  gap: var(--animal-space-6);
 }
 .star-animal-theme :is(.suit-legend, .score-table) .aurora {
   color: var(--aurora);
@@ -244,24 +266,24 @@ body:has(.star-animal-theme) {
   color: var(--dusk);
 }
 .star-animal-theme .danger {
-  color: #a3372c;
+  color: var(--animal-star-animal-theme-form-error-ink);
 }
 .star-animal-theme .toast {
-  background: #183552;
-  color: #fff;
-  box-shadow: 0 10px 30px #18355224;
+  background: var(--animal-star-animal-theme-ink);
+  color: var(--animal-star-animal-theme-button-primary-ink);
+  box-shadow: 0 10px 30px var(--animal-star-animal-theme-toast-shadow);
 }
 .star-animal-theme .local-mode {
-  background: #f3f8ff;
-  color: #526b82;
-  border-color: #d5e1ed;
+  background: var(--animal-star-animal-theme-waiting-main-surface);
+  color: var(--animal-star-animal-theme-seat-avatar-empty-ink);
+  border-color: var(--animal-star-animal-theme-local-mode-edge);
 }
 .star-animal-theme .result-person {
-  background: #fff;
+  background: var(--animal-star-animal-theme-button-primary-ink);
 }
 .star-animal-theme .result-person.winner {
-  background: #deecff;
-  color: #183552;
+  background: var(--animal-star-animal-theme-result-person-winner-surface);
+  color: var(--animal-star-animal-theme-ink);
 }
 
 /* Card ranks and family names are live text, never embedded in the artwork. */
@@ -278,9 +300,9 @@ body:has(.star-animal-theme) {
     );
   height: 148px;
   overflow: hidden;
-  color: #183552;
-  background: #fff;
-  border: 1px solid #bfd1e3;
+  color: var(--animal-star-animal-theme-ink);
+  background: var(--animal-star-animal-theme-button-primary-ink);
+  border: 1px solid var(--animal-playing-card-animal-playing-card-edge);
   border-radius: 10px;
   box-shadow: none;
   font-variant-numeric: tabular-nums;
@@ -307,8 +329,8 @@ body:has(.star-animal-theme) {
   padding: 0 var(--card-label-inset);
   align-items: flex-start;
   justify-content: center;
-  background: #fff;
-  color: #183552;
+  background: var(--animal-star-animal-theme-button-primary-ink);
+  color: var(--animal-star-animal-theme-ink);
   font-family: var(--sans);
   font-size: var(--card-rank-size);
   font-weight: 850;
@@ -319,7 +341,7 @@ body:has(.star-animal-theme) {
 }
 .animal-playing-card.support-card .card-corner {
   font-size: var(--card-support-size);
-  color: #2057ad;
+  color: var(--animal-animal-playing-card-support-card-card-corner-ink);
 }
 .animal-playing-card .card-center .suit-icon {
   width: 12px;
@@ -333,10 +355,10 @@ body:has(.star-animal-theme) {
   min-width: 0;
   padding: 0 var(--card-label-inset);
   line-height: 1.2;
-  background: #fff;
-  color: #183552;
+  background: var(--animal-star-animal-theme-button-primary-ink);
+  color: var(--animal-star-animal-theme-ink);
   flex-direction: row;
-  gap: 3px;
+  gap: var(--animal-space-3);
   align-items: center;
   justify-content: flex-start;
   text-shadow: none;
@@ -359,14 +381,14 @@ body:has(.star-animal-theme) {
   transform: none;
 }
 .playing-card.animal-playing-card.selected {
-  outline-color: #2762c7;
+  outline-color: var(--animal-star-animal-theme-connection-online-ink);
 }
 .playing-card.animal-playing-card:focus-visible {
-  outline: 3px solid #2762c7;
+  outline: 3px solid var(--color-focus);
   outline-offset: 4px;
 }
 .animal-card-gallery .card-gallery-intro {
-  padding-block: 54px 36px;
+  padding-block: var(--animal-space-54) var(--animal-space-36);
 }
 .animal-card-gallery .card-gallery-intro h1 {
   letter-spacing: -0.035em;
@@ -382,35 +404,37 @@ body:has(.star-animal-theme) {
 }
 .animal-card-gallery .card-gallery-intro nav a {
   min-height: 44px;
-  background: #fff;
+  background: var(--animal-star-animal-theme-button-primary-ink);
   border-radius: 9px;
   font-size: 14px;
 }
 .animal-card-gallery .card-gallery-intro nav a:hover,
 .animal-card-gallery .card-game-nav a[aria-current="page"] {
-  background: #edf4ff;
-  color: #2057ad;
-  border-color: #8eacd2;
+  background: var(
+    --animal-animal-card-gallery-card-gallery-intro-nav-a-surface
+  );
+  color: var(--animal-animal-playing-card-support-card-card-corner-ink);
+  border-color: var(--animal-animal-card-gallery-card-gallery-intro-nav-a-edge);
 }
 .animal-card-gallery .card-gallery-intro .animal-gallery-friends {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 18px;
+  gap: var(--animal-space-18);
   max-width: 960px;
-  margin-top: 32px;
+  margin-top: var(--animal-space-32);
 }
 .animal-card-gallery .animal-gallery-friends a {
   display: flex;
   flex-direction: column;
-  padding: 0 0 9px;
+  padding: 0 0 var(--animal-space-9);
   overflow: hidden;
-  background: #fff;
-  border-color: #d5e1ed;
+  background: var(--animal-star-animal-theme-button-primary-ink);
+  border-color: var(--animal-star-animal-theme-local-mode-edge);
   border-radius: 12px;
 }
 .animal-card-gallery .animal-gallery-friends a > span:last-child {
   display: flex;
-  gap: 7px;
+  gap: var(--animal-space-7);
   align-items: center;
   justify-content: center;
 }
@@ -426,7 +450,7 @@ body:has(.star-animal-theme) {
   object-position: center;
 }
 .animal-card-gallery .card-gallery-section {
-  padding-top: 32px;
+  padding-top: var(--animal-space-32);
 }
 .animal-card-gallery .card-gallery-grid .animal-playing-card {
   --card-rank-height: 52px;
@@ -461,36 +485,14 @@ body:has(.star-animal-theme) {
 }
 .animal-card-gallery .card-gallery-footer > div {
   display: grid;
-  gap: 5px;
+  gap: var(--animal-space-5);
 }
 @media (max-width: 760px) {
-  .star-animal-theme .animal-waiting-art > div {
-    width: 100%;
-    height: 100%;
-  }
-  .star-animal-theme .animal-waiting-art > div img {
-    width: 57px;
-    height: 86px;
-    border-width: 2px;
-    border-radius: 7px;
-  }
-  .star-animal-theme .animal-waiting-art > div img:first-child {
-    left: 3px;
-    top: 41px;
-  }
-  .star-animal-theme .animal-waiting-art > div img:nth-child(2) {
-    left: calc(50% - 28px);
-    top: 24px;
-  }
-  .star-animal-theme .animal-waiting-art > div img:last-child {
-    right: 3px;
-    top: 41px;
-  }
   .star-animal-theme .waiting-game p {
     font-size: 12px;
   }
   .animal-card-gallery .card-gallery-intro {
-    padding-block: 38px 28px;
+    padding-block: var(--animal-space-38) var(--animal-space-28);
   }
   .animal-card-gallery .card-gallery-intro h1 {
     font-size: 40px;
@@ -499,12 +501,12 @@ body:has(.star-animal-theme) {
     font-size: 15px;
   }
   .animal-card-gallery .card-gallery-intro .animal-gallery-friends {
-    gap: 7px;
-    margin-top: 24px;
+    gap: var(--animal-space-7);
+    margin-top: var(--space-lg);
   }
   .animal-card-gallery .animal-gallery-friends a {
-    gap: 5px;
-    padding-bottom: 7px;
+    gap: var(--animal-space-5);
+    padding-bottom: var(--animal-space-7);
     font-size: 12px;
     border-radius: 9px;
   }
@@ -530,7 +532,7 @@ body:has(.star-animal-theme) {
     height: 16px;
   }
   .star-animal-theme .score-formula {
-    padding: 18px 16px;
+    padding: var(--animal-space-18) var(--space-md);
   }
   .star-animal-theme .score-formula > strong {
     font-size: 16px;
@@ -540,4 +542,13 @@ body:has(.star-animal-theme) {
   .animal-playing-card {
     transition: none;
   }
+}
+
+.star-animal-theme :is(h1, h2, h3) {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+.star-animal-theme button:not(:disabled):active {
+  transform: translateY(1px);
 }

@@ -178,12 +178,12 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
     await expect(
       host.getByRole("button", { name: "탐험 시작", exact: true }),
     ).toBeDisabled();
-    await host.getByRole("button", { name: "준비됐어요", exact: true }).click();
+    await host.getByRole("button", { name: "준비", exact: true }).click();
     await expect(
       host.getByRole("button", { name: "준비 완료 · 취소", exact: true }),
     ).toBeVisible();
     await guest
-      .getByRole("button", { name: "준비됐어요", exact: true })
+      .getByRole("button", { name: "준비", exact: true })
       .click();
     await expect(
       host.getByRole("button", { name: "탐험 시작", exact: true }),
@@ -525,13 +525,14 @@ for (const width of [390, 360]) {
     await expect(trigger).toBeFocused();
 
     await page
-      .getByRole("button", { name: "별길 탐험 규칙 보기", exact: true })
+      .getByRole("button", { name: "로스트 팻츠 규칙 보기", exact: true })
       .click();
     await expect(modal).toBeVisible();
     await assertNoHorizontalOverflow(page, `${width}px rules modal`);
     await captureScreenshot(page, `rules-${width}.png`, testInfo);
-    await page
-      .getByRole("button", { name: "좋아요, 알겠어요", exact: true })
+    await modal
+      .getByRole("button", { name: "닫기", exact: true })
+      .filter({ hasText: /^닫기$/ })
       .click();
     await expect(modal).toHaveCount(0);
   });
@@ -609,7 +610,7 @@ test("a temporary session-check outage preserves the existing local identity and
     recoveredIdentity === cachedIdentity,
     "The original token and member are retained",
   ).toBe(true);
-  await page.getByRole("button", { name: "준비됐어요", exact: true }).click();
+  await page.getByRole("button", { name: "준비", exact: true }).click();
   await expect(
     page.getByRole("button", { name: "준비 완료 · 취소", exact: true }),
   ).toBeVisible();

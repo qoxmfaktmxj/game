@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import "../../card-gallery.css";
 import { Logo } from "../../../components/primitives";
@@ -25,11 +26,13 @@ export default async function GameCardsPage({
         <Link href="/" aria-label="링구링구 홈">
           <Logo />
         </Link>
-        <Link href="/">← 홈으로</Link>
+        <Link href="/">
+          <ArrowLeft size={16} aria-hidden="true" /> 홈으로
+        </Link>
       </header>
       <div className="card-gallery-intro">
-        <p>링구링구 카드 컬렉션</p>
         <h1>{artGames[key]}</h1>
+        <p>링구링구 카드 컬렉션</p>
         <p>{cards.length}개의 그림, 하나의 작은 세계.</p>
         <CardGalleryNav current={key} />
       </div>
@@ -56,7 +59,7 @@ export default async function GameCardsPage({
           확인하세요.
         </p>
         <Link className="button primary" href="/">
-          게임 하러 가기 ↗
+          게임 하러 가기 <ArrowUpRight size={16} aria-hidden="true" />
         </Link>
       </footer>
     </main>

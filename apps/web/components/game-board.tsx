@@ -310,6 +310,8 @@ export function GameBoard({
           <span>길을 누르면 전체 카드를 볼 수 있어요</span>
         </div>
         {lanes(you, true)}
+      </div>
+      <div className="star-personal-zone">
         <div className="hand-area">
           <div className="hand-heading">
             <div className="player-identity">
@@ -441,45 +443,45 @@ export function GameBoard({
             {announcement}
           </span>
         </div>
+        <aside className="game-aside">
+          <div className="game-aside-title">
+            <h2>로스트 팻츠</h2>
+            <p>다섯 동물과 한 장씩 이어 가는 길</p>
+          </div>
+          <div className="turn-summary">
+            <h3>
+              {yourTurn ? "당신의 차례예요." : `${activeName}님의 차례예요.`}
+            </h3>
+            <ol>
+              <li className={game.phase === "PLACE" ? "current" : ""}>
+                <span>1</span>카드 놓기 또는 버리기{" "}
+                {game.phase === "DRAW" && <Check size={15} />}
+              </li>
+              <li className={game.phase === "DRAW" ? "current" : ""}>
+                <span>2</span>카드 한 장 가져오기
+              </li>
+            </ol>
+          </div>
+          <div className="aside-rule">
+            <h3>지원 카드의 배수</h3>
+            <p>
+              지원 1장은 ×2, 2장은 ×3, 3장은 ×4. 숫자 카드보다 먼저 놓아 주세요.
+            </p>
+            <p>
+              모든 길을 시작할 필요는 없어요. 잘할 수 있는 길에 집중해 보세요.
+            </p>
+          </div>
+          <button className="aside-button" onClick={onRules}>
+            <BookOpen size={17} /> 게임 규칙 <ArrowRight size={15} />
+          </button>
+          <button className="aside-button muted" onClick={onResign}>
+            <Flag size={16} /> 이번 게임 기권하기
+          </button>
+          <div className="saved-note">
+            <Check size={13} /> 매 행동이 자동으로 저장돼요.
+          </div>
+        </aside>
       </div>
-      <aside className="game-aside">
-        <div className="game-aside-title">
-          <h2>별길 탐험</h2>
-          <p>다섯 동물과 한 장씩 이어 가는 길</p>
-        </div>
-        <div className="turn-summary">
-          <h3>
-            {yourTurn ? "당신의 차례예요." : `${activeName}님의 차례예요.`}
-          </h3>
-          <ol>
-            <li className={game.phase === "PLACE" ? "current" : ""}>
-              <span>1</span>카드 놓기 또는 버리기{" "}
-              {game.phase === "DRAW" && <Check size={15} />}
-            </li>
-            <li className={game.phase === "DRAW" ? "current" : ""}>
-              <span>2</span>카드 한 장 가져오기
-            </li>
-          </ol>
-        </div>
-        <div className="aside-rule">
-          <h3>지원 카드의 배수</h3>
-          <p>
-            지원 1장은 ×2, 2장은 ×3, 3장은 ×4. 숫자 카드보다 먼저 놓아 주세요.
-          </p>
-          <p>
-            모든 길을 시작할 필요는 없어요. 잘할 수 있는 길에 집중해 보세요.
-          </p>
-        </div>
-        <button className="aside-button" onClick={onRules}>
-          <BookOpen size={17} /> 게임 규칙 <ArrowRight size={15} />
-        </button>
-        <button className="aside-button muted" onClick={onResign}>
-          <Flag size={16} /> 이번 게임 기권하기
-        </button>
-        <div className="saved-note">
-          <Check size={13} /> 매 행동이 자동으로 저장돼요.
-        </div>
-      </aside>
       {drag && (
         <div
           className="star-drag-preview"
@@ -619,7 +621,7 @@ export function ResultPanel({
               <small>점</small>
             </strong>
             {result.winners.includes(score.playerId) && (
-              <span className="winner-badge">WINNER</span>
+              <span className="winner-badge">승리</span>
             )}
           </div>
         ))}

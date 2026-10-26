@@ -41,7 +41,7 @@ test("one person adds and removes a bot, plays a visible turn, then reconnects",
     path: info.outputPath("bot-lobby-390.png"),
     fullPage: true,
   });
-  await page.getByRole("button", { name: "준비됐어요", exact: true }).click();
+  await page.getByRole("button", { name: "준비", exact: true }).click();
   await page.getByRole("button", { name: "탐험 시작", exact: true }).click();
   const discard = page.getByRole("button", { name: "버리기", exact: true });
   await expect(discard).toBeVisible();
@@ -51,7 +51,7 @@ test("one person adds and removes a bot, plays a visible turn, then reconnects",
   await expect(discard).toBeVisible({ timeout: 12000 });
   await page.reload();
   await expect(page.locator(".hand .playing-card")).toHaveCount(8);
-  await expect(page.locator(".game-aside-title h2")).toHaveText("별길 탐험");
+  await expect(page.locator(".game-aside-title h2")).toHaveText("로스트 팻츠");
   await expect
     .poll(() =>
       page.evaluate(() => document.documentElement.scrollWidth - innerWidth),
@@ -74,7 +74,7 @@ test("one human and three workshop bots complete a full round", async ({
       .click();
     await expect(page.locator(".occupied-seat")).toHaveCount(i + 2);
   }
-  await page.getByRole("button", { name: "준비됐어요", exact: true }).click();
+  await page.getByRole("button", { name: "준비", exact: true }).click();
   await page.getByRole("button", { name: "게임 시작", exact: true }).click();
   for (const color of ["white", "blue", "green"])
     await page.locator(`.bank-tokens .token-${color}`).click();

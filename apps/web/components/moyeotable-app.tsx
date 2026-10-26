@@ -9,6 +9,7 @@ import {
 } from "react";
 import { Client, type Room } from "@colyseus/sdk";
 import { MotionConfig } from "motion/react";
+import Image from "next/image";
 import {
   ArrowLeft,
   ArrowRight,
@@ -31,7 +32,6 @@ import type {
   CommandAck,
   CommandError,
   RoomView,
-  Suit,
   TableCommand,
   TableView,
 } from "@moyeotable/contracts";
@@ -59,10 +59,6 @@ import {
   ExtraRules,
 } from "./multigame-board";
 import type { GameAction } from "./game-ui";
-import { starCardArt } from "../lib/star-card-art";
-
-const WAITING_SUITS: Suit[] = ["aurora", "ember", "tide"];
-
 type Dialog =
   | "create"
   | "join"
@@ -802,7 +798,7 @@ export function MoyeotableApp() {
                       <SuitIcon suit="dusk" />
                     </div>
                     <div>
-                      <span className="small-label">
+                      <span className="small-label" role="status">
                         {table.status === "PLAYING"
                           ? "게임 진행 중"
                           : table.status === "RESULT"
@@ -812,10 +808,10 @@ export function MoyeotableApp() {
                       <h2>{table.title}</h2>
                       <p>
                         <Users size={15} />
-                        {table.members.map((m) => m.nickname).join(" · ")}{" "}
+                        {table.members.map((m) => m.nickname).join(", ")}{" "}
                         <span>
                           {table.members.length}/
-                          {GAME_CATALOG[table.gameKey].maxPlayers} ·{" "}
+                          {GAME_CATALOG[table.gameKey].maxPlayers}명 /{" "}
                           {GAME_CATALOG[table.gameKey].name}
                         </span>
                       </p>
@@ -903,14 +899,7 @@ export function MoyeotableApp() {
                 <div className="waiting-layout">
                   <div className="waiting-main">
                     <div className="waiting-intro">
-                      <span className="live-label">
-                        <span /> 우리의 다음 한 판
-                      </span>
-                      <h2>
-                        좋은 친구와,
-                        <br />
-                        좋은 시간을.
-                      </h2>
+                      <h2>우리의 다음 한 판</h2>
                       <p>
                         {metadata.minPlayers === metadata.maxPlayers
                           ? metadata.minPlayers
@@ -1038,7 +1027,7 @@ export function MoyeotableApp() {
                               <Check size={18} /> 준비 완료 · 취소
                             </>
                           ) : (
-                            "준비됐어요"
+                            "준비"
                           )}
                         </button>
                         {isHost && (
@@ -1063,23 +1052,16 @@ export function MoyeotableApp() {
                   </div>
                   <aside className="waiting-game">
                     <div
-                      className={`waiting-game-art ${animalTheme ? "animal-waiting-art" : ""}`}
+                      className={`waiting-game-art ${animalTheme ? "lost-pets-cover" : ""}`}
                     >
                       {animalTheme ? (
-                        <div
-                          role="img"
-                          aria-label="함께 기다리는 멍이, 냥이, 물개 친구들"
-                        >
-                          {WAITING_SUITS.map((suit) => (
-                            <img
-                              key={suit}
-                              src={starCardArt[suit].support.src}
-                              alt=""
-                              width="240"
-                              height="360"
-                            />
-                          ))}
-                        </div>
+                        <Image
+                          src={metadata.art}
+                          alt="2부터 10까지 3×3으로 놓인 동물 카드와 오른쪽의 ×2 수달 카드"
+                          width={960}
+                          height={648}
+                          sizes="(max-width: 760px) 90vw, 320px"
+                        />
                       ) : (
                         <img
                           src={metadata.art}
@@ -1090,6 +1072,7 @@ export function MoyeotableApp() {
                       )}
                     </div>
                     <div>
+                      <h2>{metadata.name}</h2>
                       <span className="game-meta">
                         <Users size={14} />{" "}
                         {metadata.minPlayers === metadata.maxPlayers
@@ -1097,7 +1080,6 @@ export function MoyeotableApp() {
                           : `${metadata.minPlayers}~${metadata.maxPlayers}`}
                         명
                       </span>
-                      <h2>{metadata.name}</h2>
                       <p>{metadata.description}</p>
                       <button
                         className="text-button"
@@ -1279,7 +1261,7 @@ export function MoyeotableApp() {
               className="button primary full"
               onClick={() => setDialog(null)}
             >
-              좋아요, 알겠어요 <Check size={18} />
+              닫기
             </button>
           </Modal>
         )}

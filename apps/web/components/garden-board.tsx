@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import type { GameViewMap } from "@moyeotable/contracts";
 import { BoardFrame, memberName, type BoardProps } from "./game-ui";
-import { Plus, RotateCcw, Check, Timer } from "lucide-react";
+import { Plus, RotateCcw, Check, Timer, Star } from "lucide-react";
 import { CardArt } from "./card-art";
 type Tile = GameViewMap["garden"]["board"][number][number];
 const colors = ["coral", "sky", "leaf", "violet"] as const;
@@ -24,6 +24,7 @@ function TileButton({
       className={`number-tile ${color ?? "joker"} ${selected ? "selected" : ""}`}
       disabled={disabled}
       onClick={onClick}
+      aria-pressed={selected}
       aria-label={`${tile.value === null ? "조커 · " : ""}${color ? names[color] : ""} ${tile.value ?? tile.jokerValue ?? "별"}`}
     >
       <CardArt
@@ -32,8 +33,14 @@ function TileButton({
         sizes="60px"
       />
       <small>{color ? names[color] : "조커"}</small>
-      <strong>{tile.value ?? tile.jokerValue ?? "★"}</strong>
-      {tile.value === null && <span>★</span>}
+      <strong>
+        {tile.value ?? tile.jokerValue ?? <Star aria-hidden="true" />}
+      </strong>
+      {tile.value === null && (
+        <span>
+          <Star size={12} aria-hidden="true" />
+        </span>
+      )}
     </button>
   );
 }
@@ -107,11 +114,10 @@ export function GardenBoard({
           >
             <strong>
               {memberName(view, p.id)}
-              {p.id === game.you ? " · 나" : ""}
+              {p.id === game.you ? " (나)" : ""}
             </strong>
-            <span>
-              타일 {p.rackCount} · {p.opened ? "등록 완료" : "첫 등록 전"}
-            </span>
+            <span>타일 {p.rackCount}</span>
+            <span>{p.opened ? "등록 완료" : "첫 등록 전"}</span>
           </div>
         ))}
       </div>
@@ -123,7 +129,7 @@ export function GardenBoard({
         </p>
         <strong className="turn-timer" role="timer">
           <Timer size={16} />
-          {seconds}초{game.remainingMs !== null ? " · 멈춤" : ""}
+          {seconds}초{game.remainingMs !== null ? " (멈춤)" : ""}
         </strong>
       </div>
       <section className="board-section" aria-label="공용 타일 보드">

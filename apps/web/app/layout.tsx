@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import "./tokens.css";
+import "./base.css";
 import "./globals.css";
+import "./paper-club.css";
 
 export const metadata: Metadata = {
   title: "링구링구",

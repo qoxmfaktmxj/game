@@ -1,15 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import {
   ArrowDown,
   ArrowUp,
   Check,
+  Club,
   Crosshair,
+  Diamond,
   Heart,
   Radio,
   Shield,
+  Spade,
   Sparkles,
   Users,
   Zap,
@@ -38,7 +41,19 @@ const roles = {
     goal: "기지 대장을 마지막으로 꺾고 홀로 남으면 승리해요.",
   },
 } as const;
-const suits = { spades: "♠", hearts: "♥", diamonds: "♦", clubs: "♣" } as const;
+// Text equivalents are kept in accessible names; visible suits use SVG icons.
+const suits = {
+  spades: "\u2660",
+  hearts: "\u2665",
+  diamonds: "\u2666",
+  clubs: "\u2663",
+} as const;
+const suitIcons = {
+  spades: Spade,
+  hearts: Heart,
+  diamonds: Diamond,
+  clubs: Club,
+};
 const rank = (n: number) =>
   n === 11 ? "J" : n === 12 ? "Q" : n === 13 ? "K" : n === 14 ? "A" : String(n);
 const targeted = new Set([
@@ -63,6 +78,7 @@ function CardFace({
   onClick?: () => void;
   compact?: boolean;
 }) {
+  const SuitIcon = suitIcons[card.suit];
   const icon = card.equipment ? (
     <Shield size={25} />
   ) : ["tonic", "pulse"].includes(card.kind) ? (
@@ -76,8 +92,10 @@ function CardFace({
     <>
       <span
         className={`signal-card-rank ${card.suit === "hearts" || card.suit === "diamonds" ? "is-red" : ""}`}
+        role="img"
+        aria-label={`${rank(card.rank)} ${suits[card.suit]}`}
       >
-        {rank(card.rank)} {suits[card.suit]}
+        {rank(card.rank)} <SuitIcon size={14} aria-hidden="true" />
       </span>
       <span className="signal-card-emblem" aria-hidden="true">
         {icon}
@@ -127,6 +145,7 @@ export function SignalBoard({
   const [showRole, setShowRole] = useState(false);
   const [healing, setHealing] = useState(false);
   const [deathOrder, setDeathOrder] = useState<string[]>([]);
+  const reduceMotion = useReducedMotion();
   useEffect(() => {
     setSelected([]);
     setChoices([]);
@@ -222,8 +241,7 @@ export function SignalBoard({
       <div className="signal-command-center">
         <div className="signal-center-title">
           <Radio size={19} />
-          <span>OUTPOST / 황혼 관측소</span>
-          <span className="signal-live-dot" aria-hidden="true" />
+          <span>황혼 관측소</span>
         </div>
         <div className="signal-role-row">
           <div>
@@ -232,8 +250,7 @@ export function SignalBoard({
               id={`character-${me.character.id}`}
               sizes="75px"
             />
-            <span className="signal-overline">나의 관측자</span>
-            <h3>{me.character.name}</h3>
+            <h3>나의 관측자 {me.character.name}</h3>
             <p>{me.character.text}</p>
           </div>
           <button
@@ -250,9 +267,10 @@ export function SignalBoard({
           {showRole && (
             <motion.div
               className="signal-secret"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={reduceMotion ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: reduceMotion ? 0 : 0.16 }}
             >
               <CardArt game="signal" id={`role-${game.yourRole}`} />
               <strong>{roles[game.yourRole].name}</strong>
@@ -278,7 +296,8 @@ export function SignalBoard({
                   {p.id === game.you && <span> 나</span>}
                 </h3>
                 <p>
-                  {p.character.name} ·{" "}
+                  {p.character.name}
+                  {" / "}
                   {p.role &&
                   (p.id !== game.you ||
                     showRole ||
@@ -306,7 +325,7 @@ export function SignalBoard({
                   <Heart
                     size={13}
                     key={index}
-                    fill={index < p.health ? "currentColor" : "none"}
+                    className={index < p.health ? "is-filled" : "is-empty"}
                     opacity={index < p.health ? 1 : 0.25}
                   />
                 ))}
@@ -345,18 +364,12 @@ export function SignalBoard({
 
       <div className="signal-field">
         <div className="signal-radar" aria-hidden="true">
-          <i />
-          <i />
-          <i />
           <Radio size={31} />
         </div>
         <div className="signal-field-status">
-          <span className="signal-overline">
-            {game.turnPlayerId === game.you ? "MY TRANSMISSION" : "ON AIR"}
-          </span>
           <h3 aria-live="polite">{signalStatus}</h3>
           <p>
-            광선 사거리 {game.weaponRange} · 이번 차례 광선 {game.strikesPlayed}
+            광선 사거리 {game.weaponRange}, 이번 차례 광선 {game.strikesPlayed}
             회
           </p>
         </div>
@@ -675,7 +688,7 @@ export function SignalBoard({
                       {targetCandidates.map((p) => (
                         <option key={p.id} value={p.id}>
                           {memberName(view, p.id)}
-                          {p.distance ? ` · 거리 ${p.distance}` : " · 나"}
+                          {p.distance ? ` (거리 ${p.distance})` : " (나)"}
                         </option>
                       ))}
                     </select>

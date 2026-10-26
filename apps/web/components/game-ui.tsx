@@ -2,7 +2,7 @@
 import type { ReactNode } from "react";
 import type { GameKey, RoomView } from "@moyeotable/contracts";
 import { GAME_CATALOG } from "@moyeotable/game-core/catalog";
-import { BookOpen, WifiOff } from "lucide-react";
+import { ArrowUpRight, BookOpen, WifiOff } from "lucide-react";
 export type GameAction = { type: string; payload: Record<string, unknown> };
 export interface BoardProps<K extends GameKey> {
   view: RoomView<K>;
@@ -49,7 +49,7 @@ export function BoardFrame({
             target="_blank"
             rel="noreferrer"
           >
-            카드 그림 ↗
+            카드 그림 <ArrowUpRight size={14} aria-hidden="true" />
           </a>
           <button className="button secondary" onClick={onRules}>
             <BookOpen size={17} /> 규칙

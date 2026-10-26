@@ -8,7 +8,7 @@ import { suitNames } from "../../lib/client";
 import { getStarCardArt, starCardArt } from "../../lib/star-card-art";
 import { CardGalleryNav } from "../../components/card-gallery-nav";
 
-export const metadata = { title: "링구링구 - 별길 탐험" };
+export const metadata = { title: "링구링구 - 로스트 팻츠" };
 const suits: Suit[] = ["aurora", "ember", "tide", "moss", "dusk"];
 const descriptions = {
   aurora: "꼬리를 흔들며 먼저 다가오는 강아지 친구.",
@@ -34,7 +34,7 @@ export default function CardsPage() {
           <br />한 장 더 가까이.
         </h1>
         <p>
-          별길 탐험에서 만나는 멍이, 냥이, 물개, 수달, 랑이. 품종과 포즈가 다른
+          로스트 팻츠에서 만나는 멍이, 냥이, 물개, 수달, 랑이. 품종과 포즈가 다른
           50가지 그림을 만나보세요.
         </p>
         <CardGalleryNav />
@@ -103,7 +103,7 @@ export default function CardsPage() {
       <footer className="card-gallery-footer">
         <div>
           <p>숫자 카드 45장 + 지원 카드 15장. 총 60장으로 함께해요.</p>
-          <p>지원 카드 배수: 1장 ×2 · 2장 ×3 · 3장 ×4</p>
+          <p>지원 카드 배수: 1장 ×2, 2장 ×3, 3장 ×4</p>
         </div>
         <Link href="/" className="button primary">
           게임 하러 가기 <ArrowUpRight size={18} />

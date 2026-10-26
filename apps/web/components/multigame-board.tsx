@@ -46,7 +46,7 @@ export function MultiResultPanel({
     <section className="result-panel multi-results">
       <div className="result-celebration">
         <Trophy size={42} />
-        <p>{metadata.name} · 한 판 완료</p>
+        <p>{metadata.name} 한 판 완료</p>
         <h2>
           {result.tied
             ? "함께 나눈 승리"
@@ -55,7 +55,7 @@ export function MultiResultPanel({
               : "다음 한 판에서 다시 만나요"}
         </h2>
         <p>
-          {result.winners.map((id) => memberName(view, id)).join(" · ")} 승리
+          {result.winners.map((id) => memberName(view, id)).join(", ")} 승리
         </p>
       </div>
       {result.reason === "BLOCKED_TIE" && (

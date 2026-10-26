@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { GameViewMap } from "@moyeotable/contracts";
 import { BoardFrame, memberName, type BoardProps } from "./game-ui";
 import { Gem, Bookmark, Check, X } from "lucide-react";
@@ -54,6 +54,7 @@ function WorkCard({
       className={`work-card work-${work.bonus} ${selected ? "selected" : ""}`}
       onClick={onClick}
       disabled={disabled}
+      aria-pressed={selected ?? false}
       aria-label={`${names[work.bonus]} 작품 ${work.id.slice(2)} · ${work.points}점 · 비용 ${
         colors
           .filter((c) => work.cost[c] > 0)
@@ -74,7 +75,7 @@ function WorkCard({
         <small>{work.id.slice(2).padStart(2, "0")}</small>
       </span>
       <Cost cost={work.cost} />
-      <span className="work-bonus">영구 할인 · {names[work.bonus]} +1</span>
+      <span className="work-bonus">{names[work.bonus]} 영구 할인 +1</span>
     </button>
   );
 }
@@ -91,11 +92,20 @@ export function WorkshopBoard({
     [take, setTake] = useState<Color[]>([]),
     [returned, setReturned] = useState(zero),
     [payment, setPayment] = useState(zero);
+  const actionPanelRef = useRef<HTMLElement>(null);
   useEffect(() => {
     setSelected(null);
     setTake([]);
     setReturned(zero());
   }, [game.version]);
+  useEffect(() => {
+    if (!selected) return;
+    actionPanelRef.current?.focus({ preventScroll: true });
+    actionPanelRef.current?.scrollIntoView({
+      block: "nearest",
+      behavior: "instant",
+    });
+  }, [selected]);
   const disabled =
     busy || !connected || view.paused || game.activePlayerId !== game.you;
   const works = [...game.market.flat(), ...game.yourReserved],
@@ -144,12 +154,11 @@ export function WorkshopBoard({
             <summary>
               <strong>
                 {memberName(view, p.id)}
-                {p.id === game.you ? " · 나" : ""}
+                {p.id === game.you ? " (나)" : ""}
               </strong>
               <b>{p.points}점</b>
-              <span>
-                작품 {p.owned.length} · 예약 {p.reservedCount}
-              </span>
+              <span>작품 {p.owned.length}</span>
+              <span>예약 {p.reservedCount}</span>
             </summary>
             <div className="token-bar">
               {tokens.map((c) => (
@@ -173,288 +182,308 @@ export function WorkshopBoard({
           마지막 라운드예요. 모두 같은 횟수의 차례를 마치면 점수를 비교해요.
         </p>
       )}
-      <section className="board-section">
-        <div className="board-section-heading">
-          <h3>후원자</h3>
-          <span>조건 달성 시 한 차례에 한 명 · 각각 3점</span>
-        </div>
-        <div className="patron-row">
-          {game.patrons.map((p) => (
-            <button
-              key={p.id}
-              className={`patron-card ${game.eligiblePatronIds.includes(p.id) ? "eligible" : ""}`}
-              disabled={
-                disabled ||
-                game.phase !== "PATRON" ||
-                !game.eligiblePatronIds.includes(p.id)
-              }
-              onClick={() =>
-                onCommand({
-                  type: "WORKSHOP_PATRON",
-                  payload: { patronId: p.id },
-                })
-              }
-            >
-              <CardArt game="workshop" id={p.id} />
-              <strong>
-                후원자 {p.id.slice(2)} <span>3점</span>
-              </strong>
-              <Cost cost={p.cost} />
-              {game.phase === "PATRON" &&
-                game.eligiblePatronIds.includes(p.id) && (
-                  <small>이 후원자 선택</small>
-                )}
-            </button>
-          ))}
-        </div>
-      </section>
-      <section className="work-market" aria-label="공개 작품 시장">
-        <p className="game-footnote">
-          작품을 선택해 완성하거나 예약해요. 작은 화면에서는 각 줄을 옆으로 넘겨
-          볼 수 있어요.
-        </p>
-        {[2, 1, 0].map((level) => (
-          <div className="market-row" key={level}>
-            <button
-              className="work-deck"
-              disabled={
-                disabled ||
-                game.phase !== "ACTION" ||
-                mine.reservedCount >= 3 ||
-                game.deckCounts[level] === 0
-              }
-              onClick={() =>
-                onCommand({
-                  type: "WORKSHOP_RESERVE",
-                  payload: { level: level + 1 },
-                })
-              }
-            >
-              <Bookmark size={20} />
-              <strong>{level + 1}단계</strong>
-              <span>{game.deckCounts[level]}장</span>
-              <small>비공개 예약</small>
-            </button>
-            {game.market[level].map((w) => (
-              <WorkCard
-                key={w.id}
-                work={w}
-                selected={w.id === selected}
-                onClick={() => choose(w)}
-                disabled={disabled || game.phase !== "ACTION"}
-              />
-            ))}
-          </div>
-        ))}
-      </section>
-      <section className="board-section">
-        <div className="board-section-heading">
-          <h3>빛 보관소</h3>
-          <span>서로 다른 3개 또는 4개 이상 남은 색 2개</span>
-        </div>
-        <div className="token-bar bank-tokens">
-          {colors.map((c) => (
-            <button
-              key={c}
-              className={`token token-${c} ${take.includes(c) ? "selected" : ""}`}
-              disabled={
-                disabled ||
-                game.phase !== "ACTION" ||
-                game.bank[c] === 0 ||
-                take.length >= 3
-              }
-              onClick={() => setTake((old) => [...old, c])}
-            >
-              <Gem size={20} />
-              <strong>{names[c]}</strong>
-              <span>{game.bank[c]}</span>
-              {take.includes(c) && (
-                <small>선택 {take.filter((x) => x === c).length}</small>
-              )}
-            </button>
-          ))}
-          <div className="token token-gold">
-            <Gem size={20} />
-            <strong>금빛</strong>
-            <span>{game.bank.gold}</span>
-            <small>예약할 때 받아요</small>
-          </div>
-        </div>
-        {game.phase === "ACTION" && (
-          <div className="action-tray">
-            <span>
-              {take.length
-                ? take.map((c) => names[c]).join(" · ")
-                : "가져올 빛을 골라 주세요"}
-            </span>
-            <button
-              className="button secondary"
-              onClick={() => setTake([])}
-              disabled={disabled || !take.length}
-            >
-              <X size={16} /> 선택 취소
-            </button>
-            <button
-              className="button primary"
-              disabled={disabled || !validTake}
-              onClick={() =>
-                onCommand({ type: "WORKSHOP_TAKE", payload: { colors: take } })
-              }
-            >
-              선택한 빛 가져오기
-            </button>
-          </div>
-        )}
-      </section>
-      <section className="board-section">
-        <div className="board-section-heading">
-          <h3>나의 공방</h3>
-          <span>{mine.points}점 / 15점</span>
-        </div>
-        <div className="token-bar">
-          {tokens.map((c) => (
-            <span className={`token token-${c}`} key={c}>
-              {names[c]} <b>{mine.tokens[c]}</b>
-            </span>
-          ))}
-        </div>
-        <p>영구 할인</p>
-        <Cost cost={mine.bonuses} />
-        <h4>예약 작품 {game.yourReserved.length}/3</h4>
-        <div className="reserved-works">
-          {game.yourReserved.map((w) => (
-            <WorkCard
-              key={w.id}
-              work={w}
-              selected={w.id === selected}
-              onClick={() => choose(w)}
-              disabled={disabled || game.phase !== "ACTION"}
-            />
-          ))}
-          {!game.yourReserved.length && <p>예약한 작품은 나에게만 보여요.</p>}
-        </div>
-      </section>
-      {game.phase === "RETURN" && game.activePlayerId === game.you && (
-        <section className="board-section action-panel">
-          <h3>빛 {excess}개를 돌려주세요</h3>
-          <p>
-            차례가 끝날 때는 최대 10개까지 가질 수 있어요. 방금 받은 빛도 돌려줄
-            수 있어요.
-          </p>
-          <div className="token-bar">
-            {tokens.map((c) => (
-              <label className={`game-field token token-${c}`} key={c}>
-                {names[c]}
-                <select
-                  aria-label={`반환할 ${names[c]}`}
-                  value={returned[c]}
-                  onChange={(e) =>
-                    setReturned((old) => ({
-                      ...old,
-                      [c]: Number(e.target.value),
-                    }))
+      <div className="workshop-workspace">
+        <div className="workshop-market-area">
+          <section className="work-market" aria-label="공개 작품 시장">
+            <p className="game-footnote">
+              작품을 선택해 완성하거나 예약해요. 작은 화면에서는 각 줄을 옆으로
+              넘겨 볼 수 있어요.
+            </p>
+            {[2, 1, 0].map((level) => (
+              <div className="market-row" key={level}>
+                <button
+                  className="work-deck"
+                  disabled={
+                    disabled ||
+                    game.phase !== "ACTION" ||
+                    mine.reservedCount >= 3 ||
+                    game.deckCounts[level] === 0
+                  }
+                  onClick={() =>
+                    onCommand({
+                      type: "WORKSHOP_RESERVE",
+                      payload: { level: level + 1 },
+                    })
                   }
                 >
-                  {Array.from({ length: mine.tokens[c] + 1 }, (_, i) => (
-                    <option key={i} value={i}>
-                      {i}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                  <Bookmark size={20} />
+                  <strong>{level + 1}단계</strong>
+                  <span>{game.deckCounts[level]}장</span>
+                  <small>비공개 예약</small>
+                </button>
+                {game.market[level].map((w) => (
+                  <WorkCard
+                    key={w.id}
+                    work={w}
+                    selected={w.id === selected}
+                    onClick={() => choose(w)}
+                    disabled={disabled || game.phase !== "ACTION"}
+                  />
+                ))}
+              </div>
             ))}
-          </div>
-          <button
-            className="button primary"
-            disabled={disabled || returnTotal !== excess}
-            onClick={() =>
-              onCommand({
-                type: "WORKSHOP_RETURN",
-                payload: { tokens: returned },
-              })
-            }
-          >
-            <Check size={17} /> {returnTotal}/{excess}개 반환
-          </button>
-        </section>
-      )}
-      {work && game.phase === "ACTION" && (
-        <section className="board-section action-panel">
-          <div className="board-section-heading">
-            <h3>
-              {names[work.bonus]} 작품 {work.id.slice(2)}
-            </h3>
-            <button
-              className="icon-button"
-              aria-label="작품 선택 닫기"
-              onClick={() => setSelected(null)}
+          </section>
+          <section className="board-section">
+            <div className="board-section-heading">
+              <h3>후원자</h3>
+              <span>조건 달성 시 한 차례에 한 명, 각각 3점</span>
+            </div>
+            <div className="patron-row">
+              {game.patrons.map((p) => (
+                <button
+                  key={p.id}
+                  className={`patron-card ${game.eligiblePatronIds.includes(p.id) ? "eligible" : ""}`}
+                  disabled={
+                    disabled ||
+                    game.phase !== "PATRON" ||
+                    !game.eligiblePatronIds.includes(p.id)
+                  }
+                  onClick={() =>
+                    onCommand({
+                      type: "WORKSHOP_PATRON",
+                      payload: { patronId: p.id },
+                    })
+                  }
+                >
+                  <CardArt game="workshop" id={p.id} />
+                  <strong>
+                    후원자 {p.id.slice(2)} <span>3점</span>
+                  </strong>
+                  <Cost cost={p.cost} />
+                  {game.phase === "PATRON" &&
+                    game.eligiblePatronIds.includes(p.id) && (
+                      <small>이 후원자 선택</small>
+                    )}
+                </button>
+              ))}
+            </div>
+          </section>
+        </div>
+        <aside className="workshop-controls" aria-label="나의 공방 행동">
+          {work && game.phase === "ACTION" && (
+            <section
+              className="board-section action-panel"
+              ref={actionPanelRef}
+              tabIndex={-1}
+              aria-label="선택한 작품의 행동"
             >
-              <X size={18} />
-            </button>
-          </div>
-          <p>지불할 빛을 선택해요. 색 토큰 대신 금빛을 사용할 수도 있어요.</p>
-          <div className="token-bar">
-            {colors
-              .filter((c) => work.cost[c] > mine.bonuses[c])
-              .map((c) => (
-                <label className={`game-field token token-${c}`} key={c}>
-                  {names[c]}
-                  <select
-                    aria-label={`지불할 ${names[c]}`}
-                    value={payment[c]}
-                    onChange={(e) => changePayment(c, Number(e.target.value))}
+              <div className="board-section-heading">
+                <h3>
+                  {names[work.bonus]} 작품 {work.id.slice(2)}
+                </h3>
+                <button
+                  className="icon-button"
+                  aria-label="작품 선택 닫기"
+                  onClick={() => setSelected(null)}
+                >
+                  <X size={18} />
+                </button>
+              </div>
+              <p>
+                지불할 빛을 선택해요. 색 토큰 대신 금빛을 사용할 수도 있어요.
+              </p>
+              <div className="token-bar">
+                {colors
+                  .filter((c) => work.cost[c] > mine.bonuses[c])
+                  .map((c) => (
+                    <label className={`game-field token token-${c}`} key={c}>
+                      {names[c]}
+                      <select
+                        aria-label={`지불할 ${names[c]}`}
+                        value={payment[c]}
+                        onChange={(e) =>
+                          changePayment(c, Number(e.target.value))
+                        }
+                      >
+                        {Array.from(
+                          {
+                            length:
+                              Math.min(
+                                mine.tokens[c],
+                                Math.max(0, work.cost[c] - mine.bonuses[c]),
+                              ) + 1,
+                          },
+                          (_, i) => (
+                            <option key={i} value={i}>
+                              {i}
+                            </option>
+                          ),
+                        )}
+                      </select>
+                    </label>
+                  ))}
+                <span className="token token-gold">
+                  금빛 {payment.gold} / 보유 {mine.tokens.gold}
+                </span>
+              </div>
+              <div className="action-tray">
+                <button
+                  className="button primary"
+                  disabled={disabled || payment.gold > mine.tokens.gold}
+                  onClick={() =>
+                    onCommand({
+                      type: "WORKSHOP_BUY",
+                      payload: { cardId: work.id, payment },
+                    })
+                  }
+                >
+                  <Check size={17} /> 작품 완성
+                </button>
+                {!game.yourReserved.some((w) => w.id === work.id) && (
+                  <button
+                    className="button secondary"
+                    disabled={disabled || mine.reservedCount >= 3}
+                    onClick={() =>
+                      onCommand({
+                        type: "WORKSHOP_RESERVE",
+                        payload: { cardId: work.id },
+                      })
+                    }
                   >
-                    {Array.from(
-                      {
-                        length:
-                          Math.min(
-                            mine.tokens[c],
-                            Math.max(0, work.cost[c] - mine.bonuses[c]),
-                          ) + 1,
-                      },
-                      (_, i) => (
+                    <Bookmark size={17} /> 예약하고 금빛 받기
+                  </button>
+                )}
+              </div>
+            </section>
+          )}
+          <section className="board-section">
+            <div className="board-section-heading">
+              <h3>빛 보관소</h3>
+              <span>서로 다른 3개 또는 4개 이상 남은 색 2개</span>
+            </div>
+            <div className="token-bar bank-tokens">
+              {colors.map((c) => (
+                <button
+                  key={c}
+                  className={`token token-${c} ${take.includes(c) ? "selected" : ""}`}
+                  disabled={
+                    disabled ||
+                    game.phase !== "ACTION" ||
+                    game.bank[c] === 0 ||
+                    take.length >= 3
+                  }
+                  onClick={() => setTake((old) => [...old, c])}
+                >
+                  <Gem size={20} />
+                  <strong>{names[c]}</strong>
+                  <span>{game.bank[c]}</span>
+                  {take.includes(c) && (
+                    <small>선택 {take.filter((x) => x === c).length}</small>
+                  )}
+                </button>
+              ))}
+              <div className="token token-gold">
+                <Gem size={20} />
+                <strong>금빛</strong>
+                <span>{game.bank.gold}</span>
+                <small>예약할 때 받아요</small>
+              </div>
+            </div>
+            {game.phase === "ACTION" && (
+              <div className="action-tray">
+                <span>
+                  {take.length
+                    ? take.map((c) => names[c]).join(", ")
+                    : "가져올 빛을 골라 주세요"}
+                </span>
+                <button
+                  className="button secondary"
+                  onClick={() => setTake([])}
+                  disabled={disabled || !take.length}
+                >
+                  <X size={16} /> 선택 취소
+                </button>
+                <button
+                  className="button primary"
+                  disabled={disabled || !validTake}
+                  onClick={() =>
+                    onCommand({
+                      type: "WORKSHOP_TAKE",
+                      payload: { colors: take },
+                    })
+                  }
+                >
+                  선택한 빛 가져오기
+                </button>
+              </div>
+            )}
+          </section>
+          <section className="board-section">
+            <div className="board-section-heading">
+              <h3>나의 공방</h3>
+              <span>{mine.points}점 / 15점</span>
+            </div>
+            <div className="token-bar">
+              {tokens.map((c) => (
+                <span className={`token token-${c}`} key={c}>
+                  {names[c]} <b>{mine.tokens[c]}</b>
+                </span>
+              ))}
+            </div>
+            <p>영구 할인</p>
+            <Cost cost={mine.bonuses} />
+            <h4>예약 작품 {game.yourReserved.length}/3</h4>
+            <div className="reserved-works">
+              {game.yourReserved.map((w) => (
+                <WorkCard
+                  key={w.id}
+                  work={w}
+                  selected={w.id === selected}
+                  onClick={() => choose(w)}
+                  disabled={disabled || game.phase !== "ACTION"}
+                />
+              ))}
+              {!game.yourReserved.length && (
+                <p>예약한 작품은 나에게만 보여요.</p>
+              )}
+            </div>
+          </section>
+          {game.phase === "RETURN" && game.activePlayerId === game.you && (
+            <section className="board-section action-panel">
+              <h3>빛 {excess}개를 돌려주세요</h3>
+              <p>
+                차례가 끝날 때는 최대 10개까지 가질 수 있어요. 방금 받은 빛도
+                돌려줄 수 있어요.
+              </p>
+              <div className="token-bar">
+                {tokens.map((c) => (
+                  <label className={`game-field token token-${c}`} key={c}>
+                    {names[c]}
+                    <select
+                      aria-label={`반환할 ${names[c]}`}
+                      value={returned[c]}
+                      onChange={(e) =>
+                        setReturned((old) => ({
+                          ...old,
+                          [c]: Number(e.target.value),
+                        }))
+                      }
+                    >
+                      {Array.from({ length: mine.tokens[c] + 1 }, (_, i) => (
                         <option key={i} value={i}>
                           {i}
                         </option>
-                      ),
-                    )}
-                  </select>
-                </label>
-              ))}
-            <span className="token token-gold">
-              금빛 {payment.gold} / 보유 {mine.tokens.gold}
-            </span>
-          </div>
-          <div className="action-tray">
-            <button
-              className="button primary"
-              disabled={disabled || payment.gold > mine.tokens.gold}
-              onClick={() =>
-                onCommand({
-                  type: "WORKSHOP_BUY",
-                  payload: { cardId: work.id, payment },
-                })
-              }
-            >
-              <Check size={17} /> 작품 완성
-            </button>
-            {!game.yourReserved.some((w) => w.id === work.id) && (
+                      ))}
+                    </select>
+                  </label>
+                ))}
+              </div>
               <button
-                className="button secondary"
-                disabled={disabled || mine.reservedCount >= 3}
+                className="button primary"
+                disabled={disabled || returnTotal !== excess}
                 onClick={() =>
                   onCommand({
-                    type: "WORKSHOP_RESERVE",
-                    payload: { cardId: work.id },
+                    type: "WORKSHOP_RETURN",
+                    payload: { tokens: returned },
                   })
                 }
               >
-                <Bookmark size={17} /> 예약하고 금빛 받기
+                <Check size={17} /> {returnTotal}/{excess}개 반환
               </button>
-            )}
-          </div>
-        </section>
-      )}
+            </section>
+          )}
+        </aside>
+      </div>
     </BoardFrame>
   );
 }

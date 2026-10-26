@@ -11,45 +11,42 @@ import {
   BookOpen,
 } from "lucide-react";
 import { useInView, useReducedMotion } from "motion/react";
+import { GAME_CATALOG } from "@moyeotable/game-core/catalog";
+import { starCardArt } from "../lib/star-card-art";
 
 export const clubGames = [
   {
     key: "star-trails",
-    name: "별길 탐험",
-    art: "orbit",
-    genre: "2명 · 카드 전략",
+    name: GAME_CATALOG["star-trails"].name,
+    genre: "2명 / 카드 전략",
     description: "한 장의 선택, 다섯 갈래의 승부.",
     tone: "lime",
   },
   {
     key: "workshop",
     name: "빛의 공방",
-    art: "workshop",
-    genre: "2–4명 · 자원 전략",
+    genre: "2~4명 / 자원 전략",
     description: "빛을 모으고, 나만의 공방을 완성해요.",
     tone: "coral",
   },
   {
     key: "council",
     name: "밤의 의회",
-    art: "council",
-    genre: "2–7명 · 역할 선택",
+    genre: "2~7명 / 역할 선택",
     description: "누가 어떤 역할일까? 밤의 수를 읽어요.",
     tone: "lilac",
   },
   {
     key: "signal",
     name: "황혼의 신호",
-    art: "signal",
-    genre: "4–7명 · 공격과 대응",
+    genre: "4~7명 / 공격과 대응",
     description: "날카로운 한 수와 아슬아슬한 반격.",
     tone: "amber",
   },
   {
     key: "garden",
     name: "넘버가든",
-    art: "garden",
-    genre: "2–4명 · 숫자 조합",
+    genre: "2~4명 / 숫자 조합",
     description: "흩어진 숫자에서 멋진 조합을 찾아요.",
     tone: "sky",
   },
@@ -73,28 +70,33 @@ function ClubScene() {
   const playing = ready && inView && tabVisible && !paused && !reduceMotion;
   return (
     <figure className="club-scene" ref={ref} data-playing={playing}>
-      <div className="club-scene-art" aria-hidden="true">
-        <Image
-          src="/art/club-orbit.png"
-          alt=""
-          fill
-          sizes="(max-width: 760px) 100vw, 65vw"
-          priority
-          quality={75}
-        />
-        <svg className="club-scene-path" viewBox="0 0 800 580" fill="none">
-          <ellipse
-            cx="405"
-            cy="285"
-            rx="360"
-            ry="228"
-            transform="rotate(-18 405 285)"
-            pathLength="100"
-          />
-        </svg>
+      <div
+        className="club-scene-art"
+        aria-label={`${GAME_CATALOG["star-trails"].name}의 동물 카드`}
+      >
+        {(
+          [
+            { suit: "aurora", rank: "6", family: "멍이" },
+            { suit: "ember", rank: "10", family: "냥이" },
+            { suit: "moss", rank: "8", family: "수달" },
+          ] as const
+        ).map(({ suit, rank, family }) => (
+          <div className="club-sample-card" key={suit}>
+            <span className="club-sample-rank">{rank}</span>
+            <div className="club-sample-art">
+              <Image
+                src={starCardArt[suit][rank]!.src}
+                alt={starCardArt[suit][rank]!.name}
+                fill
+                sizes="(max-width: 760px) 120px, 180px"
+                priority
+              />
+            </div>
+            <span className="club-sample-name">{family}</span>
+          </div>
+        ))}
       </div>
       <figcaption className="club-scene-caption">
-        <span className="club-caption-dot" />
         같은 테이블, 다른 즐거움.
       </figcaption>
       <button
@@ -173,7 +175,7 @@ export function Home({
                 aria-label={`${game.name} 테이블 만들기`}
               >
                 <Image
-                  src={`/art/club-${game.art}.png`}
+                  src={GAME_CATALOG[game.key].art}
                   alt=""
                   fill
                   sizes="(max-width: 760px) 50vw, 23vw"
@@ -184,12 +186,12 @@ export function Home({
                 </span>
               </button>
               <div className="club-game-copy">
-                <span className="club-game-genre">{game.genre}</span>
                 <h3>
                   <button onClick={() => onCreate(game.key)}>
                     {game.name}
                   </button>
                 </h3>
+                <span className="club-game-genre">{game.genre}</span>
                 <p>{game.description}</p>
                 <div className="club-game-actions">
                   <button onClick={() => onCreate(game.key)}>
@@ -214,11 +216,7 @@ export function Home({
           </strong>
           <p>좋은 친구들과 즐거운 게임.</p>
         </div>
-        <span>
-          GOOD FRIENDS.
-          <br />
-          GREAT GAMES.
-        </span>
+        <span>같은 테이블, 다른 즐거움.</span>
         <a href="#games">
           다음 한 판 고르기 <ArrowUpRight size={17} />
         </a>
