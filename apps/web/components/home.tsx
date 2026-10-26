@@ -24,9 +24,9 @@ export const clubGames = [
   },
   {
     key: "workshop",
-    name: "빛의 공방",
+    name: GAME_CATALOG.workshop.name,
     genre: "2~4명 / 자원 전략",
-    description: "빛을 모으고, 나만의 공방을 완성해요.",
+    description: "작은 아기부터 든든한 어른까지, 숲속 친구들.",
     tone: "coral",
   },
   {

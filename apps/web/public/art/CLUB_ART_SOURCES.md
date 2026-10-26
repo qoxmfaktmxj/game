@@ -1,5 +1,9 @@
 # Ring Club original promotional art
 
+## 와일드 스플렌더 — 2026-10-27
+
+`club-wild-splendor.png` is the new original wildlife cover: a retriever puppy, ginger kitten, otter, tiger cub and capybara at a woodland stream. Created using the built-in image_gen tool without reference images; source `exec-a6cf4293-566d-4e90-88ce-27554ccd7742.png`. The exact prompt and all 17 card/resource atlas prompts are preserved in `docs/art/wild-splendor-prompts.json`. Card artwork lives under `art/cards/wild-splendor/`; card IDs map to distinct viewports in `apps/web/lib/card-art-ready.json`. The earlier gem-based `club-workshop.png` is historical and is no longer the active cover.
+
 Created with the built-in image generation tool on 2026-10-24 (Asia/Seoul). No private rule-reference photos, existing games' pictures, or third-party brand assets were used as image input.
 
 | File | Intended use | Original generator file |

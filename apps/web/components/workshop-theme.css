@@ -1,0 +1,99 @@
+/* Wild Splendor keeps the shared Open Air surfaces and uses resource hues only for game meaning. */
+.multi-board.workshop-board {
+  --wild-honey-paper: #fff3cf;
+  --wild-honey-ink: #755012;
+  --wild-acorn-paper: #f2e6db;
+  --wild-acorn-ink: #71452b;
+  --wild-joker-paper: #fff1a8;
+  --wild-joker-ink: #694600;
+}
+.multi-board.workshop-board .token-white {
+  --token-bg: var(--wild-honey-paper);
+  --token-ink: var(--wild-honey-ink);
+}
+.multi-board.workshop-board .token-black {
+  --token-bg: var(--wild-acorn-paper);
+  --token-ink: var(--wild-acorn-ink);
+}
+.multi-board.workshop-board .token-gold {
+  --token-bg: var(--wild-joker-paper);
+  --token-ink: var(--wild-joker-ink);
+}
+.multi-board.workshop-board .work-white {
+  --work-accent: var(--wild-honey-ink);
+  background: var(--wild-honey-paper);
+}
+.multi-board.workshop-board .work-black {
+  --work-accent: var(--wild-acorn-ink);
+  background: var(--wild-acorn-paper);
+}
+.wild-resource-art {
+  display: inline-block;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-image: url("/art/cards/wild-splendor/resources.png");
+  background-size: 300% 200%;
+  background-repeat: no-repeat;
+}
+.bank-tokens .wild-resource-art {
+  width: 54px;
+  height: 54px;
+}
+.multi-board.workshop-board .work-cost .wild-resource-art {
+  width: 18px;
+  height: 18px;
+}
+.multi-board.workshop-board .work-card-top .token {
+  min-height: 28px;
+  padding: 2px 4px;
+  gap: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.multi-board.workshop-board .work-card-top .wild-resource-art {
+  width: 20px;
+  height: 20px;
+}
+.multi-board.workshop-board .work-card > .game-card-art.is-atlas,
+.multi-board.workshop-board .patron-card > .game-card-art.is-atlas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+}
+.multi-board.workshop-board .patron-card {
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 150px;
+  flex-basis: 150px;
+}
+.multi-board.workshop-board .patron-card > .game-card-art {
+  grid-row: auto;
+}
+.multi-board.workshop-board .patron-card > strong {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.5;
+}
+.multi-board.workshop-board .patron-card > strong > span {
+  white-space: nowrap;
+}
+.multi-board.workshop-board .wild-stage-name {
+  font-size: 12px;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+.multi-board.workshop-board .board-section-heading h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+.multi-board.workshop-board .work-card-name {
+  text-wrap: balance;
+  min-height: 2.8em;
+  word-break: keep-all;
+}
+.multi-board.workshop-board .work-card-name > span,
+.multi-board.workshop-board .work-card-name > small {
+  display: block;
+}

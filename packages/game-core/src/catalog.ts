@@ -34,14 +34,14 @@ export const GAME_CATALOG: { [K in GameKey]: GameMetadata<K> } = {
   },
   workshop: {
     key: "workshop",
-    name: "빛의 공방",
+    name: "와일드 스플렌더",
     minPlayers: 2,
     maxPlayers: 4,
     rulesVersion: "1.0.0",
     contentVersion: "1.0.0",
     schemaVersion: 1,
-    description: "빛을 모으고 작품을 완성하는 전략 게임",
-    art: "/art/club-workshop.png",
+    description: "간식을 모으고 숲속 동물들과 함께하는 전략 게임",
+    art: "/art/club-wild-splendor.png",
     supportsResign: false,
   },
   council: {

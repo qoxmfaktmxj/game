@@ -2,8 +2,14 @@
 import { useEffect, useRef, useState } from "react";
 import type { GameViewMap } from "@moyeotable/contracts";
 import { BoardFrame, memberName, type BoardProps } from "./game-ui";
-import { Gem, Bookmark, Check, X } from "lucide-react";
+import { PawPrint, Bookmark, Check, X } from "lucide-react";
 import { CardArt } from "./card-art";
+import {
+  workshopCardName,
+  workshopResources,
+  workshopStages,
+} from "../lib/workshop-theme";
+import "./workshop-theme.css";
 type View = GameViewMap["workshop"];
 type Work = View["market"][number][number];
 type Color = Work["bonus"];
@@ -11,13 +17,23 @@ type Token = Color | "gold";
 const colors: Color[] = ["white", "blue", "green", "red", "black"];
 const tokens: Token[] = [...colors, "gold"];
 const names: Record<Token, string> = {
-  white: "백광",
-  blue: "청광",
-  green: "녹광",
-  red: "홍광",
-  black: "흑광",
-  gold: "금빛",
+  white: workshopResources.white.name,
+  blue: workshopResources.blue.name,
+  green: workshopResources.green.name,
+  red: workshopResources.red.name,
+  black: workshopResources.black.name,
+  gold: workshopResources.gold.name,
 };
+function ResourceArt({ token }: { token: Token }) {
+  const { column, row } = workshopResources[token];
+  return (
+    <span
+      className="wild-resource-art"
+      aria-hidden="true"
+      style={{ backgroundPosition: `${column * 50}% ${row * 100}%` }}
+    />
+  );
+}
 const zero = () => ({ white: 0, blue: 0, green: 0, red: 0, black: 0, gold: 0 });
 function Cost({ cost }: { cost: Record<Color, number> }) {
   return (
@@ -31,7 +47,8 @@ function Cost({ cost }: { cost: Record<Color, number> }) {
             title={names[c]}
             aria-label={`${names[c]} ${cost[c]}`}
           >
-            <span aria-hidden="true">{names[c].slice(0, 1)}</span>
+            <ResourceArt token={c} />
+            <span aria-hidden="true">{workshopResources[c].short}</span>
             {cost[c]}
           </span>
         ))}
@@ -55,7 +72,7 @@ function WorkCard({
       onClick={onClick}
       disabled={disabled}
       aria-pressed={selected ?? false}
-      aria-label={`${names[work.bonus]} 작품 ${work.id.slice(2)} · ${work.points}점 · 비용 ${
+      aria-label={`${workshopCardName(work.id)} · ${work.level}단계 · ${work.points}점 · 비용 ${
         colors
           .filter((c) => work.cost[c] > 0)
           .map((c) => `${names[c]} ${work.cost[c]}`)
@@ -67,12 +84,18 @@ function WorkCard({
           {work.points}
           <small>점</small>
         </strong>
-        <Gem size={24} />
+        <span
+          className={`token token-${work.bonus}`}
+          title={`${names[work.bonus]} 영구 할인 1`}
+        >
+          <ResourceArt token={work.bonus} />
+          <span>{workshopResources[work.bonus].short} +1</span>
+        </span>
       </span>
       <CardArt game="workshop" id={work.id} />
       <span className="work-card-name">
-        {names[work.bonus]} 작품{" "}
-        <small>{work.id.slice(2).padStart(2, "0")}</small>
+        <span>{workshopCardName(work.id).split(" · ")[0]}</span>
+        <small>{workshopCardName(work.id).split(" · ")[1]}</small>
       </span>
       <Cost cost={work.cost} />
       <span className="work-bonus">{names[work.bonus]} 영구 할인 +1</span>
@@ -157,7 +180,7 @@ export function WorkshopBoard({
                 {p.id === game.you ? " (나)" : ""}
               </strong>
               <b>{p.points}점</b>
-              <span>작품 {p.owned.length}</span>
+              <span>동물 {p.owned.length}</span>
               <span>예약 {p.reservedCount}</span>
             </summary>
             <div className="token-bar">
@@ -184,10 +207,10 @@ export function WorkshopBoard({
       )}
       <div className="workshop-workspace">
         <div className="workshop-market-area">
-          <section className="work-market" aria-label="공개 작품 시장">
+          <section className="work-market" aria-label="숲속 동물 카드">
             <p className="game-footnote">
-              작품을 선택해 완성하거나 예약해요. 작은 화면에서는 각 줄을 옆으로
-              넘겨 볼 수 있어요.
+              간식을 모아 동물을 데려오세요. 아기·청소년·어른 카드는 각각
+              독립적으로 얻어요.
             </p>
             {[2, 1, 0].map((level) => (
               <div className="market-row" key={level}>
@@ -208,6 +231,9 @@ export function WorkshopBoard({
                 >
                   <Bookmark size={20} />
                   <strong>{level + 1}단계</strong>
+                  <span className="wild-stage-name">
+                    {workshopStages[level + 1]}
+                  </span>
                   <span>{game.deckCounts[level]}장</span>
                   <small>비공개 예약</small>
                 </button>
@@ -225,8 +251,8 @@ export function WorkshopBoard({
           </section>
           <section className="board-section">
             <div className="board-section-heading">
-              <h3>후원자</h3>
-              <span>조건 달성 시 한 차례에 한 명, 각각 3점</span>
+              <h3>숲의 수호자</h3>
+              <span>표시된 영구 할인 조건을 채우면 한 차례에 하나, 3점</span>
             </div>
             <div className="patron-row">
               {game.patrons.map((p) => (
@@ -247,40 +273,38 @@ export function WorkshopBoard({
                 >
                   <CardArt game="workshop" id={p.id} />
                   <strong>
-                    후원자 {p.id.slice(2)} <span>3점</span>
+                    {workshopCardName(p.id)} <span>3점</span>
                   </strong>
                   <Cost cost={p.cost} />
                   {game.phase === "PATRON" &&
                     game.eligiblePatronIds.includes(p.id) && (
-                      <small>이 후원자 선택</small>
+                      <small>이 수호자 선택</small>
                     )}
                 </button>
               ))}
             </div>
           </section>
         </div>
-        <aside className="workshop-controls" aria-label="나의 공방 행동">
+        <aside className="workshop-controls" aria-label="나의 안식처 행동">
           {work && game.phase === "ACTION" && (
             <section
               className="board-section action-panel"
               ref={actionPanelRef}
               tabIndex={-1}
-              aria-label="선택한 작품의 행동"
+              aria-label="선택한 동물의 행동"
             >
               <div className="board-section-heading">
-                <h3>
-                  {names[work.bonus]} 작품 {work.id.slice(2)}
-                </h3>
+                <h3>{workshopCardName(work.id)}</h3>
                 <button
                   className="icon-button"
-                  aria-label="작품 선택 닫기"
+                  aria-label="동물 선택 닫기"
                   onClick={() => setSelected(null)}
                 >
                   <X size={18} />
                 </button>
               </div>
               <p>
-                지불할 빛을 선택해요. 색 토큰 대신 금빛을 사용할 수도 있어요.
+                지불할 간식을 선택해요. 황금 뼈다귀는 어떤 간식이든 대신해요.
               </p>
               <div className="token-bar">
                 {colors
@@ -313,7 +337,7 @@ export function WorkshopBoard({
                     </label>
                   ))}
                 <span className="token token-gold">
-                  금빛 {payment.gold} / 보유 {mine.tokens.gold}
+                  황금 뼈다귀 {payment.gold} / 보유 {mine.tokens.gold}
                 </span>
               </div>
               <div className="action-tray">
@@ -327,7 +351,7 @@ export function WorkshopBoard({
                     })
                   }
                 >
-                  <Check size={17} /> 작품 완성
+                  <Check size={17} /> 동물 데려오기
                 </button>
                 {!game.yourReserved.some((w) => w.id === work.id) && (
                   <button
@@ -340,7 +364,10 @@ export function WorkshopBoard({
                       })
                     }
                   >
-                    <Bookmark size={17} /> 예약하고 금빛 받기
+                    <Bookmark size={17} />{" "}
+                    {game.bank.gold > 0
+                      ? "예약하고 황금 뼈다귀 받기"
+                      : "동물 예약하기"}
                   </button>
                 )}
               </div>
@@ -348,7 +375,7 @@ export function WorkshopBoard({
           )}
           <section className="board-section">
             <div className="board-section-heading">
-              <h3>빛 보관소</h3>
+              <h3>간식 보관소</h3>
               <span>서로 다른 3개 또는 4개 이상 남은 색 2개</span>
             </div>
             <div className="token-bar bank-tokens">
@@ -364,7 +391,7 @@ export function WorkshopBoard({
                   }
                   onClick={() => setTake((old) => [...old, c])}
                 >
-                  <Gem size={20} />
+                  <ResourceArt token={c} />
                   <strong>{names[c]}</strong>
                   <span>{game.bank[c]}</span>
                   {take.includes(c) && (
@@ -373,8 +400,8 @@ export function WorkshopBoard({
                 </button>
               ))}
               <div className="token token-gold">
-                <Gem size={20} />
-                <strong>금빛</strong>
+                <ResourceArt token="gold" />
+                <strong>황금 뼈다귀</strong>
                 <span>{game.bank.gold}</span>
                 <small>예약할 때 받아요</small>
               </div>
@@ -384,7 +411,7 @@ export function WorkshopBoard({
                 <span>
                   {take.length
                     ? take.map((c) => names[c]).join(", ")
-                    : "가져올 빛을 골라 주세요"}
+                    : "가져올 간식을 골라 주세요"}
                 </span>
                 <button
                   className="button secondary"
@@ -403,14 +430,16 @@ export function WorkshopBoard({
                     })
                   }
                 >
-                  선택한 빛 가져오기
+                  선택한 간식 가져오기
                 </button>
               </div>
             )}
           </section>
           <section className="board-section">
             <div className="board-section-heading">
-              <h3>나의 공방</h3>
+              <h3>
+                <PawPrint size={18} aria-hidden="true" /> 나의 안식처
+              </h3>
               <span>{mine.points}점 / 15점</span>
             </div>
             <div className="token-bar">
@@ -422,7 +451,7 @@ export function WorkshopBoard({
             </div>
             <p>영구 할인</p>
             <Cost cost={mine.bonuses} />
-            <h4>예약 작품 {game.yourReserved.length}/3</h4>
+            <h4>예약 동물 {game.yourReserved.length}/3</h4>
             <div className="reserved-works">
               {game.yourReserved.map((w) => (
                 <WorkCard
@@ -434,16 +463,16 @@ export function WorkshopBoard({
                 />
               ))}
               {!game.yourReserved.length && (
-                <p>예약한 작품은 나에게만 보여요.</p>
+                <p>예약한 동물 카드는 나에게만 보여요.</p>
               )}
             </div>
           </section>
           {game.phase === "RETURN" && game.activePlayerId === game.you && (
             <section className="board-section action-panel">
-              <h3>빛 {excess}개를 돌려주세요</h3>
+              <h3>간식 {excess}개를 돌려주세요</h3>
               <p>
-                차례가 끝날 때는 최대 10개까지 가질 수 있어요. 방금 받은 빛도
-                돌려줄 수 있어요.
+                황금 뼈다귀를 포함해 최대 10개까지 가질 수 있어요. 방금 받은
+                간식도 돌려줄 수 있어요.
               </p>
               <div className="token-bar">
                 {tokens.map((c) => (

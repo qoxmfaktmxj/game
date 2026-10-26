@@ -79,7 +79,7 @@ test("one human and three workshop bots complete a full round", async ({
   for (const color of ["white", "blue", "green"])
     await page.locator(`.bank-tokens .token-${color}`).click();
   await page
-    .getByRole("button", { name: "선택한 빛 가져오기", exact: true })
+    .getByRole("button", { name: "선택한 간식 가져오기", exact: true })
     .click();
   await expect(page.locator(".multi-board-heading")).toContainText(
     "생각하고 있어요",

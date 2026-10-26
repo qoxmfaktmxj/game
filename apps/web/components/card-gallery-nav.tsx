@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { GAME_CATALOG } from "@moyeotable/game-core/catalog";
 export const artGames = {
-  workshop: "빛의 공방",
+  workshop: GAME_CATALOG.workshop.name,
   council: "밤의 의회",
   signal: "황혼의 신호",
   garden: "넘버가든",

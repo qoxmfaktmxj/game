@@ -6,7 +6,7 @@
 
 | 자체 게임 | 기준 판본 | 인원 | 확인한 데이터 | 아직 확인해야 하는 데이터 |
 |---|---|---:|---|---|
-| 빛의 공방 | Splendor 2024 refresh, 기본판 | 2–4 | 규칙, 개발90장 수치의 독립 데이터3종 전행 일치, 귀족10개 사진·목록 대조 | 외부 네트워크 검증은 별도 보고 |
+| 와일드 스플렌더 | Splendor 2024 refresh, 기본판 | 2–4 | 규칙, 개발90장 수치의 독립 데이터3종 전행 일치, 귀족10개 사진·목록 대조 | 외부 네트워크 검증은 별도 보고 |
 | 밤의 의회 | Citadels FFG 2010의 **Basic Game**, 흰 별 확장 제외 | 2–7 | 기본8역할·66건물 전체 수치, 8건물 종료, 2·3인/7인 선택 규칙 | [전체 콘텐츠 대조 기록](council-content-audit.md); 네트워크 검증은 별도 보고 |
 | 황혼의 신호 | BANG! Fourth Edition 기본판 | 4–7 | 80장 종류·수트·랭크, 16인물, 7역할, 공식 FAQ, 자체 명칭, 30개 규칙 시험과 공개 View 봇 60판 종료 | 외부 네트워크 검증은 별도 보고 |
 | 넘버가든 | Rummikub Classic, D-2600-1236-0041 120819 | 2–4 | 숫자104개+조커2개, 조커/최초등록/점수; 단판 공동승리 정책은 사용자 확정 | 디지털 교착·편집·타이머 정책은 아래 구분 |
@@ -15,7 +15,9 @@
 
 Citadels 최신 판매판은 27역할·84건물이므로, 그것을 기본8역할 판본과 혼합하지 않는다. Classic 2016은 68건물/7건물 종료 규칙이 포함된 다른 판본이다. 구 CDN의 Classic PDF는 검색되지만 이번 세션에서 본문 다운로드가 실패했다. 접근 가능한 FFG 2010 Basic Game을 조사 기준으로 고정했다. [현재 공식 제품](https://www.zmangames.com/game/citadels/), [FFG 2010 공식 규칙](https://images-cdn.fantasyflightgames.com/filer_public/f2/e7/f2e74a36-bed7-4a38-aff4-c2e968a1c369/citadels-rules-english.pdf)
 
-## 빛의 공방
+## 와일드 스플렌더
+
+2026-10-27 표시 이름 변경(이전 이름: 빛의 공방). 사용자가 포켓몬판을 시각 참고로 요청한 뒤 **기존 기본판 규칙을 유지하고 이름·그림만 성장 테마로 변경**하도록 확정했다. 따라서 아래 수치·판본·검증 근거는 그대로 적용한다. 아기→청소년→어른, 간식 자원, 숲의 수호자 표현은 [테마 결정](wild-splendor-theme.md)을 따른다. 포켓몬판의 진화·특수카드·18점 규칙은 적용하지 않는다.
 
 출처: [Space Cowboys 기본판 규칙](https://cdn.svc.asmodee.net/production-spacecowboys/uploads/2025/10/SCSPL01EN_SPLENDOR_RULES_LIGHT.pdf), [공식 구성 안내](https://www.spacecowboys-games.com/game/splendor/).
 

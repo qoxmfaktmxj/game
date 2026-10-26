@@ -15,6 +15,12 @@ for (const [game, count] of Object.entries({
         errors.push(`image response ${response.status()}`);
     });
     await page.goto(`/cards/${game}`);
+    if (game === "workshop") {
+      await expect(
+        page.getByRole("heading", { name: "와일드 스플렌더", exact: true }),
+      ).toBeVisible();
+      await expect(page.locator(".card-gallery-section")).toHaveCount(4);
+    }
     const images = page.locator(".other-card-gallery .game-card-art img");
     await expect(images).toHaveCount(count);
     for (const img of await images.all()) {
@@ -30,6 +36,7 @@ for (const [game, count] of Object.entries({
     }
     await page
       .locator(".card-gallery-section")
+      .first()
       .evaluate((element) => element.scrollIntoView());
     await page.screenshot({ path: info.outputPath(`${game}-art-desktop.png`) });
     for (const width of [390, 360]) {

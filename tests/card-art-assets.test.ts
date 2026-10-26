@@ -80,9 +80,64 @@ test("every public card type has its own valid, distinct original illustration",
       "89504e470d0a1a0a",
       item.src,
     );
-    assert.equal(bytes.readUInt32BE(16), 1024, item.src);
-    assert.equal(bytes.readUInt32BE(20), 1536, item.src);
-    hashes.add(createHash("sha256").update(bytes).digest("hex"));
+    const hash = createHash("sha256").update(bytes).digest("hex");
+    if ("atlas" in item && item.atlas) {
+      const { columns, rows, column, row } = item.atlas;
+      assert.equal(item.game, "workshop");
+      assert.ok(
+        Number.isInteger(column) && column >= 0 && column < columns,
+        item.key,
+      );
+      assert.ok(Number.isInteger(row) && row >= 0 && row < rows, item.key);
+      const crop = "crop" in item.atlas ? item.atlas.crop : undefined;
+      const width = bytes.readUInt32BE(16) * (crop?.width ?? 1 / columns);
+      const height = bytes.readUInt32BE(20) * (crop?.height ?? 1 / rows);
+      // At least 320px per card, above the largest 240px gallery viewport.
+      assert.ok(width >= 320 && height >= 210, item.src);
+      if (crop) {
+        assert.ok(crop.left >= 0 && crop.top >= 0);
+        assert.ok(crop.left + crop.width <= 1 && crop.top + crop.height <= 1);
+      }
+      assert.ok(Math.abs(width / height - 1.5) < 0.01, item.src);
+      hashes.add(`${hash}:${column}:${row}`);
+    } else {
+      assert.equal(bytes.readUInt32BE(16), 1024, item.src);
+      assert.equal(bytes.readUInt32BE(20), 1536, item.src);
+      hashes.add(hash);
+    }
   }
   assert.equal(hashes.size, expected.length);
+});
+
+test("Wild Splendor maps all 90 original card IDs to the correct animal and growth stage", () => {
+  const families = {
+    red: "dog",
+    green: "cat",
+    blue: "otter",
+    white: "tiger",
+    black: "capybara",
+  };
+  for (const work of WORKS) {
+    const art = ready.find(
+      (item) => item.game === "workshop" && item.key === work.id,
+    );
+    assert.ok(art);
+    assert.equal(art.stage, work.level);
+    assert.equal(
+      art.src,
+      `/art/cards/wild-splendor/${families[work.bonus]}-${work.level}.png`,
+    );
+    assert.ok(art.name.startsWith(["", "아기", "청소년", "어른"][work.level]));
+  }
+  for (const patron of PATRONS) {
+    const art = ready.find(
+      (item) => item.game === "workshop" && item.key === patron.id,
+    );
+    assert.equal(art?.stage, 4);
+    assert.equal(art?.src, "/art/cards/wild-splendor/guardians.png");
+  }
+  const chips = readFileSync(
+    "apps/web/public/art/cards/wild-splendor/resources.png",
+  );
+  assert.equal(chips.subarray(0, 8).toString("hex"), "89504e470d0a1a0a");
 });

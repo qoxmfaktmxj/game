@@ -31,7 +31,7 @@ Users can lose their connection or refresh while playing. The interface must com
 ## Capabilities and Constraints
 
 - First game: 로스트 팻츠, two players and one basic-rules match at a time. The user selected this exact display name on 2026-10-27; it is the same game called 별길 탐험 in the original specification. Keep the rules, internal `star-trails` identifier and original reference package unchanged.
-- 빛의 공방, 밤의 의회, 황혼의 신호 and 넘버가든 implement the official base-rule editions recorded in `docs/game-expansion-sources.md`, with original names and artwork. The user approved this scope on 2026-10-23. Their private state, legal actions and results have separate engines.
+- 와일드 스플렌더, 밤의 의회, 황혼의 신호 and 넘버가든 implement the official base-rule editions recorded in `docs/game-expansion-sources.md`, with original names and artwork. The user approved this scope on 2026-10-23. Their private state, legal actions and results have separate engines.
 - Rule priority: package decisions, first-game specification, contracts/data specification, interface specification, then visual mockups.
 - Server authority, input validation, authenticated action identity, duplicate-command handling and persistence before acknowledgement are required.
 - The server must never send an opponent's private hand or the hidden deck to the browser.
@@ -40,6 +40,8 @@ Users can lose their connection or refresh while playing. The interface must com
 - Hosting is a single Colyseus process with Next.js, Caddy and PostgreSQL in Docker Compose at game.minseok91.cloud. Operational retention remains open. No remote deployment or actual PostgreSQL migration verification is claimed.
 
 ## Brand Commitments
+
+On 2026-10-27 the user renamed 빛의 공방 to **와일드 스플렌더** and chose to retain its existing base rules (90 development cards, 10 patrons, 15-point end condition). Its original photorealistic animals are dogs, cats, otters, tigers and capybaras, shown as babies, adolescents and adults across the three existing tiers. Sanctuary cushions belong in baby-card scenes, not an extra rule tier. Resources become meat, salmon, catnip, acorns, honey and a golden paw-marked bone joker; patrons become forest guardians. This is a presentation theme, without evolution or card fusion. See `docs/wild-splendor-theme.md`.
 
 The platform is 링구링구. The user explicitly requested separating the game name from the platform name on 2026-10-24, then selected **로스트 팻츠** as the two-player game's exact display name on 2026-10-27. On the same day they selected cover B: a 3×3 grid of numbers 2–10 with a larger ×2 otter card on its right. The production cover is `apps/web/public/art/club-lost-pets.png`; it uses the existing approved animal illustrations and does not change the game's 50 distinct faces or 60-card deck. The current white/off-white surfaces, Open Air accent and paired-card logo are recorded in `DESIGN.md`; the selection history and verification scope are in `docs/open-air-refinement.md`.
 

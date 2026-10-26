@@ -2,602 +2,1362 @@
   {
     "game": "workshop",
     "key": "w-1",
-    "name": "백광 작품 1",
-    "src": "/art/cards/workshop/w-1.png"
+    "name": "아기 벵골 호랑이 · 포근한 단잠",
+    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-2",
-    "name": "백광 작품 2",
-    "src": "/art/cards/workshop/w-2.png"
+    "name": "아기 시베리아 호랑이 · 둥지 밖 빼꼼",
+    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-3",
-    "name": "백광 작품 3",
-    "src": "/art/cards/workshop/w-3.png"
+    "name": "아기 백호 · 기분 좋은 기지개",
+    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 2,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-4",
-    "name": "백광 작품 4",
-    "src": "/art/cards/workshop/w-4.png"
+    "name": "아기 수마트라 호랑이 · 포근한 낮잠",
+    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 3,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-5",
-    "name": "백광 작품 5",
-    "src": "/art/cards/workshop/w-5.png"
+    "name": "아기 벵골 호랑이 · 나뭇잎 장난",
+    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-6",
-    "name": "백광 작품 6",
-    "src": "/art/cards/workshop/w-6.png"
+    "name": "아기 시베리아 호랑이 · 호기심 가득한 눈",
+    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-7",
-    "name": "백광 작품 7",
-    "src": "/art/cards/workshop/w-7.png"
+    "name": "아기 백호 · 느긋한 하품",
+    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 2,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-8",
-    "name": "백광 작품 8",
-    "src": "/art/cards/workshop/w-8.png"
+    "name": "아기 수마트라 호랑이 · 작은 안식처",
+    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 3,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-9",
-    "name": "백광 작품 9",
-    "src": "/art/cards/workshop/w-9.png"
+    "name": "청소년 벵골 호랑이 · 숲길 첫 모험",
+    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-10",
-    "name": "백광 작품 10",
-    "src": "/art/cards/workshop/w-10.png"
+    "name": "청소년 시베리아 호랑이 · 통나무 건너기",
+    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-11",
-    "name": "백광 작품 11",
-    "src": "/art/cards/workshop/w-11.png"
+    "name": "청소년 백호 · 개울 탐험",
+    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 2,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-12",
-    "name": "백광 작품 12",
-    "src": "/art/cards/workshop/w-12.png"
+    "name": "청소년 수마트라 호랑이 · 나비를 따라서",
+    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-13",
-    "name": "백광 작품 13",
-    "src": "/art/cards/workshop/w-13.png"
+    "name": "청소년 벵골 호랑이 · 언덕 오르기",
+    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-14",
-    "name": "백광 작품 14",
-    "src": "/art/cards/workshop/w-14.png"
+    "name": "청소년 시베리아 호랑이 · 폭포 앞의 용기",
+    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 2,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-15",
-    "name": "백광 작품 15",
-    "src": "/art/cards/workshop/w-15.png"
+    "name": "어른 벵골 호랑이 · 능선의 파수꾼",
+    "src": "/art/cards/wild-splendor/tiger-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-16",
-    "name": "백광 작품 16",
-    "src": "/art/cards/workshop/w-16.png"
+    "name": "어른 시베리아 호랑이 · 오래된 숲의 친구",
+    "src": "/art/cards/wild-splendor/tiger-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-17",
-    "name": "백광 작품 17",
-    "src": "/art/cards/workshop/w-17.png"
+    "name": "어른 백호 · 강줄기의 길잡이",
+    "src": "/art/cards/wild-splendor/tiger-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-18",
-    "name": "백광 작품 18",
-    "src": "/art/cards/workshop/w-18.png"
+    "name": "어른 수마트라 호랑이 · 초록 숲의 주인",
+    "src": "/art/cards/wild-splendor/tiger-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-19",
-    "name": "청광 작품 19",
-    "src": "/art/cards/workshop/w-19.png"
+    "name": "아기 수달 · 포근한 단잠",
+    "src": "/art/cards/wild-splendor/otter-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-20",
-    "name": "청광 작품 20",
-    "src": "/art/cards/workshop/w-20.png"
+    "name": "아기 수달 · 둥지 밖 빼꼼",
+    "src": "/art/cards/wild-splendor/otter-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-21",
-    "name": "청광 작품 21",
-    "src": "/art/cards/workshop/w-21.png"
+    "name": "아기 수달 · 기분 좋은 기지개",
+    "src": "/art/cards/wild-splendor/otter-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 2,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-22",
-    "name": "청광 작품 22",
-    "src": "/art/cards/workshop/w-22.png"
+    "name": "아기 수달 · 포근한 낮잠",
+    "src": "/art/cards/wild-splendor/otter-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 3,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-23",
-    "name": "청광 작품 23",
-    "src": "/art/cards/workshop/w-23.png"
+    "name": "아기 수달 · 나뭇잎 장난",
+    "src": "/art/cards/wild-splendor/otter-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-24",
-    "name": "청광 작품 24",
-    "src": "/art/cards/workshop/w-24.png"
+    "name": "아기 수달 · 호기심 가득한 눈",
+    "src": "/art/cards/wild-splendor/otter-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-25",
-    "name": "청광 작품 25",
-    "src": "/art/cards/workshop/w-25.png"
+    "name": "아기 수달 · 느긋한 하품",
+    "src": "/art/cards/wild-splendor/otter-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 2,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-26",
-    "name": "청광 작품 26",
-    "src": "/art/cards/workshop/w-26.png"
+    "name": "아기 수달 · 작은 안식처",
+    "src": "/art/cards/wild-splendor/otter-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 3,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-27",
-    "name": "청광 작품 27",
-    "src": "/art/cards/workshop/w-27.png"
+    "name": "청소년 수달 · 숲길 첫 모험",
+    "src": "/art/cards/wild-splendor/otter-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-28",
-    "name": "청광 작품 28",
-    "src": "/art/cards/workshop/w-28.png"
+    "name": "청소년 수달 · 통나무 건너기",
+    "src": "/art/cards/wild-splendor/otter-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-29",
-    "name": "청광 작품 29",
-    "src": "/art/cards/workshop/w-29.png"
+    "name": "청소년 수달 · 개울 탐험",
+    "src": "/art/cards/wild-splendor/otter-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 2,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-30",
-    "name": "청광 작품 30",
-    "src": "/art/cards/workshop/w-30.png"
+    "name": "청소년 수달 · 나비를 따라서",
+    "src": "/art/cards/wild-splendor/otter-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-31",
-    "name": "청광 작품 31",
-    "src": "/art/cards/workshop/w-31.png"
+    "name": "청소년 수달 · 언덕 오르기",
+    "src": "/art/cards/wild-splendor/otter-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-32",
-    "name": "청광 작품 32",
-    "src": "/art/cards/workshop/w-32.png"
+    "name": "청소년 수달 · 폭포 앞의 용기",
+    "src": "/art/cards/wild-splendor/otter-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 2,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-33",
-    "name": "청광 작품 33",
-    "src": "/art/cards/workshop/w-33.png"
+    "name": "어른 수달 · 능선의 파수꾼",
+    "src": "/art/cards/wild-splendor/otter-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-34",
-    "name": "청광 작품 34",
-    "src": "/art/cards/workshop/w-34.png"
+    "name": "어른 수달 · 오래된 숲의 친구",
+    "src": "/art/cards/wild-splendor/otter-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-35",
-    "name": "청광 작품 35",
-    "src": "/art/cards/workshop/w-35.png"
+    "name": "어른 수달 · 강줄기의 길잡이",
+    "src": "/art/cards/wild-splendor/otter-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-36",
-    "name": "청광 작품 36",
-    "src": "/art/cards/workshop/w-36.png"
+    "name": "어른 수달 · 초록 숲의 주인",
+    "src": "/art/cards/wild-splendor/otter-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-37",
-    "name": "녹광 작품 37",
-    "src": "/art/cards/workshop/w-37.png"
+    "name": "아기 치즈냥 · 포근한 단잠",
+    "src": "/art/cards/wild-splendor/cat-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-38",
-    "name": "녹광 작품 38",
-    "src": "/art/cards/workshop/w-38.png"
+    "name": "아기 은빛 줄무늬냥 · 둥지 밖 빼꼼",
+    "src": "/art/cards/wild-splendor/cat-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-39",
-    "name": "녹광 작품 39",
-    "src": "/art/cards/workshop/w-39.png"
+    "name": "아기 삼색냥 · 기분 좋은 기지개",
+    "src": "/art/cards/wild-splendor/cat-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 2,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-40",
-    "name": "녹광 작품 40",
-    "src": "/art/cards/workshop/w-40.png"
+    "name": "아기 샴고양이 · 포근한 낮잠",
+    "src": "/art/cards/wild-splendor/cat-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 3,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-41",
-    "name": "녹광 작품 41",
-    "src": "/art/cards/workshop/w-41.png"
+    "name": "아기 벵갈냥 · 나뭇잎 장난",
+    "src": "/art/cards/wild-splendor/cat-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-42",
-    "name": "녹광 작품 42",
-    "src": "/art/cards/workshop/w-42.png"
+    "name": "아기 까만 고양이 · 호기심 가득한 눈",
+    "src": "/art/cards/wild-splendor/cat-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-43",
-    "name": "녹광 작품 43",
-    "src": "/art/cards/workshop/w-43.png"
+    "name": "아기 하얀 장모냥 · 느긋한 하품",
+    "src": "/art/cards/wild-splendor/cat-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 2,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-44",
-    "name": "녹광 작품 44",
-    "src": "/art/cards/workshop/w-44.png"
+    "name": "아기 회색 고양이 · 작은 안식처",
+    "src": "/art/cards/wild-splendor/cat-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 3,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-45",
-    "name": "녹광 작품 45",
-    "src": "/art/cards/workshop/w-45.png"
+    "name": "청소년 치즈냥 · 숲길 첫 모험",
+    "src": "/art/cards/wild-splendor/cat-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-46",
-    "name": "녹광 작품 46",
-    "src": "/art/cards/workshop/w-46.png"
+    "name": "청소년 은빛 줄무늬냥 · 통나무 건너기",
+    "src": "/art/cards/wild-splendor/cat-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-47",
-    "name": "녹광 작품 47",
-    "src": "/art/cards/workshop/w-47.png"
+    "name": "청소년 삼색냥 · 개울 탐험",
+    "src": "/art/cards/wild-splendor/cat-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 2,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-48",
-    "name": "녹광 작품 48",
-    "src": "/art/cards/workshop/w-48.png"
+    "name": "청소년 샴고양이 · 나비를 따라서",
+    "src": "/art/cards/wild-splendor/cat-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-49",
-    "name": "녹광 작품 49",
-    "src": "/art/cards/workshop/w-49.png"
+    "name": "청소년 벵갈냥 · 언덕 오르기",
+    "src": "/art/cards/wild-splendor/cat-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-50",
-    "name": "녹광 작품 50",
-    "src": "/art/cards/workshop/w-50.png"
+    "name": "청소년 까만 고양이 · 폭포 앞의 용기",
+    "src": "/art/cards/wild-splendor/cat-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 2,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-51",
-    "name": "녹광 작품 51",
-    "src": "/art/cards/workshop/w-51.png"
+    "name": "어른 치즈냥 · 능선의 파수꾼",
+    "src": "/art/cards/wild-splendor/cat-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-52",
-    "name": "녹광 작품 52",
-    "src": "/art/cards/workshop/w-52.png"
+    "name": "어른 은빛 줄무늬냥 · 오래된 숲의 친구",
+    "src": "/art/cards/wild-splendor/cat-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-53",
-    "name": "녹광 작품 53",
-    "src": "/art/cards/workshop/w-53.png"
+    "name": "어른 삼색냥 · 강줄기의 길잡이",
+    "src": "/art/cards/wild-splendor/cat-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-54",
-    "name": "녹광 작품 54",
-    "src": "/art/cards/workshop/w-54.png"
+    "name": "어른 샴고양이 · 초록 숲의 주인",
+    "src": "/art/cards/wild-splendor/cat-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-55",
-    "name": "홍광 작품 55",
-    "src": "/art/cards/workshop/w-55.png"
+    "name": "아기 리트리버 · 포근한 단잠",
+    "src": "/art/cards/wild-splendor/dog-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-56",
-    "name": "홍광 작품 56",
-    "src": "/art/cards/workshop/w-56.png"
+    "name": "아기 포메라니안 · 둥지 밖 빼꼼",
+    "src": "/art/cards/wild-splendor/dog-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-57",
-    "name": "홍광 작품 57",
-    "src": "/art/cards/workshop/w-57.png"
+    "name": "아기 비글 · 기분 좋은 기지개",
+    "src": "/art/cards/wild-splendor/dog-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 2,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-58",
-    "name": "홍광 작품 58",
-    "src": "/art/cards/workshop/w-58.png"
+    "name": "아기 코기 · 포근한 낮잠",
+    "src": "/art/cards/wild-splendor/dog-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 3,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-59",
-    "name": "홍광 작품 59",
-    "src": "/art/cards/workshop/w-59.png"
+    "name": "아기 진돗개 · 나뭇잎 장난",
+    "src": "/art/cards/wild-splendor/dog-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-60",
-    "name": "홍광 작품 60",
-    "src": "/art/cards/workshop/w-60.png"
+    "name": "아기 셰퍼드 · 호기심 가득한 눈",
+    "src": "/art/cards/wild-splendor/dog-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-61",
-    "name": "홍광 작품 61",
-    "src": "/art/cards/workshop/w-61.png"
+    "name": "아기 보더콜리 · 느긋한 하품",
+    "src": "/art/cards/wild-splendor/dog-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 2,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-62",
-    "name": "홍광 작품 62",
-    "src": "/art/cards/workshop/w-62.png"
+    "name": "아기 래브라도 · 작은 안식처",
+    "src": "/art/cards/wild-splendor/dog-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 3,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-63",
-    "name": "홍광 작품 63",
-    "src": "/art/cards/workshop/w-63.png"
+    "name": "청소년 리트리버 · 숲길 첫 모험",
+    "src": "/art/cards/wild-splendor/dog-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-64",
-    "name": "홍광 작품 64",
-    "src": "/art/cards/workshop/w-64.png"
+    "name": "청소년 포메라니안 · 통나무 건너기",
+    "src": "/art/cards/wild-splendor/dog-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-65",
-    "name": "홍광 작품 65",
-    "src": "/art/cards/workshop/w-65.png"
+    "name": "청소년 비글 · 개울 탐험",
+    "src": "/art/cards/wild-splendor/dog-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 2,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-66",
-    "name": "홍광 작품 66",
-    "src": "/art/cards/workshop/w-66.png"
+    "name": "청소년 코기 · 나비를 따라서",
+    "src": "/art/cards/wild-splendor/dog-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-67",
-    "name": "홍광 작품 67",
-    "src": "/art/cards/workshop/w-67.png"
+    "name": "청소년 진돗개 · 언덕 오르기",
+    "src": "/art/cards/wild-splendor/dog-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-68",
-    "name": "홍광 작품 68",
-    "src": "/art/cards/workshop/w-68.png"
+    "name": "청소년 셰퍼드 · 폭포 앞의 용기",
+    "src": "/art/cards/wild-splendor/dog-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 2,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-69",
-    "name": "홍광 작품 69",
-    "src": "/art/cards/workshop/w-69.png"
+    "name": "어른 리트리버 · 능선의 파수꾼",
+    "src": "/art/cards/wild-splendor/dog-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-70",
-    "name": "홍광 작품 70",
-    "src": "/art/cards/workshop/w-70.png"
+    "name": "어른 포메라니안 · 오래된 숲의 친구",
+    "src": "/art/cards/wild-splendor/dog-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-71",
-    "name": "홍광 작품 71",
-    "src": "/art/cards/workshop/w-71.png"
+    "name": "어른 비글 · 강줄기의 길잡이",
+    "src": "/art/cards/wild-splendor/dog-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-72",
-    "name": "홍광 작품 72",
-    "src": "/art/cards/workshop/w-72.png"
+    "name": "어른 코기 · 초록 숲의 주인",
+    "src": "/art/cards/wild-splendor/dog-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-73",
-    "name": "흑광 작품 73",
-    "src": "/art/cards/workshop/w-73.png"
+    "name": "아기 카피바라 · 포근한 단잠",
+    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-74",
-    "name": "흑광 작품 74",
-    "src": "/art/cards/workshop/w-74.png"
+    "name": "아기 카피바라 · 둥지 밖 빼꼼",
+    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-75",
-    "name": "흑광 작품 75",
-    "src": "/art/cards/workshop/w-75.png"
+    "name": "아기 카피바라 · 기분 좋은 기지개",
+    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 2,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-76",
-    "name": "흑광 작품 76",
-    "src": "/art/cards/workshop/w-76.png"
+    "name": "아기 카피바라 · 포근한 낮잠",
+    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 3,
+      "row": 0
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-77",
-    "name": "흑광 작품 77",
-    "src": "/art/cards/workshop/w-77.png"
+    "name": "아기 카피바라 · 나뭇잎 장난",
+    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-78",
-    "name": "흑광 작품 78",
-    "src": "/art/cards/workshop/w-78.png"
+    "name": "아기 카피바라 · 호기심 가득한 눈",
+    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-79",
-    "name": "흑광 작품 79",
-    "src": "/art/cards/workshop/w-79.png"
+    "name": "아기 카피바라 · 느긋한 하품",
+    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 2,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-80",
-    "name": "흑광 작품 80",
-    "src": "/art/cards/workshop/w-80.png"
+    "name": "아기 카피바라 · 작은 안식처",
+    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "atlas": {
+      "columns": 4,
+      "rows": 2,
+      "column": 3,
+      "row": 1
+    },
+    "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-81",
-    "name": "흑광 작품 81",
-    "src": "/art/cards/workshop/w-81.png"
+    "name": "청소년 카피바라 · 숲길 첫 모험",
+    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-82",
-    "name": "흑광 작품 82",
-    "src": "/art/cards/workshop/w-82.png"
+    "name": "청소년 카피바라 · 통나무 건너기",
+    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-83",
-    "name": "흑광 작품 83",
-    "src": "/art/cards/workshop/w-83.png"
+    "name": "청소년 카피바라 · 개울 탐험",
+    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 2,
+      "row": 0
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-84",
-    "name": "흑광 작품 84",
-    "src": "/art/cards/workshop/w-84.png"
+    "name": "청소년 카피바라 · 나비를 따라서",
+    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-85",
-    "name": "흑광 작품 85",
-    "src": "/art/cards/workshop/w-85.png"
+    "name": "청소년 카피바라 · 언덕 오르기",
+    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-86",
-    "name": "흑광 작품 86",
-    "src": "/art/cards/workshop/w-86.png"
+    "name": "청소년 카피바라 · 폭포 앞의 용기",
+    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "atlas": {
+      "columns": 3,
+      "rows": 2,
+      "column": 2,
+      "row": 1
+    },
+    "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-87",
-    "name": "흑광 작품 87",
-    "src": "/art/cards/workshop/w-87.png"
+    "name": "어른 카피바라 · 능선의 파수꾼",
+    "src": "/art/cards/wild-splendor/capybara-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 0,
+      "row": 0
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-88",
-    "name": "흑광 작품 88",
-    "src": "/art/cards/workshop/w-88.png"
+    "name": "어른 카피바라 · 오래된 숲의 친구",
+    "src": "/art/cards/wild-splendor/capybara-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 1,
+      "row": 0
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-89",
-    "name": "흑광 작품 89",
-    "src": "/art/cards/workshop/w-89.png"
+    "name": "어른 카피바라 · 강줄기의 길잡이",
+    "src": "/art/cards/wild-splendor/capybara-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 0,
+      "row": 1
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-90",
-    "name": "흑광 작품 90",
-    "src": "/art/cards/workshop/w-90.png"
+    "name": "어른 카피바라 · 초록 숲의 주인",
+    "src": "/art/cards/wild-splendor/capybara-3.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 2,
+      "column": 1,
+      "row": 1
+    },
+    "stage": 3
   },
   {
     "game": "workshop",
     "key": "p-1",
-    "name": "후원자 1",
-    "src": "/art/cards/workshop/p-1.png"
+    "name": "현자의 부엉이",
+    "src": "/art/cards/wild-splendor/guardians.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 5,
+      "column": 0,
+      "row": 0,
+      "crop": {
+        "left": 0.0020597322348094747,
+        "top": 0,
+        "width": 0.49433573635427397,
+        "height": 0.19765287214329832
+      }
+    },
+    "stage": 4
   },
   {
     "game": "workshop",
     "key": "p-2",
-    "name": "후원자 2",
-    "src": "/art/cards/workshop/p-2.png"
+    "name": "산맥의 그리즐리",
+    "src": "/art/cards/wild-splendor/guardians.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 5,
+      "column": 1,
+      "row": 0,
+      "crop": {
+        "left": 0.5036045314109165,
+        "top": 0,
+        "width": 0.49433573635427397,
+        "height": 0.19765287214329832
+      }
+    },
+    "stage": 4
   },
   {
     "game": "workshop",
     "key": "p-3",
-    "name": "후원자 3",
-    "src": "/art/cards/workshop/p-3.png"
+    "name": "하늘의 흰머리수리",
+    "src": "/art/cards/wild-splendor/guardians.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 5,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.0020597322348094747,
+        "top": 0.19888820259419396,
+        "width": 0.49433573635427397,
+        "height": 0.19765287214329832
+      }
+    },
+    "stage": 4
   },
   {
     "game": "workshop",
     "key": "p-4",
-    "name": "후원자 4",
-    "src": "/art/cards/workshop/p-4.png"
+    "name": "기억의 코끼리",
+    "src": "/art/cards/wild-splendor/guardians.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 5,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.5036045314109165,
+        "top": 0.19888820259419396,
+        "width": 0.49433573635427397,
+        "height": 0.19765287214329832
+      }
+    },
+    "stage": 4
   },
   {
     "game": "workshop",
     "key": "p-5",
-    "name": "후원자 5",
-    "src": "/art/cards/workshop/p-5.png"
+    "name": "달빛의 회색늑대",
+    "src": "/art/cards/wild-splendor/guardians.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 5,
+      "column": 0,
+      "row": 2,
+      "crop": {
+        "left": 0.006694129763130793,
+        "top": 0.3983940704138357,
+        "width": 0.4850669412976313,
+        "height": 0.19394688079061148
+      }
+    },
+    "stage": 4
   },
   {
     "game": "workshop",
     "key": "p-6",
-    "name": "후원자 6",
-    "src": "/art/cards/workshop/p-6.png"
+    "name": "숲왕 사슴",
+    "src": "/art/cards/wild-splendor/guardians.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 5,
+      "column": 1,
+      "row": 2,
+      "crop": {
+        "left": 0.5082389289392379,
+        "top": 0.3983940704138357,
+        "width": 0.4850669412976313,
+        "height": 0.19394688079061148
+      }
+    },
+    "stage": 4
   },
   {
     "game": "workshop",
     "key": "p-7",
-    "name": "후원자 7",
-    "src": "/art/cards/workshop/p-7.png"
+    "name": "고요한 큰거북",
+    "src": "/art/cards/wild-splendor/guardians.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 5,
+      "column": 0,
+      "row": 3,
+      "crop": {
+        "left": 0.0213697219361483,
+        "top": 0.5941939468807906,
+        "width": 0.4557157569515963,
+        "height": 0.18221124150710316
+      }
+    },
+    "stage": 4
   },
   {
     "game": "workshop",
     "key": "p-8",
-    "name": "후원자 8",
-    "src": "/art/cards/workshop/p-8.png"
+    "name": "설원의 북극여우",
+    "src": "/art/cards/wild-splendor/guardians.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 5,
+      "column": 1,
+      "row": 3,
+      "crop": {
+        "left": 0.5229145211122554,
+        "top": 0.5941939468807906,
+        "width": 0.4557157569515963,
+        "height": 0.18221124150710316
+      }
+    },
+    "stage": 4
   },
   {
     "game": "workshop",
     "key": "p-9",
-    "name": "후원자 9",
-    "src": "/art/cards/workshop/p-9.png"
+    "name": "밀림의 고릴라",
+    "src": "/art/cards/wild-splendor/guardians.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 5,
+      "column": 0,
+      "row": 4,
+      "crop": {
+        "left": 0,
+        "top": 0.7894791023265391,
+        "width": 0.4984552008238929,
+        "height": 0.19929997941115915
+      }
+    },
+    "stage": 4
   },
   {
     "game": "workshop",
     "key": "p-10",
-    "name": "후원자 10",
-    "src": "/art/cards/workshop/p-10.png"
+    "name": "눈산의 설표",
+    "src": "/art/cards/wild-splendor/guardians.png",
+    "atlas": {
+      "columns": 2,
+      "rows": 5,
+      "column": 1,
+      "row": 4,
+      "crop": {
+        "left": 0.5015447991761071,
+        "top": 0.7894791023265391,
+        "width": 0.4984552008238929,
+        "height": 0.19929997941115915
+      }
+    },
+    "stage": 4
   },
   {
     "game": "council",

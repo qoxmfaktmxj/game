@@ -104,11 +104,36 @@ test("four friends use one invitation, collect light, reserve privately, reconne
     await start(pages);
     const host = pages[0],
       guest = pages[1];
+    await host.locator(".work-market .work-card").first().click();
+    await expect(
+      host.getByLabel("선택한 동물의 행동", { exact: true }),
+    ).toBeVisible();
+    await expect(
+      host.getByRole("button", { name: "동물 데려오기", exact: true }),
+    ).toBeVisible();
+    await host
+      .getByLabel("선택한 동물의 행동", { exact: true })
+      .screenshot({ path: info.outputPath("workshop-selected.png") });
+    await host
+      .getByRole("button", { name: "동물 선택 닫기", exact: true })
+      .click();
+    await host
+      .locator(".multi-board")
+      .getByRole("button", { name: "규칙", exact: true })
+      .click();
+    await expect(host.getByRole("dialog")).toContainText(
+      "모든 단계의 영구 할인은 카드당 1",
+    );
+    await host
+      .getByRole("dialog")
+      .getByRole("button", { name: "닫기", exact: true })
+      .filter({ hasText: "닫기" })
+      .click();
     await host.locator(".bank-tokens .token-white").click();
     await host.locator(".bank-tokens .token-blue").click();
     await host.locator(".bank-tokens .token-green").click();
     await host
-      .getByRole("button", { name: "선택한 빛 가져오기", exact: true })
+      .getByRole("button", { name: "선택한 간식 가져오기", exact: true })
       .click();
     await expect(guest.locator(".multi-board-heading")).toContainText(
       "내 차례예요",
@@ -142,15 +167,13 @@ test("same members choose garden, ready again, edit tiles and keep the rack afte
   const { pages, contexts } = await setup(browser, baseURL, "workshop", 2);
   try {
     for (const page of pages)
-      await expect(page).toHaveTitle("링구링구 - 빛의 공방");
+      await expect(page).toHaveTitle("링구링구 - 와일드 스플렌더");
     await pages[0]
       .getByLabel("다음에 함께할 게임", { exact: false })
       .selectOption("star-trails");
     for (const page of pages)
       await expect(page).toHaveTitle("링구링구 - 로스트 팻츠");
-    await pages[0]
-      .getByRole("button", { name: "준비", exact: true })
-      .click();
+    await pages[0].getByRole("button", { name: "준비", exact: true }).click();
     await pages[0]
       .getByLabel("다음에 함께할 게임", { exact: false })
       .selectOption("garden");
