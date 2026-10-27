@@ -41,7 +41,7 @@ Users can lose their connection or refresh while playing. The interface must com
 
 ## Brand Commitments
 
-On 2026-10-27 the user renamed 빛의 공방 to **와일드 스플렌더** and chose to retain its existing base rules (90 development cards, 10 patrons, 15-point end condition). Its original photorealistic animals are dogs, cats, otters, tigers and capybaras, shown as babies, adolescents and adults across the three existing tiers. Sanctuary cushions belong in baby-card scenes, not an extra rule tier. Resources become meat, salmon, catnip, acorns, honey and a golden paw-marked bone joker; patrons become forest guardians. This is a presentation theme, without evolution or card fusion. See `docs/wild-splendor-theme.md`.
+On 2026-10-27 the user renamed 빛의 공방 to **와일드 스플렌더** and chose to retain its existing base rules (90 development cards, 10 patrons, 15-point end condition). Its original B-style 2D cartoon animals are dogs, cats, otters, tigers and capybaras, shown as babies, adolescents and adults across the three existing tiers. Sanctuary cushions belong in baby-card scenes, not an extra rule tier. Resources become meat, salmon, catnip, acorns, honey and a golden paw-marked bone joker; patrons become forest guardians. This is a presentation theme, without evolution or card fusion. See `docs/wild-splendor-theme.md`.
 
 The platform is 링구링구. The user explicitly requested separating the game name from the platform name on 2026-10-24, then selected **로스트 팻츠** as the two-player game's exact display name on 2026-10-27. On the same day they selected cover B: a 3×3 grid of numbers 2–10 with a larger ×2 otter card on its right. The production cover is `apps/web/public/art/club-lost-pets.png`; it uses the existing approved animal illustrations and does not change the game's 50 distinct faces or 60-card deck. The current white/off-white surfaces, Open Air accent and paired-card logo are recorded in `DESIGN.md`; the selection history and verification scope are in `docs/open-air-refinement.md`.
 
@@ -69,3 +69,9 @@ Use friendly, direct Korean. Explain player actions in familiar language. Keep i
 ## Accessibility & Inclusion
 
 The product specification calls for keyboard access, visible focus, primary touch targets of at least 44px, reduced-motion support, and no page-wide horizontal overflow at 360px and 390px. Suit meaning is communicated through shape and Korean name as well as colour. Mobile hand scrolling is permitted inside the hand region. Essential numbers and game text remain live HTML rather than baked into artwork.
+
+## 2026-10-27 아트 확정 후속
+
+와일드 스플렌더의 B 선명한 카툰풍을 사용자가 확정했다. 동물 90면, 수호자 10면, 대표그림을 교체하고 실사 파일은 공개 서비스 자산에서 제거한다. 카드 프레임은 실물 재질에 가까운 5안을 비교 중이다. 사용자는 다음 밤의 의회에 C 입체 애니메이션풍을 선택했다. [기준 이미지와 방향](docs/art/game-art-directions.md)을 재사용한다.
+
+후속 진행 지시로 04 화이트 엠보싱 카드 프레임과 할인/비용 칩 20% 확대를 실제 게임에 적용했다. 수호자 의인화 및 개성 소품 시안은 아직 전체 적용 전이다.

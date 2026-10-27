@@ -2,1170 +2,1710 @@
   {
     "game": "workshop",
     "key": "w-1",
-    "name": "아기 벵골 호랑이 · 포근한 단잠",
-    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "name": "아기 벵골 호랑이 / 포근한 단잠",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.0013812154696132596,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-2",
-    "name": "아기 시베리아 호랑이 · 둥지 밖 빼꼼",
-    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "name": "아기 시베리아 호랑이 / 둥지 밖 빼꼼",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.0013812154696132596,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-3",
-    "name": "아기 백호 · 기분 좋은 기지개",
-    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "name": "아기 백호 / 기분 좋은 기지개",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 2,
-      "row": 0
+      "columns": 2,
+      "rows": 4,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.2513812154696133,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-4",
-    "name": "아기 수마트라 호랑이 · 포근한 낮잠",
-    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "name": "아기 수마트라 호랑이 / 포근한 낮잠",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 3,
-      "row": 0
+      "columns": 2,
+      "rows": 4,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.2513812154696133,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-5",
-    "name": "아기 벵골 호랑이 · 나뭇잎 장난",
-    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "name": "아기 벵골 호랑이 / 나뭇잎 장난",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 0,
-      "row": 1
+      "row": 2,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.5013812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-6",
-    "name": "아기 시베리아 호랑이 · 호기심 가득한 눈",
-    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "name": "아기 시베리아 호랑이 / 호기심 가득한 눈",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 1,
-      "row": 1
+      "row": 2,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.5013812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-7",
-    "name": "아기 백호 · 느긋한 하품",
-    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "name": "아기 백호 / 느긋한 하품",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 2,
-      "row": 1
+      "columns": 2,
+      "rows": 4,
+      "column": 0,
+      "row": 3,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.7513812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-8",
-    "name": "아기 수마트라 호랑이 · 작은 안식처",
-    "src": "/art/cards/wild-splendor/tiger-1.png",
+    "name": "아기 수마트라 호랑이 / 작은 안식처",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 3,
-      "row": 1
+      "columns": 2,
+      "rows": 4,
+      "column": 1,
+      "row": 3,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.7513812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-9",
-    "name": "청소년 벵골 호랑이 · 숲길 첫 모험",
-    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "name": "청소년 벵골 호랑이 / 숲길 첫 모험",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
+      "columns": 2,
+      "rows": 3,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.08528645833333333,
+        "top": 0.001953125,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-10",
-    "name": "청소년 시베리아 호랑이 · 통나무 건너기",
-    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "name": "청소년 시베리아 호랑이 / 통나무 건너기",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
+      "columns": 2,
+      "rows": 3,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.001953125,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-11",
-    "name": "청소년 백호 · 개울 탐험",
-    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "name": "청소년 백호 / 개울 탐험",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 2,
-      "row": 0
+      "columns": 2,
+      "rows": 3,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.08528645833333333,
+        "top": 0.3352864583333333,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-12",
-    "name": "청소년 수마트라 호랑이 · 나비를 따라서",
-    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "name": "청소년 수마트라 호랑이 / 나비를 따라서",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 0,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.3352864583333333,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-13",
-    "name": "청소년 벵골 호랑이 · 언덕 오르기",
-    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "name": "청소년 벵골 호랑이 / 언덕 오르기",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 1,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 0,
+      "row": 2,
+      "crop": {
+        "left": 0.08528645833333331,
+        "top": 0.6686197916666666,
+        "width": 0.32942708333333337,
+        "height": 0.32942708333333337
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-14",
-    "name": "청소년 시베리아 호랑이 · 폭포 앞의 용기",
-    "src": "/art/cards/wild-splendor/tiger-2.png",
+    "name": "청소년 시베리아 호랑이 / 폭포 앞의 용기",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 2,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 1,
+      "row": 2,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.6686197916666666,
+        "width": 0.32942708333333337,
+        "height": 0.32942708333333337
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-15",
-    "name": "어른 벵골 호랑이 · 능선의 파수꾼",
-    "src": "/art/cards/wild-splendor/tiger-3.png",
+    "name": "어른 벵골 호랑이 / 능선의 파수꾼",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.001953125,
+        "top": 0.001953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-16",
-    "name": "어른 시베리아 호랑이 · 오래된 숲의 친구",
-    "src": "/art/cards/wild-splendor/tiger-3.png",
+    "name": "어른 시베리아 호랑이 / 오래된 숲의 친구",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.501953125,
+        "top": 0.001953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-17",
-    "name": "어른 백호 · 강줄기의 길잡이",
-    "src": "/art/cards/wild-splendor/tiger-3.png",
+    "name": "어른 백호 / 강줄기의 길잡이",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 0,
-      "row": 1
+      "row": 1,
+      "crop": {
+        "left": 0.001953125,
+        "top": 0.501953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-18",
-    "name": "어른 수마트라 호랑이 · 초록 숲의 주인",
-    "src": "/art/cards/wild-splendor/tiger-3.png",
+    "name": "어른 수마트라 호랑이 / 초록 숲의 주인",
+    "src": "/art/cards/wild-splendor-cartoon/tiger-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 1,
-      "row": 1
+      "row": 1,
+      "crop": {
+        "left": 0.501953125,
+        "top": 0.501953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-19",
-    "name": "아기 수달 · 포근한 단잠",
-    "src": "/art/cards/wild-splendor/otter-1.png",
+    "name": "아기 수달 / 포근한 단잠",
+    "src": "/art/cards/wild-splendor-cartoon/otter-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.126953125,
+        "top": 0.001953125,
+        "width": 0.24609375,
+        "height": 0.24609375
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-20",
-    "name": "아기 수달 · 둥지 밖 빼꼼",
-    "src": "/art/cards/wild-splendor/otter-1.png",
+    "name": "아기 수달 / 둥지 밖 빼꼼",
+    "src": "/art/cards/wild-splendor-cartoon/otter-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.626953125,
+        "top": 0.001953125,
+        "width": 0.24609375,
+        "height": 0.24609375
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-21",
-    "name": "아기 수달 · 기분 좋은 기지개",
-    "src": "/art/cards/wild-splendor/otter-1.png",
+    "name": "아기 수달 / 기분 좋은 기지개",
+    "src": "/art/cards/wild-splendor-cartoon/otter-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 2,
-      "row": 0
+      "columns": 2,
+      "rows": 4,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.126953125,
+        "top": 0.251953125,
+        "width": 0.24609375,
+        "height": 0.24609375
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-22",
-    "name": "아기 수달 · 포근한 낮잠",
-    "src": "/art/cards/wild-splendor/otter-1.png",
+    "name": "아기 수달 / 포근한 낮잠",
+    "src": "/art/cards/wild-splendor-cartoon/otter-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 3,
-      "row": 0
+      "columns": 2,
+      "rows": 4,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.626953125,
+        "top": 0.251953125,
+        "width": 0.24609375,
+        "height": 0.24609375
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-23",
-    "name": "아기 수달 · 나뭇잎 장난",
-    "src": "/art/cards/wild-splendor/otter-1.png",
+    "name": "아기 수달 / 나뭇잎 장난",
+    "src": "/art/cards/wild-splendor-cartoon/otter-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 0,
-      "row": 1
+      "row": 2,
+      "crop": {
+        "left": 0.126953125,
+        "top": 0.501953125,
+        "width": 0.24609375,
+        "height": 0.24609375
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-24",
-    "name": "아기 수달 · 호기심 가득한 눈",
-    "src": "/art/cards/wild-splendor/otter-1.png",
+    "name": "아기 수달 / 호기심 가득한 눈",
+    "src": "/art/cards/wild-splendor-cartoon/otter-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 1,
-      "row": 1
+      "row": 2,
+      "crop": {
+        "left": 0.626953125,
+        "top": 0.501953125,
+        "width": 0.24609375,
+        "height": 0.24609375
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-25",
-    "name": "아기 수달 · 느긋한 하품",
-    "src": "/art/cards/wild-splendor/otter-1.png",
+    "name": "아기 수달 / 느긋한 하품",
+    "src": "/art/cards/wild-splendor-cartoon/otter-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 2,
-      "row": 1
+      "columns": 2,
+      "rows": 4,
+      "column": 0,
+      "row": 3,
+      "crop": {
+        "left": 0.126953125,
+        "top": 0.751953125,
+        "width": 0.24609375,
+        "height": 0.24609375
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-26",
-    "name": "아기 수달 · 작은 안식처",
-    "src": "/art/cards/wild-splendor/otter-1.png",
+    "name": "아기 수달 / 작은 안식처",
+    "src": "/art/cards/wild-splendor-cartoon/otter-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 3,
-      "row": 1
+      "columns": 2,
+      "rows": 4,
+      "column": 1,
+      "row": 3,
+      "crop": {
+        "left": 0.626953125,
+        "top": 0.751953125,
+        "width": 0.24609375,
+        "height": 0.24609375
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-27",
-    "name": "청소년 수달 · 숲길 첫 모험",
-    "src": "/art/cards/wild-splendor/otter-2.png",
+    "name": "청소년 수달 / 숲길 첫 모험",
+    "src": "/art/cards/wild-splendor-cartoon/otter-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
+      "columns": 2,
+      "rows": 3,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.08528645833333333,
+        "top": 0.001953125,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-28",
-    "name": "청소년 수달 · 통나무 건너기",
-    "src": "/art/cards/wild-splendor/otter-2.png",
+    "name": "청소년 수달 / 통나무 건너기",
+    "src": "/art/cards/wild-splendor-cartoon/otter-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
+      "columns": 2,
+      "rows": 3,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.001953125,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-29",
-    "name": "청소년 수달 · 개울 탐험",
-    "src": "/art/cards/wild-splendor/otter-2.png",
+    "name": "청소년 수달 / 개울 탐험",
+    "src": "/art/cards/wild-splendor-cartoon/otter-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 2,
-      "row": 0
+      "columns": 2,
+      "rows": 3,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.08528645833333333,
+        "top": 0.3352864583333333,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-30",
-    "name": "청소년 수달 · 나비를 따라서",
-    "src": "/art/cards/wild-splendor/otter-2.png",
+    "name": "청소년 수달 / 나비를 따라서",
+    "src": "/art/cards/wild-splendor-cartoon/otter-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 0,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.3352864583333333,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-31",
-    "name": "청소년 수달 · 언덕 오르기",
-    "src": "/art/cards/wild-splendor/otter-2.png",
+    "name": "청소년 수달 / 언덕 오르기",
+    "src": "/art/cards/wild-splendor-cartoon/otter-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 1,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 0,
+      "row": 2,
+      "crop": {
+        "left": 0.08528645833333331,
+        "top": 0.6686197916666666,
+        "width": 0.32942708333333337,
+        "height": 0.32942708333333337
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-32",
-    "name": "청소년 수달 · 폭포 앞의 용기",
-    "src": "/art/cards/wild-splendor/otter-2.png",
+    "name": "청소년 수달 / 폭포 앞의 용기",
+    "src": "/art/cards/wild-splendor-cartoon/otter-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 2,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 1,
+      "row": 2,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.6686197916666666,
+        "width": 0.32942708333333337,
+        "height": 0.32942708333333337
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-33",
-    "name": "어른 수달 · 능선의 파수꾼",
-    "src": "/art/cards/wild-splendor/otter-3.png",
+    "name": "어른 수달 / 능선의 파수꾼",
+    "src": "/art/cards/wild-splendor-cartoon/otter-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.001953125,
+        "top": 0.001953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-34",
-    "name": "어른 수달 · 오래된 숲의 친구",
-    "src": "/art/cards/wild-splendor/otter-3.png",
+    "name": "어른 수달 / 오래된 숲의 친구",
+    "src": "/art/cards/wild-splendor-cartoon/otter-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.501953125,
+        "top": 0.001953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-35",
-    "name": "어른 수달 · 강줄기의 길잡이",
-    "src": "/art/cards/wild-splendor/otter-3.png",
+    "name": "어른 수달 / 강줄기의 길잡이",
+    "src": "/art/cards/wild-splendor-cartoon/otter-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 0,
-      "row": 1
+      "row": 1,
+      "crop": {
+        "left": 0.001953125,
+        "top": 0.501953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-36",
-    "name": "어른 수달 · 초록 숲의 주인",
-    "src": "/art/cards/wild-splendor/otter-3.png",
+    "name": "어른 수달 / 초록 숲의 주인",
+    "src": "/art/cards/wild-splendor-cartoon/otter-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 1,
-      "row": 1
+      "row": 1,
+      "crop": {
+        "left": 0.501953125,
+        "top": 0.501953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-37",
-    "name": "아기 치즈냥 · 포근한 단잠",
-    "src": "/art/cards/wild-splendor/cat-1.png",
+    "name": "아기 치즈냥 / 포근한 단잠",
+    "src": "/art/cards/wild-splendor-cartoon/cat-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.0013812154696132596,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-38",
-    "name": "아기 은빛 줄무늬냥 · 둥지 밖 빼꼼",
-    "src": "/art/cards/wild-splendor/cat-1.png",
+    "name": "아기 은빛 줄무늬냥 / 둥지 밖 빼꼼",
+    "src": "/art/cards/wild-splendor-cartoon/cat-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.0013812154696132596,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-39",
-    "name": "아기 삼색냥 · 기분 좋은 기지개",
-    "src": "/art/cards/wild-splendor/cat-1.png",
+    "name": "아기 삼색냥 / 기분 좋은 기지개",
+    "src": "/art/cards/wild-splendor-cartoon/cat-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 2,
-      "row": 0
+      "columns": 2,
+      "rows": 4,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.2513812154696133,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-40",
-    "name": "아기 샴고양이 · 포근한 낮잠",
-    "src": "/art/cards/wild-splendor/cat-1.png",
+    "name": "아기 샴고양이 / 포근한 낮잠",
+    "src": "/art/cards/wild-splendor-cartoon/cat-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 3,
-      "row": 0
+      "columns": 2,
+      "rows": 4,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.2513812154696133,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-41",
-    "name": "아기 벵갈냥 · 나뭇잎 장난",
-    "src": "/art/cards/wild-splendor/cat-1.png",
+    "name": "아기 벵갈냥 / 나뭇잎 장난",
+    "src": "/art/cards/wild-splendor-cartoon/cat-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 0,
-      "row": 1
+      "row": 2,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.5013812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-42",
-    "name": "아기 까만 고양이 · 호기심 가득한 눈",
-    "src": "/art/cards/wild-splendor/cat-1.png",
+    "name": "아기 까만 고양이 / 호기심 가득한 눈",
+    "src": "/art/cards/wild-splendor-cartoon/cat-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 1,
-      "row": 1
+      "row": 2,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.5013812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-43",
-    "name": "아기 하얀 장모냥 · 느긋한 하품",
-    "src": "/art/cards/wild-splendor/cat-1.png",
+    "name": "아기 하얀 장모냥 / 느긋한 하품",
+    "src": "/art/cards/wild-splendor-cartoon/cat-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 2,
-      "row": 1
+      "columns": 2,
+      "rows": 4,
+      "column": 0,
+      "row": 3,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.7513812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-44",
-    "name": "아기 회색 고양이 · 작은 안식처",
-    "src": "/art/cards/wild-splendor/cat-1.png",
+    "name": "아기 회색 고양이 / 작은 안식처",
+    "src": "/art/cards/wild-splendor-cartoon/cat-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 3,
-      "row": 1
+      "columns": 2,
+      "rows": 4,
+      "column": 1,
+      "row": 3,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.7513812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-45",
-    "name": "청소년 치즈냥 · 숲길 첫 모험",
-    "src": "/art/cards/wild-splendor/cat-2.png",
+    "name": "청소년 치즈냥 / 숲길 첫 모험",
+    "src": "/art/cards/wild-splendor-cartoon/cat-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
+      "columns": 2,
+      "rows": 3,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.08528645833333333,
+        "top": 0.001953125,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-46",
-    "name": "청소년 은빛 줄무늬냥 · 통나무 건너기",
-    "src": "/art/cards/wild-splendor/cat-2.png",
+    "name": "청소년 은빛 줄무늬냥 / 통나무 건너기",
+    "src": "/art/cards/wild-splendor-cartoon/cat-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
+      "columns": 2,
+      "rows": 3,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.001953125,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-47",
-    "name": "청소년 삼색냥 · 개울 탐험",
-    "src": "/art/cards/wild-splendor/cat-2.png",
+    "name": "청소년 삼색냥 / 개울 탐험",
+    "src": "/art/cards/wild-splendor-cartoon/cat-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 2,
-      "row": 0
+      "columns": 2,
+      "rows": 3,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.08528645833333333,
+        "top": 0.3352864583333333,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-48",
-    "name": "청소년 샴고양이 · 나비를 따라서",
-    "src": "/art/cards/wild-splendor/cat-2.png",
+    "name": "청소년 샴고양이 / 나비를 따라서",
+    "src": "/art/cards/wild-splendor-cartoon/cat-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 0,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.3352864583333333,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-49",
-    "name": "청소년 벵갈냥 · 언덕 오르기",
-    "src": "/art/cards/wild-splendor/cat-2.png",
+    "name": "청소년 벵갈냥 / 언덕 오르기",
+    "src": "/art/cards/wild-splendor-cartoon/cat-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 1,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 0,
+      "row": 2,
+      "crop": {
+        "left": 0.08528645833333331,
+        "top": 0.6686197916666666,
+        "width": 0.32942708333333337,
+        "height": 0.32942708333333337
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-50",
-    "name": "청소년 까만 고양이 · 폭포 앞의 용기",
-    "src": "/art/cards/wild-splendor/cat-2.png",
+    "name": "청소년 까만 고양이 / 폭포 앞의 용기",
+    "src": "/art/cards/wild-splendor-cartoon/cat-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 2,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 1,
+      "row": 2,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.6686197916666666,
+        "width": 0.32942708333333337,
+        "height": 0.32942708333333337
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-51",
-    "name": "어른 치즈냥 · 능선의 파수꾼",
-    "src": "/art/cards/wild-splendor/cat-3.png",
+    "name": "어른 치즈냥 / 능선의 파수꾼",
+    "src": "/art/cards/wild-splendor-cartoon/cat-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.001953125,
+        "top": 0.001953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-52",
-    "name": "어른 은빛 줄무늬냥 · 오래된 숲의 친구",
-    "src": "/art/cards/wild-splendor/cat-3.png",
+    "name": "어른 은빛 줄무늬냥 / 오래된 숲의 친구",
+    "src": "/art/cards/wild-splendor-cartoon/cat-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.501953125,
+        "top": 0.001953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-53",
-    "name": "어른 삼색냥 · 강줄기의 길잡이",
-    "src": "/art/cards/wild-splendor/cat-3.png",
+    "name": "어른 삼색냥 / 강줄기의 길잡이",
+    "src": "/art/cards/wild-splendor-cartoon/cat-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 0,
-      "row": 1
+      "row": 1,
+      "crop": {
+        "left": 0.001953125,
+        "top": 0.501953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-54",
-    "name": "어른 샴고양이 · 초록 숲의 주인",
-    "src": "/art/cards/wild-splendor/cat-3.png",
+    "name": "어른 샴고양이 / 초록 숲의 주인",
+    "src": "/art/cards/wild-splendor-cartoon/cat-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 1,
-      "row": 1
+      "row": 1,
+      "crop": {
+        "left": 0.501953125,
+        "top": 0.501953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-55",
-    "name": "아기 리트리버 · 포근한 단잠",
-    "src": "/art/cards/wild-splendor/dog-1.png",
+    "name": "아기 리트리버 / 포근한 단잠",
+    "src": "/art/cards/wild-splendor-cartoon/dog-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.0013812154696132596,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-56",
-    "name": "아기 포메라니안 · 둥지 밖 빼꼼",
-    "src": "/art/cards/wild-splendor/dog-1.png",
+    "name": "아기 포메라니안 / 둥지 밖 빼꼼",
+    "src": "/art/cards/wild-splendor-cartoon/dog-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.0013812154696132596,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-57",
-    "name": "아기 비글 · 기분 좋은 기지개",
-    "src": "/art/cards/wild-splendor/dog-1.png",
+    "name": "아기 비글 / 기분 좋은 기지개",
+    "src": "/art/cards/wild-splendor-cartoon/dog-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 2,
-      "row": 0
+      "columns": 2,
+      "rows": 4,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.2513812154696133,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-58",
-    "name": "아기 코기 · 포근한 낮잠",
-    "src": "/art/cards/wild-splendor/dog-1.png",
+    "name": "아기 코기 / 포근한 낮잠",
+    "src": "/art/cards/wild-splendor-cartoon/dog-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 3,
-      "row": 0
+      "columns": 2,
+      "rows": 4,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.2513812154696133,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-59",
-    "name": "아기 진돗개 · 나뭇잎 장난",
-    "src": "/art/cards/wild-splendor/dog-1.png",
+    "name": "아기 진돗개 / 나뭇잎 장난",
+    "src": "/art/cards/wild-splendor-cartoon/dog-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 0,
-      "row": 1
+      "row": 2,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.5013812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-60",
-    "name": "아기 셰퍼드 · 호기심 가득한 눈",
-    "src": "/art/cards/wild-splendor/dog-1.png",
+    "name": "아기 셰퍼드 / 호기심 가득한 눈",
+    "src": "/art/cards/wild-splendor-cartoon/dog-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 1,
-      "row": 1
+      "row": 2,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.5013812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-61",
-    "name": "아기 보더콜리 · 느긋한 하품",
-    "src": "/art/cards/wild-splendor/dog-1.png",
+    "name": "아기 보더콜리 / 느긋한 하품",
+    "src": "/art/cards/wild-splendor-cartoon/dog-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 2,
-      "row": 1
+      "columns": 2,
+      "rows": 4,
+      "column": 0,
+      "row": 3,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.7513812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-62",
-    "name": "아기 래브라도 · 작은 안식처",
-    "src": "/art/cards/wild-splendor/dog-1.png",
+    "name": "아기 래브라도 / 작은 안식처",
+    "src": "/art/cards/wild-splendor-cartoon/dog-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 3,
-      "row": 1
+      "columns": 2,
+      "rows": 4,
+      "column": 1,
+      "row": 3,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.7513812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-63",
-    "name": "청소년 리트리버 · 숲길 첫 모험",
-    "src": "/art/cards/wild-splendor/dog-2.png",
+    "name": "청소년 리트리버 / 숲길 첫 모험",
+    "src": "/art/cards/wild-splendor-cartoon/dog-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
+      "columns": 2,
+      "rows": 3,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.08528645833333333,
+        "top": 0.001953125,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-64",
-    "name": "청소년 포메라니안 · 통나무 건너기",
-    "src": "/art/cards/wild-splendor/dog-2.png",
+    "name": "청소년 포메라니안 / 통나무 건너기",
+    "src": "/art/cards/wild-splendor-cartoon/dog-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
+      "columns": 2,
+      "rows": 3,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.001953125,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-65",
-    "name": "청소년 비글 · 개울 탐험",
-    "src": "/art/cards/wild-splendor/dog-2.png",
+    "name": "청소년 비글 / 개울 탐험",
+    "src": "/art/cards/wild-splendor-cartoon/dog-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 2,
-      "row": 0
+      "columns": 2,
+      "rows": 3,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.08528645833333333,
+        "top": 0.3352864583333333,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-66",
-    "name": "청소년 코기 · 나비를 따라서",
-    "src": "/art/cards/wild-splendor/dog-2.png",
+    "name": "청소년 코기 / 나비를 따라서",
+    "src": "/art/cards/wild-splendor-cartoon/dog-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 0,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.3352864583333333,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-67",
-    "name": "청소년 진돗개 · 언덕 오르기",
-    "src": "/art/cards/wild-splendor/dog-2.png",
+    "name": "청소년 진돗개 / 언덕 오르기",
+    "src": "/art/cards/wild-splendor-cartoon/dog-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 1,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 0,
+      "row": 2,
+      "crop": {
+        "left": 0.08528645833333331,
+        "top": 0.6686197916666666,
+        "width": 0.32942708333333337,
+        "height": 0.32942708333333337
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-68",
-    "name": "청소년 셰퍼드 · 폭포 앞의 용기",
-    "src": "/art/cards/wild-splendor/dog-2.png",
+    "name": "청소년 셰퍼드 / 폭포 앞의 용기",
+    "src": "/art/cards/wild-splendor-cartoon/dog-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 2,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 1,
+      "row": 2,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.6686197916666666,
+        "width": 0.32942708333333337,
+        "height": 0.32942708333333337
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-69",
-    "name": "어른 리트리버 · 능선의 파수꾼",
-    "src": "/art/cards/wild-splendor/dog-3.png",
+    "name": "어른 리트리버 / 능선의 파수꾼",
+    "src": "/art/cards/wild-splendor-cartoon/dog-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.001953125,
+        "top": 0.001953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-70",
-    "name": "어른 포메라니안 · 오래된 숲의 친구",
-    "src": "/art/cards/wild-splendor/dog-3.png",
+    "name": "어른 포메라니안 / 오래된 숲의 친구",
+    "src": "/art/cards/wild-splendor-cartoon/dog-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.501953125,
+        "top": 0.001953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-71",
-    "name": "어른 비글 · 강줄기의 길잡이",
-    "src": "/art/cards/wild-splendor/dog-3.png",
+    "name": "어른 비글 / 강줄기의 길잡이",
+    "src": "/art/cards/wild-splendor-cartoon/dog-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 0,
-      "row": 1
+      "row": 1,
+      "crop": {
+        "left": 0.001953125,
+        "top": 0.501953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-72",
-    "name": "어른 코기 · 초록 숲의 주인",
-    "src": "/art/cards/wild-splendor/dog-3.png",
+    "name": "어른 코기 / 초록 숲의 주인",
+    "src": "/art/cards/wild-splendor-cartoon/dog-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 1,
-      "row": 1
+      "row": 1,
+      "crop": {
+        "left": 0.501953125,
+        "top": 0.501953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-73",
-    "name": "아기 카피바라 · 포근한 단잠",
-    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "name": "아기 카피바라 / 포근한 단잠",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.0013812154696132596,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-74",
-    "name": "아기 카피바라 · 둥지 밖 빼꼼",
-    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "name": "아기 카피바라 / 둥지 밖 빼꼼",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.0013812154696132596,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-75",
-    "name": "아기 카피바라 · 기분 좋은 기지개",
-    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "name": "아기 카피바라 / 기분 좋은 기지개",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 2,
-      "row": 0
+      "columns": 2,
+      "rows": 4,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.2513812154696133,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-76",
-    "name": "아기 카피바라 · 포근한 낮잠",
-    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "name": "아기 카피바라 / 포근한 낮잠",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 3,
-      "row": 0
+      "columns": 2,
+      "rows": 4,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.2513812154696133,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-77",
-    "name": "아기 카피바라 · 나뭇잎 장난",
-    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "name": "아기 카피바라 / 나뭇잎 장난",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 0,
-      "row": 1
+      "row": 2,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.5013812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-78",
-    "name": "아기 카피바라 · 호기심 가득한 눈",
-    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "name": "아기 카피바라 / 호기심 가득한 눈",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
+      "columns": 2,
+      "rows": 4,
       "column": 1,
-      "row": 1
+      "row": 2,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.5013812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-79",
-    "name": "아기 카피바라 · 느긋한 하품",
-    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "name": "아기 카피바라 / 느긋한 하품",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 2,
-      "row": 1
+      "columns": 2,
+      "rows": 4,
+      "column": 0,
+      "row": 3,
+      "crop": {
+        "left": 0.0027624309392265192,
+        "top": 0.7513812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-80",
-    "name": "아기 카피바라 · 작은 안식처",
-    "src": "/art/cards/wild-splendor/capybara-1.png",
+    "name": "아기 카피바라 / 작은 안식처",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-1.png",
     "atlas": {
-      "columns": 4,
-      "rows": 2,
-      "column": 3,
-      "row": 1
+      "columns": 2,
+      "rows": 4,
+      "column": 1,
+      "row": 3,
+      "crop": {
+        "left": 0.5027624309392266,
+        "top": 0.7513812154696132,
+        "width": 0.494475138121547,
+        "height": 0.2472375690607735
+      }
     },
     "stage": 1
   },
   {
     "game": "workshop",
     "key": "w-81",
-    "name": "청소년 카피바라 · 숲길 첫 모험",
-    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "name": "청소년 카피바라 / 숲길 첫 모험",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
+      "columns": 2,
+      "rows": 3,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.08528645833333333,
+        "top": 0.001953125,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-82",
-    "name": "청소년 카피바라 · 통나무 건너기",
-    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "name": "청소년 카피바라 / 통나무 건너기",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
+      "columns": 2,
+      "rows": 3,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.001953125,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-83",
-    "name": "청소년 카피바라 · 개울 탐험",
-    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "name": "청소년 카피바라 / 개울 탐험",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 2,
-      "row": 0
+      "columns": 2,
+      "rows": 3,
+      "column": 0,
+      "row": 1,
+      "crop": {
+        "left": 0.08528645833333333,
+        "top": 0.3352864583333333,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-84",
-    "name": "청소년 카피바라 · 나비를 따라서",
-    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "name": "청소년 카피바라 / 나비를 따라서",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 0,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 1,
+      "row": 1,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.3352864583333333,
+        "width": 0.3294270833333333,
+        "height": 0.3294270833333333
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-85",
-    "name": "청소년 카피바라 · 언덕 오르기",
-    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "name": "청소년 카피바라 / 언덕 오르기",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 1,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 0,
+      "row": 2,
+      "crop": {
+        "left": 0.08528645833333331,
+        "top": 0.6686197916666666,
+        "width": 0.32942708333333337,
+        "height": 0.32942708333333337
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-86",
-    "name": "청소년 카피바라 · 폭포 앞의 용기",
-    "src": "/art/cards/wild-splendor/capybara-2.png",
+    "name": "청소년 카피바라 / 폭포 앞의 용기",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-2.png",
     "atlas": {
-      "columns": 3,
-      "rows": 2,
-      "column": 2,
-      "row": 1
+      "columns": 2,
+      "rows": 3,
+      "column": 1,
+      "row": 2,
+      "crop": {
+        "left": 0.5852864583333334,
+        "top": 0.6686197916666666,
+        "width": 0.32942708333333337,
+        "height": 0.32942708333333337
+      }
     },
     "stage": 2
   },
   {
     "game": "workshop",
     "key": "w-87",
-    "name": "어른 카피바라 · 능선의 파수꾼",
-    "src": "/art/cards/wild-splendor/capybara-3.png",
+    "name": "어른 카피바라 / 능선의 파수꾼",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 0,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.001953125,
+        "top": 0.001953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-88",
-    "name": "어른 카피바라 · 오래된 숲의 친구",
-    "src": "/art/cards/wild-splendor/capybara-3.png",
+    "name": "어른 카피바라 / 오래된 숲의 친구",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 1,
-      "row": 0
+      "row": 0,
+      "crop": {
+        "left": 0.501953125,
+        "top": 0.001953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-89",
-    "name": "어른 카피바라 · 강줄기의 길잡이",
-    "src": "/art/cards/wild-splendor/capybara-3.png",
+    "name": "어른 카피바라 / 강줄기의 길잡이",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 0,
-      "row": 1
+      "row": 1,
+      "crop": {
+        "left": 0.001953125,
+        "top": 0.501953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
   {
     "game": "workshop",
     "key": "w-90",
-    "name": "어른 카피바라 · 초록 숲의 주인",
-    "src": "/art/cards/wild-splendor/capybara-3.png",
+    "name": "어른 카피바라 / 초록 숲의 주인",
+    "src": "/art/cards/wild-splendor-cartoon/capybara-3.png",
     "atlas": {
       "columns": 2,
       "rows": 2,
       "column": 1,
-      "row": 1
+      "row": 1,
+      "crop": {
+        "left": 0.501953125,
+        "top": 0.501953125,
+        "width": 0.49609375,
+        "height": 0.49609375
+      }
     },
     "stage": 3
   },
@@ -1173,17 +1713,17 @@
     "game": "workshop",
     "key": "p-1",
     "name": "현자의 부엉이",
-    "src": "/art/cards/wild-splendor/guardians.png",
+    "src": "/art/cards/wild-splendor-cartoon/guardians.png",
     "atlas": {
       "columns": 2,
       "rows": 5,
       "column": 0,
       "row": 0,
       "crop": {
-        "left": 0.0020597322348094747,
-        "top": 0,
-        "width": 0.49433573635427397,
-        "height": 0.19765287214329832
+        "left": 0.017507723995880537,
+        "top": 0.0012353304508956147,
+        "width": 0.4649845520082389,
+        "height": 0.18591723285979
       }
     },
     "stage": 4
@@ -1192,17 +1732,17 @@
     "game": "workshop",
     "key": "p-2",
     "name": "산맥의 그리즐리",
-    "src": "/art/cards/wild-splendor/guardians.png",
+    "src": "/art/cards/wild-splendor-cartoon/guardians.png",
     "atlas": {
       "columns": 2,
       "rows": 5,
       "column": 1,
       "row": 0,
       "crop": {
-        "left": 0.5036045314109165,
-        "top": 0,
-        "width": 0.49433573635427397,
-        "height": 0.19765287214329832
+        "left": 0.5175077239958805,
+        "top": 0.0012353304508956147,
+        "width": 0.4649845520082389,
+        "height": 0.18591723285979
       }
     },
     "stage": 4
@@ -1211,17 +1751,17 @@
     "game": "workshop",
     "key": "p-3",
     "name": "하늘의 흰머리수리",
-    "src": "/art/cards/wild-splendor/guardians.png",
+    "src": "/art/cards/wild-splendor-cartoon/guardians.png",
     "atlas": {
       "columns": 2,
       "rows": 5,
       "column": 0,
       "row": 1,
       "crop": {
-        "left": 0.0020597322348094747,
-        "top": 0.19888820259419396,
-        "width": 0.49433573635427397,
-        "height": 0.19765287214329832
+        "left": 0.02059732234809475,
+        "top": 0.18962322421247685,
+        "width": 0.4588053553038105,
+        "height": 0.18344657195799877
       }
     },
     "stage": 4
@@ -1230,17 +1770,17 @@
     "game": "workshop",
     "key": "p-4",
     "name": "기억의 코끼리",
-    "src": "/art/cards/wild-splendor/guardians.png",
+    "src": "/art/cards/wild-splendor-cartoon/guardians.png",
     "atlas": {
       "columns": 2,
       "rows": 5,
       "column": 1,
       "row": 1,
       "crop": {
-        "left": 0.5036045314109165,
-        "top": 0.19888820259419396,
-        "width": 0.49433573635427397,
-        "height": 0.19765287214329832
+        "left": 0.5205973223480947,
+        "top": 0.18962322421247685,
+        "width": 0.4588053553038105,
+        "height": 0.18344657195799877
       }
     },
     "stage": 4
@@ -1249,15 +1789,15 @@
     "game": "workshop",
     "key": "p-5",
     "name": "달빛의 회색늑대",
-    "src": "/art/cards/wild-splendor/guardians.png",
+    "src": "/art/cards/wild-splendor-cartoon/guardians.png",
     "atlas": {
       "columns": 2,
       "rows": 5,
       "column": 0,
       "row": 2,
       "crop": {
-        "left": 0.006694129763130793,
-        "top": 0.3983940704138357,
+        "left": 0.007466529351184346,
+        "top": 0.37554045707226685,
         "width": 0.4850669412976313,
         "height": 0.19394688079061148
       }
@@ -1268,15 +1808,15 @@
     "game": "workshop",
     "key": "p-6",
     "name": "숲왕 사슴",
-    "src": "/art/cards/wild-splendor/guardians.png",
+    "src": "/art/cards/wild-splendor-cartoon/guardians.png",
     "atlas": {
       "columns": 2,
       "rows": 5,
       "column": 1,
       "row": 2,
       "crop": {
-        "left": 0.5082389289392379,
-        "top": 0.3983940704138357,
+        "left": 0.5074665293511843,
+        "top": 0.37554045707226685,
         "width": 0.4850669412976313,
         "height": 0.19394688079061148
       }
@@ -1287,17 +1827,17 @@
     "game": "workshop",
     "key": "p-7",
     "name": "고요한 큰거북",
-    "src": "/art/cards/wild-splendor/guardians.png",
+    "src": "/art/cards/wild-splendor-cartoon/guardians.png",
     "atlas": {
       "columns": 2,
       "rows": 5,
       "column": 0,
       "row": 3,
       "crop": {
-        "left": 0.0213697219361483,
-        "top": 0.5941939468807906,
-        "width": 0.4557157569515963,
-        "height": 0.18221124150710316
+        "left": 0.009011328527291394,
+        "top": 0.5719579987646696,
+        "width": 0.4819773429454172,
+        "height": 0.1927115503397159
       }
     },
     "stage": 4
@@ -1306,17 +1846,17 @@
     "game": "workshop",
     "key": "p-8",
     "name": "설원의 북극여우",
-    "src": "/art/cards/wild-splendor/guardians.png",
+    "src": "/art/cards/wild-splendor-cartoon/guardians.png",
     "atlas": {
       "columns": 2,
       "rows": 5,
       "column": 1,
       "row": 3,
       "crop": {
-        "left": 0.5229145211122554,
-        "top": 0.5941939468807906,
-        "width": 0.4557157569515963,
-        "height": 0.18221124150710316
+        "left": 0.5090113285272914,
+        "top": 0.5719579987646696,
+        "width": 0.4819773429454172,
+        "height": 0.1927115503397159
       }
     },
     "stage": 4
@@ -1325,17 +1865,17 @@
     "game": "workshop",
     "key": "p-9",
     "name": "밀림의 고릴라",
-    "src": "/art/cards/wild-splendor/guardians.png",
+    "src": "/art/cards/wild-splendor-cartoon/guardians.png",
     "atlas": {
       "columns": 2,
       "rows": 5,
       "column": 0,
       "row": 4,
       "crop": {
-        "left": 0,
-        "top": 0.7894791023265391,
-        "width": 0.4984552008238929,
-        "height": 0.19929997941115915
+        "left": 0.0020597322348094747,
+        "top": 0.7838171710932674,
+        "width": 0.49588053553038103,
+        "height": 0.19827053736874614
       }
     },
     "stage": 4
@@ -1344,17 +1884,17 @@
     "game": "workshop",
     "key": "p-10",
     "name": "눈산의 설표",
-    "src": "/art/cards/wild-splendor/guardians.png",
+    "src": "/art/cards/wild-splendor-cartoon/guardians.png",
     "atlas": {
       "columns": 2,
       "rows": 5,
       "column": 1,
       "row": 4,
       "crop": {
-        "left": 0.5015447991761071,
-        "top": 0.7894791023265391,
-        "width": 0.4984552008238929,
-        "height": 0.19929997941115915
+        "left": 0.5020597322348095,
+        "top": 0.7838171710932674,
+        "width": 0.49588053553038103,
+        "height": 0.19827053736874614
       }
     },
     "stage": 4

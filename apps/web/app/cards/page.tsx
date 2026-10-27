@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { webImage } from "../../lib/web-assets";
 import "../card-gallery.css";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import type { Card, Suit } from "@moyeotable/contracts";
@@ -43,7 +44,7 @@ export default function CardsPage() {
             <a href={`#${suit}`} key={suit}>
               <span className="animal-friend-preview">
                 <Image
-                  src={starCardArt[suit].support.src}
+                  src={webImage(starCardArt[suit].support.src)}
                   alt=""
                   fill
                   sizes="(max-width: 760px) 16vw, 180px"

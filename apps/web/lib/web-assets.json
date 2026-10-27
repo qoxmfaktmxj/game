@@ -1,0 +1,1754 @@
+{
+  "workshop-token/red": {
+    "src": "/optimized/workshop-token-red-b6305668e598362f.webp",
+    "width": 192,
+    "height": 192,
+    "bytes": 17426
+  },
+  "workshop-token/blue": {
+    "src": "/optimized/workshop-token-blue-2ce71c4daef046a7.webp",
+    "width": 192,
+    "height": 192,
+    "bytes": 16078
+  },
+  "workshop-token/green": {
+    "src": "/optimized/workshop-token-green-97c8ba2fd349eea6.webp",
+    "width": 192,
+    "height": 192,
+    "bytes": 16456
+  },
+  "workshop-token/black": {
+    "src": "/optimized/workshop-token-black-e93d63c30a1d0160.webp",
+    "width": 192,
+    "height": 192,
+    "bytes": 14596
+  },
+  "workshop-token/white": {
+    "src": "/optimized/workshop-token-white-65976859961d500a.webp",
+    "width": 192,
+    "height": 192,
+    "bytes": 16668
+  },
+  "workshop-token/gold": {
+    "src": "/optimized/workshop-token-gold-11ce8fe376a28e4d.webp",
+    "width": 192,
+    "height": 192,
+    "bytes": 13926
+  },
+  "workshop/w-1": {
+    "src": "/optimized/workshop-w-1-c5bab28925256d6d.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 42458
+  },
+  "workshop/w-2": {
+    "src": "/optimized/workshop-w-2-191e3ac7963260f2.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 48124
+  },
+  "workshop/w-3": {
+    "src": "/optimized/workshop-w-3-bdcd4f097ce653ff.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 50478
+  },
+  "workshop/w-4": {
+    "src": "/optimized/workshop-w-4-ec5ae413f6edcd4d.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 45600
+  },
+  "workshop/w-5": {
+    "src": "/optimized/workshop-w-5-f7bfd71d7bccf9d6.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 56352
+  },
+  "workshop/w-6": {
+    "src": "/optimized/workshop-w-6-afc6c17fc835880e.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 47602
+  },
+  "workshop/w-7": {
+    "src": "/optimized/workshop-w-7-fb66cae1b7485126.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 48174
+  },
+  "workshop/w-8": {
+    "src": "/optimized/workshop-w-8-b4d67ddf96999ac6.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 45978
+  },
+  "workshop/w-9": {
+    "src": "/optimized/workshop-w-9-d9e1f8d4a09309ea.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 50338
+  },
+  "workshop/w-10": {
+    "src": "/optimized/workshop-w-10-64b14bc59ae51eb8.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 52750
+  },
+  "workshop/w-11": {
+    "src": "/optimized/workshop-w-11-99eaec01141d2aaa.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 48468
+  },
+  "workshop/w-12": {
+    "src": "/optimized/workshop-w-12-946600a5ab51ff11.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 52868
+  },
+  "workshop/w-13": {
+    "src": "/optimized/workshop-w-13-015e0f7f1bb05382.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 48566
+  },
+  "workshop/w-14": {
+    "src": "/optimized/workshop-w-14-851c411e5d0fa3ef.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 49078
+  },
+  "workshop/w-15": {
+    "src": "/optimized/workshop-w-15-dee8f5fe7c358ac0.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 85432
+  },
+  "workshop/w-16": {
+    "src": "/optimized/workshop-w-16-cdf4a5dc24fef02d.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 92992
+  },
+  "workshop/w-17": {
+    "src": "/optimized/workshop-w-17-9b3a690f52007bce.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 91694
+  },
+  "workshop/w-18": {
+    "src": "/optimized/workshop-w-18-5793af0087ac2d4d.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 99092
+  },
+  "workshop/w-19": {
+    "src": "/optimized/workshop-w-19-32c4075d9696d4ad.webp",
+    "width": 378,
+    "height": 252,
+    "bytes": 15400
+  },
+  "workshop/w-20": {
+    "src": "/optimized/workshop-w-20-49b9cde689a6f049.webp",
+    "width": 378,
+    "height": 252,
+    "bytes": 18976
+  },
+  "workshop/w-21": {
+    "src": "/optimized/workshop-w-21-503296399ce3f430.webp",
+    "width": 378,
+    "height": 252,
+    "bytes": 19314
+  },
+  "workshop/w-22": {
+    "src": "/optimized/workshop-w-22-879e5edb18917b83.webp",
+    "width": 378,
+    "height": 252,
+    "bytes": 14936
+  },
+  "workshop/w-23": {
+    "src": "/optimized/workshop-w-23-9be125bbb9c009f8.webp",
+    "width": 378,
+    "height": 252,
+    "bytes": 17352
+  },
+  "workshop/w-24": {
+    "src": "/optimized/workshop-w-24-aaec57edb7ad3d43.webp",
+    "width": 378,
+    "height": 252,
+    "bytes": 20118
+  },
+  "workshop/w-25": {
+    "src": "/optimized/workshop-w-25-b18e36a20a0be228.webp",
+    "width": 378,
+    "height": 252,
+    "bytes": 17910
+  },
+  "workshop/w-26": {
+    "src": "/optimized/workshop-w-26-21bc0dec3d04838c.webp",
+    "width": 378,
+    "height": 252,
+    "bytes": 18372
+  },
+  "workshop/w-27": {
+    "src": "/optimized/workshop-w-27-9cbec1315e9ef594.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 40722
+  },
+  "workshop/w-28": {
+    "src": "/optimized/workshop-w-28-e7db69b52d3e455f.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 40808
+  },
+  "workshop/w-29": {
+    "src": "/optimized/workshop-w-29-5a6e73d78b41964f.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 44042
+  },
+  "workshop/w-30": {
+    "src": "/optimized/workshop-w-30-720ec92574137830.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 40962
+  },
+  "workshop/w-31": {
+    "src": "/optimized/workshop-w-31-a68be72aad32249b.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 38492
+  },
+  "workshop/w-32": {
+    "src": "/optimized/workshop-w-32-9832728ef4648060.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 40296
+  },
+  "workshop/w-33": {
+    "src": "/optimized/workshop-w-33-503a99e87fb363e1.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 69320
+  },
+  "workshop/w-34": {
+    "src": "/optimized/workshop-w-34-c63c52932100e3e1.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 73538
+  },
+  "workshop/w-35": {
+    "src": "/optimized/workshop-w-35-1a325e8bbd15dfbe.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 71630
+  },
+  "workshop/w-36": {
+    "src": "/optimized/workshop-w-36-fe4f8c5a4ff499ac.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 72806
+  },
+  "workshop/w-37": {
+    "src": "/optimized/workshop-w-37-62c7bee51d5f0fbe.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 37504
+  },
+  "workshop/w-38": {
+    "src": "/optimized/workshop-w-38-66994dedeb901388.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 43398
+  },
+  "workshop/w-39": {
+    "src": "/optimized/workshop-w-39-e1940fc9d1bf6b45.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 42936
+  },
+  "workshop/w-40": {
+    "src": "/optimized/workshop-w-40-f99f62cfb250aad4.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 30288
+  },
+  "workshop/w-41": {
+    "src": "/optimized/workshop-w-41-9a5b383b63125c2c.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 51724
+  },
+  "workshop/w-42": {
+    "src": "/optimized/workshop-w-42-1fb8d8b95cec3be9.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 32404
+  },
+  "workshop/w-43": {
+    "src": "/optimized/workshop-w-43-be808b305885bc7f.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 36238
+  },
+  "workshop/w-44": {
+    "src": "/optimized/workshop-w-44-e9c2b8b7214d3bd2.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 31242
+  },
+  "workshop/w-45": {
+    "src": "/optimized/workshop-w-45-b4efb066a8de6b54.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 42720
+  },
+  "workshop/w-46": {
+    "src": "/optimized/workshop-w-46-0a8d3c3a7424ac55.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 43990
+  },
+  "workshop/w-47": {
+    "src": "/optimized/workshop-w-47-0af845ea7a089f91.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 41772
+  },
+  "workshop/w-48": {
+    "src": "/optimized/workshop-w-48-eb1cb23101e7ef04.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 38962
+  },
+  "workshop/w-49": {
+    "src": "/optimized/workshop-w-49-ca7eaaeefff9bd9a.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 47238
+  },
+  "workshop/w-50": {
+    "src": "/optimized/workshop-w-50-9c783088d3904c45.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 31196
+  },
+  "workshop/w-51": {
+    "src": "/optimized/workshop-w-51-54ed104ad2007990.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 72802
+  },
+  "workshop/w-52": {
+    "src": "/optimized/workshop-w-52-1608c9d52889343a.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 95486
+  },
+  "workshop/w-53": {
+    "src": "/optimized/workshop-w-53-a6cfe08eb0356f76.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 91920
+  },
+  "workshop/w-54": {
+    "src": "/optimized/workshop-w-54-7120c6472596729b.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 85298
+  },
+  "workshop/w-55": {
+    "src": "/optimized/workshop-w-55-e2e00b4f1b071164.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 37766
+  },
+  "workshop/w-56": {
+    "src": "/optimized/workshop-w-56-4861c2638c6635e5.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 40736
+  },
+  "workshop/w-57": {
+    "src": "/optimized/workshop-w-57-a931adacdc0e1b64.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 46986
+  },
+  "workshop/w-58": {
+    "src": "/optimized/workshop-w-58-75f071d342d72555.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 45616
+  },
+  "workshop/w-59": {
+    "src": "/optimized/workshop-w-59-a40e4ef8bc582f13.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 44728
+  },
+  "workshop/w-60": {
+    "src": "/optimized/workshop-w-60-559c73f51bf32126.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 43938
+  },
+  "workshop/w-61": {
+    "src": "/optimized/workshop-w-61-7f3b0f0f7e109e5d.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 46752
+  },
+  "workshop/w-62": {
+    "src": "/optimized/workshop-w-62-028d6942d7723923.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 32984
+  },
+  "workshop/w-63": {
+    "src": "/optimized/workshop-w-63-5ff78f7f37d24be9.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 42960
+  },
+  "workshop/w-64": {
+    "src": "/optimized/workshop-w-64-fab49f5b1a09272d.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 37566
+  },
+  "workshop/w-65": {
+    "src": "/optimized/workshop-w-65-3b6386abb3e043f9.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 48552
+  },
+  "workshop/w-66": {
+    "src": "/optimized/workshop-w-66-7f9abca03ecdba3b.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 41310
+  },
+  "workshop/w-67": {
+    "src": "/optimized/workshop-w-67-2dbc36426b43897f.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 37628
+  },
+  "workshop/w-68": {
+    "src": "/optimized/workshop-w-68-130303d7007970f1.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 46170
+  },
+  "workshop/w-69": {
+    "src": "/optimized/workshop-w-69-79ed8a12a71063ef.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 67508
+  },
+  "workshop/w-70": {
+    "src": "/optimized/workshop-w-70-fc6f4b9a6fd50da1.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 72852
+  },
+  "workshop/w-71": {
+    "src": "/optimized/workshop-w-71-bcba65bd4079e476.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 80294
+  },
+  "workshop/w-72": {
+    "src": "/optimized/workshop-w-72-4f8fe388525cc99e.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 75564
+  },
+  "workshop/w-73": {
+    "src": "/optimized/workshop-w-73-3cac2e2294d9cdbc.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 34012
+  },
+  "workshop/w-74": {
+    "src": "/optimized/workshop-w-74-ef183c051abcc29d.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 33736
+  },
+  "workshop/w-75": {
+    "src": "/optimized/workshop-w-75-93a0f7a1c2b2f9b5.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 35202
+  },
+  "workshop/w-76": {
+    "src": "/optimized/workshop-w-76-6640572536407bdb.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 34448
+  },
+  "workshop/w-77": {
+    "src": "/optimized/workshop-w-77-2d2a64f86b94e722.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 42146
+  },
+  "workshop/w-78": {
+    "src": "/optimized/workshop-w-78-e7e5b6b0bf3a61f3.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 37610
+  },
+  "workshop/w-79": {
+    "src": "/optimized/workshop-w-79-ef2cdc700d372dfe.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 36480
+  },
+  "workshop/w-80": {
+    "src": "/optimized/workshop-w-80-888fffe760d6d482.webp",
+    "width": 537,
+    "height": 358,
+    "bytes": 34650
+  },
+  "workshop/w-81": {
+    "src": "/optimized/workshop-w-81-d16092a775ecfefa.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 38894
+  },
+  "workshop/w-82": {
+    "src": "/optimized/workshop-w-82-acc54f6300f76ba3.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 37186
+  },
+  "workshop/w-83": {
+    "src": "/optimized/workshop-w-83-f4fabb082dde67cb.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 38332
+  },
+  "workshop/w-84": {
+    "src": "/optimized/workshop-w-84-b88c6b8f6356064e.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 36540
+  },
+  "workshop/w-85": {
+    "src": "/optimized/workshop-w-85-01bbc35f50fc16aa.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 34730
+  },
+  "workshop/w-86": {
+    "src": "/optimized/workshop-w-86-ac0b7601bdcc0b64.webp",
+    "width": 506,
+    "height": 337,
+    "bytes": 34924
+  },
+  "workshop/w-87": {
+    "src": "/optimized/workshop-w-87-3e1eb3dbf9b53800.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 60968
+  },
+  "workshop/w-88": {
+    "src": "/optimized/workshop-w-88-e9cbccdc405e91a7.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 64256
+  },
+  "workshop/w-89": {
+    "src": "/optimized/workshop-w-89-2ec46695452f6cf0.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 65626
+  },
+  "workshop/w-90": {
+    "src": "/optimized/workshop-w-90-99960358453f073a.webp",
+    "width": 762,
+    "height": 508,
+    "bytes": 68682
+  },
+  "workshop/p-1": {
+    "src": "/optimized/workshop-p-1-1e46dda7843f27f9.webp",
+    "width": 452,
+    "height": 301,
+    "bytes": 40120
+  },
+  "workshop/p-2": {
+    "src": "/optimized/workshop-p-2-4819d68f4b7044d3.webp",
+    "width": 452,
+    "height": 301,
+    "bytes": 39950
+  },
+  "workshop/p-3": {
+    "src": "/optimized/workshop-p-3-98cc03b0f030a090.webp",
+    "width": 446,
+    "height": 297,
+    "bytes": 38610
+  },
+  "workshop/p-4": {
+    "src": "/optimized/workshop-p-4-64a094d947f0750f.webp",
+    "width": 446,
+    "height": 297,
+    "bytes": 38182
+  },
+  "workshop/p-5": {
+    "src": "/optimized/workshop-p-5-7c32451b3b7c3098.webp",
+    "width": 471,
+    "height": 314,
+    "bytes": 37560
+  },
+  "workshop/p-6": {
+    "src": "/optimized/workshop-p-6-5eede6cc721c3a28.webp",
+    "width": 471,
+    "height": 314,
+    "bytes": 43148
+  },
+  "workshop/p-7": {
+    "src": "/optimized/workshop-p-7-6cb69e9237da35e7.webp",
+    "width": 468,
+    "height": 312,
+    "bytes": 46004
+  },
+  "workshop/p-8": {
+    "src": "/optimized/workshop-p-8-cb55ec8b9d42116e.webp",
+    "width": 468,
+    "height": 312,
+    "bytes": 34934
+  },
+  "workshop/p-9": {
+    "src": "/optimized/workshop-p-9-aa48e212e52e7b50.webp",
+    "width": 482,
+    "height": 321,
+    "bytes": 43548
+  },
+  "workshop/p-10": {
+    "src": "/optimized/workshop-p-10-18847f73534f02f3.webp",
+    "width": 482,
+    "height": 321,
+    "bytes": 50200
+  },
+  "council/estate": {
+    "src": "/optimized/council-estate-e951b0449c3bb9ff.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 341544
+  },
+  "council/citadel": {
+    "src": "/optimized/council-citadel-d82c22906b42d9ae.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 272638
+  },
+  "council/palace": {
+    "src": "/optimized/council-palace-1688600bd9683568.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 290680
+  },
+  "council/shrine": {
+    "src": "/optimized/council-shrine-d8c88e4061795744.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 260016
+  },
+  "council/chapel": {
+    "src": "/optimized/council-chapel-76d80ceadf496338.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 276574
+  },
+  "council/cloister": {
+    "src": "/optimized/council-cloister-5f725867060e183c.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 276890
+  },
+  "council/sanctum": {
+    "src": "/optimized/council-sanctum-e72c06b615bf54bd.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 255930
+  },
+  "council/inn": {
+    "src": "/optimized/council-inn-ada9cbce2253eb64.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 279308
+  },
+  "council/bazaar": {
+    "src": "/optimized/council-bazaar-7860be231cedb0db.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 309804
+  },
+  "council/exchange": {
+    "src": "/optimized/council-exchange-9bb58fc11109ae8b.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 296806
+  },
+  "council/pier": {
+    "src": "/optimized/council-pier-5355dd33d0d42ca5.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 307260
+  },
+  "council/port": {
+    "src": "/optimized/council-port-5a340aa3fbedf5e6.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 284018
+  },
+  "council/hall": {
+    "src": "/optimized/council-hall-f72971cadb21d078.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 363576
+  },
+  "council/outpost": {
+    "src": "/optimized/council-outpost-75bcd8690c23013e.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 189426
+  },
+  "council/vault": {
+    "src": "/optimized/council-vault-0696e3139d196327.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 241338
+  },
+  "council/barracks": {
+    "src": "/optimized/council-barracks-befda3f00f020498.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 240330
+  },
+  "council/bastion": {
+    "src": "/optimized/council-bastion-ea7302b8f24c4f5a.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 226322
+  },
+  "council/memory": {
+    "src": "/optimized/council-memory-c95d84d6b595b4a9.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 297028
+  },
+  "council/seal": {
+    "src": "/optimized/council-seal-e6e0cc415a5fb5f4.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 268972
+  },
+  "council/laboratory": {
+    "src": "/optimized/council-laboratory-8f8aad07114ef1a4.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 308336
+  },
+  "council/forge": {
+    "src": "/optimized/council-forge-1698c8a19ce23adf.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 307714
+  },
+  "council/observatory": {
+    "src": "/optimized/council-observatory-d36d221b0441fe4a.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 277454
+  },
+  "council/memorial": {
+    "src": "/optimized/council-memorial-50a418a9e440e44d.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 312044
+  },
+  "council/gate": {
+    "src": "/optimized/council-gate-5a2b636a9fde28e5.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 264800
+  },
+  "council/academy": {
+    "src": "/optimized/council-academy-abb74c26c6a4e1d1.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 301582
+  },
+  "council/archive": {
+    "src": "/optimized/council-archive-8676c1dd9c2f7893.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 288594
+  },
+  "council/rampart": {
+    "src": "/optimized/council-rampart-bd3b656fd9674856.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 259512
+  },
+  "council/prism": {
+    "src": "/optimized/council-prism-f6a3988a72e67559.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 305932
+  },
+  "council/role-1": {
+    "src": "/optimized/council-role-1-fbf87d712cb06056.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 212114
+  },
+  "council/role-2": {
+    "src": "/optimized/council-role-2-f8fd0295d181567a.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 194018
+  },
+  "council/role-3": {
+    "src": "/optimized/council-role-3-40ee5bd0a01573a1.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 227230
+  },
+  "council/role-4": {
+    "src": "/optimized/council-role-4-e79fa4b507e34c35.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 222020
+  },
+  "council/role-5": {
+    "src": "/optimized/council-role-5-a5d9dfb1b9a876e0.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 243886
+  },
+  "council/role-6": {
+    "src": "/optimized/council-role-6-267af7d6b26407a7.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 232874
+  },
+  "council/role-7": {
+    "src": "/optimized/council-role-7-c28760982fc75735.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 241358
+  },
+  "council/role-8": {
+    "src": "/optimized/council-role-8-4c915355704a4c29.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 201380
+  },
+  "signal/strike": {
+    "src": "/optimized/signal-strike-d0258b326aa8af60.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 231472
+  },
+  "signal/evade": {
+    "src": "/optimized/signal-evade-bdf1e936676a8b28.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 241144
+  },
+  "signal/tonic": {
+    "src": "/optimized/signal-tonic-5dc910a87811667f.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 206462
+  },
+  "signal/pulse": {
+    "src": "/optimized/signal-pulse-be67904b56984057.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 250650
+  },
+  "signal/challenge": {
+    "src": "/optimized/signal-challenge-073f96ea2dd0e188.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 242938
+  },
+  "signal/jam": {
+    "src": "/optimized/signal-jam-a25c74c01792eca5.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 261354
+  },
+  "signal/snatch": {
+    "src": "/optimized/signal-snatch-4e999744a1489bdc.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 259192
+  },
+  "signal/cache": {
+    "src": "/optimized/signal-cache-51416fae868b7a8c.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 269216
+  },
+  "signal/supply": {
+    "src": "/optimized/signal-supply-923daaf748c7b831.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 237354
+  },
+  "signal/caravan": {
+    "src": "/optimized/signal-caravan-47151de4baf9c17c.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 251570
+  },
+  "signal/barrage": {
+    "src": "/optimized/signal-barrage-ef376b7f431e2bea.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 231754
+  },
+  "signal/raiders": {
+    "src": "/optimized/signal-raiders-21e86297cd08b180.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 247988
+  },
+  "signal/shield": {
+    "src": "/optimized/signal-shield-7a52860b40052c7a.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 248406
+  },
+  "signal/detour": {
+    "src": "/optimized/signal-detour-869f089355b97e83.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 288130
+  },
+  "signal/lens": {
+    "src": "/optimized/signal-lens-bb26ea1cbd4e12b9.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 308202
+  },
+  "signal/quarantine": {
+    "src": "/optimized/signal-quarantine-b8ba71026fa99b2e.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 263772
+  },
+  "signal/reactor": {
+    "src": "/optimized/signal-reactor-ce0d13f827ce0588.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 290906
+  },
+  "signal/repeater": {
+    "src": "/optimized/signal-repeater-bf6c0cb478b09dab.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 292376
+  },
+  "signal/range2": {
+    "src": "/optimized/signal-range2-7a56817bc9bd0742.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 215240
+  },
+  "signal/range3": {
+    "src": "/optimized/signal-range3-ab28f0f70d555f48.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 255002
+  },
+  "signal/range4": {
+    "src": "/optimized/signal-range4-6a2b29664b54a49d.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 243656
+  },
+  "signal/range5": {
+    "src": "/optimized/signal-range5-2ec739697c4f7139.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 218470
+  },
+  "signal/character-resilient": {
+    "src": "/optimized/signal-character-resilient-0439ee5b183a8c48.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 250778
+  },
+  "signal/character-redreader": {
+    "src": "/optimized/signal-character-redreader-59b10f9ac2c750ac.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 250672
+  },
+  "signal/character-versatile": {
+    "src": "/optimized/signal-character-versatile-457b6774226b3cfa.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 236382
+  },
+  "signal/character-retaliator": {
+    "src": "/optimized/signal-character-retaliator-aa45683e7397680c.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 225950
+  },
+  "signal/character-scrounger": {
+    "src": "/optimized/signal-character-scrounger-451a515d0ed4022d.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 250328
+  },
+  "signal/character-warded": {
+    "src": "/optimized/signal-character-warded-e4a13b134af2b600.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 209908
+  },
+  "signal/character-surveyor": {
+    "src": "/optimized/signal-character-surveyor-39dff442ada62dcd.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 232822
+  },
+  "signal/character-fortunate": {
+    "src": "/optimized/signal-character-fortunate-ed467a315205e284.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 252348
+  },
+  "signal/character-elusive": {
+    "src": "/optimized/signal-character-elusive-b9261882f007f670.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 224586
+  },
+  "signal/character-recycler": {
+    "src": "/optimized/signal-character-recycler-520332fd0b9c97e1.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 271140
+  },
+  "signal/character-tracker": {
+    "src": "/optimized/signal-character-tracker-41f2aff1c6826856.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 253278
+  },
+  "signal/character-medic": {
+    "src": "/optimized/signal-character-medic-39ac417f53c08b8f.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 234414
+  },
+  "signal/character-piercer": {
+    "src": "/optimized/signal-character-piercer-ec204cb2f34654e3.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 244362
+  },
+  "signal/character-resourceful": {
+    "src": "/optimized/signal-character-resourceful-0a2bb832a2e382b6.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 214238
+  },
+  "signal/character-salvager": {
+    "src": "/optimized/signal-character-salvager-55b9d888c800e721.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 219940
+  },
+  "signal/character-rapid": {
+    "src": "/optimized/signal-character-rapid-4eea6f32ca6dad2c.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 225830
+  },
+  "signal/role-captain": {
+    "src": "/optimized/signal-role-captain-922807e795b68c4a.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 230738
+  },
+  "signal/role-ally": {
+    "src": "/optimized/signal-role-ally-605e90015c69abd2.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 267930
+  },
+  "signal/role-raider": {
+    "src": "/optimized/signal-role-raider-63245f179176eeaf.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 230794
+  },
+  "signal/role-drifter": {
+    "src": "/optimized/signal-role-drifter-d9a94d164f03de34.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 239296
+  },
+  "garden/coral-1": {
+    "src": "/optimized/garden-coral-1-e837bb10b8e462f5.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 148634
+  },
+  "garden/coral-2": {
+    "src": "/optimized/garden-coral-2-e00a63030fecec91.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 157800
+  },
+  "garden/coral-3": {
+    "src": "/optimized/garden-coral-3-9c1061d4da1109fb.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 139104
+  },
+  "garden/coral-4": {
+    "src": "/optimized/garden-coral-4-d5303339756aa127.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 159000
+  },
+  "garden/coral-5": {
+    "src": "/optimized/garden-coral-5-7df3c5b105c36fd1.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 148934
+  },
+  "garden/coral-6": {
+    "src": "/optimized/garden-coral-6-af135e3d512e0f43.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 141470
+  },
+  "garden/coral-7": {
+    "src": "/optimized/garden-coral-7-6588a917a65e8cf7.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 188108
+  },
+  "garden/coral-8": {
+    "src": "/optimized/garden-coral-8-9c3e93cda0659dda.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 190110
+  },
+  "garden/coral-9": {
+    "src": "/optimized/garden-coral-9-f186d9d34dcfa9b2.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 141900
+  },
+  "garden/coral-10": {
+    "src": "/optimized/garden-coral-10-7a6272b3ef9cae9d.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 169732
+  },
+  "garden/coral-11": {
+    "src": "/optimized/garden-coral-11-1bf7489c7bbd3a9a.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 165982
+  },
+  "garden/coral-12": {
+    "src": "/optimized/garden-coral-12-b07411662153aace.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 127616
+  },
+  "garden/coral-13": {
+    "src": "/optimized/garden-coral-13-0b7e5cec2f791a50.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 175580
+  },
+  "garden/sky-1": {
+    "src": "/optimized/garden-sky-1-db16522fd3135db8.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 148908
+  },
+  "garden/sky-2": {
+    "src": "/optimized/garden-sky-2-b622376437444459.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 188280
+  },
+  "garden/sky-3": {
+    "src": "/optimized/garden-sky-3-5d56e4a5ac952027.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 144982
+  },
+  "garden/sky-4": {
+    "src": "/optimized/garden-sky-4-dd430b42e72425fb.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 179870
+  },
+  "garden/sky-5": {
+    "src": "/optimized/garden-sky-5-39b0df0abed22e90.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 156956
+  },
+  "garden/sky-6": {
+    "src": "/optimized/garden-sky-6-58eb897b52d2de35.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 151836
+  },
+  "garden/sky-7": {
+    "src": "/optimized/garden-sky-7-76c160bcc61c17b0.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 196856
+  },
+  "garden/sky-8": {
+    "src": "/optimized/garden-sky-8-fb92b9b91bb9c2cb.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 217756
+  },
+  "garden/sky-9": {
+    "src": "/optimized/garden-sky-9-24717494977b8dbb.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 168846
+  },
+  "garden/sky-10": {
+    "src": "/optimized/garden-sky-10-7a8496f3833607f8.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 195626
+  },
+  "garden/sky-11": {
+    "src": "/optimized/garden-sky-11-d064d8a9162dde2c.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 190478
+  },
+  "garden/sky-12": {
+    "src": "/optimized/garden-sky-12-8225161fa55a9858.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 155972
+  },
+  "garden/sky-13": {
+    "src": "/optimized/garden-sky-13-f84a759d63c8a36b.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 211270
+  },
+  "garden/leaf-1": {
+    "src": "/optimized/garden-leaf-1-cd5441a0afd518ce.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 151104
+  },
+  "garden/leaf-2": {
+    "src": "/optimized/garden-leaf-2-36694af5bf814a8b.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 152376
+  },
+  "garden/leaf-3": {
+    "src": "/optimized/garden-leaf-3-71647b09d5aa1d90.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 157968
+  },
+  "garden/leaf-4": {
+    "src": "/optimized/garden-leaf-4-eb1bedab9b4f1181.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 192058
+  },
+  "garden/leaf-5": {
+    "src": "/optimized/garden-leaf-5-51222adc9e2422ca.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 138284
+  },
+  "garden/leaf-6": {
+    "src": "/optimized/garden-leaf-6-c6d061884b3bdc82.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 134372
+  },
+  "garden/leaf-7": {
+    "src": "/optimized/garden-leaf-7-8d0be86591c1d978.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 175486
+  },
+  "garden/leaf-8": {
+    "src": "/optimized/garden-leaf-8-f076e9b09c7c4132.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 168472
+  },
+  "garden/leaf-9": {
+    "src": "/optimized/garden-leaf-9-11320edb05e6ac29.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 168182
+  },
+  "garden/leaf-10": {
+    "src": "/optimized/garden-leaf-10-69939d83f2ee9fdd.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 188570
+  },
+  "garden/leaf-11": {
+    "src": "/optimized/garden-leaf-11-770413cc55d4f02c.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 186534
+  },
+  "garden/leaf-12": {
+    "src": "/optimized/garden-leaf-12-6370cf051410ee27.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 165016
+  },
+  "garden/leaf-13": {
+    "src": "/optimized/garden-leaf-13-bcec79de76e5ecf7.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 190738
+  },
+  "garden/violet-1": {
+    "src": "/optimized/garden-violet-1-0877e6ca18bd25bd.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 141256
+  },
+  "garden/violet-2": {
+    "src": "/optimized/garden-violet-2-aa71387d075a891b.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 150628
+  },
+  "garden/violet-3": {
+    "src": "/optimized/garden-violet-3-a6a78158fd79be3b.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 135422
+  },
+  "garden/violet-4": {
+    "src": "/optimized/garden-violet-4-9130fb1cc24e939e.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 156782
+  },
+  "garden/violet-5": {
+    "src": "/optimized/garden-violet-5-b24beaece53fbdb9.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 138138
+  },
+  "garden/violet-6": {
+    "src": "/optimized/garden-violet-6-5ce8029b7fbdc4ac.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 138426
+  },
+  "garden/violet-7": {
+    "src": "/optimized/garden-violet-7-94ec8ca81b124331.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 167236
+  },
+  "garden/violet-8": {
+    "src": "/optimized/garden-violet-8-da1c4d93989b7617.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 172212
+  },
+  "garden/violet-9": {
+    "src": "/optimized/garden-violet-9-9e779aae49a0ae0d.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 191954
+  },
+  "garden/violet-10": {
+    "src": "/optimized/garden-violet-10-345f1c4ac2c13271.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 171586
+  },
+  "garden/violet-11": {
+    "src": "/optimized/garden-violet-11-538de8af83a2b173.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 169570
+  },
+  "garden/violet-12": {
+    "src": "/optimized/garden-violet-12-88d3ab2448d4445c.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 126658
+  },
+  "garden/violet-13": {
+    "src": "/optimized/garden-violet-13-e2d31b3e7c4fd811.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 198582
+  },
+  "garden/joker": {
+    "src": "/optimized/garden-joker-c5cd4c840c26aaa0.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 170328
+  },
+  "/art/cards/sky-hop/aurora-support-v2.png": {
+    "src": "/optimized/cards-sky-hop-aurora-support-v2-0d6cd99b49ceec9e.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 35642
+  },
+  "/art/cards/sky-hop/aurora-2-v3.png": {
+    "src": "/optimized/cards-sky-hop-aurora-2-v3-c97edefee338446d.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 36472
+  },
+  "/art/cards/sky-hop/aurora-3-v2.png": {
+    "src": "/optimized/cards-sky-hop-aurora-3-v2-1523f027888236d5.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 37164
+  },
+  "/art/cards/sky-hop/aurora-4-v3.png": {
+    "src": "/optimized/cards-sky-hop-aurora-4-v3-13086e1c62942e7e.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 39322
+  },
+  "/art/cards/sky-hop/aurora-5-v4.png": {
+    "src": "/optimized/cards-sky-hop-aurora-5-v4-ed9b1180ff3e75fa.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 32772
+  },
+  "/art/cards/sky-hop/aurora-6-v2.png": {
+    "src": "/optimized/cards-sky-hop-aurora-6-v2-afd3d72b463a0a67.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 39110
+  },
+  "/art/cards/sky-hop/aurora-7-v2.png": {
+    "src": "/optimized/cards-sky-hop-aurora-7-v2-e52e39e11d7d2076.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 34668
+  },
+  "/art/cards/sky-hop/aurora-8-v2.png": {
+    "src": "/optimized/cards-sky-hop-aurora-8-v2-35a16a3c67cb1978.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 36844
+  },
+  "/art/cards/sky-hop/aurora-9-v2.png": {
+    "src": "/optimized/cards-sky-hop-aurora-9-v2-836b7dcf783a7e06.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 44114
+  },
+  "/art/cards/sky-hop/aurora-10-v5.png": {
+    "src": "/optimized/cards-sky-hop-aurora-10-v5-d482a749379c6544.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 43750
+  },
+  "/art/cards/sky-hop/ember-support-v2.png": {
+    "src": "/optimized/cards-sky-hop-ember-support-v2-8d542eeafa00befc.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 35474
+  },
+  "/art/cards/sky-hop/ember-2-v3.png": {
+    "src": "/optimized/cards-sky-hop-ember-2-v3-1d4fa32ff4365299.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 34356
+  },
+  "/art/cards/sky-hop/ember-3-v2.png": {
+    "src": "/optimized/cards-sky-hop-ember-3-v2-fbc3dcb119ccf993.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 42510
+  },
+  "/art/cards/sky-hop/ember-4-v2.png": {
+    "src": "/optimized/cards-sky-hop-ember-4-v2-14fd234874d07bd4.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 46234
+  },
+  "/art/cards/sky-hop/ember-5-v2.png": {
+    "src": "/optimized/cards-sky-hop-ember-5-v2-92732dac13fc0789.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 37234
+  },
+  "/art/cards/sky-hop/ember-6-v2.png": {
+    "src": "/optimized/cards-sky-hop-ember-6-v2-734c95d26768b834.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 40338
+  },
+  "/art/cards/sky-hop/ember-7-v2.png": {
+    "src": "/optimized/cards-sky-hop-ember-7-v2-a92830fb60da84ce.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 37372
+  },
+  "/art/cards/sky-hop/ember-8-v2.png": {
+    "src": "/optimized/cards-sky-hop-ember-8-v2-15ac3e4caae3e79c.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 37782
+  },
+  "/art/cards/sky-hop/ember-9-v2.png": {
+    "src": "/optimized/cards-sky-hop-ember-9-v2-a008308a4d1c98bc.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 45990
+  },
+  "/art/cards/sky-hop/ember-10-v3.png": {
+    "src": "/optimized/cards-sky-hop-ember-10-v3-7f4a8bd6269e87b9.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 47120
+  },
+  "/art/cards/sky-hop/tide-support.png": {
+    "src": "/optimized/cards-sky-hop-tide-support-2b58009bc5599714.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 30992
+  },
+  "/art/cards/sky-hop/tide-2.png": {
+    "src": "/optimized/cards-sky-hop-tide-2-9fa1ea5e62d37164.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 34864
+  },
+  "/art/cards/sky-hop/tide-3.png": {
+    "src": "/optimized/cards-sky-hop-tide-3-a604ff263d47ccd2.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 35228
+  },
+  "/art/cards/sky-hop/tide-4.png": {
+    "src": "/optimized/cards-sky-hop-tide-4-b5465f03310743a2.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 34390
+  },
+  "/art/cards/sky-hop/tide-5.png": {
+    "src": "/optimized/cards-sky-hop-tide-5-86be849a7aeb8874.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 31526
+  },
+  "/art/cards/sky-hop/tide-6.png": {
+    "src": "/optimized/cards-sky-hop-tide-6-a151706ffa2dd878.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 34288
+  },
+  "/art/cards/sky-hop/tide-7.png": {
+    "src": "/optimized/cards-sky-hop-tide-7-ac7a3360eb5e2118.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 31720
+  },
+  "/art/cards/sky-hop/tide-8.png": {
+    "src": "/optimized/cards-sky-hop-tide-8-085e96abc6a91abf.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 30348
+  },
+  "/art/cards/sky-hop/tide-9.png": {
+    "src": "/optimized/cards-sky-hop-tide-9-c6f8df42aa4d21f3.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 34448
+  },
+  "/art/cards/sky-hop/tide-10-v2.png": {
+    "src": "/optimized/cards-sky-hop-tide-10-v2-8077e6c1cca22011.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 30046
+  },
+  "/art/cards/sky-hop/moss-support.png": {
+    "src": "/optimized/cards-sky-hop-moss-support-8123da888ec4f324.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 38250
+  },
+  "/art/cards/sky-hop/moss-2.png": {
+    "src": "/optimized/cards-sky-hop-moss-2-f8a24347a76e0349.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 42066
+  },
+  "/art/cards/sky-hop/moss-3.png": {
+    "src": "/optimized/cards-sky-hop-moss-3-28e36e06074be243.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 40672
+  },
+  "/art/cards/sky-hop/moss-4.png": {
+    "src": "/optimized/cards-sky-hop-moss-4-89d650fb1d3fd57b.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 47202
+  },
+  "/art/cards/sky-hop/moss-5.png": {
+    "src": "/optimized/cards-sky-hop-moss-5-2e31c6576f1d2b2d.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 47740
+  },
+  "/art/cards/sky-hop/moss-6.png": {
+    "src": "/optimized/cards-sky-hop-moss-6-77c720e629b97562.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 45498
+  },
+  "/art/cards/sky-hop/moss-7.png": {
+    "src": "/optimized/cards-sky-hop-moss-7-467b3a7ee9dcbe7d.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 40354
+  },
+  "/art/cards/sky-hop/moss-8-v2.png": {
+    "src": "/optimized/cards-sky-hop-moss-8-v2-af42ba2471cec619.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 44596
+  },
+  "/art/cards/sky-hop/moss-9-v2.png": {
+    "src": "/optimized/cards-sky-hop-moss-9-v2-73606ac83b73d5af.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 45692
+  },
+  "/art/cards/sky-hop/moss-10.png": {
+    "src": "/optimized/cards-sky-hop-moss-10-43354466c088809e.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 45764
+  },
+  "/art/cards/sky-hop/dusk-support.png": {
+    "src": "/optimized/cards-sky-hop-dusk-support-fa577d502a1889f1.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 44054
+  },
+  "/art/cards/sky-hop/dusk-2.png": {
+    "src": "/optimized/cards-sky-hop-dusk-2-b21471f79cec9ddc.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 48154
+  },
+  "/art/cards/sky-hop/dusk-3.png": {
+    "src": "/optimized/cards-sky-hop-dusk-3-65f918ee73580874.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 51748
+  },
+  "/art/cards/sky-hop/dusk-4.png": {
+    "src": "/optimized/cards-sky-hop-dusk-4-b5a58a5f43293750.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 53912
+  },
+  "/art/cards/sky-hop/dusk-5.png": {
+    "src": "/optimized/cards-sky-hop-dusk-5-17f2643e3b7e46a4.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 52732
+  },
+  "/art/cards/sky-hop/dusk-6-v2.png": {
+    "src": "/optimized/cards-sky-hop-dusk-6-v2-fbe04346b33c48ec.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 56362
+  },
+  "/art/cards/sky-hop/dusk-7.png": {
+    "src": "/optimized/cards-sky-hop-dusk-7-0785bdf442403722.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 55264
+  },
+  "/art/cards/sky-hop/dusk-8.png": {
+    "src": "/optimized/cards-sky-hop-dusk-8-6197193e81ce2ae2.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 56376
+  },
+  "/art/cards/sky-hop/dusk-9.png": {
+    "src": "/optimized/cards-sky-hop-dusk-9-43c9b4e811f5c83a.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 53682
+  },
+  "/art/cards/sky-hop/dusk-10.png": {
+    "src": "/optimized/cards-sky-hop-dusk-10-6d786e782e01b0fc.webp",
+    "width": 768,
+    "height": 1152,
+    "bytes": 60046
+  },
+  "/art/club-lost-pets.png": {
+    "src": "/optimized/club-lost-pets-56ec9fc004f98e02.webp",
+    "width": 960,
+    "height": 649,
+    "bytes": 42248
+  },
+  "/art/club-wild-splendor.png": {
+    "src": "/optimized/club-wild-splendor-30ade16c7eecb1d2.webp",
+    "width": 1280,
+    "height": 853,
+    "bytes": 215284
+  },
+  "/art/club-council.png": {
+    "src": "/optimized/club-council-058ef0841d00ec7f.webp",
+    "width": 1280,
+    "height": 853,
+    "bytes": 160600
+  },
+  "/art/club-signal.png": {
+    "src": "/optimized/club-signal-78b389c18604a7bf.webp",
+    "width": 1280,
+    "height": 853,
+    "bytes": 179568
+  },
+  "/art/club-garden.png": {
+    "src": "/optimized/club-garden-72a428e3eb70e383.webp",
+    "width": 1280,
+    "height": 853,
+    "bytes": 116176
+  }
+}

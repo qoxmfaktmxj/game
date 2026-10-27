@@ -17,15 +17,18 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "test:e2e": "playwright test",
-    "test:art": "tsx --test tests/card-art-assets.test.ts",
+    "test:art": "tsx --test tests/card-art-assets.test.ts tests/web-assets.test.ts",
     "build": "npm run build --workspace @moyeotable/game-server && npm run build --workspace @moyeotable/web",
-    "check": "npm run typecheck && npm test && npm run build"
+    "check": "npm run typecheck && npm test && npm run build",
+    "assets:web": "node scripts/prepare-web-assets.mjs",
+    "assets:stage": "node scripts/stage-web-public.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2",
     "tsx": "4.23.15",
     "prettier": "3.9.10",
     "@types/node": "^24.0.0",
-    "@playwright/test": "^1.56.0"
+    "@playwright/test": "^1.56.0",
+    "sharp": "0.35.5"
   }
 }

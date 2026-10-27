@@ -152,3 +152,7 @@ FAQ가 요구하는 주요 회귀시험: Slab+Barrel은 대응1개만 차감; Ga
 공식 룰북이 정하는 사항이 아니라 이 저장소의 네트워크 구현 요구다. 네 게임 모두 순수 `create/apply/view/result` 경계로 둔다. 모든 선택 대기 단계와 효과 큐를 저장하고, ACK는 저장 이후 전송한다. 액터는 인증 연결에서 결정한다. `commandId`, `expectedVersion`, `rulesVersion`, `contentVersion`을 유지한다. 재접속은 선택 중인 자신의 비공개 선택지만 복구한다. 연결 끊김을 게임 내 패배나 임의 카드소비로 바꾸지 않는다.
 
 이번 조사에서 내려받은 공식 PDF와 추출 텍스트는 저장소 밖 `%TEMP%/ringuringu-rules-research/`에만 두었다. `public/`, 앱 빌드, Git에 포함하지 않았다. `splendor.pdf`, `bang.pdf`, `bang-faq.pdf`, `rummikub.pdf`, `citadels-2010.pdf`, `citadels-current.pdf`, `citadels-faq.pdf`, `splendor-nobles.pdf`가 해당한다. 이 문서는 출처 검토 기록이며 구현·네트워크 플레이 검증 완료 보고가 아니다.
+
+## 2026-10-27 스플렌더 재검토
+
+사용자가 제공한 카드 사진, WING 설명과 공식 기본판 PDF를 다시 확인했다. 모든 등급의 카드당 할인은 1이며, 점수와 별도로 누적되는 현행 판정이 맞다. 포켓몬판 복수 아이콘과 진화 규칙은 적용하지 않는다. 나무위키 직접 열기는 실패했다. [표시 변경과 재검토 근거](web-assets-and-workshop.md)에 기록했다.

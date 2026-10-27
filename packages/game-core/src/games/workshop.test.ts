@@ -126,6 +126,23 @@ test("buy supports voluntary gold, exact payment, permanent discounts", () => {
   assert.equal(g.bonuses(n.players[0]).white, 1);
   assert.equal(n.market[0].length, 4);
 });
+test("모든 단계는 같은 색 할인 1을 제공하고 누적 할인은 소비되지 않는다", () => {
+  const s = g.create(["a", "b"], entropy);
+  for (const level of [1, 2, 3]) {
+    const card = g.WORKS.find(
+      (work) => work.level === level && work.bonus === "white",
+    )!;
+    own(s, 0, card.id);
+    assert.equal(g.bonuses(s.players[0]).white, level);
+  }
+  const target = s.market.flat().find((work) => work.cost.white >= 1)!;
+  const before = structuredClone(s.players[0]);
+  g.price(s.players[0], target);
+  g.price(s.players[0], target);
+  assert.deepEqual(s.players[0], before);
+  assert.equal(g.bonuses(s.players[0]).white, 3);
+});
+
 test("qualifying for multiple patrons requires choice and grants only one", () => {
   const s = g.create(["a", "b"], entropy);
   for (const c of ["green", "red", "blue"] as const)

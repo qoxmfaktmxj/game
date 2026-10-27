@@ -19,7 +19,9 @@ test("50 selected animal illustrations remain distinct and readable on mobile", 
     images.map((image) => image.getAttribute("src")),
   );
   expect(new Set(sources).size).toBe(50);
-  expect(decodeURIComponent(sources[8]!)).toContain("aurora-10-v5.png");
+  expect(decodeURIComponent(sources[8]!)).toMatch(
+    /aurora-10-v5-[a-f0-9]+\.webp/,
+  );
   for (const name of ["멍이", "냥이", "물개", "수달", "랑이"]) {
     await expect(
       page.getByRole("heading", { level: 2, name, exact: true }),

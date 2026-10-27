@@ -10,6 +10,7 @@ RUN npm ci
 COPY apps ./apps
 COPY packages ./packages
 COPY tsconfig.base.json ./
+COPY scripts/stage-web-public.mjs ./scripts/stage-web-public.mjs
 ARG PUBLIC_ORIGIN=https://game.minseok91.cloud
 ENV NEXT_PUBLIC_GAME_SERVER_URL=$PUBLIC_ORIGIN NEXT_TELEMETRY_DISABLED=1
 RUN npm run build --workspace @moyeotable/game-server && npm run build --workspace @moyeotable/web
@@ -19,7 +20,7 @@ ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 HOSTNAME=0.0.0.0 PORT=3000
 WORKDIR /app
 COPY --from=build --chown=node:node /app/apps/web/.next/standalone ./
 COPY --from=build --chown=node:node /app/apps/web/.next/static ./apps/web/.next/static
-COPY --from=build --chown=node:node /app/apps/web/public ./apps/web/public
+COPY --from=build --chown=node:node /app/apps/web/.web-public ./apps/web/public
 USER node
 EXPOSE 3000
 CMD ["node", "apps/web/server.js"]

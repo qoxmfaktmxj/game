@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { webImage } from "../lib/web-assets";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -85,7 +86,7 @@ function ClubScene() {
             <span className="club-sample-rank">{rank}</span>
             <div className="club-sample-art">
               <Image
-                src={starCardArt[suit][rank]!.src}
+                src={webImage(starCardArt[suit][rank]!.src)}
                 alt={starCardArt[suit][rank]!.name}
                 fill
                 sizes="(max-width: 760px) 120px, 180px"
@@ -175,7 +176,7 @@ export function Home({
                 aria-label={`${game.name} 테이블 만들기`}
               >
                 <Image
-                  src={GAME_CATALOG[game.key].art}
+                  src={webImage(GAME_CATALOG[game.key].art)}
                   alt=""
                   fill
                   sizes="(max-width: 760px) 50vw, 23vw"

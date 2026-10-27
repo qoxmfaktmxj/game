@@ -10,6 +10,7 @@ import {
 import { Client, type Room } from "@colyseus/sdk";
 import { MotionConfig } from "motion/react";
 import Image from "next/image";
+import { webImage } from "../lib/web-assets";
 import {
   ArrowLeft,
   ArrowRight,
@@ -1056,18 +1057,19 @@ export function MoyeotableApp() {
                     >
                       {animalTheme ? (
                         <Image
-                          src={metadata.art}
+                          src={webImage(metadata.art)}
                           alt="2부터 10까지 3×3으로 놓인 동물 카드와 오른쪽의 ×2 수달 카드"
                           width={960}
                           height={648}
                           sizes="(max-width: 760px) 90vw, 320px"
                         />
                       ) : (
-                        <img
-                          src={metadata.art}
+                        <Image
+                          src={webImage(metadata.art)}
                           alt={`${metadata.name} 게임 아트`}
-                          width="1000"
-                          height="850"
+                          width={1000}
+                          height={850}
+                          sizes="(max-width: 760px) 90vw, 320px"
                         />
                       )}
                     </div>

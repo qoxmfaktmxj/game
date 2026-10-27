@@ -1,0 +1,96 @@
+{
+  "style": "B 선명한 카툰풍, 간식 칩은 실물 재질 표현",
+  "generatedWith": "내장 image_gen",
+  "assets": [
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/capybara-1.png",
+      "sha256": "ba8183037c20c7363868803e02d0cb298bfb16498a0c42a527b9972a5d861145",
+      "bytes": 2213764
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/capybara-2.png",
+      "sha256": "1ea1c45dbf45cd1b4350be0fa12b7f2e3f2034220ff4a3c39527c57ab8217d19",
+      "bytes": 2248813
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/capybara-3.png",
+      "sha256": "a9900984c6466c2657bfdfa02d35ae06c25b305eb4ce6b47c63ac22cb38fa65f",
+      "bytes": 2071473
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/cat-1.png",
+      "sha256": "24b9af52186576f8cc879fe4b51a99c1ac2e116603d5636719ecb0c55c00ca01",
+      "bytes": 2318062
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/cat-2.png",
+      "sha256": "f1dca7e3fa66821ce6d07dc2757fdb3e57b0661c2abc99727b43fdedb575ada2",
+      "bytes": 2424137
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/cat-3.png",
+      "sha256": "cd4398851afcb63152e521597fe2a6905402c078b2c074c138e9ad4d2c995beb",
+      "bytes": 2321041
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/dog-1.png",
+      "sha256": "af827e0911af791e135856358f5978de1330e2acf88615296d12613f69cea186",
+      "bytes": 2332744
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/dog-2.png",
+      "sha256": "7359346a5f4419e3cf98527ba55dd12376267d27ca343ec95dd9e7b2f10e357c",
+      "bytes": 2384711
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/dog-3.png",
+      "sha256": "f7dd979c0581d85fd21d6ef8a9b8e95c8ed746a555dc27001741a01ec5d4837c",
+      "bytes": 2191484
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/guardians.png",
+      "sha256": "3b20c6a22aa2a093ffc25206b3dfb0da13500c40cc347214651c5b44a1f65434",
+      "bytes": 2688158
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/otter-1.png",
+      "sha256": "ae7c84d10d2c0de7087b2fbe21570fed13e5a94efb7edf59c1731f5cb4827490",
+      "bytes": 2280472
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/otter-2.png",
+      "sha256": "66cfb7b3ed65d54eead6f4ac3745c10db7fb02e23ffca9c7bd655cc3e1d17545",
+      "bytes": 2382373
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/otter-3.png",
+      "sha256": "a0dda0a497838f2089950119e739de551f605a4933b19e9f25ef63cf8d8a3cae",
+      "bytes": 2207423
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/resources.png",
+      "sha256": "88b4bfb97ec8bdf3dad59128e81bc0657f3f8716339544ee3800e9da1c92dee1",
+      "bytes": 2657632
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/tiger-1.png",
+      "sha256": "761e4655b6782f8e84fdfb6d5a841ad9edfa6d8f94182b81f3933da34264efbd",
+      "bytes": 2495137
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/tiger-2.png",
+      "sha256": "77bb008b7490369e142f9473d5f554f8449a346e0ad5ba94173fdedcc80f6257",
+      "bytes": 2534569
+    },
+    {
+      "path": "apps/web/public/art/cards/wild-splendor-cartoon/tiger-3.png",
+      "sha256": "f9a0bae55e7a853c296b78257fd7808fa9aa9529af1e78b87e66c88e458800fb",
+      "bytes": 2445660
+    },
+    {
+      "path": "apps/web/public/art/club-wild-splendor.png",
+      "sha256": "e5ffa35bd566c9db6c010596f0b86737344b287d4482f81a1e39209d9145d2b7",
+      "bytes": 2145538
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 // Rebuild public presentation metadata from the verified card IDs, never game rules.
 import { readFileSync, writeFileSync } from "node:fs";
+import sharp from "sharp";
 
 const cards = JSON.parse(
   readFileSync("packages/game-core/src/games/workshop-cards.json", "utf8"),
@@ -92,12 +93,12 @@ for (const item of ready) {
     const group = `${family.key}-${card.level}`;
     const index = counters.get(group) ?? 0;
     counters.set(group, index + 1);
-    const columns = { 1: 4, 2: 3, 3: 2 }[card.level];
-    item.name = `${["", "아기", "청소년", "어른"][card.level]} ${family.names[index]} · ${scenes[card.level][index]}`;
-    item.src = `/art/cards/wild-splendor/${group}.png`;
+    const columns = 2;
+    item.name = `${["", "아기", "청소년", "어른"][card.level]} ${family.names[index]} / ${scenes[card.level][index]}`;
+    item.src = `/art/cards/wild-splendor-cartoon/${group}.png`;
     item.atlas = {
       columns,
-      rows: 2,
+      rows: { 1: 4, 2: 3, 3: 2 }[card.level],
       column: index % columns,
       row: Math.floor(index / columns),
     };
@@ -106,35 +107,36 @@ for (const item of ready) {
     const index = Number(item.key.slice(2)) - 1;
     if (!guardians[index]) throw new Error(`Unknown guardian ${item.key}`);
     item.name = guardians[index];
-    item.src = "/art/cards/wild-splendor/guardians.png";
+    item.src = "/art/cards/wild-splendor-cartoon/guardians.png";
     item.atlas = {
       columns: 2,
       rows: 5,
       column: index % 2,
       row: Math.floor(index / 2),
     };
-    // The generated guardian sheet has slightly uneven row boundaries.
-    // Measured safe rectangles keep adjacent pictures out of every viewport.
-    const bounds = [
-      [0, 320],
-      [322, 642],
-      [645, 959],
-      [962, 1257],
-      [1260, 1619],
-    ];
-    const [top, bottom] = bounds[Math.floor(index / 2)];
-    const left = index % 2 === 0 ? 0 : 487;
-    const cellWidth = 484;
-    const height = Math.min(bottom - top, cellWidth / 1.5);
-    const width = height * 1.5;
-    item.atlas.crop = {
-      left: (left + (cellWidth - width) / 2) / 971,
-      top: (top + (bottom - top - height) / 2) / 1619,
-      width: width / 971,
-      height: height / 1619,
-    };
     item.stage = 4;
   }
+  const { width, height } = await sharp(
+    `apps/web/public${item.src}`,
+  ).metadata();
+  const atlas = item.atlas;
+  const rowBounds =
+    item.stage === 4
+      ? [0, 305 / 1619, 606 / 1619, 924 / 1619, 1240 / 1619, 1]
+      : Array.from({ length: atlas.rows + 1 }, (_, i) => i / atlas.rows);
+  const cellLeft = (atlas.column * width) / atlas.columns + 2;
+  const cellTop = rowBounds[atlas.row] * height + 2;
+  const cellWidth = width / atlas.columns - 4;
+  const cellHeight =
+    (rowBounds[atlas.row + 1] - rowBounds[atlas.row]) * height - 4;
+  const cropWidth = Math.min(cellWidth, cellHeight * 1.5);
+  const cropHeight = cropWidth / 1.5;
+  atlas.crop = {
+    left: (cellLeft + (cellWidth - cropWidth) / 2) / width,
+    top: (cellTop + (cellHeight - cropHeight) / 2) / height,
+    width: cropWidth / width,
+    height: cropHeight / height,
+  };
 }
 for (const [group, count] of counters) {
   if (count !== { 1: 8, 2: 6, 3: 4 }[group.at(-1)])

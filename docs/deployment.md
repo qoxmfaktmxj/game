@@ -74,3 +74,7 @@ docker compose --env-file .env.self-host -f deploy/compose.yaml exec -T postgres
 ## 여기서 확인하지 못한 것
 
 현재 개발 컴퓨터에는 Docker·리눅스 실행 환경·PostgreSQL이 없어 실제 Compose 이미지 빌드와 migration, Caddy 인증서 발급은 실행하지 않았다. 소스 빌드·타입·규칙·브라우저·실제 로컬 소켓 검증과 Docker 설정 정적 검토를 구분한다. 아직 공개 서비스 URL이 활성화되었다고 주장하지 않는다.
+
+## 2026-10-27 웹 자산 변경
+
+현재 Docker 웹 이미지는 원본 public 전체 대신 빌드에서 생성한 `.web-public`만 포함한다. 확정 그림의 WebP, 문자 구간별 Pretendard와 라이선스를 사용한다. 새 그림을 적용할 때 먼저 `npm run assets:web`을 실행하고 생성 파일과 manifest를 함께 반영한다. [경량화와 검증 기록](web-assets-and-workshop.md)을 참고한다.

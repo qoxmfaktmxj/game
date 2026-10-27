@@ -22,21 +22,6 @@
   object-fit: cover;
   object-position: center 42%;
 }
-.game-card-art.is-atlas,
-.other-card-gallery .game-card-art.is-atlas,
-.work-card > .game-card-art.is-atlas,
-.patron-card > .game-card-art.is-atlas {
-  height: auto;
-  aspect-ratio: 3 / 2;
-}
-.card-art-atlas {
-  position: absolute;
-  display: block;
-}
-.game-card-art.is-atlas .card-art-atlas img {
-  object-fit: fill;
-  object-position: center;
-}
 .work-card > .game-card-art {
   height: 105px;
 }

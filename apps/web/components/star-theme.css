@@ -12,9 +12,13 @@
   --animal-star-animal-theme-ink: var(--color-ink);
   --animal-star-animal-theme-button-primary-ink: var(--color-paper);
   --animal-star-animal-theme-button-primary-surface: var(--color-accent-hover);
-  --animal-star-animal-theme-button-secondary-shadow: var(--color-border-strong);
+  --animal-star-animal-theme-button-secondary-shadow: var(
+    --color-border-strong
+  );
   --animal-star-animal-theme-button-secondary-surface: var(--color-paper-2);
-  --animal-star-animal-theme-icon-button-bordered-edge: var(--color-border-strong);
+  --animal-star-animal-theme-icon-button-bordered-edge: var(
+    --color-border-strong
+  );
   --animal-star-animal-theme-avatar-surface: var(--color-accent-soft);
   --animal-star-animal-theme-avatar-ink: var(--color-accent-text);
   --animal-star-animal-theme-avatar-opponent-surface: #fce6d6;
@@ -24,7 +28,11 @@
   --animal-star-animal-theme-seat-avatar-empty-ink: var(--color-muted);
   --animal-star-animal-theme-seat-avatar-empty-edge: var(--color-border-strong);
   --animal-star-animal-theme-seat-h3-small-surface: var(--color-accent-soft);
-  --animal-star-animal-theme-modal-shadow: color-mix(in srgb, var(--color-ink) 19%, transparent);
+  --animal-star-animal-theme-modal-shadow: color-mix(
+    in srgb,
+    var(--color-ink) 19%,
+    transparent
+  );
   --animal-star-animal-theme-modal-surface: var(--color-backdrop);
   --animal-star-animal-theme-field-edge: var(--color-border-strong);
   --animal-star-animal-theme-field-ink: var(--color-muted);
@@ -34,16 +42,28 @@
   --animal-star-animal-theme-form-success-ink: var(--color-success);
   --animal-space-20: 20px;
   --animal-space-6: 6px;
-  --animal-star-animal-theme-toast-shadow: color-mix(in srgb, var(--color-ink) 14%, transparent);
+  --animal-star-animal-theme-toast-shadow: color-mix(
+    in srgb,
+    var(--color-ink) 14%,
+    transparent
+  );
   --animal-star-animal-theme-local-mode-edge: var(--color-rule);
-  --animal-star-animal-theme-result-person-winner-surface: var(--color-accent-soft);
+  --animal-star-animal-theme-result-person-winner-surface: var(
+    --color-accent-soft
+  );
   --animal-playing-card-animal-playing-card-edge: var(--color-card-edge);
-  --animal-animal-playing-card-support-card-card-corner-ink: var(--color-accent-text);
+  --animal-animal-playing-card-support-card-card-corner-ink: var(
+    --color-accent-text
+  );
   --animal-space-3: 3px;
   --animal-space-54: 54px;
   --animal-space-36: 36px;
-  --animal-animal-card-gallery-card-gallery-intro-nav-a-surface: var(--color-paper-2);
-  --animal-animal-card-gallery-card-gallery-intro-nav-a-edge: var(--color-border-strong);
+  --animal-animal-card-gallery-card-gallery-intro-nav-a-surface: var(
+    --color-paper-2
+  );
+  --animal-animal-card-gallery-card-gallery-intro-nav-a-edge: var(
+    --color-border-strong
+  );
   --animal-space-18: 18px;
   --animal-space-32: 32px;
   --animal-space-9: 9px;
@@ -287,6 +307,26 @@ body:has(.star-animal-theme) {
 }
 
 /* Card ranks and family names are live text, never embedded in the artwork. */
+.playing-card.animal-playing-card.aurora {
+  --animal-family-border: #ac6b00;
+  --animal-family-ink: #704600;
+}
+.playing-card.animal-playing-card.ember {
+  --animal-family-border: #c83b64;
+  --animal-family-ink: #962346;
+}
+.playing-card.animal-playing-card.tide {
+  --animal-family-border: #0878b8;
+  --animal-family-ink: #065585;
+}
+.playing-card.animal-playing-card.moss {
+  --animal-family-border: #16814d;
+  --animal-family-ink: #0e5b35;
+}
+.playing-card.animal-playing-card.dusk {
+  --animal-family-border: #7851b5;
+  --animal-family-ink: #563583;
+}
 .playing-card.animal-playing-card {
   --card-rank-height: 32px;
   --card-name-height: 22px;
@@ -302,7 +342,7 @@ body:has(.star-animal-theme) {
   overflow: hidden;
   color: var(--animal-star-animal-theme-ink);
   background: var(--animal-star-animal-theme-button-primary-ink);
-  border: 1px solid var(--animal-playing-card-animal-playing-card-edge);
+  border: 2px solid var(--animal-family-border);
   border-radius: 10px;
   box-shadow: none;
   font-variant-numeric: tabular-nums;
@@ -330,7 +370,7 @@ body:has(.star-animal-theme) {
   align-items: flex-start;
   justify-content: center;
   background: var(--animal-star-animal-theme-button-primary-ink);
-  color: var(--animal-star-animal-theme-ink);
+  color: var(--animal-family-ink);
   font-family: var(--sans);
   font-size: var(--card-rank-size);
   font-weight: 850;
@@ -341,7 +381,7 @@ body:has(.star-animal-theme) {
 }
 .animal-playing-card.support-card .card-corner {
   font-size: var(--card-support-size);
-  color: var(--animal-animal-playing-card-support-card-card-corner-ink);
+  color: var(--animal-family-ink);
 }
 .animal-playing-card .card-center .suit-icon {
   width: 12px;
@@ -356,7 +396,7 @@ body:has(.star-animal-theme) {
   padding: 0 var(--card-label-inset);
   line-height: 1.2;
   background: var(--animal-star-animal-theme-button-primary-ink);
-  color: var(--animal-star-animal-theme-ink);
+  color: var(--animal-family-ink);
   flex-direction: row;
   gap: var(--animal-space-3);
   align-items: center;

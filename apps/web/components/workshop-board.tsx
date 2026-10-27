@@ -9,6 +9,12 @@ import {
   workshopResources,
   workshopStages,
 } from "../lib/workshop-theme";
+import {
+  ResourceArt,
+  TokenPile,
+  TokenInventory,
+  useTokenTransfers,
+} from "./workshop-tokens";
 import "./workshop-theme.css";
 type View = GameViewMap["workshop"];
 type Work = View["market"][number][number];
@@ -24,16 +30,6 @@ const names: Record<Token, string> = {
   black: workshopResources.black.name,
   gold: workshopResources.gold.name,
 };
-function ResourceArt({ token }: { token: Token }) {
-  const { column, row } = workshopResources[token];
-  return (
-    <span
-      className="wild-resource-art"
-      aria-hidden="true"
-      style={{ backgroundPosition: `${column * 50}% ${row * 100}%` }}
-    />
-  );
-}
 const zero = () => ({ white: 0, blue: 0, green: 0, red: 0, black: 0, gold: 0 });
 function Cost({ cost }: { cost: Record<Color, number> }) {
   return (
@@ -45,10 +41,10 @@ function Cost({ cost }: { cost: Record<Color, number> }) {
             className={`token token-${c}`}
             key={c}
             title={names[c]}
+            role="img"
             aria-label={`${names[c]} ${cost[c]}`}
           >
             <ResourceArt token={c} />
-            <span aria-hidden="true">{workshopResources[c].short}</span>
             {cost[c]}
           </span>
         ))}
@@ -72,12 +68,12 @@ function WorkCard({
       onClick={onClick}
       disabled={disabled}
       aria-pressed={selected ?? false}
-      aria-label={`${workshopCardName(work.id)} · ${work.level}단계 · ${work.points}점 · 비용 ${
+      aria-label={`${workshopCardName(work.id)} / ${work.level}단계 / ${work.points}점 / 비용 ${
         colors
           .filter((c) => work.cost[c] > 0)
           .map((c) => `${names[c]} ${work.cost[c]}`)
           .join(", ") || "없음"
-      } · ${names[work.bonus]} 영구 할인 1`}
+      } / ${names[work.bonus]} 영구 할인 1`}
     >
       <span className="work-card-top">
         <strong>
@@ -89,16 +85,15 @@ function WorkCard({
           title={`${names[work.bonus]} 영구 할인 1`}
         >
           <ResourceArt token={work.bonus} />
-          <span>{workshopResources[work.bonus].short} +1</span>
+          <span className="visually-hidden">영구 할인 1</span>
         </span>
       </span>
       <CardArt game="workshop" id={work.id} />
       <span className="work-card-name">
-        <span>{workshopCardName(work.id).split(" · ")[0]}</span>
-        <small>{workshopCardName(work.id).split(" · ")[1]}</small>
+        <span>{workshopCardName(work.id).split(" / ")[0]}</span>
+        <small>{workshopCardName(work.id).split(" / ")[1]}</small>
       </span>
       <Cost cost={work.cost} />
-      <span className="work-bonus">{names[work.bonus]} 영구 할인 +1</span>
     </button>
   );
 }
@@ -116,6 +111,8 @@ export function WorkshopBoard({
     [returned, setReturned] = useState(zero),
     [payment, setPayment] = useState(zero);
   const actionPanelRef = useRef<HTMLElement>(null);
+  const workspaceRef = useRef<HTMLDivElement>(null);
+  useTokenTransfers(workspaceRef, mine.tokens, game.bank, connected, game.you);
   useEffect(() => {
     setSelected(null);
     setTake([]);
@@ -185,8 +182,13 @@ export function WorkshopBoard({
             </summary>
             <div className="token-bar">
               {tokens.map((c) => (
-                <span className={`token token-${c}`} key={c}>
-                  {names[c]} {p.tokens[c]}
+                <span
+                  className={`token token-${c}`}
+                  key={c}
+                  aria-label={`${names[c]} ${p.tokens[c]}개`}
+                  title={names[c]}
+                >
+                  <ResourceArt token={c} /> {p.tokens[c]}
                 </span>
               ))}
             </div>
@@ -205,11 +207,11 @@ export function WorkshopBoard({
           마지막 라운드예요. 모두 같은 횟수의 차례를 마치면 점수를 비교해요.
         </p>
       )}
-      <div className="workshop-workspace">
+      <div className="workshop-workspace" ref={workspaceRef}>
         <div className="workshop-market-area">
           <section className="work-market" aria-label="숲속 동물 카드">
             <p className="game-footnote">
-              간식을 모아 동물을 데려오세요. 아기·청소년·어른 카드는 각각
+              간식을 모아 동물을 데려오세요. 아기, 청소년, 어른 카드는 각각
               독립적으로 얻어요.
             </p>
             {[2, 1, 0].map((level) => (
@@ -311,7 +313,7 @@ export function WorkshopBoard({
                   .filter((c) => work.cost[c] > mine.bonuses[c])
                   .map((c) => (
                     <label className={`game-field token token-${c}`} key={c}>
-                      {names[c]}
+                      <ResourceArt token={c} />
                       <select
                         aria-label={`지불할 ${names[c]}`}
                         value={payment[c]}
@@ -337,7 +339,8 @@ export function WorkshopBoard({
                     </label>
                   ))}
                 <span className="token token-gold">
-                  황금 뼈다귀 {payment.gold} / 보유 {mine.tokens.gold}
+                  <ResourceArt token="gold" /> {payment.gold} / 보유{" "}
+                  {mine.tokens.gold}
                 </span>
               </div>
               <div className="action-tray">
@@ -383,6 +386,11 @@ export function WorkshopBoard({
                 <button
                   key={c}
                   className={`token token-${c} ${take.includes(c) ? "selected" : ""}`}
+                  data-token-zone="bank"
+                  data-token={c}
+                  aria-label={`${names[c]} ${game.bank[c]}개, 선택 ${take.filter((x) => x === c).length}개`}
+                  aria-pressed={take.includes(c)}
+                  title={names[c]}
                   disabled={
                     disabled ||
                     game.phase !== "ACTION" ||
@@ -391,26 +399,41 @@ export function WorkshopBoard({
                   }
                   onClick={() => setTake((old) => [...old, c])}
                 >
-                  <ResourceArt token={c} />
-                  <strong>{names[c]}</strong>
-                  <span>{game.bank[c]}</span>
+                  <TokenPile token={c} count={game.bank[c]} />
+                  <b aria-hidden="true">{game.bank[c]}</b>
                   {take.includes(c) && (
                     <small>선택 {take.filter((x) => x === c).length}</small>
                   )}
                 </button>
               ))}
-              <div className="token token-gold">
-                <ResourceArt token="gold" />
-                <strong>황금 뼈다귀</strong>
-                <span>{game.bank.gold}</span>
-                <small>예약할 때 받아요</small>
+              <div
+                className="token token-gold"
+                role="img"
+                data-token-zone="bank"
+                data-token="gold"
+                aria-label={`황금 뼈다귀 ${game.bank.gold}개, 예약할 때 받아요`}
+                title="황금 뼈다귀, 예약할 때 받아요"
+              >
+                <TokenPile token="gold" count={game.bank.gold} />
+                <b aria-hidden="true">{game.bank.gold}</b>
               </div>
             </div>
+            <p className="wild-bank-hint">
+              <ResourceArt token="gold" /> 예약하면 1개 받아요
+            </p>
             {game.phase === "ACTION" && (
               <div className="action-tray">
-                <span>
+                <span
+                  className="wild-take-preview"
+                  aria-live="polite"
+                  aria-label={
+                    take.length
+                      ? `선택한 간식 ${take.map((c) => names[c]).join(", ")}`
+                      : undefined
+                  }
+                >
                   {take.length
-                    ? take.map((c) => names[c]).join(", ")
+                    ? take.map((c, i) => <ResourceArt token={c} key={i} />)
                     : "가져올 간식을 골라 주세요"}
                 </span>
                 <button
@@ -442,15 +465,16 @@ export function WorkshopBoard({
               </h3>
               <span>{mine.points}점 / 15점</span>
             </div>
-            <div className="token-bar">
-              {tokens.map((c) => (
-                <span className={`token token-${c}`} key={c}>
-                  {names[c]} <b>{mine.tokens[c]}</b>
-                </span>
-              ))}
-            </div>
-            <p>영구 할인</p>
+            <TokenInventory counts={mine.tokens} />
+            <p className="wild-discount-heading">
+              영구 할인 <small>동물 카드 1장당 1개</small>
+            </p>
             <Cost cost={mine.bonuses} />
+            {mine.owned.length === 0 && (
+              <p className="game-footnote">
+                동물을 데려오면 다음 구매부터 계속 할인돼요.
+              </p>
+            )}
             <h4>예약 동물 {game.yourReserved.length}/3</h4>
             <div className="reserved-works">
               {game.yourReserved.map((w) => (
@@ -477,7 +501,7 @@ export function WorkshopBoard({
               <div className="token-bar">
                 {tokens.map((c) => (
                   <label className={`game-field token token-${c}`} key={c}>
-                    {names[c]}
+                    <ResourceArt token={c} />
                     <select
                       aria-label={`반환할 ${names[c]}`}
                       value={returned[c]}

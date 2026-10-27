@@ -125,7 +125,7 @@ test("Wild Splendor maps all 90 original card IDs to the correct animal and grow
     assert.equal(art.stage, work.level);
     assert.equal(
       art.src,
-      `/art/cards/wild-splendor/${families[work.bonus]}-${work.level}.png`,
+      `/art/cards/wild-splendor-cartoon/${families[work.bonus]}-${work.level}.png`,
     );
     assert.ok(art.name.startsWith(["", "아기", "청소년", "어른"][work.level]));
   }
@@ -134,10 +134,6 @@ test("Wild Splendor maps all 90 original card IDs to the correct animal and grow
       (item) => item.game === "workshop" && item.key === patron.id,
     );
     assert.equal(art?.stage, 4);
-    assert.equal(art?.src, "/art/cards/wild-splendor/guardians.png");
+    assert.equal(art?.src, "/art/cards/wild-splendor-cartoon/guardians.png");
   }
-  const chips = readFileSync(
-    "apps/web/public/art/cards/wild-splendor/resources.png",
-  );
-  assert.equal(chips.subarray(0, 8).toString("hex"), "89504e470d0a1a0a");
 });

@@ -77,6 +77,44 @@ async function start(pages: Page[]) {
     .click();
   for (const p of pages) await expect(p.locator(".multi-board")).toBeVisible();
 }
+async function checkWorkshopCards(page: Page) {
+  const issues = await page
+    .locator(".work-market .work-card, .reserved-works .work-card")
+    .evaluateAll((cards) => {
+      const failures: string[] = [];
+      for (const card of cards) {
+        const bounds = card.getBoundingClientRect();
+        const rect = (selector: string) =>
+          card.querySelector(selector)!.getBoundingClientRect();
+        const bonus = rect(".work-card-top .wild-resource-art");
+        const art = rect(".game-card-art");
+        const name = rect(".work-card-name");
+        const cost = rect(".work-cost");
+        const costChip = rect(".work-cost .wild-resource-art");
+        if (
+          bonus.bottom > art.top - 3 + 0.5 ||
+          art.bottom + 3 > name.top + 0.5 ||
+          name.bottom > cost.top + 0.5 ||
+          cost.bottom > bounds.bottom - 1
+        )
+          failures.push("카드 영역 겹침");
+        if (
+          Math.abs(bonus.width - (innerWidth <= 700 ? 38.4 : 48)) > 0.2 ||
+          Math.abs(costChip.width - (innerWidth <= 700 ? 27.6 : 31.2)) > 0.2
+        )
+          failures.push("칩 크기 불일치");
+        if (getComputedStyle(card).backgroundColor !== "rgb(255, 255, 255)")
+          failures.push("흰 카드 표면 불일치");
+        for (const token of card.querySelectorAll(".work-cost .token")) {
+          const box = token.getBoundingClientRect();
+          if (box.left < bounds.left || box.right > bounds.right)
+            failures.push("비용 칩 가로 넘침");
+        }
+      }
+      return failures;
+    });
+  expect(issues).toEqual([]);
+}
 async function mobile(page: Page, name: string, info: TestInfo) {
   for (const width of [360, 390]) {
     await page.setViewportSize({ width, height: 844 });
@@ -87,6 +125,7 @@ async function mobile(page: Page, name: string, info: TestInfo) {
         ),
       )
       .toBeLessThanOrEqual(1);
+    if (name === "workshop") await checkWorkshopCards(page);
     await page.screenshot({
       path: info.outputPath(`${name}-${width}.png`),
       fullPage: true,
@@ -129,6 +168,21 @@ test("four friends use one invitation, collect light, reserve privately, reconne
       .getByRole("button", { name: "닫기", exact: true })
       .filter({ hasText: "닫기" })
       .click();
+    await expect(
+      host.locator(".bank-tokens .token-white .wild-pile-piece"),
+    ).toHaveCount(7);
+    await expect(
+      host.locator(".bank-tokens .token-gold .wild-pile-piece"),
+    ).toHaveCount(5);
+    await expect(host.locator(".wild-inventory .wild-pile-piece")).toHaveCount(
+      0,
+    );
+    await expect(
+      host.locator(".work-market .work-card-top .wild-resource-art"),
+    ).toHaveCount(12);
+    for (const cost of await host.locator(".work-market .work-cost").all()) {
+      await expect(cost).not.toContainText(/[가-힣]/);
+    }
     await host.locator(".bank-tokens .token-white").click();
     await host.locator(".bank-tokens .token-blue").click();
     await host.locator(".bank-tokens .token-green").click();
@@ -138,6 +192,17 @@ test("four friends use one invitation, collect light, reserve privately, reconne
     await expect(guest.locator(".multi-board-heading")).toContainText(
       "내 차례예요",
     );
+    await expect(
+      host.locator(".bank-tokens .token-white .wild-pile-piece"),
+    ).toHaveCount(6);
+    for (const token of ["white", "blue", "green"]) {
+      await expect(
+        host.locator(
+          `[data-token-zone="mine"][data-token="${token}"] .wild-pile-piece`,
+        ),
+      ).toHaveCount(1);
+    }
+    await expect(host.locator(".wild-token-flight")).toHaveCount(0);
     await guest.locator(".work-deck").filter({ hasText: "1단계" }).click();
     await expect(guest.locator(".reserved-works .work-card")).toHaveCount(1);
     await expect(host.locator(".reserved-works .work-card")).toHaveCount(0);
@@ -150,10 +215,51 @@ test("four friends use one invitation, collect light, reserve privately, reconne
       "aria-label",
       reserved!,
     );
+    for (const player of pages.slice(2)) {
+      await player.locator(".work-deck").filter({ hasText: "1단계" }).click();
+    }
+    await host.emulateMedia({ reducedMotion: "no-preference" });
+    await host.locator(".bank-tokens .token-white").click();
+    await host.locator(".bank-tokens .token-white").click();
+    await host.evaluate(() => {
+      Reflect.set(window, "observedTokenFlights", 0);
+      const observer = new MutationObserver((records) => {
+        const added = records
+          .flatMap((record) => [...record.addedNodes])
+          .filter(
+            (node) =>
+              node instanceof Element && node.matches(".wild-token-flight"),
+          ).length;
+        const count =
+          Number(Reflect.get(window, "observedTokenFlights")) + added;
+        Reflect.set(window, "observedTokenFlights", count);
+        if (count >= 2) observer.disconnect();
+      });
+      observer.observe(document.body, { childList: true });
+    });
+    await host
+      .getByRole("button", { name: "선택한 간식 가져오기", exact: true })
+      .click();
+    await expect
+      .poll(() =>
+        host.evaluate(() => Reflect.get(window, "observedTokenFlights")),
+      )
+      .toBe(2);
+    await expect(
+      host.locator(
+        '[data-token-zone="mine"][data-token="white"] .wild-pile-piece',
+      ),
+    ).toHaveCount(3);
+    await expect(host.locator(".wild-token-flight")).toHaveCount(0);
+    await host.screenshot({
+      path: info.outputPath("workshop-three-tokens.png"),
+      fullPage: true,
+    });
     await guest.screenshot({
       path: info.outputPath("workshop-desktop.png"),
       fullPage: true,
     });
+    await checkWorkshopCards(guest);
     await mobile(guest, "workshop", info);
     expect(errors).toEqual([]);
   } finally {

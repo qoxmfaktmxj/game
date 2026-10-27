@@ -1,66 +1,167 @@
-/* Wild Splendor keeps the shared Open Air surfaces and uses resource hues only for game meaning. */
 .multi-board.workshop-board {
-  --wild-honey-paper: #fff3cf;
-  --wild-honey-ink: #755012;
-  --wild-acorn-paper: #f2e6db;
-  --wild-acorn-ink: #71452b;
-  --wild-joker-paper: #fff1a8;
-  --wild-joker-ink: #694600;
+  --snack-shadow: #24242c30;
+  --wild-card-border: #dad9d5;
+  --wild-card-art-line: #efefeb;
+  --wild-card-shadow: 0 2px 4px #26262620, 0 12px 24px #26262614;
+  --wild-bonus-size: 48px;
+  --wild-cost-size: 31.2px;
 }
-.multi-board.workshop-board .token-white {
-  --token-bg: var(--wild-honey-paper);
-  --token-ink: var(--wild-honey-ink);
+.snack-white,
+.workshop-board .token-white,
+.workshop-board .work-white {
+  --chip-color: #b45b00;
+  --chip-ink: #fff;
+  --chip-edge: #7b3d08;
+  --token-bg: #fff2cf;
+  --token-ink: #633600;
 }
-.multi-board.workshop-board .token-black {
-  --token-bg: var(--wild-acorn-paper);
-  --token-ink: var(--wild-acorn-ink);
+.snack-blue,
+.workshop-board .token-blue,
+.workshop-board .work-blue {
+  --chip-color: #1764d9;
+  --chip-ink: #fff;
+  --chip-edge: #103d8a;
+  --token-bg: #e8f1ff;
+  --token-ink: #164280;
 }
-.multi-board.workshop-board .token-gold {
-  --token-bg: var(--wild-joker-paper);
-  --token-ink: var(--wild-joker-ink);
+.snack-green,
+.workshop-board .token-green,
+.workshop-board .work-green {
+  --chip-color: #078440;
+  --chip-ink: #fff;
+  --chip-edge: #07502b;
+  --token-bg: #e5f5e9;
+  --token-ink: #155d32;
 }
-.multi-board.workshop-board .work-white {
-  --work-accent: var(--wild-honey-ink);
-  background: var(--wild-honey-paper);
+.snack-red,
+.workshop-board .token-red,
+.workshop-board .work-red {
+  --chip-color: #d52e43;
+  --chip-ink: #fff;
+  --chip-edge: #862033;
+  --token-bg: #ffe9ec;
+  --token-ink: #922235;
 }
-.multi-board.workshop-board .work-black {
-  --work-accent: var(--wild-acorn-ink);
-  background: var(--wild-acorn-paper);
+.snack-black,
+.workshop-board .token-black,
+.workshop-board .work-black {
+  --chip-color: #60351f;
+  --chip-ink: #fff;
+  --chip-edge: #352014;
+  --token-bg: #f1e7df;
+  --token-ink: #59301b;
+}
+.snack-gold,
+.workshop-board .token-gold {
+  --chip-color: #f6cf36;
+  --chip-ink: #553700;
+  --chip-edge: #a77c0b;
+  --token-bg: #fff8ce;
+  --token-ink: #634700;
 }
 .wild-resource-art {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   flex: none;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-image: url("/art/cards/wild-splendor/resources.png");
-  background-size: 300% 200%;
-  background-repeat: no-repeat;
+  width: 28px;
+  height: 28px;
+  color: var(--chip-ink);
+  background: transparent;
+  border: 0;
 }
-.bank-tokens .wild-resource-art {
-  width: 54px;
-  height: 54px;
+.wild-resource-art > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-.multi-board.workshop-board .work-cost .wild-resource-art {
-  width: 18px;
-  height: 18px;
+
+.multi-board.workshop-board .work-card {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--wild-card-border);
+  border-radius: 12px;
+  box-shadow: var(--wild-card-shadow);
+  padding: 10px;
+  gap: 8px;
+  overflow: hidden;
+}
+.multi-board.workshop-board .work-card-top {
+  color: var(--token-ink);
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  min-height: var(--wild-bonus-size);
+  flex: none;
+}
+.multi-board.workshop-board .work-card-top > strong {
+  font-size: 28px;
 }
 .multi-board.workshop-board .work-card-top .token {
-  min-height: 28px;
-  padding: 2px 4px;
-  gap: 3px;
-  font-size: 12px;
-  white-space: nowrap;
+  background: transparent;
+  color: inherit;
+  min-height: 32px;
+  padding: 0;
 }
 .multi-board.workshop-board .work-card-top .wild-resource-art {
-  width: 20px;
-  height: 20px;
+  width: var(--wild-bonus-size);
+  height: var(--wild-bonus-size);
 }
-.multi-board.workshop-board .work-card > .game-card-art.is-atlas,
-.multi-board.workshop-board .patron-card > .game-card-art.is-atlas {
+.multi-board.workshop-board .work-card > .game-card-art,
+.multi-board.workshop-board .patron-card > .game-card-art {
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 2;
+}
+.multi-board.workshop-board .work-card > .game-card-art {
+  outline: 3px solid var(--wild-card-art-line);
+  border-radius: 6px;
+}
+.multi-board.workshop-board .work-card-name {
+  font-size: 13px;
+  line-height: 1.5;
+  word-break: keep-all;
+  text-align: center;
+}
+.multi-board.workshop-board .work-card-name > span {
+  display: block;
+}
+.multi-board.workshop-board .work-card-name > small {
+  display: none;
+}
+.multi-board.workshop-board .work-cost {
+  gap: 5px;
+  margin-top: auto;
+}
+.multi-board.workshop-board .work-cost .token {
+  background: transparent;
+  color: var(--ink);
+  padding: 0;
+  min-height: 28px;
+  gap: 3px;
+  font-size: 16px;
+  font-weight: 800;
+}
+.multi-board.workshop-board .work-cost .wild-resource-art {
+  width: 26px;
+  height: 26px;
+}
+.multi-board.workshop-board .work-card > .work-cost {
+  width: 100%;
+  justify-content: center;
+  column-gap: 6px;
+  row-gap: 6px;
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+}
+.multi-board.workshop-board .work-card > .work-cost .token {
+  flex: none;
+  white-space: nowrap;
+}
+.multi-board.workshop-board .work-card > .work-cost .wild-resource-art {
+  width: var(--wild-cost-size);
+  height: var(--wild-cost-size);
 }
 .multi-board.workshop-board .patron-card {
   grid-template-columns: minmax(0, 1fr);
@@ -81,19 +182,147 @@
 .multi-board.workshop-board .wild-stage-name {
   font-size: 12px;
   line-height: 1.6;
-  text-wrap: balance;
 }
 .multi-board.workshop-board .board-section-heading h3 {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 6px;
 }
-.multi-board.workshop-board .work-card-name {
-  text-wrap: balance;
-  min-height: 2.8em;
-  word-break: keep-all;
+.multi-board.workshop-board .bank-tokens {
+  align-items: stretch;
+  gap: 8px;
 }
-.multi-board.workshop-board .work-card-name > span,
-.multi-board.workshop-board .work-card-name > small {
+.multi-board.workshop-board .bank-tokens > .token {
+  min-height: 128px;
+  padding: 5px 0 8px;
+  border: 1px solid transparent;
+  background: var(--token-bg);
+  position: relative;
+  justify-content: flex-end;
+  transition:
+    background 160ms,
+    transform 160ms;
+}
+.multi-board.workshop-board .bank-tokens > button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  border-color: var(--chip-edge);
+}
+.multi-board.workshop-board .bank-tokens > .token.selected {
+  outline: 2px solid var(--chip-edge);
+  outline-offset: 1px;
+}
+.multi-board.workshop-board .bank-tokens > .token > small {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  font-size: 11px;
+  background: var(--paper);
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+.multi-board.workshop-board .bank-tokens > .token > b {
+  font-size: 20px;
+  line-height: 1.2;
+}
+.wild-token-pile {
   display: block;
+  position: relative;
+  width: 100%;
+  height: 92px;
+  flex: none;
+}
+.wild-pile-piece {
+  display: block;
+  position: absolute;
+  width: 44px;
+  height: 44px;
+}
+.wild-pile-piece .wild-resource-art,
+.wild-token-empty .wild-resource-art {
+  width: 44px;
+  height: 44px;
+  border-width: 3px;
+}
+.wild-token-empty {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 22px);
+  opacity: 0.2;
+}
+.wild-inventory {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.wild-token-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 8px;
+  background: var(--token-bg);
+  color: var(--token-ink);
+  border-radius: 10px;
+}
+.wild-token-slot > b {
+  font-size: 18px;
+  line-height: 1.4;
+}
+.wild-bank-hint,
+.wild-take-preview {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  min-height: 32px;
+}
+.wild-bank-hint {
+  margin: 10px 0 6px;
+  font-size: 12px;
+  color: var(--ink);
+}
+.wild-bank-hint .wild-resource-art {
+  width: 23px;
+  height: 23px;
+}
+.wild-discount-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+  margin-block: 16px 8px;
+}
+.wild-discount-heading > small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.wild-token-flight {
+  position: fixed;
+  z-index: 200;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+}
+@media (min-width: 1101px) {
+  .workshop-workspace {
+    grid-template-columns: minmax(0, 1fr) 304px;
+  }
+}
+@media (max-width: 700px) {
+  .multi-board.workshop-board {
+    --wild-bonus-size: 38.4px;
+    --wild-cost-size: 27.6px;
+  }
+  .multi-board.workshop-board .market-row {
+    grid-template-columns: 64px repeat(4, 160px);
+  }
+  .multi-board.workshop-board .work-card {
+    min-height: 224px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .multi-board.workshop-board .bank-tokens > .token {
+    transition: none;
+  }
+  .multi-board.workshop-board .bank-tokens > button:hover:not(:disabled) {
+    transform: none;
+  }
 }

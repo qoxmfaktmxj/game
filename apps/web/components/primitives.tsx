@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, type ReactNode } from "react";
 import Image from "next/image";
+import { webImage } from "../lib/web-assets";
 import { ArrowUpRight, X, LoaderCircle } from "lucide-react";
 import type { Card, Suit } from "@moyeotable/contracts";
 import { suitNames } from "../lib/client";
@@ -132,7 +133,7 @@ export function PlayingCard({
       </span>
       <span className="card-art-window">
         <Image
-          src={getStarCardArt(card).src}
+          src={webImage(getStarCardArt(card).src)}
           alt=""
           fill
           sizes={artSizes}
