@@ -15,6 +15,21 @@ test("50 selected animal illustrations remain distinct and readable on mobile", 
   );
   const illustrations = page.locator(".card-gallery-grid img.card-art");
   await expect(illustrations).toHaveCount(50);
+  const rankColors = await page
+    .locator(".card-gallery-grid")
+    .evaluateAll((grids) =>
+      grids.map((grid) => [
+        ...new Set(
+          Array.from(
+            grid.querySelectorAll(".card-corner"),
+            (rank) => getComputedStyle(rank).backgroundColor,
+          ),
+        ),
+      ]),
+    );
+  expect(rankColors.every((family) => family.length === 1)).toBe(true);
+  expect(new Set(rankColors.flat()).size).toBe(5);
+  expect(rankColors.flat()).not.toContain("rgb(255, 255, 255)");
   const sources = await illustrations.evaluateAll((images) =>
     images.map((image) => image.getAttribute("src")),
   );

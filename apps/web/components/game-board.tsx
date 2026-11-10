@@ -257,7 +257,24 @@ export function GameBoard({
             role="group"
             aria-label="함께 쓰는 버림 더미"
           >
-            <div className="board-row-label">함께 쓰는 버림 더미</div>
+            <div className="discard-heading">
+              <span className="board-row-label">함께 쓰는 버림 더미</span>
+              <button
+                type="button"
+                className={`draw-deck ${canDraw ? "available" : ""}`}
+                disabled={!canDraw || locked}
+                onClick={() => act({ type: "STAR_DRAW_DECK", payload: {} })}
+                aria-label={`덱에서 뽑기, ${game.deckCount}장 남음`}
+              >
+                <span className="deck-back" aria-hidden="true">
+                  <SuitIcon suit="dusk" />
+                </span>
+                <span>덱에서 뽑기</span>
+                <span>
+                  <b>{game.deckCount}</b>장 남음
+                </span>
+              </button>
+            </div>
             <div className="discard-row">
               {suits.map((suit) => {
                 const pile = game.discards[suit];
@@ -312,20 +329,6 @@ export function GameBoard({
               })}
             </div>
           </div>
-          <button
-            className={`draw-deck ${canDraw ? "available" : ""}`}
-            disabled={!canDraw || locked}
-            onClick={() => act({ type: "STAR_DRAW_DECK", payload: {} })}
-            aria-label={`덱에서 뽑기, ${game.deckCount}장 남음`}
-          >
-            <div className="deck-back">
-              <SuitIcon suit="dusk" />
-              <span>링구링구</span>
-            </div>
-            <span>
-              <b>{game.deckCount}</b>장 남음
-            </span>
-          </button>
         </div>
         <div className="my-path-title">
           <strong>나의 길</strong>

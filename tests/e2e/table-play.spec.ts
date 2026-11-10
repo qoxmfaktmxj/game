@@ -48,8 +48,63 @@ async function checkMobileWidths(
         new Promise<void>((resolve) => requestAnimationFrame(() => resolve())),
     );
     await assertNoHorizontalOverflow(page, `${screen} at ${width}px`);
+    if (screen === "game-in-progress") await checkSuitColumns(page, testInfo);
     await captureScreenshot(page, `${screen}-${width}.png`, testInfo);
   }
+}
+
+async function checkSuitColumns(page: Page, info: TestInfo) {
+  const layout = await page.locator(".game-surface").evaluate((board) => {
+    function columns(selector: string) {
+      return Array.from(board.querySelectorAll(selector), (face) => {
+        const { x, width } = face.getBoundingClientRect();
+        return {
+          suit: face.closest<HTMLElement>("[data-suit]")!.dataset.suit,
+          center: x + width / 2,
+        };
+      });
+    }
+    const heading = board
+      .querySelector(".board-row-label")!
+      .getBoundingClientRect();
+    const deck = board.querySelector(".draw-deck")!.getBoundingClientRect();
+    return {
+      theirs: columns(".theirs .lane-slot"),
+      discard: columns(".discard-row .discard-face"),
+      mine: columns(".mine .lane-slot"),
+      deckBesideTitle:
+        deck.left >= heading.right &&
+        deck.top <= heading.top &&
+        deck.bottom >= heading.bottom,
+      deckAbovePiles:
+        deck.bottom <=
+        board.querySelector(".discard-row")!.getBoundingClientRect().top,
+      deckHeight: deck.height,
+    };
+  });
+  expect(layout.deckBesideTitle && layout.deckAbovePiles).toBe(true);
+  expect(layout.deckHeight).toBeGreaterThanOrEqual(44);
+  expect(layout.discard.map((col) => col.suit)).toEqual([
+    "aurora",
+    "ember",
+    "tide",
+    "moss",
+    "dusk",
+  ]);
+  for (const row of [layout.theirs, layout.mine]) {
+    expect(row.map((col) => col.suit)).toEqual(
+      layout.discard.map((col) => col.suit),
+    );
+    row.forEach((col, i) =>
+      expect(
+        Math.abs(col.center - layout.discard[i]!.center),
+      ).toBeLessThanOrEqual(1),
+    );
+  }
+  await writeFile(
+    info.outputPath(`suit-columns-${page.viewportSize()!.width}.json`),
+    JSON.stringify(layout, null, 2),
+  );
 }
 
 async function selectWithTurnControls(
@@ -453,6 +508,8 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
         await guest
           .getByRole("button", { name: "덱에서 뽑기", exact: true })
           .tap();
+      } else if (actor === guest) {
+        await drawButton(guest, 44 - turn).tap();
       } else {
         await drawButton(actor, 44 - turn).click();
       }
@@ -469,6 +526,7 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
         await expect(handCards(opponent).first()).toBeEnabled();
       }
       if (turn === 19) {
+        await checkSuitColumns(host, testInfo);
         await captureScreenshot(host, "game-in-progress-desktop.png", testInfo);
         await checkMobileWidths(guest, "game-in-progress", testInfo);
       }

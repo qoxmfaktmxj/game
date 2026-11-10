@@ -77,10 +77,14 @@
   border-color: var(--color-border-strong);
   background: var(--color-paper-2);
 }
-.star-animal-board .lane-row {
+.star-animal-board .lane-row,
+.star-animal-board .discard-row {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--space-sm);
-  margin-top: var(--space-md);
   align-items: start;
+}
+.star-animal-board .lane-row {
+  margin-top: var(--space-md);
 }
 .star-animal-board .lane {
   padding: 0;
@@ -89,7 +93,7 @@
   border-radius: 9px;
 }
 .star-animal-board .lane-label {
-  color: var(--board-ink);
+  color: var(--animal-family-ink);
   font-size: 13px;
   gap: var(--star-space-5);
   margin-bottom: var(--space-xs);
@@ -115,13 +119,12 @@
   background: var(--star-clear);
 }
 .star-animal-board .empty-lane {
-  color: var(--board-muted);
+  color: var(--animal-family-ink);
   gap: var(--space-xs);
 }
 .star-animal-board .empty-lane > .suit-icon {
   width: 28px;
   height: 28px;
-  opacity: 0.65;
 }
 .star-animal-board .animal-card-stack {
   position: relative;
@@ -195,23 +198,22 @@
   outline-offset: 5px;
 }
 .star-animal-board .shared-center {
-  --shared-label-height: 18px;
-  --shared-label-gap: var(--star-space-9);
-  gap: var(--space-ml);
+  display: block;
   margin: var(--space-ml) 0;
   padding: var(--star-space-14) 0;
   border-color: var(--board-line);
-  align-items: flex-start;
+}
+.star-animal-board .discard-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 .star-animal-board .board-row-label {
   color: var(--board-muted);
   font-size: 12px;
-  line-height: var(--shared-label-height);
-  margin-bottom: var(--shared-label-gap);
-}
-.star-animal-board .discard-row {
-  gap: var(--space-sm);
-  align-items: start;
+  line-height: 1.4;
+  margin: 0;
 }
 .star-animal-board .discard-pile {
   display: flex;
@@ -260,7 +262,7 @@
   border: 1px dashed var(--color-border-strong);
   border-radius: 8px;
   background: var(--color-paper-2);
-  color: var(--board-muted);
+  color: var(--animal-family-ink);
 }
 .star-animal-board .discard-empty > span {
   font-size: 11px;
@@ -308,33 +310,29 @@
 }
 .star-animal-board .draw-deck {
   color: var(--board-ink);
-  flex-shrink: 0;
-  align-self: flex-start;
-  margin-top: calc(var(--shared-label-height) + var(--shared-label-gap));
-  min-width: 70px;
+  flex-direction: row;
+  min-height: 44px;
+  padding: 4px var(--space-sm);
   gap: var(--space-xs);
+  background: var(--paper);
+  border: 1px solid var(--board-line);
+  border-radius: 8px;
+  white-space: nowrap;
   opacity: 1 !important;
 }
 .star-animal-board .deck-back {
-  width: 70px;
-  height: var(--discard-card-height);
+  width: 23px;
+  height: 31px;
   background: var(--color-accent);
-  border: 4px solid var(--paper);
+  border: 2px solid var(--paper);
   outline: 1px solid var(--color-border-strong);
-  border-radius: 9px;
-  box-shadow: 3px 4px 7px var(--star-deck-shadow);
-  gap: var(--star-space-9);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 var(--star-deck-shadow);
 }
 .star-animal-board .deck-back > .suit-icon {
   color: var(--color-accent-ink);
-  width: 29px;
-  height: 29px;
-}
-.star-animal-board .deck-back > span {
-  color: var(--color-accent-ink);
-  font-size: 10px;
-  letter-spacing: 0;
-  font-weight: 700;
+  width: 15px;
+  height: 15px;
 }
 .star-animal-board .draw-deck > span {
   font-size: 11px;
@@ -342,9 +340,14 @@
 .star-animal-board .draw-deck > span > b {
   font-size: 13px;
 }
+.star-animal-board .draw-deck.available:not(:disabled) {
+  color: var(--color-accent-ink);
+  background: var(--color-accent-soft);
+  border-color: var(--board-blue);
+}
 .star-animal-board .draw-deck.available .deck-back {
-  outline: 3px solid var(--board-blue);
-  outline-offset: 4px;
+  outline: 1px solid var(--color-border-strong);
+  outline-offset: 0;
 }
 .star-animal-board .my-path-title {
   color: var(--board-ink);
@@ -594,8 +597,11 @@
     padding: var(--star-space-14) var(--star-space-10) 0;
     border-radius: 12px;
   }
-  .star-animal-board .lane-row {
+  .star-animal-board .lane-row,
+  .star-animal-board .discard-row {
     gap: var(--star-space-7);
+  }
+  .star-animal-board .lane-row {
     margin-top: var(--star-space-14);
   }
   .star-animal-board .lane-label {
@@ -618,14 +624,14 @@
     --card-name-height: 16px;
     --card-rank-size: 17px;
     --card-support-size: 15px;
-    --card-name-size: 9px;
+    --card-name-size: 10px;
     --card-label-inset: 3px;
     border-radius: 6px;
   }
   .star-animal-board .lane-slot .card-center .suit-icon,
   .star-animal-board .discard-face .card-center .suit-icon {
-    width: 9px;
-    height: 9px;
+    width: 11px;
+    height: 11px;
   }
   .star-animal-board .lane-slot .card-center,
   .star-animal-board .discard-face .card-center {
@@ -636,16 +642,11 @@
     height: 22px;
   }
   .star-animal-board .shared-center {
-    --shared-label-height: 16px;
-    gap: var(--star-space-11);
     margin-block: var(--star-space-15);
     padding-block: var(--space-sm);
   }
   .star-animal-board .board-row-label {
     font-size: 11px;
-  }
-  .star-animal-board .discard-row {
-    gap: var(--star-space-6);
   }
   .star-animal-board .discard-pile {
     gap: var(--star-space-6);
@@ -667,22 +668,6 @@
   }
   .star-animal-board .discard > small {
     font-size: 10px;
-  }
-  .star-animal-board .draw-deck {
-    min-width: 48px;
-    gap: var(--star-space-6);
-  }
-  .star-animal-board .deck-back {
-    width: 48px;
-    border-width: 3px;
-    gap: var(--space-2xs);
-  }
-  .star-animal-board .deck-back > .suit-icon {
-    width: 22px;
-    height: 22px;
-  }
-  .star-animal-board .deck-back > span {
-    font-size: 8px;
   }
   .star-animal-board .draw-deck > span {
     font-size: 10px;
@@ -778,7 +763,8 @@
     margin-inline: calc(var(--space-xs) * -1);
     padding-inline: var(--space-xs);
   }
-  .star-animal-board .lane-row {
+  .star-animal-board .lane-row,
+  .star-animal-board .discard-row {
     gap: var(--star-space-5);
   }
   .star-animal-board .lane-label .suit-icon {
