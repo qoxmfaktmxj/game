@@ -1,0 +1,142 @@
+[
+  {
+    "device": "laptop",
+    "card": "냥이 4",
+    "before": 0,
+    "preview": -16,
+    "actual": -16
+  },
+  {
+    "device": "mobile",
+    "card": "멍이 지원 카드, 배수 카드",
+    "before": 0,
+    "preview": -40,
+    "actual": -40
+  },
+  {
+    "device": "mobile",
+    "card": "수달 5",
+    "before": 0,
+    "preview": -15,
+    "actual": -15
+  },
+  {
+    "device": "laptop",
+    "card": "랑이 7",
+    "before": 0,
+    "preview": -13,
+    "actual": -13
+  },
+  {
+    "device": "laptop",
+    "card": "수달 지원 카드, 배수 카드",
+    "before": 0,
+    "preview": -40,
+    "actual": -40
+  },
+  {
+    "device": "mobile",
+    "card": "수달 7",
+    "before": -15,
+    "preview": -8,
+    "actual": -8
+  },
+  {
+    "device": "mobile",
+    "card": "멍이 2",
+    "before": -40,
+    "preview": -36,
+    "actual": -36
+  },
+  {
+    "device": "laptop",
+    "card": "수달 지원 카드, 배수 카드",
+    "before": -40,
+    "preview": -60,
+    "actual": -60
+  },
+  {
+    "device": "mobile",
+    "card": "물개 2",
+    "before": 0,
+    "preview": -18,
+    "actual": -18
+  },
+  {
+    "device": "mobile",
+    "card": "냥이 8",
+    "before": 0,
+    "preview": -12,
+    "actual": -12
+  },
+  {
+    "device": "laptop",
+    "card": "냥이 7",
+    "before": -16,
+    "preview": -9,
+    "actual": -9
+  },
+  {
+    "device": "laptop",
+    "card": "수달 2",
+    "before": -60,
+    "preview": -54,
+    "actual": -54
+  },
+  {
+    "device": "mobile",
+    "card": "수달 8",
+    "before": -8,
+    "preview": 0,
+    "actual": 0
+  },
+  {
+    "device": "mobile",
+    "card": "물개 7",
+    "before": -18,
+    "preview": -11,
+    "actual": -11
+  },
+  {
+    "device": "laptop",
+    "card": "물개 9",
+    "before": 0,
+    "preview": -11,
+    "actual": -11
+  },
+  {
+    "device": "laptop",
+    "card": "랑이 9",
+    "before": -13,
+    "preview": -4,
+    "actual": -4
+  },
+  {
+    "device": "mobile",
+    "card": "랑이 8",
+    "before": 0,
+    "preview": -12,
+    "actual": -12
+  },
+  {
+    "device": "laptop",
+    "card": "수달 6",
+    "before": -54,
+    "preview": -36,
+    "actual": -36
+  },
+  {
+    "device": "mobile",
+    "card": "멍이 7",
+    "before": -36,
+    "preview": -22,
+    "actual": -22
+  },
+  {
+    "device": "laptop",
+    "card": "멍이 6",
+    "before": 0,
+    "preview": -14,
+    "actual": -14
+  }
+]

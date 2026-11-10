@@ -1,4 +1,5 @@
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
+import { writeFile } from "node:fs/promises";
 
 const handCards = (page: Page) =>
   page.locator('[aria-label="내 손패"] button[data-card-id]');
@@ -51,6 +52,46 @@ async function checkMobileWidths(
   }
 }
 
+async function selectWithTurnControls(
+  page: Page,
+  mobile: boolean,
+  info: TestInfo,
+) {
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
+  const cards = handCards(page);
+  if (mobile) {
+    const jump = page.getByRole("button", { name: "손패 보기", exact: true });
+    await expect(jump).toBeInViewport({ ratio: 1 });
+    await expect(cards.first()).not.toBeInViewport();
+    await page.screenshot({ path: info.outputPath("mobile-turn-start.png") });
+    await jump.tap();
+    await expect(cards.first()).toBeInViewport({ ratio: 1 });
+    await expect(cards).toHaveCount(8);
+    await expect(cards.first()).toHaveAttribute("aria-pressed", "false");
+    await cards.first().tap();
+  } else {
+    for (const card of await cards.all()) {
+      await expect(card).toBeInViewport({ ratio: 1 });
+    }
+    await cards.first().press("Enter");
+    await page.keyboard.press("Tab");
+    await expect(
+      page.getByRole("button", { name: "버리기", exact: true }),
+    ).toBeFocused();
+    expect(await page.evaluate(() => window.scrollY)).toBe(0);
+  }
+  for (const name of ["놓기", "버리기"]) {
+    await expect(
+      page.getByRole("button", { name, exact: true }),
+    ).toBeInViewport({ ratio: 1 });
+  }
+  await page.screenshot({
+    path: info.outputPath(
+      mobile ? "mobile-card-selected.png" : "laptop-card-selected.png",
+    ),
+  });
+}
+
 test("two browsers finish a real game, recover DRAW after refresh, and rematch at the same table", async ({
   browser,
   baseURL,
@@ -60,7 +101,7 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
   // Isolated browser storage creates two genuinely different signed-in members.
   const hostContext = await browser.newContext({
     baseURL,
-    viewport: { width: 1440, height: 1000 },
+    viewport: { width: 1366, height: 768 },
     reducedMotion: "no-preference",
     locale: "ko-KR",
     permissions: ["clipboard-read", "clipboard-write"],
@@ -68,6 +109,7 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
   const guestContext = await browser.newContext({
     baseURL,
     viewport: { width: 390, height: 844 },
+    hasTouch: true,
     reducedMotion: "reduce",
     locale: "ko-KR",
   });
@@ -221,24 +263,23 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
 
     let playedCards = 0;
     let discardedCards = 0;
+    const comparisons: Array<{
+      device: string;
+      card: string;
+      before: number;
+      preview: number;
+      actual: number;
+    }> = [];
     for (let turn = 0; turn < 44; turn += 1) {
       await expect
         .poll(
           async () =>
-            (await host
-              .getByRole("button", { name: "버리기", exact: true })
-              .isVisible()) ||
-            (await guest
-              .getByRole("button", { name: "버리기", exact: true })
-              .isVisible()),
+            (await handCards(host).first().isEnabled()) ||
+            (await handCards(guest).first().isEnabled()),
           { message: `turn ${turn + 1}: one player reaches PLACE` },
         )
         .toBe(true);
-      const actor = (await host
-        .getByRole("button", { name: "버리기", exact: true })
-        .isVisible())
-        ? host
-        : guest;
+      const actor = (await handCards(host).first().isEnabled()) ? host : guest;
       const opponent = actor === host ? guest : host;
       await expect(handCards(actor)).toHaveCount(8);
       await expect(handCards(actor).first()).toBeEnabled();
@@ -247,22 +288,85 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
       const selected = handCards(actor).first();
       const selectedId = await selected.getAttribute("data-card-id");
       const selectedLabel = await selected.getAttribute("aria-label");
-      await selected.click();
+      if (turn < 2) {
+        await selectWithTurnControls(actor, actor === guest, testInfo);
+      } else {
+        await selected.click();
+      }
       await expect(selected).toHaveAttribute("aria-pressed", "true");
       const play = actor.getByRole("button", {
         name: "놓기",
         exact: true,
       });
-      if (turn > 0 && turn % 3 !== 0 && (await play.isEnabled())) {
-        await play.click();
-        playedCards += 1;
-      } else {
-        await actor
-          .getByRole("button", { name: "버리기", exact: true })
-          .click();
-        discardedCards += 1;
+      const shouldPlay = turn > 0 && turn % 3 !== 0 && (await play.isEnabled());
+      const device = actor === guest ? "mobile" : "laptop";
+      const suitName = selectedLabel!.split(" ")[0];
+      const lane = actor.getByRole("button", {
+        name: new RegExp(`^내 ${suitName} 길,`),
+      });
+      const readout = actor.locator(".star-score-preview b");
+      const before = Number(await lane.locator(".lane-score b").textContent());
+      let predicted: number | undefined;
+      if (shouldPlay) {
+        const match = (await readout.innerText()).match(
+          /^(.+) 길 예상 (-?\d+) → (-?\d+)점$/,
+        );
+        expect(match?.[1]).toBe(suitName);
+        expect(Number(match?.[2])).toBe(before);
+        predicted = Number(match?.[3]);
+        if (!comparisons.some((c) => c.device === device)) {
+          await readout.scrollIntoViewIfNeeded();
+          await expect(readout).toBeInViewport({ ratio: 1 });
+          await actor.screenshot({
+            path: testInfo.outputPath(`${device}-score-preview.png`),
+          });
+        }
+      } else if (!(await play.isEnabled())) {
+        await expect(readout).toHaveCount(0);
+        const lastRank = await lane.locator(".stack-front .card-corner").innerText();
+        const reason = selectedLabel!.includes("지원 카드")
+          ? "지원 카드는 첫 숫자보다 먼저 놓아야 해요."
+          : lastRank === "10"
+            ? "이 길에 10이 있어 숫자를 더 놓을 수 없어요."
+            : `이 길에는 ${lastRank}보다 큰 숫자만 놓을 수 있어요.`;
+        await expect(actor.locator(".star-placement-reason")).toHaveText(reason);
       }
+      const action = shouldPlay
+        ? play
+        : actor.getByRole("button", { name: "버리기", exact: true });
+      if (turn < 2 && actor === guest) {
+        await action.tap();
+      } else if (turn < 2) {
+        if (shouldPlay) await actor.keyboard.press("Tab");
+        await expect(action).toBeFocused();
+        await actor.keyboard.press("Enter");
+      } else {
+        await action.click();
+      }
+      if (shouldPlay) playedCards += 1;
+      else discardedCards += 1;
       await expect(handCards(actor)).toHaveCount(7);
+      if (predicted !== undefined) {
+        const accepted = lane.locator(".lane-score b");
+        await expect
+          .poll(async () => Number(await accepted.textContent()))
+          .toBe(predicted);
+        const otherLane = opponent.getByRole("button", {
+          name: new RegExp(`^상대 ${suitName} 길,`),
+        });
+        await expect
+          .poll(async () =>
+            Number(await otherLane.locator(".lane-score b").textContent()),
+          )
+          .toBe(predicted);
+        comparisons.push({
+          device,
+          card: selectedLabel!,
+          before,
+          preview: predicted,
+          actual: Number(await accepted.textContent()),
+        });
+      }
       await expect(
         actor.getByText("카드 한 장을 가져오세요", { exact: true }),
       ).toBeVisible();
@@ -331,10 +435,38 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
         await inspectDiscard();
         await checkMobileWidths(guest, "draw-recovery", testInfo);
       }
-      await drawButton(actor, 44 - turn).click();
+      if (turn < 2 && actor === guest) {
+        const jump = guest.getByRole("button", {
+          name: "버림 더미 보기",
+          exact: true,
+        });
+        await expect(jump).toBeInViewport({ ratio: 1 });
+        await jump.tap();
+        await expect(
+          guest.getByRole("group", { name: "함께 쓰는 버림 더미" }),
+        ).toBeInViewport({ ratio: 1 });
+        await expect(handCards(guest)).toHaveCount(7);
+        await expect(drawButton(guest, 44 - turn)).toBeEnabled();
+        await guest.screenshot({
+          path: testInfo.outputPath("mobile-draw.png"),
+        });
+        await guest
+          .getByRole("button", { name: "덱에서 뽑기", exact: true })
+          .tap();
+      } else {
+        await drawButton(actor, 44 - turn).click();
+      }
       if (turn < 43) {
         for (const page of [host, guest])
           await expect(drawButton(page, 43 - turn)).toBeVisible();
+      }
+      if (turn < 2) {
+        await expect(handCards(actor)).toHaveCount(8);
+        await expect(
+          opponent.getByText("상대 손패 8장", { exact: true }),
+        ).toBeVisible();
+        await expect(handCards(actor).first()).toBeDisabled();
+        await expect(handCards(opponent).first()).toBeEnabled();
       }
       if (turn === 19) {
         await captureScreenshot(host, "game-in-progress-desktop.png", testInfo);
@@ -343,6 +475,13 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
     }
     expect(playedCards).toBeGreaterThan(0);
     expect(discardedCards).toBeGreaterThan(0);
+    expect(new Set(comparisons.map((c) => c.device))).toEqual(
+      new Set(["mobile", "laptop"]),
+    );
+    await writeFile(
+      testInfo.outputPath("score-comparisons.json"),
+      JSON.stringify(comparisons, null, 2),
+    );
     for (const page of [host, guest]) {
       await expect(
         page.getByText("덱의 마지막 카드까지, 탐험 완료", { exact: true }),
@@ -351,6 +490,30 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
         page.getByRole("table", { name: "다섯 별길의 점수" }),
       ).toBeVisible();
       await expect(page.locator(".result-person")).toHaveCount(2);
+      const scores = (
+        await page.locator(".result-person > strong").allTextContents()
+      ).map((value) => parseInt(value, 10));
+      const margin = Math.abs(scores[0]! - scores[1]!);
+      const won =
+        page === host ? scores[0]! > scores[1]! : scores[1]! > scores[0]!;
+      const headline = page.getByRole("heading", {
+        name:
+          margin === 0
+            ? "동점으로 함께 이겼어요"
+            : `${margin}점 차이로 ${won ? "이겼어요" : "졌어요"}`,
+      });
+      await expect(headline).toBeInViewport({ ratio: 1 });
+      await expect(page.locator(".result-scores")).toBeInViewport({ ratio: 1 });
+      await expect(
+        page.getByRole("button", { name: "재경기 준비하기", exact: true }),
+      ).toBeInViewport({ ratio: 1 });
+      await page.screenshot({
+        path: testInfo.outputPath(
+          page === host
+            ? "laptop-result-screen.png"
+            : "mobile-result-screen.png",
+        ),
+      });
       await expect(
         page.getByRole("button", { name: "재경기 준비하기", exact: true }),
       ).toBeEnabled();
@@ -368,6 +531,9 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
     await expect(
       host.getByRole("button", { name: "새 탐험 시작", exact: true }),
     ).toBeEnabled();
+    await host.screenshot({
+      path: testInfo.outputPath("rematch-both-ready.png"),
+    });
     await host
       .getByRole("button", { name: "새 탐험 시작", exact: true })
       .click();
@@ -378,6 +544,12 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
         page.getByRole("heading", { name: new RegExp(tableTitle) }),
       ).toBeVisible();
       expect(page.url()).toBe(tableUrl);
+    }
+    for (const page of [host, guest]) {
+      await expect(page.locator(".lane-score b")).toHaveText(
+        Array(10).fill("0"),
+      );
+      await expect(page.locator(".result-panel")).toHaveCount(0);
     }
 
     // Leaving the page really closes the second socket; no API or transport mocks.
@@ -403,9 +575,7 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
     await expect(handCards(guest)).toHaveCount(8);
     expect(await readHand(host)).toEqual(hostHandBeforeDisconnect);
     expect(await readHand(guest)).toEqual(guestHandBeforeDisconnect);
-    const resumedActor = (await host
-      .getByRole("button", { name: "버리기", exact: true })
-      .isVisible())
+    const resumedActor = (await handCards(host).first().isEnabled())
       ? host
       : guest;
     await expect(handCards(resumedActor).first()).toBeEnabled();
@@ -435,6 +605,12 @@ test("two browsers finish a real game, recover DRAW after refresh, and rematch a
       await expect(
         page.getByText("기권으로 마친 게임", { exact: true }),
       ).toBeVisible();
+    await expect(
+      host.getByRole("heading", { name: "상대 기권으로 이겼어요" }),
+    ).toBeVisible();
+    await expect(
+      guest.getByRole("heading", { name: "기권으로 졌어요" }),
+    ).toBeVisible();
 
     await host.getByRole("button", { name: "설정", exact: true }).click();
     await host

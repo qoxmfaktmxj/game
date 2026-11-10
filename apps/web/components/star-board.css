@@ -1025,6 +1025,33 @@
   border: 1px solid var(--color-border-strong);
   border-radius: 12px;
 }
+.star-animal-board .star-jump,
+.star-animal-board .star-turn-prefix {
+  display: none;
+}
+.star-score-preview {
+  font-size: 14px;
+  color: var(--board-blue);
+  font-variant-numeric: tabular-nums;
+}
+.star-score-preview small {
+  display: block;
+  color: var(--board-muted);
+  font-size: 12px;
+}
+.star-result .result-celebration > svg {
+  margin: 0 auto var(--space-xs);
+}
+.star-result .result-celebration h1 {
+  margin-inline: auto;
+}
+.star-result .result-celebration > span,
+.star-result .rematch-actions > span {
+  font-size: 13px;
+}
+.star-result .rematch-actions {
+  margin-top: var(--space-md);
+}
 @media (min-width: 1101px) {
   .star-animal-board {
     grid-template-columns: minmax(0, 1fr) 400px;
@@ -1056,7 +1083,7 @@
     height: 148px;
   }
   .star-animal-board .star-personal-zone .card-drag-handle {
-    min-height: 44px;
+    display: none;
   }
   .star-animal-board .star-personal-zone .action-bar {
     display: flex;
@@ -1115,6 +1142,23 @@
     min-height: 44px;
   }
 }
+@media (min-width: 1101px) and (any-pointer: coarse) {
+  .star-animal-board .star-personal-zone .card-drag-handle {
+    display: flex;
+  }
+}
+@media (min-width: 1101px) and (max-height: 800px) and (any-pointer: coarse) {
+  .star-animal-board .star-personal-zone .action-bar {
+    flex-direction: row;
+    align-items: center;
+  }
+  .star-animal-board .star-personal-zone .action-buttons {
+    width: auto;
+  }
+  .star-animal-board .action-help {
+    display: none;
+  }
+}
 @media (min-width: 1101px) and (min-height: 1200px) {
   .star-animal-board .star-personal-zone {
     position: sticky;
@@ -1122,12 +1166,86 @@
   }
 }
 @media (max-width: 1100px) {
+  html:has(.star-animal-board) {
+    scroll-padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+  body:has(.star-animal-board) {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  }
   .star-animal-board .star-personal-zone .game-aside {
     display: none;
+  }
+  .star-animal-board .action-bar {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 20;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    min-height: 60px;
+    padding: var(--space-xs) max(var(--space-sm), env(safe-area-inset-right))
+      calc(var(--space-xs) + env(safe-area-inset-bottom))
+      max(var(--space-sm), env(safe-area-inset-left));
+    gap: var(--space-xs);
+    background: var(--color-paper);
+  }
+  .star-animal-board .action-bar > div:first-child {
+    flex: 1 1 90px;
+    gap: 2px;
+  }
+  .star-animal-board .action-step,
+  .star-animal-board .star-turn-prefix {
+    display: inline;
+    padding: 0;
+  }
+  .star-animal-board .action-help,
+  .star-animal-board [data-card-selected="false"] .place-command {
+    display: none;
+  }
+  .star-animal-board .action-buttons {
+    width: auto;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .star-animal-board .action-buttons .button {
+    flex: none;
+    padding-inline: var(--space-sm);
+  }
+  .star-animal-board .star-jump {
+    display: inline-flex;
   }
 }
 @media (max-width: 640px) {
   .star-animal-board .star-personal-zone .hand-area {
     padding: var(--space-md) var(--space-xs);
+  }
+  .star-animal-board .action-bar[data-inspecting="true"] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .star-animal-board .action-bar[data-inspecting="true"] > div:first-child {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    gap: 0 var(--space-xs);
+  }
+  .star-animal-board
+    .action-bar[data-inspecting="true"]
+    .action-buttons
+    .button {
+    flex: 1;
+  }
+  html:has(.star-animal-board .action-bar[data-inspecting="true"]) {
+    scroll-padding-bottom: calc(120px + env(safe-area-inset-bottom));
+  }
+  body:has(.star-animal-board .action-bar[data-inspecting="true"]) {
+    padding-bottom: calc(120px + env(safe-area-inset-bottom));
+  }
+  .star-result .rematch-actions > div {
+    flex-flow: row wrap;
+  }
+  .star-result .rematch-actions .button {
+    flex: 1;
+    min-height: 44px;
   }
 }

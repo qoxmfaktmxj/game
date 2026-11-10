@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { randomInt, randomUUID } from "node:crypto";
 import test from "node:test";
+import { scoreAfterPlacement } from "./star-scoring.js";
 import {
   RULES_VERSION,
   SUITS,
@@ -300,11 +301,41 @@ for (const [label, cards, expected] of scoringCases) {
     assert.equal(scoreLane(cards).total, expected));
 }
 
+test("placement previews match the scored lane after each card, including support multipliers and the eighth-card bonus", () => {
+  for (const [, cards, expected] of scoringCases) {
+    let preview = scoreLane([]);
+    for (const [index, card] of cards.entries()) {
+      preview = scoreAfterPlacement(preview, card);
+      assert.deepEqual(preview, scoreLane(cards.slice(0, index + 1)));
+    }
+    assert.equal(preview.total, expected);
+  }
+});
+
 test("seven cards have no length bonus", () => {
   assert.equal(
     scoreLane([support(), ...[2, 3, 4, 5, 6, 7].map(number)]).bonus,
     0,
   );
+});
+
+test("the accepted eighth placement has the previewed score in both players' views", () => {
+  const lane = ["s0", "s1", 2, 3, 5, 7, 8] as const;
+  const state = fixture({
+    hand0: [cardId("moss", 10)],
+    lanes0: { moss: lane.map((rank) => cardId("moss", rank)) },
+  });
+  const ownView = toPlayerView(state, "A");
+  const card = first(ownView.yourHand);
+  const before = ownView.players[0].score.lanes.moss;
+  const preview = scoreAfterPlacement(before, card);
+  assert.equal(before.total, 15);
+  assert.equal(preview.bonus, 20);
+  assert.equal(preview.total, 65);
+  const next = applyCommand(state, "A", play(card));
+  for (const player of state.playerIds) {
+    assert.deepEqual(toPlayerView(next, player).players[0].score.lanes.moss, preview);
+  }
 });
 
 test("player scoring combines five lanes and ignores the hand", () => {

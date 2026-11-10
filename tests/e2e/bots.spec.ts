@@ -44,11 +44,13 @@ test("one person adds and removes a bot, plays a visible turn, then reconnects",
   await page.getByRole("button", { name: "준비", exact: true }).click();
   await page.getByRole("button", { name: "탐험 시작", exact: true }).click();
   const discard = page.getByRole("button", { name: "버리기", exact: true });
-  await expect(discard).toBeVisible();
+  const showHand = page.getByRole("button", { name: "손패 보기", exact: true });
+  await expect(showHand).toBeVisible();
+  await showHand.click();
   await page.locator(".hand .playing-card").first().click();
   await discard.click();
   await page.getByRole("button", { name: "덱에서 뽑기", exact: true }).click();
-  await expect(discard).toBeVisible({ timeout: 12000 });
+  await expect(showHand).toBeVisible({ timeout: 12000 });
   await page.reload();
   await expect(page.locator(".hand .playing-card")).toHaveCount(8);
   await expect(page.locator(".game-aside-title h2")).toHaveText("로스트 팻츠");

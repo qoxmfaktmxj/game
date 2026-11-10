@@ -1,0 +1,114 @@
+[
+  {
+    "device": "laptop",
+    "card": "멍이 지원 카드, 배수 카드",
+    "before": 0,
+    "preview": -40,
+    "actual": -40
+  },
+  {
+    "device": "mobile",
+    "card": "멍이 9",
+    "before": 0,
+    "preview": -11,
+    "actual": -11
+  },
+  {
+    "device": "mobile",
+    "card": "물개 7",
+    "before": 0,
+    "preview": -13,
+    "actual": -13
+  },
+  {
+    "device": "laptop",
+    "card": "랑이 9",
+    "before": 0,
+    "preview": -11,
+    "actual": -11
+  },
+  {
+    "device": "mobile",
+    "card": "랑이 지원 카드, 배수 카드",
+    "before": 0,
+    "preview": -40,
+    "actual": -40
+  },
+  {
+    "device": "mobile",
+    "card": "수달 9",
+    "before": 0,
+    "preview": -11,
+    "actual": -11
+  },
+  {
+    "device": "laptop",
+    "card": "냥이 3",
+    "before": 0,
+    "preview": -17,
+    "actual": -17
+  },
+  {
+    "device": "laptop",
+    "card": "물개 3",
+    "before": 0,
+    "preview": -17,
+    "actual": -17
+  },
+  {
+    "device": "mobile",
+    "card": "냥이 10",
+    "before": 0,
+    "preview": -10,
+    "actual": -10
+  },
+  {
+    "device": "mobile",
+    "card": "랑이 지원 카드, 배수 카드",
+    "before": -40,
+    "preview": -60,
+    "actual": -60
+  },
+  {
+    "device": "laptop",
+    "card": "수달 3",
+    "before": 0,
+    "preview": -17,
+    "actual": -17
+  },
+  {
+    "device": "laptop",
+    "card": "물개 5",
+    "before": -17,
+    "preview": -12,
+    "actual": -12
+  },
+  {
+    "device": "laptop",
+    "card": "냥이 6",
+    "before": -17,
+    "preview": -11,
+    "actual": -11
+  },
+  {
+    "device": "laptop",
+    "card": "냥이 7",
+    "before": -11,
+    "preview": -4,
+    "actual": -4
+  },
+  {
+    "device": "laptop",
+    "card": "수달 10",
+    "before": -17,
+    "preview": -7,
+    "actual": -7
+  },
+  {
+    "device": "laptop",
+    "card": "멍이 7",
+    "before": -40,
+    "preview": -26,
+    "actual": -26
+  }
+]

@@ -1118,6 +1118,18 @@ export function MoyeotableApp() {
                   </aside>
                 </div>
               )}
+              {view?.table.status === "RESULT" &&
+                view.result &&
+                session &&
+                view.gameKey === "star-trails" && (
+                  <ResultPanel
+                    view={view}
+                    userId={session.user.id}
+                    busy={busy || !connected}
+                    onReady={() => tableCommand("READY", !me?.ready)}
+                    onRematch={() => tableCommand("REMATCH")}
+                  />
+                )}
               {view && view.table.status !== "PLAYING" && (
                 <label className="field game-switcher">
                   다음에 함께할 게임
@@ -1207,18 +1219,6 @@ export function MoyeotableApp() {
                     connected={connected}
                     onCommand={gameCommand}
                     onRules={() => openDialog("rules")}
-                  />
-                )}
-              {view?.table.status === "RESULT" &&
-                view.result &&
-                session &&
-                view.gameKey === "star-trails" && (
-                  <ResultPanel
-                    view={view}
-                    userId={session.user.id}
-                    busy={busy || !connected}
-                    onReady={() => tableCommand("READY", !me?.ready)}
-                    onRematch={() => tableCommand("REMATCH")}
                   />
                 )}
               {view?.table.status === "RESULT" &&

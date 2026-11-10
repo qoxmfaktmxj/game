@@ -229,6 +229,20 @@ test("animal cards select without playing; illegal and cancelled drags return; l
 
     await card.click();
     await expect(card).toHaveAttribute("aria-pressed", "true");
+    await expect(ownLane.locator(".lane-target-hint")).toHaveCount(0);
+    // A short touchscreen laptop keeps both the drag handles and the actions in view.
+    await actor.setViewportSize({ width: 1366, height: 768 });
+    await actor.evaluate(() =>
+      window.scrollTo({ top: 0, behavior: "instant" }),
+    );
+    await expect(hand(actor).last()).toBeInViewport({ ratio: 1 });
+    await expect(actor.locator(".card-drag-handle").last()).toBeInViewport({
+      ratio: 1,
+    });
+    await expect(
+      actor.getByRole("button", { name: "놓기", exact: true }),
+    ).toBeInViewport({ ratio: 1 });
+    await actor.setViewportSize({ width: 1440, height: 1200 });
     await expect(hand(actor)).toHaveCount(8);
     await ownLane.click();
     await expect(actor.getByRole("dialog")).toBeVisible();
@@ -259,6 +273,7 @@ test("animal cards select without playing; illegal and cancelled drags return; l
     await expect(actor.locator(".star-drag-preview")).toHaveCount(0);
 
     await dragCard(actor, card, ownLane, false);
+    await expect(ownLane.locator(".lane-target-hint")).toBeVisible();
     await actor.mouse.move(1, 1);
     await actor.mouse.up();
     await expect(hand(actor)).toHaveCount(8);

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
+import { scoreAfterPlacement } from "@moyeotable/game-core/star-scoring";
 import {
   ArrowRight,
   BookOpen,
@@ -80,6 +81,9 @@ export function GameBoard({
 }) {
   const game = view.game!;
   const boardRef = useBoardMotion(game.version);
+  const handRef = useRef<HTMLDivElement>(null);
+  const discardsRef = useRef<HTMLDivElement>(null);
+  const discardButtonRef = useRef<HTMLButtonElement>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [laneDetail, setLaneDetail] = useState<{
     playerId: string;
@@ -111,6 +115,13 @@ export function GameBoard({
     );
   const canDraw = game.legalCommands.some((c) => c.type === "STAR_DRAW_DECK");
   const canSelect = !locked && yourTurn && game.phase === "PLACE";
+  const discardOnly = canSelect && selected && canDiscard && !canPlay;
+  const laneScore = selected && you.score.lanes[selected.suit];
+  const preview =
+    canSelect && canPlay && selected && laneScore
+      ? scoreAfterPlacement(laneScore, selected)
+      : null;
+  const lastRank = discardOnly ? you.lanes[selected.suit].at(-1)?.value : null;
   const act = (command: StarCommand) => {
     if (locked) return;
     onCommand(command);
@@ -140,6 +151,11 @@ export function GameBoard({
       (command) =>
         command.type === "STAR_DRAW_DISCARD" && command.payload.suit === suit,
     );
+
+  function showArea(area: HTMLDivElement | null) {
+    area?.focus({ preventScroll: true });
+    area?.scrollIntoView({ block: "nearest", behavior: "instant" });
+  }
 
   function lanes(player: PublicPlayer, mine: boolean) {
     return (
@@ -173,7 +189,7 @@ export function GameBoard({
                     <SuitIcon suit={suit} />
                   </span>
                 )}
-                {target && (
+                {target && drag && (
                   <span className="lane-target-hint">
                     <ArrowRight size={16} />
                   </span>
@@ -234,7 +250,13 @@ export function GameBoard({
         </div>
         {lanes(other, false)}
         <div className="shared-center">
-          <div className="discard-area">
+          <div
+            className="discard-area"
+            ref={discardsRef}
+            tabIndex={-1}
+            role="group"
+            aria-label="함께 쓰는 버림 더미"
+          >
             <div className="board-row-label">함께 쓰는 버림 더미</div>
             <div className="discard-row">
               {suits.map((suit) => {
@@ -331,12 +353,30 @@ export function GameBoard({
               </b>
             </div>
           </div>
-          <div className="hand" aria-label="내 손패">
+          <div
+            className="hand"
+            aria-label="내 손패"
+            ref={handRef}
+            tabIndex={-1}
+            role="group"
+          >
             {game.yourHand.map((card) => (
               <div
                 key={card.id}
                 className={`hand-card-holder ${drag?.card.id === card.id ? "drag-origin" : ""}`}
                 onPointerDown={(event) => start(event, card)}
+                onKeyDown={(event) => {
+                  if (
+                    event.key === "Tab" &&
+                    !event.shiftKey &&
+                    selectedId === card.id &&
+                    canDiscard &&
+                    !locked
+                  ) {
+                    event.preventDefault();
+                    discardButtonRef.current?.focus();
+                  }
+                }}
               >
                 <PlayingCard
                   card={card}
@@ -350,6 +390,7 @@ export function GameBoard({
                 <button
                   type="button"
                   className="card-drag-handle"
+                  tabIndex={-1}
                   disabled={!canSelect}
                   aria-label={`${suitNames[card.suit]} ${card.kind === "support" ? "지원 ×2" : card.value} 카드 끌기, 누르면 선택`}
                   onClick={() => setSelectedId(card.id)}
@@ -362,10 +403,14 @@ export function GameBoard({
           </div>
           <div
             className={`action-bar ${yourTurn ? "active" : ""}`}
+            data-inspecting={canSelect && !!selected}
             aria-live="polite"
           >
             <div>
               <span className="action-step">
+                {yourTurn && (
+                  <span className="star-turn-prefix">내 차례 / </span>
+                )}
                 {yourTurn
                   ? game.phase === "PLACE"
                     ? "놓기·버리기"
@@ -386,22 +431,48 @@ export function GameBoard({
                         : game.phase === "DRAW"
                           ? "카드 한 장을 가져오세요"
                           : selected
-                            ? `${suitNames[selected.suit]} ${selected.kind === "support" ? "지원 ×2" : selected.value} 카드를 선택했어요`
+                            ? `${suitNames[selected.suit]} ${selected.kind === "support" ? "지원 ×2" : selected.value} 선택`
                             : "손패에서 카드 한 장을 골라 주세요"}
               </strong>
-              <span>
-                {yourTurn && game.phase === "DRAW"
-                  ? "덱을 누르거나 버림 더미 아래 ‘가져오기’를 눌러요."
-                  : yourTurn && selected && !canPlay
-                    ? "이 카드는 지금 길에 놓을 수 없어요. 버릴 수는 있어요."
+              {preview && selected && laneScore ? (
+                <div className="star-score-preview">
+                  <b>
+                    {suitNames[selected.suit]} 길 예상 {laneScore.total} →{" "}
+                    {preview.total}점
+                  </b>
+                  {laneScore.count === 0 && (
+                    <small>첫 장은 숫자 합에서 20점을 빼요.</small>
+                  )}
+                </div>
+              ) : discardOnly ? (
+                <span className="star-placement-reason">
+                  {selected.kind === "support"
+                    ? "지원 카드는 첫 숫자보다 먼저 놓아야 해요."
+                    : lastRank === 10
+                      ? "이 길에 10이 있어 숫자를 더 놓을 수 없어요."
+                      : `이 길에는 ${lastRank}보다 큰 숫자만 놓을 수 있어요.`}
+                </span>
+              ) : yourTurn && !locked ? (
+                <span className="action-help">
+                  {game.phase === "DRAW"
+                    ? "덱을 누르거나 버림 더미 아래 ‘가져오기’를 눌러요."
                     : "카드를 고른 뒤 버튼으로 놓거나, 원하는 곳으로 끌어 주세요."}
-              </span>
+                </span>
+              ) : null}
             </div>
-            <div className="action-buttons">
+            <div className="action-buttons" data-card-selected={!!selected}>
               {yourTurn && game.phase === "PLACE" && (
                 <>
                   <button
-                    className="button discard-button"
+                    className={`button star-jump ${selected ? "secondary" : "mint"}`}
+                    type="button"
+                    onClick={() => showArea(handRef.current)}
+                  >
+                    손패 보기
+                  </button>
+                  <button
+                    className="button discard-button place-command"
+                    ref={discardButtonRef}
                     disabled={!canDiscard || locked}
                     onClick={() =>
                       selected &&
@@ -414,7 +485,7 @@ export function GameBoard({
                     버리기
                   </button>
                   <button
-                    className="button mint"
+                    className="button mint place-command"
                     disabled={!canPlay || locked}
                     onClick={() =>
                       selected &&
@@ -429,13 +500,22 @@ export function GameBoard({
                 </>
               )}
               {yourTurn && game.phase === "DRAW" && (
-                <button
-                  className="button mint"
-                  disabled={!canDraw || locked}
-                  onClick={() => act({ type: "STAR_DRAW_DECK", payload: {} })}
-                >
-                  덱에서 뽑기 <ArrowRight size={17} />
-                </button>
+                <>
+                  <button
+                    className="button secondary star-jump"
+                    type="button"
+                    onClick={() => showArea(discardsRef.current)}
+                  >
+                    버림 더미 보기
+                  </button>
+                  <button
+                    className="button mint"
+                    disabled={!canDraw || locked}
+                    onClick={() => act({ type: "STAR_DRAW_DECK", payload: {} })}
+                  >
+                    덱에서 뽑기 <ArrowRight size={17} />
+                  </button>
+                </>
               )}
             </div>
           </div>
@@ -567,7 +647,15 @@ export function ResultPanel({
   onRematch: () => void;
 }) {
   const resultRef = useRef<SVGSVGElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
   const systemReduced = useReducedMotion();
+  useEffect(() => {
+    const heading = headingRef.current;
+    heading?.focus({ preventScroll: true });
+    heading
+      ?.closest(".star-result")
+      ?.scrollIntoView({ block: "start", behavior: "instant" });
+  }, []);
   useEffect(() => {
     if (systemReduced) return;
     const animation = resultRef.current?.animate(
@@ -580,22 +668,26 @@ export function ResultPanel({
     return () => animation?.cancel();
   }, [systemReduced]);
   const result = view.result!;
+  const won = result.winners.includes(userId);
+  let heading = "동점으로 함께 이겼어요";
+  if (result.reason === "RESIGN") {
+    heading = won ? "상대 기권으로 이겼어요" : "기권으로 졌어요";
+  } else if (!result.tied) {
+    const [first, second] = result.scores;
+    const margin = Math.abs(first.total - second.total);
+    heading = `${margin}점 차이로 ${won ? "이겼어요" : "졌어요"}`;
+  }
   const mine = view.table.members.find((m) => m.userId === userId)!;
   const isHost = view.table.hostId === userId;
   const allReady =
     view.table.members.length === 2 &&
     view.table.members.every((m) => m.ready && m.connected);
   return (
-    <section className="result-panel">
+    <section className="result-panel star-result">
       <div className="result-celebration">
         <Trophy ref={resultRef} size={40} strokeWidth={1.2} />
-        <p>한 장 한 장, 멋진 탐험이었어요.</p>
-        <h1>
-          {result.tied
-            ? "함께 이룬 승리!"
-            : result.winners.includes(userId)
-              ? "당신의 별길이 빛났어요."
-              : "다음 탐험을 기대해요."}
+        <h1 ref={headingRef} tabIndex={-1}>
+          {heading}
         </h1>
         <span>
           {result.reason === "RESIGN"
@@ -625,6 +717,39 @@ export function ResultPanel({
             )}
           </div>
         ))}
+      </div>
+      <div className="rematch-actions">
+        <div>
+          <button
+            className={`button ${mine.ready ? "secondary" : "primary"}`}
+            aria-pressed={mine.ready}
+            disabled={busy}
+            onClick={onReady}
+          >
+            {mine.ready ? (
+              <>
+                <Check size={18} /> 재경기 준비 완료
+              </>
+            ) : (
+              "재경기 준비하기"
+            )}
+          </button>
+          {isHost && (
+            <button
+              className="button primary"
+              disabled={!allReady || busy}
+              onClick={onRematch}
+            >
+              새 탐험 시작 <ArrowRight size={18} />
+            </button>
+          )}
+        </div>
+        <span>
+          {view.table.members.filter((m) => m.ready).length}/2 준비 완료 ·{" "}
+          {isHost
+            ? "모두 준비하면 시작할 수 있어요."
+            : "방장이 새 탐험을 시작해요."}
+        </span>
       </div>
       <div className="score-table-wrap">
         <table className="score-table">
@@ -665,39 +790,6 @@ export function ResultPanel({
             ))}
           </tbody>
         </table>
-      </div>
-      <div className="rematch-actions">
-        <p>같은 테이블, 같은 친구. 한 판 더 할까요?</p>
-        <div>
-          <button
-            className={`button ${mine.ready ? "secondary" : "primary"}`}
-            disabled={busy}
-            onClick={onReady}
-          >
-            {mine.ready ? (
-              <>
-                <Check size={18} /> 재경기 준비 완료
-              </>
-            ) : (
-              "재경기 준비하기"
-            )}
-          </button>
-          {isHost && (
-            <button
-              className="button primary"
-              disabled={!allReady || busy}
-              onClick={onRematch}
-            >
-              새 탐험 시작 <ArrowRight size={18} />
-            </button>
-          )}
-        </div>
-        <span>
-          {view.table.members.filter((m) => m.ready).length}/2 준비 완료 ·{" "}
-          {isHost
-            ? "모두 준비하면 시작할 수 있어요."
-            : "방장이 새 탐험을 시작해요."}
-        </span>
       </div>
     </section>
   );

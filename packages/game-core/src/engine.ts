@@ -1,3 +1,4 @@
+import { scoreLaneTotals } from "./star-scoring.js";
 import {
   RULES_VERSION,
   SUITS,
@@ -245,17 +246,6 @@ export function scoreLane(
   cards: readonly Pick<Card, "kind" | "value">[],
 ): LaneScore {
   if (!Array.isArray(cards)) fail("INVALID_LANE");
-  if (cards.length === 0) {
-    return {
-      sum: 0,
-      cost: 0,
-      supports: 0,
-      multiplier: 1,
-      bonus: 0,
-      count: 0,
-      total: 0,
-    };
-  }
   let sum = 0;
   let supports = 0;
   for (const card of cards) {
@@ -264,17 +254,7 @@ export function scoreLane(
     else if (card.kind === "support") supports += 1;
     else fail("INVALID_LANE");
   }
-  const multiplier = supports + 1;
-  const bonus = cards.length >= 8 ? 20 : 0;
-  return {
-    sum,
-    cost: -20,
-    supports,
-    multiplier,
-    bonus,
-    count: cards.length,
-    total: (sum - 20) * multiplier + bonus,
-  };
+  return scoreLaneTotals({ sum, supports, count: cards.length });
 }
 
 export function scorePlayer(
